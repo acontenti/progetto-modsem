@@ -10,9 +10,9 @@
 
 <http://www.semanticweb.org/acontenti/ontologies/survival> rdf:type owl:Ontology ;
                                                             <http://purl.org/dc/elements/1.1/creator> "Alessandro Contenti" ;
-                                                            <http://purl.org/dc/elements/1.1/date> "2022-01-19" ;
-                                                            <http://purl.org/dc/elements/1.1/description> "An ontology to describe the operations of the NGO \"Survival International\"" ;
-                                                            <http://purl.org/dc/elements/1.1/title> "Survival International Ontology" ;
+                                                            <http://purl.org/dc/elements/1.1/date> "2022-02-03" ;
+                                                            <http://purl.org/dc/elements/1.1/description> "An ontology to describe the operations of the Survival International NGO"@en ;
+                                                            <http://purl.org/dc/elements/1.1/title> "Survival International Ontology"@en ;
                                                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "survival" ;
                                                             <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/acontenti/ontologies/survival#" ;
                                                             rdfs:label "Survival" .
@@ -553,41 +553,56 @@ survival:UncontactedTribe rdf:type owl:Class ;
 survival:APIB rdf:type owl:NamedIndividual ,
                        survival:Organization ;
               survival:locatedIn survival:Brazil ;
-              rdfs:label "Articulation of Indigenous Peoples of Brazil"@en ,
+              survival:email "apib.se@apiboficial.org" ;
+              survival:website "https://apiboficial.org/"^^xsd:anyURI ;
+              rdfs:label "Articolazione dei Popoli Indigeni del Brasile"@it ,
+                         "Articulation of Indigenous Peoples of Brazil"@en ,
                          "Articulação dos Povos Indígenas do Brasil"@pt .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Africa
 survival:Africa rdf:type owl:NamedIndividual ,
-                         survival:Continent .
+                         survival:Continent ;
+                rdfs:label "Africa"@en ,
+                           "Africa"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Antarctica
 survival:Antarctica rdf:type owl:NamedIndividual ,
-                             survival:Continent .
+                             survival:Continent ;
+                    rdfs:label "Antarctica"@en ,
+                               "Antartide"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Asia
 survival:Asia rdf:type owl:NamedIndividual ,
-                       survival:Continent .
+                       survival:Continent ;
+              rdfs:label "Asia"@en ,
+                         "Asia"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Bolivia
 survival:Bolivia rdf:type owl:NamedIndividual ,
                           survival:Country ;
-                 survival:locatedIn survival:SouthAmerica .
+                 survival:locatedIn survival:SouthAmerica ;
+                 rdfs:label "Bolivia"@en ,
+                            "Bolivia"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Botswana
 survival:Botswana rdf:type owl:NamedIndividual ,
                            survival:Country ;
-                  survival:locatedIn survival:Africa .
+                  survival:locatedIn survival:Africa ;
+                  rdfs:label "Botswana"@en ,
+                             "Botswana"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Brazil
 survival:Brazil rdf:type owl:NamedIndividual ,
                          survival:Country ;
-                survival:locatedIn survival:SouthAmerica .
+                survival:locatedIn survival:SouthAmerica ;
+                rdfs:label "Brasile"@it ,
+                           "Brazil"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Bushmen
@@ -595,63 +610,94 @@ survival:Bushmen rdf:type owl:NamedIndividual ,
                           survival:Tribe ;
                  survival:livesIn survival:CentralKalahariGameReserve ;
                  survival:threatenedBy survival:ColonialConservation ;
-                 survival:contacted "true"^^xsd:boolean .
+                 survival:contacted "true"^^xsd:boolean ;
+                 survival:name "San"^^xsd:string ;
+                 rdfs:label "Boscimani"@it ,
+                            "Bushmen"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#CentralKalahariGameReserve
 survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
                                              survival:Habitat ;
                                     survival:locatedIn survival:Botswana ;
-                                    survival:habitatType "desert" .
+                                    survival:habitatType "desert" ;
+                                    rdfs:label "Central Kalahari Game Reserve"@en ,
+                                               "Riserva faunistica del Kalahari centrale"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ColonialConservation
 survival:ColonialConservation rdf:type owl:NamedIndividual ,
-                                       survival:Threat .
+                                       survival:Threat ;
+                              rdfs:label "Colonial conservation"@en ,
+                                         "Conservazione di stampo colonialista"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#DecolonizeConservation
 survival:DecolonizeConservation rdf:type owl:NamedIndividual ,
                                          survival:Campaign ;
                                 survival:addresses survival:ColonialConservation ;
-                                survival:ledBy survival:SurvivalInternational .
+                                survival:ledBy survival:SurvivalInternational ;
+                                survival:campaignPage "https://www.survivalinternational.org/conservation"^^xsd:anyURI ;
+                                rdfs:label "Decolonize Conservation"@en ,
+                                           "Decolonizziamo la conservazione"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Deforestation
 survival:Deforestation rdf:type owl:NamedIndividual ,
-                                survival:Threat .
+                                survival:Threat ;
+                       rdfs:label "Deforestation"@en ,
+                                  "Deforestazione"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Europe
 survival:Europe rdf:type owl:NamedIndividual ,
-                         survival:Continent .
+                         survival:Continent ;
+                rdfs:label "Europa"@it ,
+                           "Europe"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ForcedContact
 survival:ForcedContact rdf:type owl:NamedIndividual ,
-                                survival:Threat .
+                                survival:Threat ;
+                       rdfs:label "Contatto forzato"@it ,
+                                  "Forced contact"@en .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#IllegalFishing
+survival:IllegalFishing rdf:type owl:NamedIndividual ,
+                                 survival:Threat ;
+                        rdfs:label "Illegal fishing"@en ,
+                                   "Pesca illegale"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#IllegalMining
 survival:IllegalMining rdf:type owl:NamedIndividual ,
-                                survival:Threat .
+                                survival:Threat ;
+                       rdfs:label "Estrazione mineraria illegale"@it ,
+                                  "Illegal mining"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#India
 survival:India rdf:type owl:NamedIndividual ,
                         survival:Country ;
-               survival:locatedIn survival:Asia .
+               survival:locatedIn survival:Asia ;
+               rdfs:label "India"@en ,
+                          "India"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Italy
 survival:Italy rdf:type owl:NamedIndividual ,
                         survival:Country ;
-               survival:locatedIn survival:Europe .
+               survival:locatedIn survival:Europe ;
+               rdfs:label "Italia"@it ,
+                          "Italy"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#LandExploitation
 survival:LandExploitation rdf:type owl:NamedIndividual ,
-                                   survival:Threat .
+                                   survival:Threat ;
+                          rdfs:label "Land exploitation"@en ,
+                                     "Sfruttamento delle terre"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#MashcoPiro
@@ -661,7 +707,9 @@ survival:MashcoPiro rdf:type owl:NamedIndividual ,
                     survival:threatenedBy survival:ForcedContact ,
                                           survival:LandExploitation ;
                     survival:contacted "false"^^xsd:boolean ;
-                    survival:name "Mashco-Piro"^^xsd:string .
+                    survival:name "Mashco-Piro"^^xsd:string ;
+                    rdfs:label "Mascho-Piro"@it ,
+                               "Mashco-Piro"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Matses
@@ -671,12 +719,16 @@ survival:Matses rdf:type owl:NamedIndividual ,
                 survival:threatenedBy survival:ForcedContact ,
                                       survival:LandExploitation ;
                 survival:contacted "false"^^xsd:boolean ;
-                survival:name "Matsés"^^xsd:string .
+                survival:name "Matsés"^^xsd:string ;
+                rdfs:label "Matsés"@en ,
+                           "Matsés"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#NorthAmerica
 survival:NorthAmerica rdf:type owl:NamedIndividual ,
-                               survival:Continent .
+                               survival:Continent ;
+                      rdfs:label "Nord America"@it ,
+                                 "North America"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#NorthSentinel
@@ -684,31 +736,43 @@ survival:NorthSentinel rdf:type owl:NamedIndividual ,
                                 survival:Habitat ;
                        survival:locatedIn survival:India ;
                        survival:habitatType "forest" ,
-                                            "island" .
+                                            "island" ;
+                       rdfs:label "Isola di North Sentinel"@it ,
+                                  "North Sentinel Island"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Oceania
 survival:Oceania rdf:type owl:NamedIndividual ,
-                          survival:Continent .
+                          survival:Continent ;
+                 rdfs:label "Oceania"@en ,
+                            "Oceania"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Peru
 survival:Peru rdf:type owl:NamedIndividual ,
                        survival:Country ;
-              survival:locatedIn survival:SouthAmerica .
+              survival:locatedIn survival:SouthAmerica ;
+              rdfs:label "Peru"@en ,
+                         "Perù"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Sentinelese
 survival:Sentinelese rdf:type owl:NamedIndividual ,
                               survival:Tribe ;
                      survival:livesIn survival:NorthSentinel ;
-                     survival:threatenedBy survival:ForcedContact ;
-                     survival:contacted "false"^^xsd:boolean .
+                     survival:threatenedBy survival:ForcedContact ,
+                                           survival:IllegalFishing ;
+                     survival:contacted "false"^^xsd:boolean ;
+                     survival:name "Sentinelese"^^xsd:string ;
+                     rdfs:label "Sentinelese"@en ,
+                                "Sentinellesi"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SouthAmerica
 survival:SouthAmerica rdf:type owl:NamedIndividual ,
-                               survival:Continent .
+                               survival:Continent ;
+                      rdfs:label "South America"@en ,
+                                 "Sud America"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#StopBrazilGenocide
@@ -716,7 +780,10 @@ survival:StopBrazilGenocide rdf:type owl:NamedIndividual ,
                                      survival:Campaign ;
                             survival:explicitlyHelps survival:Yanomami ;
                             survival:ledBy survival:APIB ,
-                                           survival:SurvivalInternational .
+                                           survival:SurvivalInternational ;
+                            survival:campaignPage "https://www.survivalinternational.org/brazilgenocide"^^xsd:anyURI ;
+                            rdfs:label "Fermiamo il genocidio in Brasile"@it ,
+                                       "Stop Brazil's genocide"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalBrasil
@@ -725,7 +792,9 @@ survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
                         survival:branchOf survival:SurvivalInternational ;
                         survival:locatedIn survival:Brazil ;
                         survival:email "info@survivalbrasil.org"^^xsd:string ;
-                        survival:website "https://www.survivalbrasil.org"^^xsd:anyURI .
+                        survival:website "https://www.survivalbrasil.org"^^xsd:anyURI ;
+                        rdfs:label "Survival Brasile"@it ,
+                                   "Survival Brazil"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalInternational
@@ -734,7 +803,8 @@ survival:SurvivalInternational rdf:type owl:NamedIndividual ,
                                survival:locatedIn survival:UK ;
                                survival:email "info@survivalinternational.org" ;
                                survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
-                               rdfs:label "Survival International Charitable Trust"@en .
+                               rdfs:label "Survival International"@en ,
+                                          "Survival International"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalItalia
@@ -743,7 +813,9 @@ survival:SurvivalItalia rdf:type owl:NamedIndividual ,
                         survival:branchOf survival:SurvivalInternational ;
                         survival:locatedIn survival:Italy ;
                         survival:email "info@survival.it"^^xsd:string ;
-                        survival:website "https://www.survival.it"^^xsd:anyURI .
+                        survival:website "https://www.survival.it"^^xsd:anyURI ;
+                        rdfs:label "Survival Italia"@it ,
+                                   "Survival Italy"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalUSA
@@ -752,19 +824,25 @@ survival:SurvivalUSA rdf:type owl:NamedIndividual ,
                      survival:branchOf survival:SurvivalInternational ;
                      survival:locatedIn survival:USA ;
                      survival:email "info.usa@survivalinternational.org"^^xsd:string ;
-                     survival:website "https://www.survivalinternational.org"^^xsd:anyURI .
+                     survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
+                     rdfs:label "Survival USA"@en ,
+                                "Survival USA"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UK
 survival:UK rdf:type owl:NamedIndividual ,
                      survival:Country ;
-            survival:locatedIn survival:Europe .
+            survival:locatedIn survival:Europe ;
+            rdfs:label "Regno Unito"@it ,
+                       "United Kingdom"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#USA
 survival:USA rdf:type owl:NamedIndividual ,
                       survival:Country ;
-             survival:locatedIn survival:NorthAmerica .
+             survival:locatedIn survival:NorthAmerica ;
+             rdfs:label "Stati Uniti d'America"@it ,
+                        "United States of America"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedFrontier
@@ -773,14 +851,19 @@ survival:UncontactedFrontier rdf:type owl:NamedIndividual ,
                              survival:locatedIn survival:Bolivia ,
                                                 survival:Brazil ,
                                                 survival:Peru ;
-                             survival:habitatType "forest" .
+                             survival:habitatType "forest" ;
+                             rdfs:label "La frontiera dell'Amazzonia incontattata"@it ,
+                                        "The Uncontacted Frontier"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedTribes
 survival:UncontactedTribes rdf:type owl:NamedIndividual ,
                                     survival:Campaign ;
                            survival:addresses survival:ForcedContact ;
-                           survival:ledBy survival:SurvivalInternational .
+                           survival:ledBy survival:SurvivalInternational ;
+                           survival:campaignPage "https://www.survivalinternational.org/uncontactedtribes"^^xsd:anyURI ;
+                           rdfs:label "Incontattati"@it ,
+                                      "Uncontacted Tribes"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Yanomami
@@ -789,14 +872,19 @@ survival:Yanomami rdf:type owl:NamedIndividual ,
                   survival:livesIn survival:YanomamiPark ;
                   survival:threatenedBy survival:Deforestation ,
                                         survival:IllegalMining ;
-                  survival:contacted "false"^^xsd:boolean .
+                  survival:contacted "false"^^xsd:boolean ;
+                  survival:name "Yanomamö"^^xsd:string ;
+                  rdfs:label "Yanomami"@en ,
+                             "Yanomami"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#YanomamiPark
 survival:YanomamiPark rdf:type owl:NamedIndividual ,
                                survival:Habitat ;
                       survival:locatedIn survival:Brazil ;
-                      survival:habitatType "forest" .
+                      survival:habitatType "forest" ;
+                      rdfs:label "Yanomami Park"@en ,
+                                 "Yanomami Park"@it .
 
 
 #################################################################
