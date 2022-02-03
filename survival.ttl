@@ -555,14 +555,15 @@ survival:APIB rdf:type owl:NamedIndividual ,
               survival:locatedIn survival:Brazil ;
               survival:email "apib.se@apiboficial.org" ;
               survival:website "https://apiboficial.org/"^^xsd:anyURI ;
+              rdfs:comment "The Articulation of Indigenous Peoples of Brazil was created by the indigenous movement at Camp Terra Livre (ATL) 2005. APIB is an instance of national reference of the indigenous movement in Brazil, created from the bottom up."@en ;
               rdfs:label "Articolazione dei Popoli Indigeni del Brasile"@it ,
-                         "Articulation of Indigenous Peoples of Brazil"@en ,
-                         "Articulação dos Povos Indígenas do Brasil"@pt .
+                         "Articulation of Indigenous Peoples of Brazil"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Africa
 survival:Africa rdf:type owl:NamedIndividual ,
                          survival:Continent ;
+                rdfs:comment "The African continent"@en ;
                 rdfs:label "Africa"@en ,
                            "Africa"@it .
 
@@ -570,6 +571,7 @@ survival:Africa rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Antarctica
 survival:Antarctica rdf:type owl:NamedIndividual ,
                              survival:Continent ;
+                    rdfs:comment "The Antarctic continent"@en ;
                     rdfs:label "Antarctica"@en ,
                                "Antartide"@it .
 
@@ -577,6 +579,7 @@ survival:Antarctica rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Asia
 survival:Asia rdf:type owl:NamedIndividual ,
                        survival:Continent ;
+              rdfs:comment "The continent of Asia"@en ;
               rdfs:label "Asia"@en ,
                          "Asia"@it .
 
@@ -585,6 +588,7 @@ survival:Asia rdf:type owl:NamedIndividual ,
 survival:Bolivia rdf:type owl:NamedIndividual ,
                           survival:Country ;
                  survival:locatedIn survival:SouthAmerica ;
+                 rdfs:comment "The Plurinational State of Bolivia"@en ;
                  rdfs:label "Bolivia"@en ,
                             "Bolivia"@it .
 
@@ -593,6 +597,7 @@ survival:Bolivia rdf:type owl:NamedIndividual ,
 survival:Botswana rdf:type owl:NamedIndividual ,
                            survival:Country ;
                   survival:locatedIn survival:Africa ;
+                  rdfs:comment "The Republic of Botswana"@en ;
                   rdfs:label "Botswana"@en ,
                              "Botswana"@it .
 
@@ -612,6 +617,7 @@ survival:Bushmen rdf:type owl:NamedIndividual ,
                  survival:threatenedBy survival:ColonialConservation ;
                  survival:contacted "true"^^xsd:boolean ;
                  survival:name "San"^^xsd:string ;
+                 rdfs:comment "The Bushmen are the indigenous peoples of southern Africa. Largely hunter-gatherers, their territory spans several nations and they have called the region home for tens of thousands of years."@en ;
                  rdfs:label "Boscimani"@it ,
                             "Bushmen"@en .
 
@@ -621,6 +627,7 @@ survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
                                              survival:Habitat ;
                                     survival:locatedIn survival:Botswana ;
                                     survival:habitatType "desert" ;
+                                    rdfs:comment "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana"@en ;
                                     rdfs:label "Central Kalahari Game Reserve"@en ,
                                                "Riserva faunistica del Kalahari centrale"@it .
 
@@ -628,6 +635,7 @@ survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ColonialConservation
 survival:ColonialConservation rdf:type owl:NamedIndividual ,
                                        survival:Threat ;
+                              rdfs:comment "Colonial conservation, also known as Fortress Conservation, rests on the racist misconception that indigenous people cannot be trusted to look after their own land and the animals that live there. Its proponents view the original custodians of the land as a “nuisance” to be “dealt with\", instead of as experts in local biodiversity and key partners in conservation."@en ;
                               rdfs:label "Colonial conservation"@en ,
                                          "Conservazione di stampo colonialista"@it .
 
@@ -638,6 +646,7 @@ survival:DecolonizeConservation rdf:type owl:NamedIndividual ,
                                 survival:addresses survival:ColonialConservation ;
                                 survival:ledBy survival:SurvivalInternational ;
                                 survival:campaignPage "https://www.survivalinternational.org/conservation"^^xsd:anyURI ;
+                                rdfs:comment "Well known conservation groups like WWF, WCS, and African Parks have been aware of these atrocities for many years but they continue to fund and support colonial conservation. For over 30 years, Survival has been campaigning against the atrocities committed in the name of “conservation”."@en ;
                                 rdfs:label "Decolonize Conservation"@en ,
                                            "Decolonizziamo la conservazione"@it .
 
@@ -645,6 +654,7 @@ survival:DecolonizeConservation rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Deforestation
 survival:Deforestation rdf:type owl:NamedIndividual ,
                                 survival:Threat ;
+                       rdfs:comment "Deforestation or forest clearance is the removal of a forest or stand of trees from land that is then converted to non-forest use. Deforestation can involve conversion of forest land to farms, ranches, or urban use. The most concentrated deforestation occurs in tropical rainforests."@en ;
                        rdfs:label "Deforestation"@en ,
                                   "Deforestazione"@it .
 
@@ -652,6 +662,7 @@ survival:Deforestation rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Europe
 survival:Europe rdf:type owl:NamedIndividual ,
                          survival:Continent ;
+                rdfs:comment "The European continent"@en ;
                 rdfs:label "Europa"@it ,
                            "Europe"@en .
 
@@ -659,6 +670,7 @@ survival:Europe rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ForcedContact
 survival:ForcedContact rdf:type owl:NamedIndividual ,
                                 survival:Threat ;
+                       rdfs:comment "Forced contact is the practice of contacting forcibly indigenous tribes for many reasons such as to either exploit their land, convert them to Christianity or simply study their habits. Whole populations are being wiped out by genocidal violence, and by diseases like flu and measles to which they have no resistance."@en ;
                        rdfs:label "Contatto forzato"@it ,
                                   "Forced contact"@en .
 
@@ -666,6 +678,7 @@ survival:ForcedContact rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#IllegalFishing
 survival:IllegalFishing rdf:type owl:NamedIndividual ,
                                  survival:Threat ;
+                        rdfs:comment "Illegal fishing takes place when vessels or poachers operate in violation of the laws and especially in protected natural reserves. It endangers some tribes by reducing their sources of livelihood and exposing them to deadly deseases."@en ;
                         rdfs:label "Illegal fishing"@en ,
                                    "Pesca illegale"@it .
 
@@ -673,6 +686,7 @@ survival:IllegalFishing rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#IllegalMining
 survival:IllegalMining rdf:type owl:NamedIndividual ,
                                 survival:Threat ;
+                       rdfs:comment "Illegal mining is mining activity that is undertaken without state permission, in particular in absence of land rights, mining licenses, and exploration or mineral transportation permits."@en ;
                        rdfs:label "Estrazione mineraria illegale"@it ,
                                   "Illegal mining"@en .
 
@@ -681,6 +695,7 @@ survival:IllegalMining rdf:type owl:NamedIndividual ,
 survival:India rdf:type owl:NamedIndividual ,
                         survival:Country ;
                survival:locatedIn survival:Asia ;
+               rdfs:comment "The Republic of India"@en ;
                rdfs:label "India"@en ,
                           "India"@it .
 
@@ -689,25 +704,20 @@ survival:India rdf:type owl:NamedIndividual ,
 survival:Italy rdf:type owl:NamedIndividual ,
                         survival:Country ;
                survival:locatedIn survival:Europe ;
+               rdfs:comment "The Italian Republic"@en ;
                rdfs:label "Italia"@it ,
                           "Italy"@en .
-
-
-###  http://www.semanticweb.org/acontenti/ontologies/survival#LandExploitation
-survival:LandExploitation rdf:type owl:NamedIndividual ,
-                                   survival:Threat ;
-                          rdfs:label "Land exploitation"@en ,
-                                     "Sfruttamento delle terre"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#MashcoPiro
 survival:MashcoPiro rdf:type owl:NamedIndividual ,
                              survival:Tribe ;
                     survival:livesIn survival:UncontactedFrontier ;
-                    survival:threatenedBy survival:ForcedContact ,
-                                          survival:LandExploitation ;
+                    survival:threatenedBy survival:Deforestation ,
+                                          survival:ForcedContact ;
                     survival:contacted "false"^^xsd:boolean ;
                     survival:name "Mashco-Piro"^^xsd:string ;
+                    rdfs:comment "Mashco-Piro are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."@en ;
                     rdfs:label "Mascho-Piro"@it ,
                                "Mashco-Piro"@en .
 
@@ -716,10 +726,10 @@ survival:MashcoPiro rdf:type owl:NamedIndividual ,
 survival:Matses rdf:type owl:NamedIndividual ,
                          survival:Tribe ;
                 survival:livesIn survival:UncontactedFrontier ;
-                survival:threatenedBy survival:ForcedContact ,
-                                      survival:LandExploitation ;
+                survival:threatenedBy survival:ForcedContact ;
                 survival:contacted "false"^^xsd:boolean ;
                 survival:name "Matsés"^^xsd:string ;
+                rdfs:comment "Matsés are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."@en ;
                 rdfs:label "Matsés"@en ,
                            "Matsés"@it .
 
@@ -727,6 +737,7 @@ survival:Matses rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#NorthAmerica
 survival:NorthAmerica rdf:type owl:NamedIndividual ,
                                survival:Continent ;
+                      rdfs:comment "The North American continent"@en ;
                       rdfs:label "Nord America"@it ,
                                  "North America"@en .
 
@@ -737,6 +748,7 @@ survival:NorthSentinel rdf:type owl:NamedIndividual ,
                        survival:locatedIn survival:India ;
                        survival:habitatType "forest" ,
                                             "island" ;
+                       rdfs:comment "North Sentinel Island is one of the Andaman Islands, an Indian archipelago in the Bay of Bengal"@en ;
                        rdfs:label "Isola di North Sentinel"@it ,
                                   "North Sentinel Island"@en .
 
@@ -744,6 +756,7 @@ survival:NorthSentinel rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Oceania
 survival:Oceania rdf:type owl:NamedIndividual ,
                           survival:Continent ;
+                 rdfs:comment "The continent of Oceania"@en ;
                  rdfs:label "Oceania"@en ,
                             "Oceania"@it .
 
@@ -752,6 +765,7 @@ survival:Oceania rdf:type owl:NamedIndividual ,
 survival:Peru rdf:type owl:NamedIndividual ,
                        survival:Country ;
               survival:locatedIn survival:SouthAmerica ;
+              rdfs:comment "The Republic of Peru"@en ;
               rdfs:label "Peru"@en ,
                          "Perù"@it .
 
@@ -764,6 +778,7 @@ survival:Sentinelese rdf:type owl:NamedIndividual ,
                                            survival:IllegalFishing ;
                      survival:contacted "false"^^xsd:boolean ;
                      survival:name "Sentinelese"^^xsd:string ;
+                     rdfs:comment "The Sentinelese are an uncontacted tribe living on North Sentinal Island, one of the Andaman Islands in the Indian Ocean. They vigorously reject all contact with outsiders."@en ;
                      rdfs:label "Sentinelese"@en ,
                                 "Sentinellesi"@it .
 
@@ -771,6 +786,7 @@ survival:Sentinelese rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SouthAmerica
 survival:SouthAmerica rdf:type owl:NamedIndividual ,
                                survival:Continent ;
+                      rdfs:comment "The South American continent"@en ;
                       rdfs:label "South America"@en ,
                                  "Sud America"@it .
 
@@ -782,6 +798,7 @@ survival:StopBrazilGenocide rdf:type owl:NamedIndividual ,
                             survival:ledBy survival:APIB ,
                                            survival:SurvivalInternational ;
                             survival:campaignPage "https://www.survivalinternational.org/brazilgenocide"^^xsd:anyURI ;
+                            rdfs:comment "President Jair Bolsonaro is trying to turn back the clock on indigenous rights. He wants to strip their autonomy, sell off their territories for logging and mining and “assimilate” them against their wishes. Brazil’s indigenous peoples, their supporters and allies, and Survival International are fighting back as the President plots to steal their land, destroy their lives and annihilate them as peoples."@en ;
                             rdfs:label "Fermiamo il genocidio in Brasile"@it ,
                                        "Stop Brazil's genocide"@en .
 
@@ -793,8 +810,9 @@ survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
                         survival:locatedIn survival:Brazil ;
                         survival:email "info@survivalbrasil.org"^^xsd:string ;
                         survival:website "https://www.survivalbrasil.org"^^xsd:anyURI ;
-                        rdfs:label "Survival Brasile"@it ,
-                                   "Survival Brazil"@en .
+                        rdfs:comment "Brazilian office of Survival International"@en ;
+                        rdfs:label "Survival International Brasile"@it ,
+                                   "Survival International Brazil"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalInternational
@@ -803,6 +821,7 @@ survival:SurvivalInternational rdf:type owl:NamedIndividual ,
                                survival:locatedIn survival:UK ;
                                survival:email "info@survivalinternational.org" ;
                                survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
+                               rdfs:comment "Survival International is a human rights organisation formed in 1969 that campaigns for the rights of indigenous and/or tribal peoples and uncontacted peoples"@en ;
                                rdfs:label "Survival International"@en ,
                                           "Survival International"@it .
 
@@ -814,8 +833,9 @@ survival:SurvivalItalia rdf:type owl:NamedIndividual ,
                         survival:locatedIn survival:Italy ;
                         survival:email "info@survival.it"^^xsd:string ;
                         survival:website "https://www.survival.it"^^xsd:anyURI ;
-                        rdfs:label "Survival Italia"@it ,
-                                   "Survival Italy"@en .
+                        rdfs:comment "Italian office of Survival International"@en ;
+                        rdfs:label "Survival International Italia"@it ,
+                                   "Survival International Italy"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalUSA
@@ -825,14 +845,16 @@ survival:SurvivalUSA rdf:type owl:NamedIndividual ,
                      survival:locatedIn survival:USA ;
                      survival:email "info.usa@survivalinternational.org"^^xsd:string ;
                      survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
-                     rdfs:label "Survival USA"@en ,
-                                "Survival USA"@it .
+                     rdfs:comment "US office of Survival International"@en ;
+                     rdfs:label "Survival International USA"@en ,
+                                "Survival International USA"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UK
 survival:UK rdf:type owl:NamedIndividual ,
                      survival:Country ;
             survival:locatedIn survival:Europe ;
+            rdfs:comment "The United Kingdom of Great Britain and Northern Ireland"@en ;
             rdfs:label "Regno Unito"@it ,
                        "United Kingdom"@en .
 
@@ -841,6 +863,7 @@ survival:UK rdf:type owl:NamedIndividual ,
 survival:USA rdf:type owl:NamedIndividual ,
                       survival:Country ;
              survival:locatedIn survival:NorthAmerica ;
+             rdfs:comment "The United States of America"@en ;
              rdfs:label "Stati Uniti d'America"@it ,
                         "United States of America"@en .
 
@@ -852,8 +875,9 @@ survival:UncontactedFrontier rdf:type owl:NamedIndividual ,
                                                 survival:Brazil ,
                                                 survival:Peru ;
                              survival:habitatType "forest" ;
+                             rdfs:comment "Straddling the borders of Peru, Brazil and Bolivia is the Uncontacted Frontier, home to more uncontacted tribes than anywhere else on the planet"@en ;
                              rdfs:label "La frontiera dell'Amazzonia incontattata"@it ,
-                                        "The Uncontacted Frontier"@en .
+                                        "The Amazon Uncontacted Frontier"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedTribes
@@ -862,8 +886,17 @@ survival:UncontactedTribes rdf:type owl:NamedIndividual ,
                            survival:addresses survival:ForcedContact ;
                            survival:ledBy survival:SurvivalInternational ;
                            survival:campaignPage "https://www.survivalinternational.org/uncontactedtribes"^^xsd:anyURI ;
+                           rdfs:comment "There are more than a hundred uncontacted tribes around the world. They are a vitally important part of humankind’s diversity, but they face catastrophe unless their land is protected. Survival is doing everything possible to secure their land for them, and to let them live."@en ;
                            rdfs:label "Incontattati"@it ,
                                       "Uncontacted Tribes"@en .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#Venezuela
+survival:Venezuela rdf:type owl:NamedIndividual ,
+                            survival:Country ;
+                   rdfs:comment "The Bolivarian Republic of Venezuela"@en ;
+                   rdfs:label "Venezuela"@en ,
+                              "Venezuela"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Yanomami
@@ -874,6 +907,7 @@ survival:Yanomami rdf:type owl:NamedIndividual ,
                                         survival:IllegalMining ;
                   survival:contacted "false"^^xsd:boolean ;
                   survival:name "Yanomamö"^^xsd:string ;
+                  rdfs:comment "The Yanomami are the largest relatively isolated tribe in South America. They live in the rainforests and mountains of northern Brazil and southern Venezuela."@en ;
                   rdfs:label "Yanomami"@en ,
                              "Yanomami"@it .
 
@@ -881,8 +915,10 @@ survival:Yanomami rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#YanomamiPark
 survival:YanomamiPark rdf:type owl:NamedIndividual ,
                                survival:Habitat ;
-                      survival:locatedIn survival:Brazil ;
+                      survival:locatedIn survival:Brazil ,
+                                         survival:Venezuela ;
                       survival:habitatType "forest" ;
+                      rdfs:comment "The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission."@en ;
                       rdfs:label "Yanomami Park"@en ,
                                  "Yanomami Park"@it .
 
