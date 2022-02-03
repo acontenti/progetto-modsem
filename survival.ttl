@@ -51,22 +51,15 @@
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#emailAddress
 survival:emailAddress rdf:type rdfs:Datatype ;
+                      rdfs:comment "A datatype for an e-mail address"@en ;
+                      rdfs:label "E-mail"@en ,
+                                 "E-mail"@it ;
                       owl:equivalentClass [ rdf:type rdfs:Datatype ;
                                             owl:onDatatype xsd:string ;
                                             owl:withRestrictions ( [ xsd:pattern "[^@]+@[^\\.]+\\..+"
                                                                    ]
                                                                  )
                                           ] .
-
-
-###  http://www.semanticweb.org/acontenti/ontologies/survival#websiteURL
-survival:websiteURL rdf:type rdfs:Datatype ;
-                    owl:equivalentClass [ rdf:type rdfs:Datatype ;
-                                          owl:onDatatype xsd:string ;
-                                          owl:withRestrictions ( [ xsd:pattern "[hH][tT][tT][pP][sS]?:\\/\\/.+"
-                                                                 ]
-                                                               )
-                                        ] .
 
 
 #################################################################
@@ -77,13 +70,19 @@ survival:websiteURL rdf:type rdfs:Datatype ;
 survival:addressedBy rdf:type owl:ObjectProperty ;
                      owl:inverseOf survival:addresses ;
                      rdfs:domain survival:Threat ;
-                     rdfs:range survival:Campaign .
+                     rdfs:range survival:Campaign ;
+                     rdfs:comment "Links a threat to a campaign addressing it"@en ;
+                     rdfs:label "Addressed by"@en ,
+                                "Affrontata da"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#addresses
 survival:addresses rdf:type owl:ObjectProperty ;
                    rdfs:domain survival:Campaign ;
-                   rdfs:range survival:Threat .
+                   rdfs:range survival:Threat ;
+                   rdfs:comment "Links a campaign to a threat that it addresses"@en ;
+                   rdfs:label "Addresses"@en ,
+                              "Affronta"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#branchOf
@@ -92,26 +91,35 @@ survival:branchOf rdf:type owl:ObjectProperty ;
                   rdf:type owl:FunctionalProperty ,
                            owl:AsymmetricProperty ,
                            owl:IrreflexiveProperty ;
-                  rdfs:domain survival:BranchOrganization ;
-                  rdfs:range survival:Organization .
+                  rdfs:domain survival:Organization ;
+                  rdfs:range survival:Organization ;
+                  rdfs:comment "Links a branch organization to its head organization"@en ;
+                  rdfs:label "Branch of"@en ,
+                             "Ufficio di"@it .
 
 
-###  http://www.semanticweb.org/acontenti/ontologies/survival#cohabits
-survival:cohabits rdf:type owl:ObjectProperty ,
-                           owl:SymmetricProperty ;
-                  rdfs:domain survival:Tribe ;
-                  rdfs:range survival:Tribe ;
-                  owl:propertyChainAxiom ( survival:livesIn
-                                           [ owl:inverseOf survival:livesIn
-                                           ]
-                                         ) .
+###  http://www.semanticweb.org/acontenti/ontologies/survival#cohabitsWith
+survival:cohabitsWith rdf:type owl:ObjectProperty ,
+                               owl:SymmetricProperty ;
+                      rdfs:domain survival:Tribe ;
+                      rdfs:range survival:Tribe ;
+                      owl:propertyChainAxiom ( survival:livesIn
+                                               [ owl:inverseOf survival:livesIn
+                                               ]
+                                             ) ;
+                      rdfs:comment "Links a tribe to another tribe it shares a habitat with"@en ;
+                      rdfs:label "Coabita con"@it ,
+                                 "Cohabits with"@en .
 
 
-###  http://www.semanticweb.org/acontenti/ontologies/survival#directlyHelps
-survival:directlyHelps rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf survival:helps ;
-                       rdfs:domain survival:LocalCampaign ;
-                       rdfs:range survival:Tribe .
+###  http://www.semanticweb.org/acontenti/ontologies/survival#explicitlyHelps
+survival:explicitlyHelps rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf survival:helps ;
+                         rdfs:domain survival:LocalCampaign ;
+                         rdfs:range survival:Tribe ;
+                         rdfs:comment "Links a campaign to a tribe it explicitly helps"@en ;
+                         rdfs:label "Aiuta esplicitamente"@it ,
+                                    "Explicitly helps"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#hasBranch
@@ -120,7 +128,10 @@ survival:hasBranch rdf:type owl:ObjectProperty ,
                             owl:AsymmetricProperty ,
                             owl:IrreflexiveProperty ;
                    rdfs:domain survival:Organization ;
-                   rdfs:range survival:BranchOrganization .
+                   rdfs:range survival:BranchOrganization ;
+                   rdfs:comment "Links an organization to one of its branches"@en ;
+                   rdfs:label "Ha ufficio"@it ,
+                              "Has branch"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#helpedBy
@@ -128,41 +139,59 @@ survival:helpedBy rdf:type owl:ObjectProperty ;
                   owl:inverseOf survival:helps ;
                   rdfs:domain survival:Tribe ;
                   rdfs:range survival:Campaign ;
-                  owl:propertyChainAxiom ( survival:threatenedBy
-                                           survival:addressedBy
-                                         ) .
+                  rdfs:comment "Links a tribe to a campaign it is helped by"@en ;
+                  rdfs:label "Aiutata da"@it ,
+                             "Helped by"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#helps
 survival:helps rdf:type owl:ObjectProperty ;
                rdfs:domain survival:Campaign ;
-               rdfs:range survival:Tribe .
+               rdfs:range survival:Tribe ;
+               owl:propertyChainAxiom ( survival:addresses
+                                        survival:threatens
+                                      ) ;
+               rdfs:comment "Links a campaign to a tribe it implicitly helps"@en ;
+               rdfs:label "Aiuta"@it ,
+                          "Helps"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#hosts
 survival:hosts rdf:type owl:ObjectProperty ;
                owl:inverseOf survival:livesIn ;
                rdfs:domain survival:Habitat ;
-               rdfs:range survival:Tribe .
+               rdfs:range survival:Tribe ;
+               rdfs:comment "Links a habitat to a tribe it hosts"@en ;
+               rdfs:label "Hosts"@en ,
+                          "Ospita"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#leads
 survival:leads rdf:type owl:ObjectProperty ;
                owl:inverseOf survival:ledBy ;
                rdfs:domain survival:Organization ;
-               rdfs:range survival:Campaign .
+               rdfs:range survival:Campaign ;
+               rdfs:comment "Links an organization to a campaign it conducts"@en ;
+               rdfs:label "Conduce"@it ,
+                          "Leads"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ledBy
 survival:ledBy rdf:type owl:ObjectProperty ;
                rdfs:domain survival:Campaign ;
-               rdfs:range survival:Organization .
+               rdfs:range survival:Organization ;
+               rdfs:comment "Links a campaign to an organization it is conducted by"@en ;
+               rdfs:label "Condotta da"@it ,
+                          "Led by"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#livesIn
 survival:livesIn rdf:type owl:ObjectProperty ;
                  rdfs:domain survival:Tribe ;
-                 rdfs:range survival:Habitat .
+                 rdfs:range survival:Habitat ;
+                 rdfs:comment "Links a tribe to a habitat it lives in"@en ;
+                 rdfs:label "Abita in"@it ,
+                            "Lives in"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#locatedIn
@@ -174,20 +203,29 @@ survival:locatedIn rdf:type owl:ObjectProperty ,
                                                survival:Organization
                                              )
                                ] ;
-                   rdfs:range survival:Location .
+                   rdfs:range survival:Location ;
+                   rdfs:comment "Links a country or a habitat or an organization to a location it is located in"@en ;
+                   rdfs:label "Located in"@en ,
+                              "Situato in"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#threatenedBy
 survival:threatenedBy rdf:type owl:ObjectProperty ;
                       owl:inverseOf survival:threatens ;
                       rdfs:domain survival:Tribe ;
-                      rdfs:range survival:Threat .
+                      rdfs:range survival:Threat ;
+                      rdfs:comment "Links a tribe to a threat it is endangered by"@en ;
+                      rdfs:label "Minacciata da"@it ,
+                                 "Threatened by"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#threatens
 survival:threatens rdf:type owl:ObjectProperty ;
                    rdfs:domain survival:Threat ;
-                   rdfs:range survival:Tribe .
+                   rdfs:range survival:Tribe ;
+                   rdfs:comment "Links a threat to a tribe it endangers"@en ;
+                   rdfs:label "Minaccia"@it ,
+                              "Threatens"@en .
 
 
 #################################################################
@@ -197,20 +235,29 @@ survival:threatens rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#campaignPage
 survival:campaignPage rdf:type owl:DatatypeProperty ;
                       rdfs:domain survival:Campaign ;
-                      rdfs:range xsd:anyURI .
+                      rdfs:range xsd:anyURI ;
+                      rdfs:comment "URL of the web page of the campaign"@en ;
+                      rdfs:label "Campaign web page"@en ,
+                                 "Pagina web della campagna"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#contacted
 survival:contacted rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
                    rdfs:domain survival:Tribe ;
-                   rdfs:range xsd:boolean .
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Whether a tribe has been contacted or not: defines its uncontacted status"@en ;
+                   rdfs:label "Contacted tribe"@en ,
+                              "Tribù contattata"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#email
 survival:email rdf:type owl:DatatypeProperty ;
                rdfs:domain survival:Organization ;
-               rdfs:range survival:emailAddress .
+               rdfs:range survival:emailAddress ;
+               rdfs:comment "An organization e-mail address"@en ;
+               rdfs:label "Indirizzo e-mail dell'organizzazione"@it ,
+                          "Organization e-mail address"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#habitatType
@@ -227,19 +274,28 @@ survival:habitatType rdf:type owl:DatatypeProperty ;
                                                                   ]
                                                        ]
                                             ]
-                                ] .
+                                ] ;
+                     rdfs:comment "Defines the type of an habitat, can be either desert, forest or island. Can be used twice to define an intersection, like: forest + island = forested island"@en ;
+                     rdfs:label "Habitat type"@en ,
+                                "Tipo di habitat"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#name
 survival:name rdf:type owl:DatatypeProperty ;
               rdfs:domain survival:Tribe ;
-              rdfs:range xsd:string .
+              rdfs:range xsd:string ;
+              rdfs:comment "The official name of a tribe or indigenous people"@en ;
+              rdfs:label "Nome della tribù"@it ,
+                         "Tribe name"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#website
 survival:website rdf:type owl:DatatypeProperty ;
                  rdfs:domain survival:Organization ;
-                 rdfs:range xsd:anyURI .
+                 rdfs:range xsd:anyURI ;
+                 rdfs:comment "URL of the website of an organization"@en ;
+                 rdfs:label "Organization website"@en ,
+                            "Sito web dell'organizzazione"@it .
 
 
 #################################################################
@@ -253,7 +309,10 @@ survival:BranchOrganization rdf:type owl:Class ;
                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                   owl:onClass survival:Organization
                                                 ] ;
-                            rdfs:subClassOf survival:Organization .
+                            rdfs:subClassOf survival:Organization ;
+                            rdfs:comment "A local office or branch of an organization. Can be an indipendent legal entity or not."@en ;
+                            rdfs:label "Branch office"@en ,
+                                       "Ufficio distaccato"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Campaign
@@ -265,13 +324,17 @@ survival:Campaign rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty survival:campaignPage ;
                                     owl:someValuesFrom xsd:anyURI
-                                  ] .
+                                  ] ;
+                  rdfs:comment "A generic project intended to mobilize public support and use democratic tools, such as lobbying, addressing some threats, in order to help endangered tribes"@en ;
+                  rdfs:label "Campagna"@it ,
+                             "Campaign"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Continent
 survival:Continent rdf:type owl:Class ;
                    owl:equivalentClass [ rdf:type owl:Class ;
                                          owl:oneOf ( survival:Africa
+                                                     survival:Antarctica
                                                      survival:Asia
                                                      survival:Europe
                                                      survival:NorthAmerica
@@ -279,7 +342,10 @@ survival:Continent rdf:type owl:Class ;
                                                      survival:SouthAmerica
                                                    )
                                        ] ;
-                   rdfs:subClassOf survival:Location .
+                   rdfs:subClassOf survival:Location ;
+                   rdfs:comment "One of the seven geographical regions that make up the global landmass"@en ;
+                   rdfs:label "Continent"@en ,
+                              "Continente"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Country
@@ -288,7 +354,10 @@ survival:Country rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty survival:locatedIn ;
                                    owl:someValuesFrom survival:Continent
-                                 ] .
+                                 ] ;
+                 rdfs:comment "A distinct territorial body or political entity"@en ;
+                 rdfs:label "Country"@en ,
+                            "Paese"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Desert
@@ -297,7 +366,22 @@ survival:Desert rdf:type owl:Class ;
                                       owl:onProperty survival:habitatType ;
                                       owl:hasValue "desert"
                                     ] ;
-                rdfs:subClassOf survival:Habitat .
+                rdfs:subClassOf survival:Habitat ;
+                rdfs:comment "A desert is a arid or semi-arid area of landscape"@en ;
+                rdfs:label "Desert"@en ,
+                           "Deserto"@it .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#DesertIsland
+survival:DesertIsland rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( survival:Desert
+                                                                 survival:Island
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:comment "An island mostly covered by a desert area"@en ;
+                      rdfs:label "Desert island"@en ,
+                                 "Isola desertica"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#DesertTribe
@@ -306,16 +390,10 @@ survival:DesertTribe rdf:type owl:Class ;
                                            owl:onProperty survival:livesIn ;
                                            owl:someValuesFrom survival:Desert
                                          ] ;
-                     rdfs:subClassOf survival:Tribe .
-
-
-###  http://www.semanticweb.org/acontenti/ontologies/survival#DesertedIsland
-survival:DesertedIsland rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( survival:Desert
-                                                                   survival:Island
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] .
+                     rdfs:subClassOf survival:Tribe ;
+                     rdfs:comment "Tribe living in a desert"@en ;
+                     rdfs:label "Desert tribe"@en ,
+                                "Tribù del deserto"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Forest
@@ -324,7 +402,10 @@ survival:Forest rdf:type owl:Class ;
                                       owl:onProperty survival:habitatType ;
                                       owl:hasValue "forest"
                                     ] ;
-                rdfs:subClassOf survival:Habitat .
+                rdfs:subClassOf survival:Habitat ;
+                rdfs:comment "A forest is an area of land dominated by trees"@en ;
+                rdfs:label "Forest"@en ,
+                           "Foresta"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ForestTribe
@@ -333,7 +414,10 @@ survival:ForestTribe rdf:type owl:Class ;
                                            owl:onProperty survival:livesIn ;
                                            owl:someValuesFrom survival:Forest
                                          ] ;
-                     rdfs:subClassOf survival:Tribe .
+                     rdfs:subClassOf survival:Tribe ;
+                     rdfs:comment "Tribe living in a forest"@en ;
+                     rdfs:label "Forest tribe"@en ,
+                                "Tribù della foresta"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ForestedIsland
@@ -342,7 +426,10 @@ survival:ForestedIsland rdf:type owl:Class ;
                                                                    survival:Island
                                                                  ) ;
                                               rdf:type owl:Class
-                                            ] .
+                                            ] ;
+                        rdfs:comment "An island mostly covered by forests"@en ;
+                        rdfs:label "Forested island"@en ,
+                                   "Isola boscosa"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Habitat
@@ -351,7 +438,10 @@ survival:Habitat rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty survival:locatedIn ;
                                    owl:someValuesFrom survival:Country
-                                 ] .
+                                 ] ;
+                 rdfs:comment "A geographical region which may span one or more countries, hosting one or more tribes"@en ;
+                 rdfs:label "Habitat"@en ,
+                            "Habitat"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Island
@@ -360,7 +450,10 @@ survival:Island rdf:type owl:Class ;
                                       owl:onProperty survival:habitatType ;
                                       owl:hasValue "island"
                                     ] ;
-                rdfs:subClassOf survival:Habitat .
+                rdfs:subClassOf survival:Habitat ;
+                rdfs:comment "An island is a portion of land entirely surrounded by water"@en ;
+                rdfs:label "Island"@en ,
+                           "Isola"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#IslanderTribe
@@ -369,20 +462,29 @@ survival:IslanderTribe rdf:type owl:Class ;
                                              owl:onProperty survival:livesIn ;
                                              owl:someValuesFrom survival:Island
                                            ] ;
-                       rdfs:subClassOf survival:Tribe .
+                       rdfs:subClassOf survival:Tribe ;
+                       rdfs:comment "Tribe living on one or more islands"@en ;
+                       rdfs:label "Islander tribe"@en ,
+                                  "Tribù isolana"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#LocalCampaign
 survival:LocalCampaign rdf:type owl:Class ;
                        owl:equivalentClass [ rdf:type owl:Restriction ;
-                                             owl:onProperty survival:directlyHelps ;
+                                             owl:onProperty survival:explicitlyHelps ;
                                              owl:someValuesFrom survival:Tribe
                                            ] ;
-                       rdfs:subClassOf survival:Campaign .
+                       rdfs:subClassOf survival:Campaign ;
+                       rdfs:comment "A campaign directly helping one or more specific tribes"@en ;
+                       rdfs:label "Campagna locale"@it ,
+                                  "Local campaign"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Location
-survival:Location rdf:type owl:Class .
+survival:Location rdf:type owl:Class ;
+                  rdfs:comment "A generic location"@en ;
+                  rdfs:label "Location"@en ,
+                             "Luogo"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Organization
@@ -390,7 +492,10 @@ survival:Organization rdf:type owl:Class ;
                       rdfs:subClassOf [ rdf:type owl:Restriction ;
                                         owl:onProperty survival:locatedIn ;
                                         owl:someValuesFrom survival:Country
-                                      ] .
+                                      ] ;
+                      rdfs:comment "An organization is an entity, such as a company, an institution, or an association, comprising one or more people and having a particular purpose"@en ;
+                      rdfs:label "Organization"@en ,
+                                 "Organizzazione"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SharedCampaign
@@ -400,7 +505,10 @@ survival:SharedCampaign rdf:type owl:Class ;
                                               owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                               owl:onClass survival:Organization
                                             ] ;
-                        rdfs:subClassOf survival:Campaign .
+                        rdfs:subClassOf survival:Campaign ;
+                        rdfs:comment "A campaign led by more than one organization"@en ;
+                        rdfs:label "Campagna condivisa"@it ,
+                                   "Shared campaign"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Threat
@@ -408,7 +516,10 @@ survival:Threat rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
                                   owl:onProperty survival:threatens ;
                                   owl:someValuesFrom survival:Tribe
-                                ] .
+                                ] ;
+                rdfs:comment "A generic threat which may endanger one or more tribe or a tribe-specific threat"@en ;
+                rdfs:label "Minaccia"@it ,
+                           "Threat"@en .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Tribe
@@ -416,7 +527,10 @@ survival:Tribe rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
                                  owl:onProperty survival:livesIn ;
                                  owl:someValuesFrom survival:Habitat
-                               ] .
+                               ] ;
+               rdfs:comment "Endangered tribes and indigenous peoples"@en ;
+               rdfs:label "Tribe"@en ,
+                          "Tribù"@it .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedTribe
@@ -425,7 +539,10 @@ survival:UncontactedTribe rdf:type owl:Class ;
                                                 owl:onProperty survival:contacted ;
                                                 owl:hasValue "false"^^xsd:boolean
                                               ] ;
-                          rdfs:subClassOf survival:Tribe .
+                          rdfs:subClassOf survival:Tribe ;
+                          rdfs:comment "Tribe that has never, or nearly never, been contacted by the \"civilized\" world, if not for some forced contacts, which have almost always been rejected. Little or nothing is known about these tribes, sometimes just their name or not event that."@en ;
+                          rdfs:label "Tribù incontattata"@it ,
+                                     "Uncontacted tribe"@en .
 
 
 #################################################################
@@ -443,6 +560,11 @@ survival:APIB rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Africa
 survival:Africa rdf:type owl:NamedIndividual ,
                          survival:Continent .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#Antarctica
+survival:Antarctica rdf:type owl:NamedIndividual ,
+                             survival:Continent .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Asia
@@ -491,7 +613,8 @@ survival:ColonialConservation rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#DecolonizeConservation
 survival:DecolonizeConservation rdf:type owl:NamedIndividual ,
                                          survival:Campaign ;
-                                survival:addresses survival:ColonialConservation .
+                                survival:addresses survival:ColonialConservation ;
+                                survival:ledBy survival:SurvivalInternational .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Deforestation
@@ -591,9 +714,9 @@ survival:SouthAmerica rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#StopBrazilGenocide
 survival:StopBrazilGenocide rdf:type owl:NamedIndividual ,
                                      survival:Campaign ;
-                            survival:directlyHelps survival:Yanomami ;
+                            survival:explicitlyHelps survival:Yanomami ;
                             survival:ledBy survival:APIB ,
-                                           survival:SurvivalBrasil .
+                                           survival:SurvivalInternational .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalBrasil
@@ -656,7 +779,8 @@ survival:UncontactedFrontier rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedTribes
 survival:UncontactedTribes rdf:type owl:NamedIndividual ,
                                     survival:Campaign ;
-                           survival:addresses survival:ForcedContact .
+                           survival:addresses survival:ForcedContact ;
+                           survival:ledBy survival:SurvivalInternational .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Yanomami
@@ -709,6 +833,7 @@ survival:YanomamiPark rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( survival:Africa
+                        survival:Antarctica
                         survival:Asia
                         survival:Europe
                         survival:NorthAmerica
