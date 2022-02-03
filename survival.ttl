@@ -46,6 +46,30 @@
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#emailAddress
+survival:emailAddress rdf:type rdfs:Datatype ;
+                      owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                            owl:onDatatype xsd:string ;
+                                            owl:withRestrictions ( [ xsd:pattern "[^@]+@[^\\.]+\\..+"
+                                                                   ]
+                                                                 )
+                                          ] .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#websiteURL
+survival:websiteURL rdf:type rdfs:Datatype ;
+                    owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                          owl:onDatatype xsd:string ;
+                                          owl:withRestrictions ( [ xsd:pattern "[hH][tT][tT][pP][sS]?:\\/\\/.+"
+                                                                 ]
+                                                               )
+                                        ] .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -133,7 +157,26 @@ survival:contacted rdf:type owl:DatatypeProperty ,
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#email
-survival:email rdf:type owl:DatatypeProperty .
+survival:email rdf:type owl:DatatypeProperty ;
+               rdfs:domain survival:Organization ;
+               rdfs:range survival:emailAddress .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#habitatType
+survival:habitatType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain survival:Habitat ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:oneOf [ rdf:type rdf:List ;
+                                              rdf:first "desert" ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first "forest" ;
+                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                    rdf:first "island" ;
+                                                                    rdf:rest rdf:nil
+                                                                  ]
+                                                       ]
+                                            ]
+                                ] .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#name
@@ -144,12 +187,8 @@ survival:name rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#website
 survival:website rdf:type owl:DatatypeProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( survival:Office
-                                             survival:Organization
-                                           )
-                             ] ;
-                 rdfs:range xsd:anyURI .
+                 rdfs:domain survival:Organization ;
+                 rdfs:range survival:websiteURL .
 
 
 #################################################################
@@ -189,6 +228,10 @@ survival:Country rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Desert
 survival:Desert rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:habitatType ;
+                                      owl:hasValue "desert"
+                                    ] ;
                 rdfs:subClassOf survival:Habitat .
 
 
@@ -212,6 +255,10 @@ survival:DesertedIsland rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Forest
 survival:Forest rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:habitatType ;
+                                      owl:hasValue "forest"
+                                    ] ;
                 rdfs:subClassOf survival:Habitat .
 
 
@@ -244,6 +291,10 @@ survival:Habitat rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Island
 survival:Island rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:habitatType ;
+                                      owl:hasValue "island"
+                                    ] ;
                 rdfs:subClassOf survival:Habitat .
 
 
@@ -361,8 +412,9 @@ survival:Bushmen rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#CentralKalahariGameReserve
 survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
-                                             survival:Desert ;
-                                    survival:locatedIn survival:Botswana .
+                                             survival:Habitat ;
+                                    survival:locatedIn survival:Botswana ;
+                                    survival:habitatType "desert" .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ColonialConservation
@@ -440,8 +492,10 @@ survival:NorthAmerica rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#NorthSentinel
 survival:NorthSentinel rdf:type owl:NamedIndividual ,
-                                survival:ForestedIsland ;
-                       survival:locatedIn survival:India .
+                                survival:Habitat ;
+                       survival:locatedIn survival:India ;
+                       survival:habitatType "forest" ,
+                                            "island" .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Oceania
@@ -480,8 +534,8 @@ survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
                                  survival:Organization ;
                         survival:branchOf survival:SurvivalInternational ;
                         survival:locatedIn survival:Brazil ;
-                        survival:email "info@survivalbrasil.org"^^xsd:anyURI ;
-                        survival:website "https://www.survivalbrasil.org/"^^xsd:anyURI .
+                        survival:email "info@survivalbrasil.org"^^xsd:string ;
+                        survival:website "https://www.survivalbrasil.org/"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalHeadquarters
@@ -489,8 +543,8 @@ survival:SurvivalHeadquarters rdf:type owl:NamedIndividual ,
                                        survival:Organization ;
                               survival:branchOf survival:SurvivalInternational ;
                               survival:locatedIn survival:UK ;
-                              survival:email "info@survivalinternational.org"^^xsd:anyURI ;
-                              survival:website "https://www.survivalinternational.org"^^xsd:anyURI .
+                              survival:email "info@survivalinternational.org"^^xsd:string ;
+                              survival:website "https://www.survivalinternational.org"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalInternational
@@ -504,8 +558,8 @@ survival:SurvivalItalia rdf:type owl:NamedIndividual ,
                                  survival:Organization ;
                         survival:branchOf survival:SurvivalInternational ;
                         survival:locatedIn survival:Italy ;
-                        survival:email "info@survival.it"^^xsd:anyURI ;
-                        survival:website "https://www.survival.it/"^^xsd:anyURI .
+                        survival:email "info@survival.it"^^xsd:string ;
+                        survival:website "https://www.survival.it/"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalUSA
@@ -513,8 +567,8 @@ survival:SurvivalUSA rdf:type owl:NamedIndividual ,
                               survival:Organization ;
                      survival:branchOf survival:SurvivalInternational ;
                      survival:locatedIn survival:USA ;
-                     survival:email "info.usa@survivalinternational.org"^^xsd:anyURI ;
-                     survival:website "https://www.survivalinternational.org"^^xsd:anyURI .
+                     survival:email "info.usa@survivalinternational.org"^^xsd:string ;
+                     survival:website "https://www.survivalinternational.org"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UK
@@ -531,10 +585,11 @@ survival:USA rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedFrontier
 survival:UncontactedFrontier rdf:type owl:NamedIndividual ,
-                                      survival:Forest ;
+                                      survival:Habitat ;
                              survival:locatedIn survival:Bolivia ,
                                                 survival:Brazil ,
-                                                survival:Peru .
+                                                survival:Peru ;
+                             survival:habitatType "forest" .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedTribes
@@ -554,8 +609,9 @@ survival:Yanomami rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#YanomamiPark
 survival:YanomamiPark rdf:type owl:NamedIndividual ,
-                               survival:Forest ;
-                      survival:locatedIn survival:Brazil .
+                               survival:Habitat ;
+                      survival:locatedIn survival:Brazil ;
+                      survival:habitatType "forest" .
 
 
 #################################################################
