@@ -1,20 +1,24 @@
 @prefix : <http://www.semanticweb.org/acontenti/ontologies/survival#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vann: <http://purl.org/vocab/vann> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
 @prefix survival: <http://www.semanticweb.org/acontenti/ontologies/survival#> .
 @base <http://www.semanticweb.org/acontenti/ontologies/survival> .
 
 <http://www.semanticweb.org/acontenti/ontologies/survival> rdf:type owl:Ontology ;
-                                                            <http://purl.org/dc/elements/1.1/creator> "Alessandro Contenti" ;
-                                                            <http://purl.org/dc/elements/1.1/date> "2022-02-03" ;
-                                                            <http://purl.org/dc/elements/1.1/description> "An ontology to describe the operations of the Survival International NGO"@en ;
-                                                            <http://purl.org/dc/elements/1.1/title> "Survival International Ontology"@en ;
-                                                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "survival" ;
-                                                            <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/acontenti/ontologies/survival#" ;
+                                                            dc:creator "Alessandro Contenti" ;
+                                                            dc:date "2022-02-04" ;
+                                                            dc:description "An ontology to describe the operations of the Survival International NGO"@en ;
+                                                            dc:title "Survival International Ontology"@en ;
+                                                            vann:preferredNamespacePrefix "survival" ;
+                                                            vann:preferredNamespaceUri "http://www.semanticweb.org/acontenti/ontologies/survival#" ;
                                                             rdfs:label "Survival" .
 
 #################################################################
@@ -22,27 +26,27 @@
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+dc:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/date
-<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+dc:date rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/description
-<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/title
-<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+dc:title rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -91,7 +95,7 @@ survival:branchOf rdf:type owl:ObjectProperty ;
                   rdf:type owl:FunctionalProperty ,
                            owl:AsymmetricProperty ,
                            owl:IrreflexiveProperty ;
-                  rdfs:domain survival:Organization ;
+                  rdfs:domain survival:BranchOrganization ;
                   rdfs:range survival:Organization ;
                   rdfs:comment "Links a branch organization to its head organization"@en ;
                   rdfs:label "Branch of"@en ,
@@ -302,6 +306,37 @@ survival:website rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://purl.org/dc/elements/1.1/Location
+dc:Location rdf:type owl:Class ;
+            owl:equivalentClass survival:Location .
+
+
+###  http://schema.org/AdministrativeArea
+schema:AdministrativeArea rdf:type owl:Class ;
+                          rdfs:subClassOf schema:Place .
+
+
+###  http://schema.org/Country
+schema:Country rdf:type owl:Class ;
+               owl:equivalentClass survival:Country ;
+               rdfs:subClassOf schema:AdministrativeArea .
+
+
+###  http://schema.org/Organization
+schema:Organization rdf:type owl:Class ;
+                    owl:equivalentClass survival:Organization .
+
+
+###  http://schema.org/Place
+schema:Place rdf:type owl:Class ;
+             owl:equivalentClass survival:Location .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization
+dul:Organization rdf:type owl:Class ;
+                 owl:equivalentClass survival:Organization .
+
+
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#BranchOrganization
 survival:BranchOrganization rdf:type owl:Class ;
                             owl:equivalentClass [ rdf:type owl:Restriction ;
@@ -489,6 +524,7 @@ survival:Location rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Organization
 survival:Organization rdf:type owl:Class ;
+                      owl:equivalentClass foaf:Organization ;
                       rdfs:subClassOf [ rdf:type owl:Restriction ;
                                         owl:onProperty survival:locatedIn ;
                                         owl:someValuesFrom survival:Country
@@ -543,6 +579,10 @@ survival:UncontactedTribe rdf:type owl:Class ;
                           rdfs:comment "Tribe that has never, or nearly never, been contacted by the \"civilized\" world, if not for some forced contacts, which have almost always been rejected. Little or nothing is known about these tribes, sometimes just their name or not event that."@en ;
                           rdfs:label "Tribù incontattata"@it ,
                                      "Uncontacted tribe"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class .
 
 
 #################################################################
