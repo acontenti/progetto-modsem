@@ -51,7 +51,9 @@
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#branchOf
 survival:branchOf rdf:type owl:ObjectProperty ,
-                           owl:FunctionalProperty ;
+                           owl:FunctionalProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
                   rdfs:domain survival:Office ;
                   rdfs:range survival:Organization .
 
@@ -61,8 +63,8 @@ survival:cohabits rdf:type owl:ObjectProperty ,
                            owl:SymmetricProperty ;
                   rdfs:domain survival:Tribe ;
                   rdfs:range survival:Tribe ;
-                  owl:propertyChainAxiom ( survival:inhabits
-                                           [ owl:inverseOf survival:inhabits
+                  owl:propertyChainAxiom ( survival:livesIn
+                                           [ owl:inverseOf survival:livesIn
                                            ]
                                          ) .
 
@@ -82,20 +84,16 @@ survival:helps rdf:type owl:ObjectProperty ;
                                       ) .
 
 
-###  http://www.semanticweb.org/acontenti/ontologies/survival#inhabits
-survival:inhabits rdf:type owl:ObjectProperty ;
-                  rdfs:domain survival:Tribe ;
-                  rdfs:range survival:Habitat .
-
-
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ledBy
 survival:ledBy rdf:type owl:ObjectProperty ;
-               rdfs:domain survival:LocalCampaign ;
-               rdfs:range [ rdf:type owl:Class ;
-                            owl:unionOf ( survival:Office
-                                          survival:Organization
-                                        )
-                          ] .
+               rdfs:domain survival:Campaign ;
+               rdfs:range survival:Organization .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#livesIn
+survival:livesIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain survival:Tribe ;
+                 rdfs:range survival:Habitat .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#locatedIn
@@ -107,11 +105,7 @@ survival:locatedIn rdf:type owl:ObjectProperty ,
                                                survival:Office
                                              )
                                ] ;
-                   rdfs:range [ rdf:type owl:Class ;
-                                owl:unionOf ( survival:Continent
-                                              survival:Country
-                                            )
-                              ] .
+                   rdfs:range survival:Location .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#threatenedBy
@@ -180,12 +174,14 @@ survival:Continent rdf:type owl:Class ;
                                                      survival:Oceania
                                                      survival:SouthAmerica
                                                    )
-                                       ] .
+                                       ] ;
+                   rdfs:subClassOf survival:Location .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Country
 survival:Country rdf:type owl:Class ;
-                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                 rdfs:subClassOf survival:Location ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty survival:locatedIn ;
                                    owl:someValuesFrom survival:Continent
                                  ] .
@@ -198,6 +194,10 @@ survival:Desert rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#DesertTribe
 survival:DesertTribe rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty survival:livesIn ;
+                                           owl:someValuesFrom survival:Desert
+                                         ] ;
                      rdfs:subClassOf survival:Tribe .
 
 
@@ -217,6 +217,10 @@ survival:Forest rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ForestTribe
 survival:ForestTribe rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty survival:livesIn ;
+                                           owl:someValuesFrom survival:Forest
+                                         ] ;
                      rdfs:subClassOf survival:Tribe .
 
 
@@ -231,7 +235,8 @@ survival:ForestedIsland rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Habitat
 survival:Habitat rdf:type owl:Class ;
-                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                 rdfs:subClassOf survival:Location ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty survival:locatedIn ;
                                    owl:someValuesFrom survival:Country
                                  ] .
@@ -244,28 +249,24 @@ survival:Island rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#IslanderTribe
 survival:IslanderTribe rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty survival:livesIn ;
+                                             owl:someValuesFrom survival:Island
+                                           ] ;
                        rdfs:subClassOf survival:Tribe .
 
 
-###  http://www.semanticweb.org/acontenti/ontologies/survival#LocalCampaign
-survival:LocalCampaign rdf:type owl:Class ;
-                       rdfs:subClassOf survival:Campaign ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty survival:ledBy ;
-                                         owl:someValuesFrom [ rdf:type owl:Class ;
-                                                              owl:unionOf ( survival:Office
-                                                                            survival:Organization
-                                                                          )
-                                                            ]
-                                       ] .
+###  http://www.semanticweb.org/acontenti/ontologies/survival#Location
+survival:Location rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Office
 survival:Office rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty survival:branchOf ;
-                                  owl:someValuesFrom survival:Organization
-                                ] ,
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:branchOf ;
+                                      owl:someValuesFrom survival:Organization
+                                    ] ;
+                rdfs:subClassOf survival:Organization ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty survival:locatedIn ;
                                   owl:someValuesFrom survival:Country
@@ -274,6 +275,16 @@ survival:Office rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Organization
 survival:Organization rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#SharedCampaign
+survival:SharedCampaign rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty survival:ledBy ;
+                                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                              owl:onClass survival:Organization
+                                            ] ;
+                        rdfs:subClassOf survival:Campaign .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Threat
@@ -287,9 +298,18 @@ survival:Threat rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Tribe
 survival:Tribe rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty survival:inhabits ;
+                                 owl:onProperty survival:livesIn ;
                                  owl:someValuesFrom survival:Habitat
                                ] .
+
+
+###  http://www.semanticweb.org/acontenti/ontologies/survival#UncontactedTribe
+survival:UncontactedTribe rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty survival:contacted ;
+                                                owl:hasValue "false"^^xsd:boolean
+                                              ] ;
+                          rdfs:subClassOf survival:Tribe .
 
 
 #################################################################
@@ -334,7 +354,8 @@ survival:Brazil rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Bushmen
 survival:Bushmen rdf:type owl:NamedIndividual ,
                           survival:Tribe ;
-                 survival:inhabits survival:CentralKalahariGameReserve ;
+                 survival:livesIn survival:CentralKalahariGameReserve ;
+                 survival:threatenedBy survival:ColonialConservation ;
                  survival:contacted "true"^^xsd:boolean .
 
 
@@ -346,8 +367,7 @@ survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ColonialConservation
 survival:ColonialConservation rdf:type owl:NamedIndividual ,
-                                       survival:Threat ;
-                              survival:threatens survival:Bushmen .
+                                       survival:Threat .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#DecolonizeConservation
@@ -358,8 +378,7 @@ survival:DecolonizeConservation rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Deforestation
 survival:Deforestation rdf:type owl:NamedIndividual ,
-                                survival:Threat ;
-                       survival:threatens survival:Yanomami .
+                                survival:Threat .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Europe
@@ -369,16 +388,12 @@ survival:Europe rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#ForcedContact
 survival:ForcedContact rdf:type owl:NamedIndividual ,
-                                survival:Threat ;
-                       survival:threatens survival:MashcoPiro ,
-                                          survival:Matses ,
-                                          survival:Sentinelese .
+                                survival:Threat .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#IllegalMining
 survival:IllegalMining rdf:type owl:NamedIndividual ,
-                                survival:Threat ;
-                       survival:threatens survival:Yanomami .
+                                survival:Threat .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#India
@@ -395,15 +410,15 @@ survival:Italy rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#LandExploitation
 survival:LandExploitation rdf:type owl:NamedIndividual ,
-                                   survival:Threat ;
-                          survival:threatens survival:MashcoPiro ,
-                                             survival:Matses .
+                                   survival:Threat .
 
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#MashcoPiro
 survival:MashcoPiro rdf:type owl:NamedIndividual ,
                              survival:Tribe ;
-                    survival:inhabits survival:UncontactedFrontier ;
+                    survival:livesIn survival:UncontactedFrontier ;
+                    survival:threatenedBy survival:ForcedContact ,
+                                          survival:LandExploitation ;
                     survival:contacted "false"^^xsd:boolean ;
                     survival:name "Mashco-Piro"^^xsd:string .
 
@@ -411,7 +426,9 @@ survival:MashcoPiro rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Matses
 survival:Matses rdf:type owl:NamedIndividual ,
                          survival:Tribe ;
-                survival:inhabits survival:UncontactedFrontier ;
+                survival:livesIn survival:UncontactedFrontier ;
+                survival:threatenedBy survival:ForcedContact ,
+                                      survival:LandExploitation ;
                 survival:contacted "false"^^xsd:boolean ;
                 survival:name "Matsés"^^xsd:string .
 
@@ -441,7 +458,8 @@ survival:Peru rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Sentinelese
 survival:Sentinelese rdf:type owl:NamedIndividual ,
                               survival:Tribe ;
-                     survival:inhabits survival:NorthSentinel ;
+                     survival:livesIn survival:NorthSentinel ;
+                     survival:threatenedBy survival:ForcedContact ;
                      survival:contacted "false"^^xsd:boolean .
 
 
@@ -459,7 +477,7 @@ survival:StopBrazilGenocide rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalBrasil
 survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
-                                 survival:Office ;
+                                 survival:Organization ;
                         survival:branchOf survival:SurvivalInternational ;
                         survival:locatedIn survival:Brazil ;
                         survival:email "info@survivalbrasil.org"^^xsd:anyURI ;
@@ -468,7 +486,7 @@ survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalHeadquarters
 survival:SurvivalHeadquarters rdf:type owl:NamedIndividual ,
-                                       survival:Office ;
+                                       survival:Organization ;
                               survival:branchOf survival:SurvivalInternational ;
                               survival:locatedIn survival:UK ;
                               survival:email "info@survivalinternational.org"^^xsd:anyURI ;
@@ -483,7 +501,7 @@ survival:SurvivalInternational rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalItalia
 survival:SurvivalItalia rdf:type owl:NamedIndividual ,
-                                 survival:Office ;
+                                 survival:Organization ;
                         survival:branchOf survival:SurvivalInternational ;
                         survival:locatedIn survival:Italy ;
                         survival:email "info@survival.it"^^xsd:anyURI ;
@@ -492,7 +510,7 @@ survival:SurvivalItalia rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#SurvivalUSA
 survival:SurvivalUSA rdf:type owl:NamedIndividual ,
-                              survival:Office ;
+                              survival:Organization ;
                      survival:branchOf survival:SurvivalInternational ;
                      survival:locatedIn survival:USA ;
                      survival:email "info.usa@survivalinternational.org"^^xsd:anyURI ;
@@ -528,7 +546,9 @@ survival:UncontactedTribes rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acontenti/ontologies/survival#Yanomami
 survival:Yanomami rdf:type owl:NamedIndividual ,
                            survival:Tribe ;
-                  survival:inhabits survival:YanomamiPark ;
+                  survival:livesIn survival:YanomamiPark ;
+                  survival:threatenedBy survival:Deforestation ,
+                                        survival:IllegalMining ;
                   survival:contacted "false"^^xsd:boolean .
 
 
@@ -544,13 +564,18 @@ survival:YanomamiPark rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( survival:Campaign
-                survival:Continent
-                survival:Country
-                survival:Habitat
-                survival:Office
+                survival:Location
                 survival:Organization
                 survival:Threat
                 survival:Tribe
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( survival:Continent
+                survival:Country
+                survival:Habitat
               )
 ] .
 
