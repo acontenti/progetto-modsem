@@ -1,0 +1,2059 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid3"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@value" : "desert"
+    }, {
+      "@value" : "forest"
+    }, {
+      "@value" : "island"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#branchOf"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#addresses"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat"
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#campaignPage"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Africa"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Antarctica"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Asia"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Europe"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthAmerica"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Oceania"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SouthAmerica"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid28",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Continent"
+  } ]
+}, {
+  "@id" : "_:genid29",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "desert"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "[^@]+@[^\\.]+\\..+"
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Desert"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Island"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid33",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Desert"
+  } ]
+}, {
+  "@id" : "_:genid34",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "forest"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType"
+  } ]
+}, {
+  "@id" : "_:genid35",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Forest"
+  } ]
+}, {
+  "@id" : "_:genid36",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Forest"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Island"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid39",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Country"
+  } ]
+}, {
+  "@id" : "_:genid40",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "island"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType"
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Island"
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#explicitlyHelps"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ]
+}, {
+  "@id" : "_:genid43",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Country"
+  } ]
+}, {
+  "@id" : "_:genid44",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ledBy"
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#threatens"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ]
+}, {
+  "@id" : "_:genid46",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ]
+}, {
+  "@id" : "_:genid47",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#contacted"
+  } ]
+}, {
+  "@id" : "_:genid48",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+  } ]
+}, {
+  "@id" : "_:genid54",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Continent"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Country"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid58",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#APIB"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalBrasil"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalItalia"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalUSA"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid64",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Africa"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Antarctica"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Asia"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Europe"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthAmerica"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Oceania"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SouthAmerica"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid72",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Bolivia"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Botswana"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Brazil"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#India"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Italy"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Peru"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UK"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#USA"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid81",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Bushmen"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#MashcoPiro"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Matses"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Sentinelese"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Yanomami"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid87",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#CentralKalahariGameReserve"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthSentinel"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedFrontier"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#YanomamiPark"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Country"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid92",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#DecolonizeConservation"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#StopBrazilGenocide"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedTribes"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/Location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/date",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vannpreferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vannpreferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/AdministrativeArea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Place"
+  } ]
+}, {
+  "@id" : "http://schema.org/Country",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/AdministrativeArea"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Country"
+  } ]
+}, {
+  "@id" : "http://schema.org/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ]
+}, {
+  "@id" : "http://schema.org/Place",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+  } ]
+}, {
+  "@id" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Alessandro Contenti"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@value" : "2022-02-04"
+  } ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@language" : "en",
+    "@value" : "An ontology to describe the operations of the Survival International NGO"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "en",
+    "@value" : "Survival International Ontology"
+  } ],
+  "http://purl.org/vocab/vannpreferredNamespacePrefix" : [ {
+    "@value" : "survival"
+  } ],
+  "http://purl.org/vocab/vannpreferredNamespaceUri" : [ {
+    "@value" : "https://acontenti.github.io/progetto-modsem/survival.owl#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Survival"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#APIB",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Organization" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Articulation of Indigenous Peoples of Brazil was created by the indigenous movement at Camp Terra Livre (ATL) 2005. APIB is an instance of national reference of the indigenous movement in Brazil, created from the bottom up."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Articolazione dei Popoli Indigeni del Brasile"
+  }, {
+    "@language" : "en",
+    "@value" : "Articulation of Indigenous Peoples of Brazil"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#email" : [ {
+    "@value" : "apib.se@apiboficial.org"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Brazil"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#website" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://apiboficial.org/"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Africa",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The African continent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Africa"
+  }, {
+    "@language" : "it",
+    "@value" : "Africa"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Antarctica",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Antarctic continent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Antarctica"
+  }, {
+    "@language" : "it",
+    "@value" : "Antartide"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Asia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The continent of Asia"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Asia"
+  }, {
+    "@language" : "it",
+    "@value" : "Asia"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Bolivia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Plurinational State of Bolivia"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bolivia"
+  }, {
+    "@language" : "it",
+    "@value" : "Bolivia"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SouthAmerica"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Botswana",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Republic of Botswana"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Botswana"
+  }, {
+    "@language" : "it",
+    "@value" : "Botswana"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Africa"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#BranchOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A local office or branch of an organization. Can be an indipendent legal entity or not."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Branch office"
+  }, {
+    "@language" : "it",
+    "@value" : "Ufficio distaccato"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid17"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Brazil",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Brasile"
+  }, {
+    "@language" : "en",
+    "@value" : "Brazil"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SouthAmerica"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Bushmen",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Bushmen are the indigenous peoples of southern Africa. Largely hunter-gatherers, their territory spans several nations and they have called the region home for tens of thousands of years."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Boscimani"
+  }, {
+    "@language" : "en",
+    "@value" : "Bushmen"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#contacted" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#CentralKalahariGameReserve"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#name" : [ {
+    "@value" : "San"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#threatenedBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ColonialConservation"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A generic project intended to mobilize public support and use democratic tools, such as lobbying, addressing some threats, in order to help endangered tribes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Campagna"
+  }, {
+    "@language" : "en",
+    "@value" : "Campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid18"
+  }, {
+    "@id" : "_:genid19"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#CentralKalahariGameReserve",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Central Kalahari Game Reserve"
+  }, {
+    "@language" : "it",
+    "@value" : "Riserva faunistica del Kalahari centrale"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType" : [ {
+    "@value" : "desert"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Botswana"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ColonialConservation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Threat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Colonial conservation, also known as Fortress Conservation, rests on the racist misconception that indigenous people cannot be trusted to look after their own land and the animals that live there. Its proponents view the original custodians of the land as a “nuisance” to be “dealt with\", instead of as experts in local biodiversity and key partners in conservation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Colonial conservation"
+  }, {
+    "@language" : "it",
+    "@value" : "Conservazione di stampo colonialista"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Continent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "One of the seven geographical regions that make up the global landmass"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Continent"
+  }, {
+    "@language" : "it",
+    "@value" : "Continente"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid20"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Country",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A distinct territorial body or political entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Country"
+  }, {
+    "@language" : "it",
+    "@value" : "Paese"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+  }, {
+    "@id" : "_:genid28"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#DecolonizeConservation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Well known conservation groups like WWF, WCS, and African Parks have been aware of these atrocities for many years but they continue to fund and support colonial conservation. For over 30 years, Survival has been campaigning against the atrocities committed in the name of “conservation”."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Decolonize Conservation"
+  }, {
+    "@language" : "it",
+    "@value" : "Decolonizziamo la conservazione"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#addresses" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ColonialConservation"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#campaignPage" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survivalinternational.org/conservation"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#ledBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Deforestation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Threat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Deforestation or forest clearance is the removal of a forest or stand of trees from land that is then converted to non-forest use. Deforestation can involve conversion of forest land to farms, ranches, or urban use. The most concentrated deforestation occurs in tropical rainforests."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Deforestation"
+  }, {
+    "@language" : "it",
+    "@value" : "Deforestazione"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Desert",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A desert is a arid or semi-arid area of landscape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Desert"
+  }, {
+    "@language" : "it",
+    "@value" : "Deserto"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid29"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#DesertIsland",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An island mostly covered by a desert area"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Desert island"
+  }, {
+    "@language" : "it",
+    "@value" : "Isola desertica"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid30"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#DesertTribe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Tribe living in a desert"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Desert tribe"
+  }, {
+    "@language" : "it",
+    "@value" : "Tribù del deserto"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid33"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Europe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The European continent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Europa"
+  }, {
+    "@language" : "en",
+    "@value" : "Europe"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForcedContact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Threat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Forced contact is the practice of contacting forcibly indigenous tribes for many reasons such as to either exploit their land, convert them to Christianity or simply study their habits. Whole populations are being wiped out by genocidal violence, and by diseases like flu and measles to which they have no resistance."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Contatto forzato"
+  }, {
+    "@language" : "en",
+    "@value" : "Forced contact"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Forest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A forest is an area of land dominated by trees"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Forest"
+  }, {
+    "@language" : "it",
+    "@value" : "Foresta"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid34"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForestTribe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Tribe living in a forest"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Forest tribe"
+  }, {
+    "@language" : "it",
+    "@value" : "Tribù della foresta"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid35"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForestedIsland",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An island mostly covered by forests"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Forested island"
+  }, {
+    "@language" : "it",
+    "@value" : "Isola boscosa"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid36"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A geographical region which may span one or more countries, hosting one or more tribes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Habitat"
+  }, {
+    "@language" : "it",
+    "@value" : "Habitat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+  }, {
+    "@id" : "_:genid39"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#IllegalFishing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Threat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Illegal fishing takes place when vessels or poachers operate in violation of the laws and especially in protected natural reserves. It endangers some tribes by reducing their sources of livelihood and exposing them to deadly deseases."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Illegal fishing"
+  }, {
+    "@language" : "it",
+    "@value" : "Pesca illegale"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#IllegalMining",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Threat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Illegal mining is mining activity that is undertaken without state permission, in particular in absence of land rights, mining licenses, and exploration or mineral transportation permits."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Estrazione mineraria illegale"
+  }, {
+    "@language" : "en",
+    "@value" : "Illegal mining"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#India",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Republic of India"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "India"
+  }, {
+    "@language" : "it",
+    "@value" : "India"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Asia"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Island",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An island is a portion of land entirely surrounded by water"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Island"
+  }, {
+    "@language" : "it",
+    "@value" : "Isola"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid40"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#IslanderTribe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Tribe living on one or more islands"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Islander tribe"
+  }, {
+    "@language" : "it",
+    "@value" : "Tribù isolana"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid41"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Italy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Italian Republic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Italia"
+  }, {
+    "@language" : "en",
+    "@value" : "Italy"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Europe"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#LocalCampaign",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A campaign directly helping one or more specific tribes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Campagna locale"
+  }, {
+    "@language" : "en",
+    "@value" : "Local campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid42"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A generic location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Location"
+  }, {
+    "@language" : "it",
+    "@value" : "Luogo"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#MashcoPiro",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Mashco-Piro are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Mascho-Piro"
+  }, {
+    "@language" : "en",
+    "@value" : "Mashco-Piro"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#contacted" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedFrontier"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#name" : [ {
+    "@value" : "Mashco-Piro"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#threatenedBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Deforestation"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForcedContact"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Matses",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Matsés are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Matsés"
+  }, {
+    "@language" : "it",
+    "@value" : "Matsés"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#contacted" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedFrontier"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#name" : [ {
+    "@value" : "Matsés"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#threatenedBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForcedContact"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthAmerica",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The North American continent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Nord America"
+  }, {
+    "@language" : "en",
+    "@value" : "North America"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthSentinel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "North Sentinel Island is one of the Andaman Islands, an Indian archipelago in the Bay of Bengal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Isola di North Sentinel"
+  }, {
+    "@language" : "en",
+    "@value" : "North Sentinel Island"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType" : [ {
+    "@value" : "forest"
+  }, {
+    "@value" : "island"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#India"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Oceania",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The continent of Oceania"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Oceania"
+  }, {
+    "@language" : "it",
+    "@value" : "Oceania"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An organization is an entity, such as a company, an institution, or an association, comprising one or more people and having a particular purpose"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Organization"
+  }, {
+    "@language" : "it",
+    "@value" : "Organizzazione"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid43"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Peru",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Republic of Peru"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Peru"
+  }, {
+    "@language" : "it",
+    "@value" : "Perù"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SouthAmerica"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Sentinelese",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Sentinelese are an uncontacted tribe living on North Sentinal Island, one of the Andaman Islands in the Indian Ocean. They vigorously reject all contact with outsiders."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sentinelese"
+  }, {
+    "@language" : "it",
+    "@value" : "Sentinellesi"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#contacted" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthSentinel"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#name" : [ {
+    "@value" : "Sentinelese"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#threatenedBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForcedContact"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#IllegalFishing"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SharedCampaign",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A campaign led by more than one organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Campagna condivisa"
+  }, {
+    "@language" : "en",
+    "@value" : "Shared campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid44"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SouthAmerica",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Continent" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The South American continent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "South America"
+  }, {
+    "@language" : "it",
+    "@value" : "Sud America"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#StopBrazilGenocide",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "President Jair Bolsonaro is trying to turn back the clock on indigenous rights. He wants to strip their autonomy, sell off their territories for logging and mining and “assimilate” them against their wishes. Brazil’s indigenous peoples, their supporters and allies, and Survival International are fighting back as the President plots to steal their land, destroy their lives and annihilate them as peoples."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Fermiamo il genocidio in Brasile"
+  }, {
+    "@language" : "en",
+    "@value" : "Stop Brazil's genocide"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#campaignPage" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survivalinternational.org/brazilgenocide"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#explicitlyHelps" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Yanomami"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#ledBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#APIB"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalBrasil",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Organization" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Brazilian office of Survival International"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Survival International Brasile"
+  }, {
+    "@language" : "en",
+    "@value" : "Survival International Brazil"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#branchOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#email" : [ {
+    "@value" : "info@survivalbrasil.org"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Brazil"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#website" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survivalbrasil.org"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Organization" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Survival International is a human rights organisation formed in 1969 that campaigns for the rights of indigenous and/or tribal peoples and uncontacted peoples"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Survival International"
+  }, {
+    "@language" : "it",
+    "@value" : "Survival International"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#email" : [ {
+    "@value" : "info@survivalinternational.org"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UK"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#website" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survivalinternational.org"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalItalia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Organization" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Italian office of Survival International"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Survival International Italia"
+  }, {
+    "@language" : "en",
+    "@value" : "Survival International Italy"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#branchOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#email" : [ {
+    "@value" : "info@survival.it"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Italy"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#website" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survival.it"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalUSA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Organization" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "US office of Survival International"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Survival International USA"
+  }, {
+    "@language" : "it",
+    "@value" : "Survival International USA"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#branchOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#email" : [ {
+    "@value" : "info.usa@survivalinternational.org"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#USA"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#website" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survivalinternational.org"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A generic threat which may endanger one or more tribe or a tribe-specific threat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Minaccia"
+  }, {
+    "@language" : "en",
+    "@value" : "Threat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid45"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Endangered tribes and indigenous peoples"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Tribe"
+  }, {
+    "@language" : "it",
+    "@value" : "Tribù"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid46"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UK",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The United Kingdom of Great Britain and Northern Ireland"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Regno Unito"
+  }, {
+    "@language" : "en",
+    "@value" : "United Kingdom"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Europe"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#USA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The United States of America"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Stati Uniti d'America"
+  }, {
+    "@language" : "en",
+    "@value" : "United States of America"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#NorthAmerica"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedFrontier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Straddling the borders of Peru, Brazil and Bolivia is the Uncontacted Frontier, home to more uncontacted tribes than anywhere else on the planet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "La frontiera dell'Amazzonia incontattata"
+  }, {
+    "@language" : "en",
+    "@value" : "The Amazon Uncontacted Frontier"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType" : [ {
+    "@value" : "forest"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Bolivia"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Brazil"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Peru"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedTribe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Tribe that has never, or nearly never, been contacted by the \"civilized\" world, if not for some forced contacts, which have almost always been rejected. Little or nothing is known about these tribes, sometimes just their name or not event that."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Tribù incontattata"
+  }, {
+    "@language" : "en",
+    "@value" : "Uncontacted tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid47"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#UncontactedTribes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "There are more than a hundred uncontacted tribes around the world. They are a vitally important part of humankind’s diversity, but they face catastrophe unless their land is protected. Survival is doing everything possible to secure their land for them, and to let them live."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Incontattati"
+  }, {
+    "@language" : "en",
+    "@value" : "Uncontacted Tribes"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#addresses" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ForcedContact"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#campaignPage" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://www.survivalinternational.org/uncontactedtribes"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#ledBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#SurvivalInternational"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Venezuela",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Country" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Bolivarian Republic of Venezuela"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Venezuela"
+  }, {
+    "@language" : "it",
+    "@value" : "Venezuela"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Yanomami",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Yanomami are the largest relatively isolated tribe in South America. They live in the rainforests and mountains of northern Brazil and southern Venezuela."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Yanomami"
+  }, {
+    "@language" : "it",
+    "@value" : "Yanomami"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#contacted" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#YanomamiPark"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#name" : [ {
+    "@value" : "Yanomamö"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#threatenedBy" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Deforestation"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#IllegalMining"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#YanomamiPark",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Yanomami Park"
+  }, {
+    "@language" : "it",
+    "@value" : "Yanomami Park"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType" : [ {
+    "@value" : "forest"
+  } ],
+  "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Brazil"
+  }, {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Venezuela"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#addressedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a threat to a campaign addressing it"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Addressed by"
+  }, {
+    "@language" : "it",
+    "@value" : "Affrontata da"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#addresses"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#addresses",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a campaign to a threat that it addresses"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Addresses"
+  }, {
+    "@language" : "it",
+    "@value" : "Affronta"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#branchOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a branch organization to its head organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#BranchOrganization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Branch of"
+  }, {
+    "@language" : "it",
+    "@value" : "Ufficio di"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#hasBranch"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#campaignPage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "URL of the web page of the campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Campaign web page"
+  }, {
+    "@language" : "it",
+    "@value" : "Pagina web della campagna"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#cohabitsWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a tribe to another tribe it shares a habitat with"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Coabita con"
+  }, {
+    "@language" : "en",
+    "@value" : "Cohabits with"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+    }, {
+      "@id" : "_:genid5"
+    } ]
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#contacted",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Whether a tribe has been contacted or not: defines its uncontacted status"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Contacted tribe"
+  }, {
+    "@language" : "it",
+    "@value" : "Tribù contattata"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#email",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An organization e-mail address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Indirizzo e-mail dell'organizzazione"
+  }, {
+    "@language" : "en",
+    "@value" : "Organization e-mail address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#emailAddress"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#emailAddress",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A datatype for an e-mail address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "E-mail"
+  }, {
+    "@language" : "it",
+    "@value" : "E-mail"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#explicitlyHelps",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a campaign to a tribe it explicitly helps"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#LocalCampaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Aiuta esplicitamente"
+  }, {
+    "@language" : "en",
+    "@value" : "Explicitly helps"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#helps"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#habitatType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Defines the type of an habitat, can be either desert, forest or island. Can be used twice to define an intersection, like: forest + island = forested island"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Habitat type"
+  }, {
+    "@language" : "it",
+    "@value" : "Tipo di habitat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid13"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#hasBranch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links an organization to one of its branches"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Ha ufficio"
+  }, {
+    "@language" : "en",
+    "@value" : "Has branch"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#BranchOrganization"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#helpedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a tribe to a campaign it is helped by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Aiutata da"
+  }, {
+    "@language" : "en",
+    "@value" : "Helped by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#helps"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#helps",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a campaign to a tribe it implicitly helps"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Aiuta"
+  }, {
+    "@language" : "en",
+    "@value" : "Helps"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#addresses"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#threatens"
+    } ]
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#hosts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a habitat to a tribe it hosts"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Hosts"
+  }, {
+    "@language" : "it",
+    "@value" : "Ospita"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#leads",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links an organization to a campaign it conducts"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Conduce"
+  }, {
+    "@language" : "en",
+    "@value" : "Leads"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ledBy"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#ledBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a campaign to an organization it is conducted by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Condotta da"
+  }, {
+    "@language" : "en",
+    "@value" : "Led by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#livesIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a tribe to a habitat it lives in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Abita in"
+  }, {
+    "@language" : "en",
+    "@value" : "Lives in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Habitat"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#locatedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a country or a habitat or an organization to a location it is located in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid9"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Located in"
+  }, {
+    "@language" : "it",
+    "@value" : "Situato in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Location"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The official name of a tribe or indigenous people"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Nome della tribù"
+  }, {
+    "@language" : "en",
+    "@value" : "Tribe name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#threatenedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a tribe to a threat it is endangered by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Minacciata da"
+  }, {
+    "@language" : "en",
+    "@value" : "Threatened by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#threatens"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#threatens",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a threat to a tribe it endangers"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Threat"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Minaccia"
+  }, {
+    "@language" : "en",
+    "@value" : "Threatens"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Tribe"
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#website",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "URL of the website of an organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.owl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Organization website"
+  }, {
+    "@language" : "it",
+    "@value" : "Sito web dell'organizzazione"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+} ]
