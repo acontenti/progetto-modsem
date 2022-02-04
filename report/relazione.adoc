@@ -1,0 +1,72 @@
+= Progetto di Modellazione Concettuale per il Web Semantico: Survival International Ontology
+:author: Alessandro Contenti
+:revnumber: 2021/2022
+:version-label: A.A.
+:toc: left
+:sectnums: true
+:pagenums: true
+:title-page:
+:title-logo-image: image:images/unito.png[pdfwidth=33%]
+:pdf-theme: theme.yml
+
+== Introduzione
+
+Il progetto svolto riguarda l'ambito della ONG "Survival International" e tutto il materiale prodotto è disponibile presso la https://github.com/acontenti/progetto-modsem[repository GitHub] del progetto stesso.
+
+== Motivazioni
+
+Il dominio che ho deciso di modellare riguarda il contesto e le operazioni dell'associazione senza scopo di lucro "Survival International".
+
+Survival International è un movimento internazionale per la salvaguardia deii diritti dei popoli indigeni. È stata fondata nel 1969 a Londra, a seguito della pubblicazione di un articolo del Sunday Times, che narrava il genocidio dei popoli amazzonici. La sua missione è aiutare i popoli indigeni e tribali a difendere le loro vite, le loro terre e i loro fondamentali diritti umani contro ogni forma di persecuzione, razzismo e genocidio.
+
+A partire dalla sua fondazione, Survival ha portato avanti decine di campagne a favore dei popoli indigeni, ricevendo il sostegno di centinaia di migliaia di persone.
+
+L'idea di modellare il dominio di Survival International mi è venuta leggendo casualmente un articolo riguardo questa associazione, in relazione alle loro campagne a supporto dei popoli incontattati, tema che mi incuriosisce molto.
+
+== Requisiti
+
+=== Finalità
+
+La finalità dello sviluppo di un'ontologia che descriva il contesto sia culturale che geografico in cui opera Survival, le operazioni che svolge e le criticità che deve affrontare è quello di creare una solida base di conoscenza che contenga tutte le informazioni utili per facilitare le operazioni interne dell'associazione e la comunicazione con il pubblico.
+
+Nell'ontologia da me creata vi è solamente un sottoinsieme di tutte le informazioni che potrebbero essere incluse in una base di conoscenza del genere. +
+Sia perché alcuni concetti potrebbero essere dettagliati con una granularità più fine. +
+Sia perché manca la modellazione di alcuni ambiti, come ad esempio la gestione dei contatti locali con i popoli indigeni e dei contatti governativi, la gestione dei fondi e molti altri aspetti su cui, da esterni, è impossibile ottenere informazioni.
+
+=== Task
+
+Alcuni task specifici dell'ontologia modellata sono:
+
+* Gestire una lista aggiornata dei popoli indigeni che necessitano di aiuto da parte di Survival o che comunque sono oggetto d'interesse
+* Gestire una lista aggiornata delle campagne in corso o passate e da chi sono gestite (per esempio se sono condivise con altre associazioni)
+* Gestire una lista delle sedi locali di Survival e delle associazioni con cui collabora
+* Cercare velocemente quali sono le minacce che mettono in pericolo uno specifico popolo indigeno e quali campagne sono in atto a loro supporto
+* Localizzare facilmente i vari popoli per area geografica, visualizzando anche quali popoli condividono la stessa
+
+=== Utenti
+
+Gli utenti che potrebbero trarre giovamento dall'utilizzo di questa ontologia sono:
+
+* *Personale di Survival*: per gestire e aggiornare la base di conoscenza e usarla per programmare e tenere sotto controllo le campagne e le operazioni da svolgere
+* *Sostenitori di Survival*: per seguire le varie campagne in atto e la situazione dei vari popoli indigeni
+* *Pubblico*: per scoprire le iniziative di Survival o informarsi riguardo i vari popoli indigeni
+
+== Descrizione del dominio
+
+== Documentazione sul dominio
+
+=== Esempio
+
+=== Allineamenti
+
+== LODE
+
+== Visualizzazione
+
+=== Tassonomia delle classi
+
+=== Triple dell'esempio
+
+== Queries SPARQL
+
+== Applicazione client

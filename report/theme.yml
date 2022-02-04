@@ -1,0 +1,21 @@
+extends: default
+page:
+  margin: 1in
+  margin-inner: 0.75in
+  margin-outer: 0.59in
+base:
+  font-size: 12
+  align: left
+title-page:
+  align: center
+  title:
+    font-size: 24
+    font-color: #666666
+    top: 50%
+  subtitle:
+    font-size: 16
+    margin-top: 20
+    margin-bottom: 5
+  logo:
+    align: center
+    top: 15%
