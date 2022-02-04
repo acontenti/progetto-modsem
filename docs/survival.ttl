@@ -1,0 +1,1050 @@
+@prefix : <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
+@base <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
+
+<https://acontenti.github.io/progetto-modsem/survival.ttl> rdf:type owl:Ontology ;
+                                                            dc:creator "Alessandro Contenti" ;
+                                                            dc:date "2022-02-04" ;
+                                                            dc:description "An ontology to describe the operations of the Survival International NGO"@en ;
+                                                            dc:title "Survival International Ontology"@en ;
+                                                            vann:preferredNamespacePrefix "survival" ;
+                                                            vann:preferredNamespaceUri "https://acontenti.github.io/progetto-modsem/survival.ttl#" ;
+                                                            rdfs:label "Survival" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#emailAddress
+survival:emailAddress rdf:type rdfs:Datatype ;
+                      rdfs:comment "A datatype for an e-mail address"@en ;
+                      rdfs:label "E-mail"@en ,
+                                 "E-mail"@it ;
+                      owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                            owl:onDatatype xsd:string ;
+                                            owl:withRestrictions ( [ xsd:pattern "[^@]+@[^\\.]+\\..+"
+                                                                   ]
+                                                                 )
+                                          ] .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy
+survival:addressedBy rdf:type owl:ObjectProperty ;
+                     owl:inverseOf survival:addresses ;
+                     rdfs:domain survival:Threat ;
+                     rdfs:range survival:Campaign ;
+                     rdfs:comment "Links a threat to a campaign addressing it"@en ;
+                     rdfs:label "Addressed by"@en ,
+                                "Affrontata da"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#addresses
+survival:addresses rdf:type owl:ObjectProperty ;
+                   rdfs:domain survival:Campaign ;
+                   rdfs:range survival:Threat ;
+                   rdfs:comment "Links a campaign to a threat that it addresses"@en ;
+                   rdfs:label "Addresses"@en ,
+                              "Affronta"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf
+survival:branchOf rdf:type owl:ObjectProperty ;
+                  owl:inverseOf survival:hasBranch ;
+                  rdf:type owl:FunctionalProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain survival:BranchOrganization ;
+                  rdfs:range survival:Organization ;
+                  rdfs:comment "Links a branch organization to its head organization"@en ;
+                  rdfs:label "Branch of"@en ,
+                             "Ufficio di"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith
+survival:cohabitsWith rdf:type owl:ObjectProperty ,
+                               owl:SymmetricProperty ;
+                      rdfs:domain survival:Tribe ;
+                      rdfs:range survival:Tribe ;
+                      owl:propertyChainAxiom ( survival:livesIn
+                                               [ owl:inverseOf survival:livesIn
+                                               ]
+                                             ) ;
+                      rdfs:comment "Links a tribe to another tribe it shares a habitat with"@en ;
+                      rdfs:label "Coabita con"@it ,
+                                 "Cohabits with"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps
+survival:explicitlyHelps rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf survival:helps ;
+                         rdfs:domain survival:LocalCampaign ;
+                         rdfs:range survival:Tribe ;
+                         rdfs:comment "Links a campaign to a tribe it explicitly helps"@en ;
+                         rdfs:label "Aiuta esplicitamente"@it ,
+                                    "Explicitly helps"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch
+survival:hasBranch rdf:type owl:ObjectProperty ,
+                            owl:InverseFunctionalProperty ,
+                            owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain survival:Organization ;
+                   rdfs:range survival:BranchOrganization ;
+                   rdfs:comment "Links an organization to one of its branches"@en ;
+                   rdfs:label "Ha ufficio"@it ,
+                              "Has branch"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#helpedBy
+survival:helpedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf survival:helps ;
+                  rdfs:domain survival:Tribe ;
+                  rdfs:range survival:Campaign ;
+                  rdfs:comment "Links a tribe to a campaign it is helped by"@en ;
+                  rdfs:label "Aiutata da"@it ,
+                             "Helped by"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#helps
+survival:helps rdf:type owl:ObjectProperty ;
+               rdfs:domain survival:Campaign ;
+               rdfs:range survival:Tribe ;
+               owl:propertyChainAxiom ( survival:addresses
+                                        survival:threatens
+                                      ) ;
+               rdfs:comment "Links a campaign to a tribe it implicitly helps"@en ;
+               rdfs:label "Aiuta"@it ,
+                          "Helps"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#hosts
+survival:hosts rdf:type owl:ObjectProperty ;
+               owl:inverseOf survival:livesIn ;
+               rdfs:domain survival:Habitat ;
+               rdfs:range survival:Tribe ;
+               rdfs:comment "Links a habitat to a tribe it hosts"@en ;
+               rdfs:label "Hosts"@en ,
+                          "Ospita"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#leads
+survival:leads rdf:type owl:ObjectProperty ;
+               owl:inverseOf survival:ledBy ;
+               rdfs:domain survival:Organization ;
+               rdfs:range survival:Campaign ;
+               rdfs:comment "Links an organization to a campaign it conducts"@en ;
+               rdfs:label "Conduce"@it ,
+                          "Leads"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy
+survival:ledBy rdf:type owl:ObjectProperty ;
+               rdfs:domain survival:Campaign ;
+               rdfs:range survival:Organization ;
+               rdfs:comment "Links a campaign to an organization it is conducted by"@en ;
+               rdfs:label "Condotta da"@it ,
+                          "Led by"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn
+survival:livesIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain survival:Tribe ;
+                 rdfs:range survival:Habitat ;
+                 rdfs:comment "Links a tribe to a habitat it lives in"@en ;
+                 rdfs:label "Abita in"@it ,
+                            "Lives in"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn
+survival:locatedIn rdf:type owl:ObjectProperty ,
+                            owl:TransitiveProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( survival:Country
+                                               survival:Habitat
+                                               survival:Organization
+                                             )
+                               ] ;
+                   rdfs:range survival:Location ;
+                   rdfs:comment "Links a country or a habitat or an organization to a location it is located in"@en ;
+                   rdfs:label "Located in"@en ,
+                              "Situato in"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy
+survival:threatenedBy rdf:type owl:ObjectProperty ;
+                      owl:inverseOf survival:threatens ;
+                      rdfs:domain survival:Tribe ;
+                      rdfs:range survival:Threat ;
+                      rdfs:comment "Links a tribe to a threat it is endangered by"@en ;
+                      rdfs:label "Minacciata da"@it ,
+                                 "Threatened by"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#threatens
+survival:threatens rdf:type owl:ObjectProperty ;
+                   rdfs:domain survival:Threat ;
+                   rdfs:range survival:Tribe ;
+                   rdfs:comment "Links a threat to a tribe it endangers"@en ;
+                   rdfs:label "Minaccia"@it ,
+                              "Threatens"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#campaignPage
+survival:campaignPage rdf:type owl:DatatypeProperty ;
+                      rdfs:domain survival:Campaign ;
+                      rdfs:range xsd:anyURI ;
+                      rdfs:comment "URL of the web page of the campaign"@en ;
+                      rdfs:label "Campaign web page"@en ,
+                                 "Pagina web della campagna"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#contacted
+survival:contacted rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain survival:Tribe ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Whether a tribe has been contacted or not: defines its uncontacted status"@en ;
+                   rdfs:label "Contacted tribe"@en ,
+                              "Tribù contattata"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#email
+survival:email rdf:type owl:DatatypeProperty ;
+               rdfs:domain survival:Organization ;
+               rdfs:range survival:emailAddress ;
+               rdfs:comment "An organization e-mail address"@en ;
+               rdfs:label "Indirizzo e-mail dell'organizzazione"@it ,
+                          "Organization e-mail address"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType
+survival:habitatType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain survival:Habitat ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:oneOf [ rdf:type rdf:List ;
+                                              rdf:first "desert" ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first "forest" ;
+                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                    rdf:first "island" ;
+                                                                    rdf:rest rdf:nil
+                                                                  ]
+                                                       ]
+                                            ]
+                                ] ;
+                     rdfs:comment "Defines the type of an habitat, can be either desert, forest or island. Can be used twice to define an intersection, like: forest + island = forested island"@en ;
+                     rdfs:label "Habitat type"@en ,
+                                "Tipo di habitat"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#name
+survival:name rdf:type owl:DatatypeProperty ;
+              rdfs:domain survival:Tribe ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The official name of a tribe or indigenous people"@en ;
+              rdfs:label "Nome della tribù"@it ,
+                         "Tribe name"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#website
+survival:website rdf:type owl:DatatypeProperty ;
+                 rdfs:domain survival:Organization ;
+                 rdfs:range xsd:anyURI ;
+                 rdfs:comment "URL of the website of an organization"@en ;
+                 rdfs:label "Organization website"@en ,
+                            "Sito web dell'organizzazione"@it .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/Location
+dc:Location rdf:type owl:Class ;
+            owl:equivalentClass survival:Location .
+
+
+###  http://schema.org/AdministrativeArea
+schema:AdministrativeArea rdf:type owl:Class ;
+                          rdfs:subClassOf schema:Place .
+
+
+###  http://schema.org/Country
+schema:Country rdf:type owl:Class ;
+               owl:equivalentClass survival:Country ;
+               rdfs:subClassOf schema:AdministrativeArea .
+
+
+###  http://schema.org/Organization
+schema:Organization rdf:type owl:Class ;
+                    owl:equivalentClass survival:Organization .
+
+
+###  http://schema.org/Place
+schema:Place rdf:type owl:Class ;
+             owl:equivalentClass survival:Location .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization
+dul:Organization rdf:type owl:Class ;
+                 owl:equivalentClass survival:Organization .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization
+survival:BranchOrganization rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty survival:branchOf ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass survival:Organization
+                                                ] ;
+                            rdfs:subClassOf survival:Organization ;
+                            rdfs:comment "A local office or branch of an organization. Can be an indipendent legal entity or not."@en ;
+                            rdfs:label "Branch office"@en ,
+                                       "Ufficio distaccato"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign
+survival:Campaign rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty survival:addresses ;
+                                    owl:someValuesFrom survival:Threat
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty survival:campaignPage ;
+                                    owl:someValuesFrom xsd:anyURI
+                                  ] ;
+                  rdfs:comment "A generic project intended to mobilize public support and use democratic tools, such as lobbying, addressing some threats, in order to help endangered tribes"@en ;
+                  rdfs:label "Campagna"@it ,
+                             "Campaign"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Continent
+survival:Continent rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:oneOf ( survival:Africa
+                                                     survival:Antarctica
+                                                     survival:Asia
+                                                     survival:Europe
+                                                     survival:NorthAmerica
+                                                     survival:Oceania
+                                                     survival:SouthAmerica
+                                                   )
+                                       ] ;
+                   rdfs:subClassOf survival:Location ;
+                   rdfs:comment "One of the seven geographical regions that make up the global landmass"@en ;
+                   rdfs:label "Continent"@en ,
+                              "Continente"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Country
+survival:Country rdf:type owl:Class ;
+                 rdfs:subClassOf survival:Location ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty survival:locatedIn ;
+                                   owl:someValuesFrom survival:Continent
+                                 ] ;
+                 rdfs:comment "A distinct territorial body or political entity"@en ;
+                 rdfs:label "Country"@en ,
+                            "Paese"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Desert
+survival:Desert rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:habitatType ;
+                                      owl:hasValue "desert"
+                                    ] ;
+                rdfs:subClassOf survival:Habitat ;
+                rdfs:comment "A desert is a arid or semi-arid area of landscape"@en ;
+                rdfs:label "Desert"@en ,
+                           "Deserto"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland
+survival:DesertIsland rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( survival:Desert
+                                                                 survival:Island
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:comment "An island mostly covered by a desert area"@en ;
+                      rdfs:label "Desert island"@en ,
+                                 "Isola desertica"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe
+survival:DesertTribe rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty survival:livesIn ;
+                                           owl:someValuesFrom survival:Desert
+                                         ] ;
+                     rdfs:subClassOf survival:Tribe ;
+                     rdfs:comment "Tribe living in a desert"@en ;
+                     rdfs:label "Desert tribe"@en ,
+                                "Tribù del deserto"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Forest
+survival:Forest rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:habitatType ;
+                                      owl:hasValue "forest"
+                                    ] ;
+                rdfs:subClassOf survival:Habitat ;
+                rdfs:comment "A forest is an area of land dominated by trees"@en ;
+                rdfs:label "Forest"@en ,
+                           "Foresta"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe
+survival:ForestTribe rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty survival:livesIn ;
+                                           owl:someValuesFrom survival:Forest
+                                         ] ;
+                     rdfs:subClassOf survival:Tribe ;
+                     rdfs:comment "Tribe living in a forest"@en ;
+                     rdfs:label "Forest tribe"@en ,
+                                "Tribù della foresta"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland
+survival:ForestedIsland rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( survival:Forest
+                                                                   survival:Island
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:comment "An island mostly covered by forests"@en ;
+                        rdfs:label "Forested island"@en ,
+                                   "Isola boscosa"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat
+survival:Habitat rdf:type owl:Class ;
+                 rdfs:subClassOf survival:Location ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty survival:locatedIn ;
+                                   owl:someValuesFrom survival:Country
+                                 ] ;
+                 rdfs:comment "A geographical region which may span one or more countries, hosting one or more tribes"@en ;
+                 rdfs:label "Habitat"@en ,
+                            "Habitat"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Island
+survival:Island rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty survival:habitatType ;
+                                      owl:hasValue "island"
+                                    ] ;
+                rdfs:subClassOf survival:Habitat ;
+                rdfs:comment "An island is a portion of land entirely surrounded by water"@en ;
+                rdfs:label "Island"@en ,
+                           "Isola"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe
+survival:IslanderTribe rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty survival:livesIn ;
+                                             owl:someValuesFrom survival:Island
+                                           ] ;
+                       rdfs:subClassOf survival:Tribe ;
+                       rdfs:comment "Tribe living on one or more islands"@en ;
+                       rdfs:label "Islander tribe"@en ,
+                                  "Tribù isolana"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign
+survival:LocalCampaign rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty survival:explicitlyHelps ;
+                                             owl:someValuesFrom survival:Tribe
+                                           ] ;
+                       rdfs:subClassOf survival:Campaign ;
+                       rdfs:comment "A campaign directly helping one or more specific tribes"@en ;
+                       rdfs:label "Campagna locale"@it ,
+                                  "Local campaign"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Location
+survival:Location rdf:type owl:Class ;
+                  rdfs:comment "A generic location"@en ;
+                  rdfs:label "Location"@en ,
+                             "Luogo"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Organization
+survival:Organization rdf:type owl:Class ;
+                      owl:equivalentClass foaf:Organization ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty survival:locatedIn ;
+                                        owl:someValuesFrom survival:Country
+                                      ] ;
+                      rdfs:comment "An organization is an entity, such as a company, an institution, or an association, comprising one or more people and having a particular purpose"@en ;
+                      rdfs:label "Organization"@en ,
+                                 "Organizzazione"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign
+survival:SharedCampaign rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty survival:ledBy ;
+                                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                              owl:onClass survival:Organization
+                                            ] ;
+                        rdfs:subClassOf survival:Campaign ;
+                        rdfs:comment "A campaign led by more than one organization"@en ;
+                        rdfs:label "Campagna condivisa"@it ,
+                                   "Shared campaign"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Threat
+survival:Threat rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty survival:threatens ;
+                                  owl:someValuesFrom survival:Tribe
+                                ] ;
+                rdfs:comment "A generic threat which may endanger one or more tribe or a tribe-specific threat"@en ;
+                rdfs:label "Minaccia"@it ,
+                           "Threat"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe
+survival:Tribe rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty survival:livesIn ;
+                                 owl:someValuesFrom survival:Habitat
+                               ] ;
+               rdfs:comment "Endangered tribes and indigenous peoples"@en ;
+               rdfs:label "Tribe"@en ,
+                          "Tribù"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe
+survival:UncontactedTribe rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty survival:contacted ;
+                                                owl:hasValue "false"^^xsd:boolean
+                                              ] ;
+                          rdfs:subClassOf survival:Tribe ;
+                          rdfs:comment "Tribe that has never, or nearly never, been contacted by the \"civilized\" world, if not for some forced contacts, which have almost always been rejected. Little or nothing is known about these tribes, sometimes just their name or not event that."@en ;
+                          rdfs:label "Tribù incontattata"@it ,
+                                     "Uncontacted tribe"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#APIB
+survival:APIB rdf:type owl:NamedIndividual ,
+                       survival:Organization ;
+              survival:locatedIn survival:Brazil ;
+              survival:email "apib.se@apiboficial.org" ;
+              survival:website "https://apiboficial.org/"^^xsd:anyURI ;
+              rdfs:comment "The Articulation of Indigenous Peoples of Brazil was created by the indigenous movement at Camp Terra Livre (ATL) 2005. APIB is an instance of national reference of the indigenous movement in Brazil, created from the bottom up."@en ;
+              rdfs:label "Articolazione dei Popoli Indigeni del Brasile"@it ,
+                         "Articulation of Indigenous Peoples of Brazil"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Africa
+survival:Africa rdf:type owl:NamedIndividual ,
+                         survival:Continent ;
+                rdfs:comment "The African continent"@en ;
+                rdfs:label "Africa"@en ,
+                           "Africa"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica
+survival:Antarctica rdf:type owl:NamedIndividual ,
+                             survival:Continent ;
+                    rdfs:comment "The Antarctic continent"@en ;
+                    rdfs:label "Antarctica"@en ,
+                               "Antartide"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Asia
+survival:Asia rdf:type owl:NamedIndividual ,
+                       survival:Continent ;
+              rdfs:comment "The continent of Asia"@en ;
+              rdfs:label "Asia"@en ,
+                         "Asia"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia
+survival:Bolivia rdf:type owl:NamedIndividual ,
+                          survival:Country ;
+                 survival:locatedIn survival:SouthAmerica ;
+                 rdfs:comment "The Plurinational State of Bolivia"@en ;
+                 rdfs:label "Bolivia"@en ,
+                            "Bolivia"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana
+survival:Botswana rdf:type owl:NamedIndividual ,
+                           survival:Country ;
+                  survival:locatedIn survival:Africa ;
+                  rdfs:comment "The Republic of Botswana"@en ;
+                  rdfs:label "Botswana"@en ,
+                             "Botswana"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil
+survival:Brazil rdf:type owl:NamedIndividual ,
+                         survival:Country ;
+                survival:locatedIn survival:SouthAmerica ;
+                rdfs:label "Brasile"@it ,
+                           "Brazil"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen
+survival:Bushmen rdf:type owl:NamedIndividual ,
+                          survival:Tribe ;
+                 survival:livesIn survival:CentralKalahariGameReserve ;
+                 survival:threatenedBy survival:ColonialConservation ;
+                 survival:contacted "true"^^xsd:boolean ;
+                 survival:name "San"^^xsd:string ;
+                 rdfs:comment "The Bushmen are the indigenous peoples of southern Africa. Largely hunter-gatherers, their territory spans several nations and they have called the region home for tens of thousands of years."@en ;
+                 rdfs:label "Boscimani"@it ,
+                            "Bushmen"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve
+survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
+                                             survival:Habitat ;
+                                    survival:locatedIn survival:Botswana ;
+                                    survival:habitatType "desert" ;
+                                    rdfs:comment "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana"@en ;
+                                    rdfs:label "Central Kalahari Game Reserve"@en ,
+                                               "Riserva faunistica del Kalahari centrale"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ColonialConservation
+survival:ColonialConservation rdf:type owl:NamedIndividual ,
+                                       survival:Threat ;
+                              rdfs:comment "Colonial conservation, also known as Fortress Conservation, rests on the racist misconception that indigenous people cannot be trusted to look after their own land and the animals that live there. Its proponents view the original custodians of the land as a “nuisance” to be “dealt with\", instead of as experts in local biodiversity and key partners in conservation."@en ;
+                              rdfs:label "Colonial conservation"@en ,
+                                         "Conservazione di stampo colonialista"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#DecolonizeConservation
+survival:DecolonizeConservation rdf:type owl:NamedIndividual ,
+                                         survival:Campaign ;
+                                survival:addresses survival:ColonialConservation ;
+                                survival:ledBy survival:SurvivalInternational ;
+                                survival:campaignPage "https://www.survivalinternational.org/conservation"^^xsd:anyURI ;
+                                rdfs:comment "Well known conservation groups like WWF, WCS, and African Parks have been aware of these atrocities for many years but they continue to fund and support colonial conservation. For over 30 years, Survival has been campaigning against the atrocities committed in the name of “conservation”."@en ;
+                                rdfs:label "Decolonize Conservation"@en ,
+                                           "Decolonizziamo la conservazione"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Deforestation
+survival:Deforestation rdf:type owl:NamedIndividual ,
+                                survival:Threat ;
+                       rdfs:comment "Deforestation or forest clearance is the removal of a forest or stand of trees from land that is then converted to non-forest use. Deforestation can involve conversion of forest land to farms, ranches, or urban use. The most concentrated deforestation occurs in tropical rainforests."@en ;
+                       rdfs:label "Deforestation"@en ,
+                                  "Deforestazione"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Europe
+survival:Europe rdf:type owl:NamedIndividual ,
+                         survival:Continent ;
+                rdfs:comment "The European continent"@en ;
+                rdfs:label "Europa"@it ,
+                           "Europe"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact
+survival:ForcedContact rdf:type owl:NamedIndividual ,
+                                survival:Threat ;
+                       rdfs:comment "Forced contact is the practice of contacting forcibly indigenous tribes for many reasons such as to either exploit their land, convert them to Christianity or simply study their habits. Whole populations are being wiped out by genocidal violence, and by diseases like flu and measles to which they have no resistance."@en ;
+                       rdfs:label "Contatto forzato"@it ,
+                                  "Forced contact"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalFishing
+survival:IllegalFishing rdf:type owl:NamedIndividual ,
+                                 survival:Threat ;
+                        rdfs:comment "Illegal fishing takes place when vessels or poachers operate in violation of the laws and especially in protected natural reserves. It endangers some tribes by reducing their sources of livelihood and exposing them to deadly deseases."@en ;
+                        rdfs:label "Illegal fishing"@en ,
+                                   "Pesca illegale"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalMining
+survival:IllegalMining rdf:type owl:NamedIndividual ,
+                                survival:Threat ;
+                       rdfs:comment "Illegal mining is mining activity that is undertaken without state permission, in particular in absence of land rights, mining licenses, and exploration or mineral transportation permits."@en ;
+                       rdfs:label "Estrazione mineraria illegale"@it ,
+                                  "Illegal mining"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#India
+survival:India rdf:type owl:NamedIndividual ,
+                        survival:Country ;
+               survival:locatedIn survival:Asia ;
+               rdfs:comment "The Republic of India"@en ;
+               rdfs:label "India"@en ,
+                          "India"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Italy
+survival:Italy rdf:type owl:NamedIndividual ,
+                        survival:Country ;
+               survival:locatedIn survival:Europe ;
+               rdfs:comment "The Italian Republic"@en ;
+               rdfs:label "Italia"@it ,
+                          "Italy"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro
+survival:MashcoPiro rdf:type owl:NamedIndividual ,
+                             survival:Tribe ;
+                    survival:livesIn survival:UncontactedFrontier ;
+                    survival:threatenedBy survival:Deforestation ,
+                                          survival:ForcedContact ;
+                    survival:contacted "false"^^xsd:boolean ;
+                    survival:name "Mashco-Piro"^^xsd:string ;
+                    rdfs:comment "Mashco-Piro are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."@en ;
+                    rdfs:label "Mascho-Piro"@it ,
+                               "Mashco-Piro"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Matses
+survival:Matses rdf:type owl:NamedIndividual ,
+                         survival:Tribe ;
+                survival:livesIn survival:UncontactedFrontier ;
+                survival:threatenedBy survival:ForcedContact ;
+                survival:contacted "false"^^xsd:boolean ;
+                survival:name "Matsés"^^xsd:string ;
+                rdfs:comment "Matsés are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."@en ;
+                rdfs:label "Matsés"@en ,
+                           "Matsés"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica
+survival:NorthAmerica rdf:type owl:NamedIndividual ,
+                               survival:Continent ;
+                      rdfs:comment "The North American continent"@en ;
+                      rdfs:label "Nord America"@it ,
+                                 "North America"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel
+survival:NorthSentinel rdf:type owl:NamedIndividual ,
+                                survival:Habitat ;
+                       survival:locatedIn survival:India ;
+                       survival:habitatType "forest" ,
+                                            "island" ;
+                       rdfs:comment "North Sentinel Island is one of the Andaman Islands, an Indian archipelago in the Bay of Bengal"@en ;
+                       rdfs:label "Isola di North Sentinel"@it ,
+                                  "North Sentinel Island"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania
+survival:Oceania rdf:type owl:NamedIndividual ,
+                          survival:Continent ;
+                 rdfs:comment "The continent of Oceania"@en ;
+                 rdfs:label "Oceania"@en ,
+                            "Oceania"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Peru
+survival:Peru rdf:type owl:NamedIndividual ,
+                       survival:Country ;
+              survival:locatedIn survival:SouthAmerica ;
+              rdfs:comment "The Republic of Peru"@en ;
+              rdfs:label "Peru"@en ,
+                         "Perù"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese
+survival:Sentinelese rdf:type owl:NamedIndividual ,
+                              survival:Tribe ;
+                     survival:livesIn survival:NorthSentinel ;
+                     survival:threatenedBy survival:ForcedContact ,
+                                           survival:IllegalFishing ;
+                     survival:contacted "false"^^xsd:boolean ;
+                     survival:name "Sentinelese"^^xsd:string ;
+                     rdfs:comment "The Sentinelese are an uncontacted tribe living on North Sentinal Island, one of the Andaman Islands in the Indian Ocean. They vigorously reject all contact with outsiders."@en ;
+                     rdfs:label "Sentinelese"@en ,
+                                "Sentinellesi"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica
+survival:SouthAmerica rdf:type owl:NamedIndividual ,
+                               survival:Continent ;
+                      rdfs:comment "The South American continent"@en ;
+                      rdfs:label "South America"@en ,
+                                 "Sud America"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#StopBrazilGenocide
+survival:StopBrazilGenocide rdf:type owl:NamedIndividual ,
+                                     survival:Campaign ;
+                            survival:explicitlyHelps survival:Yanomami ;
+                            survival:ledBy survival:APIB ,
+                                           survival:SurvivalInternational ;
+                            survival:campaignPage "https://www.survivalinternational.org/brazilgenocide"^^xsd:anyURI ;
+                            rdfs:comment "President Jair Bolsonaro is trying to turn back the clock on indigenous rights. He wants to strip their autonomy, sell off their territories for logging and mining and “assimilate” them against their wishes. Brazil’s indigenous peoples, their supporters and allies, and Survival International are fighting back as the President plots to steal their land, destroy their lives and annihilate them as peoples."@en ;
+                            rdfs:label "Fermiamo il genocidio in Brasile"@it ,
+                                       "Stop Brazil's genocide"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalBrasil
+survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
+                                 survival:Organization ;
+                        survival:branchOf survival:SurvivalInternational ;
+                        survival:locatedIn survival:Brazil ;
+                        survival:email "info@survivalbrasil.org"^^xsd:string ;
+                        survival:website "https://www.survivalbrasil.org"^^xsd:anyURI ;
+                        rdfs:comment "Brazilian office of Survival International"@en ;
+                        rdfs:label "Survival International Brasile"@it ,
+                                   "Survival International Brazil"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational
+survival:SurvivalInternational rdf:type owl:NamedIndividual ,
+                                        survival:Organization ;
+                               survival:locatedIn survival:UK ;
+                               survival:email "info@survivalinternational.org" ;
+                               survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
+                               rdfs:comment "Survival International is a human rights organisation formed in 1969 that campaigns for the rights of indigenous and/or tribal peoples and uncontacted peoples"@en ;
+                               rdfs:label "Survival International"@en ,
+                                          "Survival International"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia
+survival:SurvivalItalia rdf:type owl:NamedIndividual ,
+                                 survival:Organization ;
+                        survival:branchOf survival:SurvivalInternational ;
+                        survival:locatedIn survival:Italy ;
+                        survival:email "info@survival.it"^^xsd:string ;
+                        survival:website "https://www.survival.it"^^xsd:anyURI ;
+                        rdfs:comment "Italian office of Survival International"@en ;
+                        rdfs:label "Survival International Italia"@it ,
+                                   "Survival International Italy"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA
+survival:SurvivalUSA rdf:type owl:NamedIndividual ,
+                              survival:Organization ;
+                     survival:branchOf survival:SurvivalInternational ;
+                     survival:locatedIn survival:USA ;
+                     survival:email "info.usa@survivalinternational.org"^^xsd:string ;
+                     survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
+                     rdfs:comment "US office of Survival International"@en ;
+                     rdfs:label "Survival International USA"@en ,
+                                "Survival International USA"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UK
+survival:UK rdf:type owl:NamedIndividual ,
+                     survival:Country ;
+            survival:locatedIn survival:Europe ;
+            rdfs:comment "The United Kingdom of Great Britain and Northern Ireland"@en ;
+            rdfs:label "Regno Unito"@it ,
+                       "United Kingdom"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#USA
+survival:USA rdf:type owl:NamedIndividual ,
+                      survival:Country ;
+             survival:locatedIn survival:NorthAmerica ;
+             rdfs:comment "The United States of America"@en ;
+             rdfs:label "Stati Uniti d'America"@it ,
+                        "United States of America"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier
+survival:UncontactedFrontier rdf:type owl:NamedIndividual ,
+                                      survival:Habitat ;
+                             survival:locatedIn survival:Bolivia ,
+                                                survival:Brazil ,
+                                                survival:Peru ;
+                             survival:habitatType "forest" ;
+                             rdfs:comment "Straddling the borders of Peru, Brazil and Bolivia is the Uncontacted Frontier, home to more uncontacted tribes than anywhere else on the planet"@en ;
+                             rdfs:label "La frontiera dell'Amazzonia incontattata"@it ,
+                                        "The Amazon Uncontacted Frontier"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribes
+survival:UncontactedTribes rdf:type owl:NamedIndividual ,
+                                    survival:Campaign ;
+                           survival:addresses survival:ForcedContact ;
+                           survival:ledBy survival:SurvivalInternational ;
+                           survival:campaignPage "https://www.survivalinternational.org/uncontactedtribes"^^xsd:anyURI ;
+                           rdfs:comment "There are more than a hundred uncontacted tribes around the world. They are a vitally important part of humankind’s diversity, but they face catastrophe unless their land is protected. Survival is doing everything possible to secure their land for them, and to let them live."@en ;
+                           rdfs:label "Incontattati"@it ,
+                                      "Uncontacted Tribes"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela
+survival:Venezuela rdf:type owl:NamedIndividual ,
+                            survival:Country ;
+                   rdfs:comment "The Bolivarian Republic of Venezuela"@en ;
+                   rdfs:label "Venezuela"@en ,
+                              "Venezuela"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami
+survival:Yanomami rdf:type owl:NamedIndividual ,
+                           survival:Tribe ;
+                  survival:livesIn survival:YanomamiPark ;
+                  survival:threatenedBy survival:Deforestation ,
+                                        survival:IllegalMining ;
+                  survival:contacted "false"^^xsd:boolean ;
+                  survival:name "Yanomamö"^^xsd:string ;
+                  rdfs:comment "The Yanomami are the largest relatively isolated tribe in South America. They live in the rainforests and mountains of northern Brazil and southern Venezuela."@en ;
+                  rdfs:label "Yanomami"@en ,
+                             "Yanomami"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark
+survival:YanomamiPark rdf:type owl:NamedIndividual ,
+                               survival:Habitat ;
+                      survival:locatedIn survival:Brazil ,
+                                         survival:Venezuela ;
+                      survival:habitatType "forest" ;
+                      rdfs:comment "The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission."@en ;
+                      rdfs:label "Yanomami Park"@en ,
+                                 "Yanomami Park"@it .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( survival:Campaign
+                survival:Location
+                survival:Organization
+                survival:Threat
+                survival:Tribe
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( survival:Continent
+                survival:Country
+                survival:Habitat
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( survival:APIB
+                        survival:SurvivalBrasil
+                        survival:SurvivalInternational
+                        survival:SurvivalItalia
+                        survival:SurvivalUSA
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( survival:Africa
+                        survival:Antarctica
+                        survival:Asia
+                        survival:Europe
+                        survival:NorthAmerica
+                        survival:Oceania
+                        survival:SouthAmerica
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( survival:Bolivia
+                        survival:Botswana
+                        survival:Brazil
+                        survival:India
+                        survival:Italy
+                        survival:Peru
+                        survival:UK
+                        survival:USA
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( survival:Bushmen
+                        survival:MashcoPiro
+                        survival:Matses
+                        survival:Sentinelese
+                        survival:Yanomami
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( survival:CentralKalahariGameReserve
+                        survival:NorthSentinel
+                        survival:UncontactedFrontier
+                        survival:YanomamiPark
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( survival:DecolonizeConservation
+                        survival:StopBrazilGenocide
+                        survival:UncontactedTribes
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
