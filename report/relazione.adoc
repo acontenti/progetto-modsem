@@ -53,6 +53,38 @@ Gli utenti che potrebbero trarre giovamento dall'utilizzo di questa ontologia so
 
 == Descrizione del dominio
 
+=== Dominio
+
+Il dominio è composto da un insieme di concetti top-level, cui corrisponde una specifica classe nell'ontologia:
+
+Tribù::
+Una tribù o un popolo indigeno oggetto dell'attenzione e delle campagne di Survival
+Minaccia::
+Con minaccia si intende o un generico problema che affligge più popoli indigeni, accomunandoli come protagonisti di una campagna, oppure un problema che affligge una specifica tribù.
+Campagna::
+Una campagna può essere diretta ad affrontare in generale una minaccia che riguarda molte comunità indigene, oppure si rivolge direttamente ad una specifica tribù, affrontandone le varie problematiche
+Organizzazione::
+Un'organizzazione è un generico ente che collabora con Survival (come anche Survival stessa e le sue sedi locali). Un'organizzazione può essere legata a una campagna che conduce (o co-conduce).
+Luogo::
+Un luogo indica in generale un'area geografica, più specificamente un continente, un paese o un habitat. Quest'ultimo rappresenta un'area in cui vivono una (o più) tribù e popoli indigeni, atta a circoscrivere più precisamente i territori in cui vivono queste popolazioni, che spesso si estendono oltre i confini di un singolo paese.
+
+=== Riferimenti
+
+La stragrande maggioranza delle informazioni riguardanti i temi chiave di questa ontologia, ovvero popoli indigeni, minacce, campagne di Survival, organizzazioni sono tratte dai siti web di Survival in inglese e italiano:
+
+* Survival International: https://www.survivalinternational.org
+* Survival International Italia: https://www.survival.it
+
+Purtroppo le informazioni sono un po' frammentate e organizzate in modo poco sistematico. Probabilmente per fare più colpo sui lettori, piuttosto che per dare una documentazione precisa. +
+Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integrare qualche volta con enciclopedie online come:
+
+* Wikipedia: https://en.wikipedia.org/ e https://it.wikipedia.org/
+* Enciclopedia Treccani: https://www.treccani.it/enciclopedia/
+
+Queste sono state utilizzate anche per trarre informazioni su concetti non specifici dell'ambito di Survival, come ad esempio continenti e paesi.
+
+È stato inoltre consultato il sito dell'Articulation of Indigenous Peoples of Brazil (APIB): https://apiboficial.org/
+
 == Documentazione sul dominio
 
 === Esempio
