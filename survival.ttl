@@ -12,9 +12,12 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/> .
 @prefix survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
+@prefix participation: <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#> .
+@prefix coparticipation: <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#> .
 @base <https://acontenti.github.io/progetto-modsem/survival.ttl> .
 
 <https://acontenti.github.io/progetto-modsem/survival.ttl> rdf:type owl:Ontology ;
+                                                            owl:imports <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl> ;
                                                             dc:creator "Alessandro Contenti" ;
                                                             dc:date "2022-02-04" ;
                                                             dc:description "An ontology to describe the operations of the Survival International NGO"@en ;
@@ -166,6 +169,20 @@ survival:cohabitsWith rdf:type owl:ObjectProperty ;
                                  "Cohabits with"@en .
 
 
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith
+survival:collaboratesWith rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf coparticipation:coparticipatesWith ;
+                          rdf:type owl:SymmetricProperty ;
+                          rdfs:domain survival:Organization ;
+                          rdfs:range survival:Organization ;
+                          owl:propertyChainAxiom ( survival:leads
+                                                   survival:ledBy
+                                                 ) ;
+                          rdfs:comment "Links an organization with another organization it collaborates with in one or more campaigns"@en ;
+                          rdfs:label "Collabora con"@it ,
+                                     "Collaborates with"@en .
+
+
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps
 survival:explicitlyHelps rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf survival:helps ;
@@ -222,6 +239,7 @@ survival:hosts rdf:type owl:ObjectProperty ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#leads
 survival:leads rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf participation:isParticipantIn ;
                owl:inverseOf survival:ledBy ;
                rdfs:domain survival:Organization ;
                rdfs:range survival:Campaign ;
@@ -232,6 +250,7 @@ survival:leads rdf:type owl:ObjectProperty ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy
 survival:ledBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf participation:hasParticipant ;
                rdfs:domain survival:Campaign ;
                rdfs:range survival:Organization ;
                rdfs:comment "Links a campaign to an organization it is conducted by"@en ;
@@ -376,11 +395,6 @@ schema:Place rdf:type owl:Class ;
              owl:equivalentClass survival:Location .
 
 
-###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization
-dul:Organization rdf:type owl:Class ;
-                 owl:equivalentClass survival:Organization .
-
-
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization
 survival:BranchOrganization rdf:type owl:Class ;
                             owl:equivalentClass [ rdf:type owl:Restriction ;
@@ -397,7 +411,8 @@ survival:BranchOrganization rdf:type owl:Class ;
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign
 survival:Campaign rdf:type owl:Class ;
                   owl:equivalentClass wd:Q18812548 ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf participation:Event ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty survival:addresses ;
                                     owl:someValuesFrom survival:Threat
                                   ] ,
@@ -565,6 +580,7 @@ survival:LocalCampaign rdf:type owl:Class ;
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Location
 survival:Location rdf:type owl:Class ;
                   owl:equivalentClass wd:Q82794 ;
+                  rdfs:subClassOf participation:Object ;
                   rdfs:comment "A generic location"@en ;
                   rdfs:label "Location"@en ,
                              "Luogo"@it .
@@ -573,7 +589,8 @@ survival:Location rdf:type owl:Class ;
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Organization
 survival:Organization rdf:type owl:Class ;
                       owl:equivalentClass wd:Q43229 ;
-                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      rdfs:subClassOf participation:Object ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty survival:locatedIn ;
                                         owl:someValuesFrom survival:Country
                                       ] ;
@@ -597,7 +614,8 @@ survival:SharedCampaign rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Threat
 survival:Threat rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                rdfs:subClassOf participation:Object ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty survival:threatens ;
                                   owl:someValuesFrom survival:Tribe
                                 ] ;
@@ -609,7 +627,8 @@ survival:Threat rdf:type owl:Class ;
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe
 survival:Tribe rdf:type owl:Class ;
                owl:equivalentClass wd:Q103817 ;
-               rdfs:subClassOf [ rdf:type owl:Restriction ;
+               rdfs:subClassOf participation:Object ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty survival:livesIn ;
                                  owl:someValuesFrom survival:Habitat
                                ] ;
@@ -1223,19 +1242,18 @@ wd:Q963 rdf:type owl:NamedIndividual ,
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( survival:Campaign
-                survival:Location
-                survival:Organization
-                survival:Threat
-                survival:Tribe
+  owl:members ( survival:Continent
+                survival:Country
+                survival:Habitat
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( survival:Continent
-                survival:Country
-                survival:Habitat
+  owl:members ( survival:Location
+                survival:Organization
+                survival:Threat
+                survival:Tribe
               )
 ] .
 
