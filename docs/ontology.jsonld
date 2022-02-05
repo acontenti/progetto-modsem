@@ -10,7 +10,19 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid13",
+  "@id" : "_:genid11",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Country"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid15",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -22,7 +34,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid17",
+  "@id" : "_:genid19",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
@@ -35,7 +47,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid18",
+  "@id" : "_:genid20",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#addresses"
@@ -44,7 +56,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Threat"
   } ]
 }, {
-  "@id" : "_:genid19",
+  "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#campaignPage"
@@ -53,7 +65,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
   } ]
 }, {
-  "@id" : "_:genid20",
+  "@id" : "_:genid22",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -73,7 +85,12 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid28",
+  "@id" : "_:genid3",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "[^@]+@[^\\.]+\\..+"
+  } ]
+}, {
+  "@id" : "_:genid30",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"
@@ -82,7 +99,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid31",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@value" : "desert"
@@ -91,12 +108,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType"
   } ]
 }, {
-  "@id" : "_:genid3",
-  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
-    "@value" : "[^@]+@[^\\.]+\\..+"
-  } ]
-}, {
-  "@id" : "_:genid30",
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
@@ -106,7 +118,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid35",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"
@@ -115,7 +127,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Desert"
   } ]
 }, {
-  "@id" : "_:genid34",
+  "@id" : "_:genid36",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@value" : "forest"
@@ -124,7 +136,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType"
   } ]
 }, {
-  "@id" : "_:genid35",
+  "@id" : "_:genid37",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"
@@ -133,7 +145,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Forest"
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid38",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
@@ -143,7 +155,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid39",
+  "@id" : "_:genid41",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"
@@ -152,7 +164,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Country"
   } ]
 }, {
-  "@id" : "_:genid40",
+  "@id" : "_:genid42",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@value" : "island"
@@ -161,7 +173,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType"
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid43",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"
@@ -170,7 +182,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Island"
   } ]
 }, {
-  "@id" : "_:genid42",
+  "@id" : "_:genid44",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps"
@@ -179,7 +191,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ]
 }, {
-  "@id" : "_:genid43",
+  "@id" : "_:genid45",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"
@@ -188,7 +200,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Country"
   } ]
 }, {
-  "@id" : "_:genid44",
+  "@id" : "_:genid46",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -201,7 +213,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy"
   } ]
 }, {
-  "@id" : "_:genid45",
+  "@id" : "_:genid47",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#threatens"
@@ -210,7 +222,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ]
 }, {
-  "@id" : "_:genid46",
+  "@id" : "_:genid48",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"
@@ -219,7 +231,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"
   } ]
 }, {
-  "@id" : "_:genid47",
+  "@id" : "_:genid49",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -229,28 +241,12 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#contacted"
   } ]
 }, {
-  "@id" : "_:genid48",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Threat"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
-    } ]
-  } ]
-}, {
   "@id" : "_:genid5",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"
   } ]
 }, {
-  "@id" : "_:genid54",
+  "@id" : "_:genid50",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -262,7 +258,21 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid58",
+  "@id" : "_:genid54",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Threat"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid59",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -273,8 +283,6 @@
       "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational"
     }, {
       "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA"
     } ]
   } ]
 }, {
@@ -316,7 +324,7 @@
     }, {
       "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#UK"
     }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#USA"
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela"
     } ]
   } ]
 }, {
@@ -350,18 +358,6 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid9",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Country"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"
-    }, {
-      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
-    } ]
-  } ]
-}, {
   "@id" : "_:genid92",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
@@ -372,12 +368,6 @@
     }, {
       "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribes"
     } ]
-  } ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/Location",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
   } ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/creator",
@@ -398,16 +388,25 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://schema.org/AdministrativeArea",
+  "@id" : "http://schema.org/Continent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Continent"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://schema.org/Place"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"
   } ]
 }, {
   "@id" : "http://schema.org/Country",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Country"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://schema.org/AdministrativeArea"
+    "@id" : "http://schema.org/Place"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Country"
@@ -415,26 +414,108 @@
 }, {
   "@id" : "http://schema.org/Organization",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
   } ]
 }, {
   "@id" : "http://schema.org/Place",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
   } ]
 }, {
-  "@id" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+  "@id" : "http://schema.org/location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "location"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"
   } ]
 }, {
-  "@id" : "http://xmlns.com/foaf/0.1/Organization",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+  "@id" : "http://schema.org/parentOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "parentOrganization"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://schema.org/subOrganization"
+  } ]
+}, {
+  "@id" : "http://schema.org/subOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "subOrganization"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch"
+  } ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P1706",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "insieme a"
+  }, {
+    "@language" : "en",
+    "@value" : "together with"
+  } ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P355",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "filiali"
+  }, {
+    "@language" : "en",
+    "@value" : "subsidiary"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.wikidata.org/prop/direct/P749"
+  } ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P706",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "located in/on physical feature"
+  }, {
+    "@language" : "it",
+    "@value" : "luogo geografico"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"
+  } ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P749",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "ente controllante"
+  }, {
+    "@language" : "en",
+    "@value" : "parent organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl",
@@ -443,7 +524,7 @@
     "@value" : "Alessandro Contenti"
   } ],
   "http://purl.org/dc/elements/1.1/date" : [ {
-    "@value" : "2022-02-04"
+    "@value" : "2022-02-05"
   } ],
   "http://purl.org/dc/elements/1.1/description" : [ {
     "@language" : "en",
@@ -461,6 +542,11 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Survival"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl"
+  }, {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#APIB",
@@ -475,6 +561,9 @@
   }, {
     "@language" : "en",
     "@value" : "Articulation of Indigenous Peoples of Brazil"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q16494254"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#email" : [ {
     "@value" : "apib.se@apiboficial.org"
@@ -499,6 +588,9 @@
   }, {
     "@language" : "it",
     "@value" : "Africa"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q15"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica",
@@ -513,6 +605,9 @@
   }, {
     "@language" : "it",
     "@value" : "Antartide"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q51"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Asia",
@@ -527,6 +622,9 @@
   }, {
     "@language" : "it",
     "@value" : "Asia"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q48"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia",
@@ -541,6 +639,9 @@
   }, {
     "@language" : "it",
     "@value" : "Bolivia"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q750"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica"
@@ -558,6 +659,9 @@
   }, {
     "@language" : "it",
     "@value" : "Botswana"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q963"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Africa"
@@ -580,7 +684,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid17"
+    "@id" : "_:genid19"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil",
@@ -591,6 +695,9 @@
   }, {
     "@language" : "en",
     "@value" : "Brazil"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q155"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica"
@@ -608,6 +715,9 @@
   }, {
     "@language" : "en",
     "@value" : "Bushmen"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q172365"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#contacted" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -637,9 +747,14 @@
     "@value" : "Campaign"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid18"
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"
   }, {
-    "@id" : "_:genid19"
+    "@id" : "_:genid20"
+  }, {
+    "@id" : "_:genid21"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q18812548"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve",
@@ -654,6 +769,9 @@
   }, {
     "@language" : "it",
     "@value" : "Riserva faunistica del Kalahari centrale"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q194732"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType" : [ {
     "@value" : "desert"
@@ -693,7 +811,9 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid20"
+    "@id" : "https://www.wikidata.org/entity/Q5107"
+  }, {
+    "@id" : "_:genid22"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Country",
@@ -712,7 +832,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
   }, {
-    "@id" : "_:genid28"
+    "@id" : "_:genid30"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q6256"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#DecolonizeConservation",
@@ -770,7 +893,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid29"
+    "@id" : "_:genid31"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland",
@@ -787,7 +910,7 @@
     "@value" : "Isola desertica"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid30"
+    "@id" : "_:genid32"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe",
@@ -807,7 +930,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid33"
+    "@id" : "_:genid35"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Europe",
@@ -822,6 +945,9 @@
   }, {
     "@language" : "en",
     "@value" : "Europe"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q46"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact",
@@ -855,7 +981,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid34"
+    "@id" : "_:genid36"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe",
@@ -875,7 +1001,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid35"
+    "@id" : "_:genid37"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland",
@@ -892,7 +1018,7 @@
     "@value" : "Isola boscosa"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid36"
+    "@id" : "_:genid38"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat",
@@ -911,7 +1037,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location"
   }, {
-    "@id" : "_:genid39"
+    "@id" : "_:genid41"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalFishing",
@@ -955,6 +1081,9 @@
     "@language" : "it",
     "@value" : "India"
   } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q668"
+  } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Asia"
   } ]
@@ -976,7 +1105,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid40"
+    "@id" : "_:genid42"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe",
@@ -996,7 +1125,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid41"
+    "@id" : "_:genid43"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Italy",
@@ -1011,6 +1140,9 @@
   }, {
     "@language" : "en",
     "@value" : "Italy"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q38"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Europe"
@@ -1033,7 +1165,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid42"
+    "@id" : "_:genid44"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Location",
@@ -1048,6 +1180,12 @@
   }, {
     "@language" : "it",
     "@value" : "Luogo"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q82794"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro",
@@ -1062,6 +1200,9 @@
   }, {
     "@language" : "en",
     "@value" : "Mashco-Piro"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q3850712"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#contacted" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1092,6 +1233,9 @@
     "@language" : "it",
     "@value" : "Matsés"
   } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q2708837"
+  } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#contacted" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "false"
@@ -1118,6 +1262,9 @@
   }, {
     "@language" : "en",
     "@value" : "North America"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q49"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel",
@@ -1132,6 +1279,9 @@
   }, {
     "@language" : "en",
     "@value" : "North Sentinel Island"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q1260331"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType" : [ {
     "@value" : "forest"
@@ -1154,6 +1304,9 @@
   }, {
     "@language" : "it",
     "@value" : "Oceania"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q55643"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization",
@@ -1170,7 +1323,12 @@
     "@value" : "Organizzazione"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid43"
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  }, {
+    "@id" : "_:genid45"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q43229"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Peru",
@@ -1185,6 +1343,9 @@
   }, {
     "@language" : "it",
     "@value" : "Perù"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q419"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica"
@@ -1202,6 +1363,9 @@
   }, {
     "@language" : "it",
     "@value" : "Sentinellesi"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q917695"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#contacted" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1236,7 +1400,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid44"
+    "@id" : "_:genid46"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica",
@@ -1251,6 +1415,9 @@
   }, {
     "@language" : "it",
     "@value" : "Sud America"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q18"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#StopBrazilGenocide",
@@ -1319,6 +1486,9 @@
     "@language" : "it",
     "@value" : "Survival International"
   } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q1887464"
+  } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#email" : [ {
     "@value" : "info@survivalinternational.org"
   } ],
@@ -1357,33 +1527,6 @@
     "@value" : "https://www.survival.it"
   } ]
 }, {
-  "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "US office of Survival International"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Survival International USA"
-  }, {
-    "@language" : "it",
-    "@value" : "Survival International USA"
-  } ],
-  "https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf" : [ {
-    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational"
-  } ],
-  "https://acontenti.github.io/progetto-modsem/survival.ttl#email" : [ {
-    "@value" : "info.usa@survivalinternational.org"
-  } ],
-  "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
-    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#USA"
-  } ],
-  "https://acontenti.github.io/progetto-modsem/survival.ttl#website" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
-    "@value" : "https://www.survivalinternational.org"
-  } ]
-}, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Threat",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1398,7 +1541,9 @@
     "@value" : "Threat"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid45"
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  }, {
+    "@id" : "_:genid47"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe",
@@ -1415,7 +1560,12 @@
     "@value" : "Tribù"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid46"
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  }, {
+    "@id" : "_:genid48"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q103817"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#UK",
@@ -1431,25 +1581,11 @@
     "@language" : "en",
     "@value" : "United Kingdom"
   } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q145"
+  } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Europe"
-  } ]
-}, {
-  "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#USA",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://acontenti.github.io/progetto-modsem/survival.ttl#Country" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The United States of America"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "it",
-    "@value" : "Stati Uniti d'America"
-  }, {
-    "@language" : "en",
-    "@value" : "United States of America"
-  } ],
-  "https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn" : [ {
-    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier",
@@ -1493,7 +1629,7 @@
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid47"
+    "@id" : "_:genid49"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribes",
@@ -1532,6 +1668,9 @@
   }, {
     "@language" : "it",
     "@value" : "Venezuela"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q717"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami",
@@ -1546,6 +1685,9 @@
   }, {
     "@language" : "it",
     "@value" : "Yanomami"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q34188"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#contacted" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1575,6 +1717,9 @@
   }, {
     "@language" : "it",
     "@value" : "Yanomami Park"
+  } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q10380751"
   } ],
   "https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType" : [ {
     "@value" : "forest"
@@ -1690,11 +1835,44 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.wikidata.org/prop/direct/P1706"
+  } ],
   "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
     "@list" : [ {
       "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"
     }, {
       "@id" : "_:genid5"
+    } ]
+  } ]
+}, {
+  "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links an organization with another organization it collaborates with in one or more campaigns"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Collabora con"
+  }, {
+    "@language" : "en",
+    "@value" : "Collaborates with"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#leads"
+    }, {
+      "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy"
     } ]
   } ]
 }, {
@@ -1795,7 +1973,7 @@
     "@value" : "Tipo di habitat"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid13"
+    "@id" : "_:genid15"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch",
@@ -1910,6 +2088,9 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn"
+  } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy"
   } ]
@@ -1932,6 +2113,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant"
   } ]
 }, {
   "@id" : "https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn",
@@ -1961,7 +2145,7 @@
     "@value" : "Links a country or a habitat or an organization to a location it is located in"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid9"
+    "@id" : "_:genid11"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2055,5 +2239,327 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q10380751",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Terra Indígena Yanomami"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q103817",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "indigenous people"
+  }, {
+    "@language" : "it",
+    "@value" : "popolo indigeno"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q1260331",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "North Sentinel Island"
+  }, {
+    "@language" : "it",
+    "@value" : "isola di North Sentinel"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q145",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Regno Unito"
+  }, {
+    "@language" : "en",
+    "@value" : "United Kingdom"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q15",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Africa"
+  }, {
+    "@language" : "it",
+    "@value" : "Africa"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q155",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Brasile"
+  }, {
+    "@language" : "en",
+    "@value" : "Brazil"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q16494254",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q43229" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Brazil's Indigenous People Articulation"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q172365",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q103817" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "San"
+  }, {
+    "@language" : "en",
+    "@value" : "San people"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q18",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "America meridionale"
+  }, {
+    "@language" : "en",
+    "@value" : "South America"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q18812548",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "campagna"
+  }, {
+    "@language" : "en",
+    "@value" : "campaign"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q1887464",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q43229" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Survival International"
+  }, {
+    "@language" : "it",
+    "@value" : "Survival International"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q194732",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Central Kalahari Game Reserve"
+  }, {
+    "@language" : "it",
+    "@value" : "Central Kalahari Game Reserve"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q2708837",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q103817" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Matsés"
+  }, {
+    "@language" : "en",
+    "@value" : "Matsés people"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q34188",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q103817" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Yanomami"
+  }, {
+    "@language" : "it",
+    "@value" : "Yanomamö"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q38",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Italia"
+  }, {
+    "@language" : "en",
+    "@value" : "Italy"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q3850712",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q103817" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Mascho Piro"
+  }, {
+    "@language" : "en",
+    "@value" : "Mashco-Piro people"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q419",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Peru"
+  }, {
+    "@language" : "it",
+    "@value" : "Perù"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q43229",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "organization"
+  }, {
+    "@language" : "it",
+    "@value" : "organizzazione"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q46",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "Europa"
+  }, {
+    "@language" : "en",
+    "@value" : "Europe"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q48",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Asia"
+  }, {
+    "@language" : "it",
+    "@value" : "Asia"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q49",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "it",
+    "@value" : "America del Nord"
+  }, {
+    "@language" : "en",
+    "@value" : "North America"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Antarctica"
+  }, {
+    "@language" : "it",
+    "@value" : "Antartide"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q5107",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "continent"
+  }, {
+    "@language" : "it",
+    "@value" : "continente"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q82794"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q55643",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q5107" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Oceania"
+  }, {
+    "@language" : "it",
+    "@value" : "Oceania"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q6256",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "country"
+  }, {
+    "@language" : "it",
+    "@value" : "paese"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.wikidata.org/entity/Q82794"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q668",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "India"
+  }, {
+    "@language" : "it",
+    "@value" : "India"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q717",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Venezuela"
+  }, {
+    "@language" : "it",
+    "@value" : "Venezuela"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q750",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bolivia"
+  }, {
+    "@language" : "it",
+    "@value" : "Bolivia"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q82794",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "geographic region"
+  }, {
+    "@language" : "it",
+    "@value" : "regione geografica"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q917695",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q103817" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sentinelese people"
+  }, {
+    "@language" : "it",
+    "@value" : "Sentinelesi"
+  } ]
+}, {
+  "@id" : "https://www.wikidata.org/entity/Q963",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.wikidata.org/entity/Q6256" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Botswana"
+  }, {
+    "@language" : "it",
+    "@value" : "Botswana"
   } ]
 } ]

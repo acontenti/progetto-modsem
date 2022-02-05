@@ -1,6 +1,8 @@
 <https://acontenti.github.io/progetto-modsem/survival.ttl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl> <http://www.w3.org/2002/07/owl#imports> <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl> <http://www.w3.org/2002/07/owl#imports> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl> <http://purl.org/dc/elements/1.1/creator> "Alessandro Contenti" .
-<https://acontenti.github.io/progetto-modsem/survival.ttl> <http://purl.org/dc/elements/1.1/date> "2022-02-04" .
+<https://acontenti.github.io/progetto-modsem/survival.ttl> <http://purl.org/dc/elements/1.1/date> "2022-02-05" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl> <http://purl.org/dc/elements/1.1/description> "An ontology to describe the operations of the Survival International NGO"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl> <http://purl.org/dc/elements/1.1/title> "Survival International Ontology"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl> <http://purl.org/vocab/vann/preferredNamespacePrefix> "survival" .
@@ -65,6 +67,46 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # #################################################################
 # 
 # 
+# http://schema.org/location
+<http://schema.org/location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/location> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
+<http://schema.org/location> <http://www.w3.org/2000/01/rdf-schema#label> "location" .
+# 
+# http://schema.org/parentOrganization
+<http://schema.org/parentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/parentOrganization> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf> .
+<http://schema.org/parentOrganization> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.org/subOrganization> .
+<http://schema.org/parentOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "parentOrganization" .
+# 
+# http://schema.org/subOrganization
+<http://schema.org/subOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/subOrganization> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch> .
+<http://schema.org/subOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "subOrganization" .
+# 
+# http://www.wikidata.org/prop/direct/P1706
+<http://www.wikidata.org/prop/direct/P1706> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.wikidata.org/prop/direct/P1706> <http://www.w3.org/2000/01/rdf-schema#label> "insieme a"@it .
+<http://www.wikidata.org/prop/direct/P1706> <http://www.w3.org/2000/01/rdf-schema#label> "together with"@en .
+# 
+# http://www.wikidata.org/prop/direct/P355
+<http://www.wikidata.org/prop/direct/P355> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.wikidata.org/prop/direct/P355> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch> .
+<http://www.wikidata.org/prop/direct/P355> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.wikidata.org/prop/direct/P749> .
+<http://www.wikidata.org/prop/direct/P355> <http://www.w3.org/2000/01/rdf-schema#label> "filiali"@it .
+<http://www.wikidata.org/prop/direct/P355> <http://www.w3.org/2000/01/rdf-schema#label> "subsidiary"@en .
+# 
+# http://www.wikidata.org/prop/direct/P706
+<http://www.wikidata.org/prop/direct/P706> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.wikidata.org/prop/direct/P706> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
+<http://www.wikidata.org/prop/direct/P706> <http://www.w3.org/2000/01/rdf-schema#label> "located in/on physical feature"@en .
+<http://www.wikidata.org/prop/direct/P706> <http://www.w3.org/2000/01/rdf-schema#label> "luogo geografico"@it .
+# 
+# http://www.wikidata.org/prop/direct/P749
+<http://www.wikidata.org/prop/direct/P749> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.wikidata.org/prop/direct/P749> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf> .
+<http://www.wikidata.org/prop/direct/P749> <http://www.w3.org/2000/01/rdf-schema#label> "ente controllante"@it .
+<http://www.wikidata.org/prop/direct/P749> <http://www.w3.org/2000/01/rdf-schema#label> "parent organization"@en .
+# 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy
 <https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#addresses> .
@@ -96,6 +138,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.wikidata.org/prop/direct/P1706> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
@@ -110,6 +153,23 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a tribe to another tribe it shares a habitat with"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/2000/01/rdf-schema#label> "Coabita con"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith> <http://www.w3.org/2000/01/rdf-schema#label> "Cohabits with"@en .
+# 
+# https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#leads> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an organization with another organization it collaborates with in one or more campaigns"@en .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#label> "Collabora con"@it .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#label> "Collaborates with"@en .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps
 <https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -144,13 +204,13 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2000/01/rdf-schema#domain> <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2000/01/rdf-schema#range> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#addresses> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatens> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#addresses> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatens> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a campaign to a tribe it implicitly helps"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2000/01/rdf-schema#label> "Aiuta"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#helps> <http://www.w3.org/2000/01/rdf-schema#label> "Helps"@en .
@@ -166,6 +226,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#leads
 <https://acontenti.github.io/progetto-modsem/survival.ttl#leads> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#leads> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#leads> <http://www.w3.org/2002/07/owl#inverseOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#leads> <http://www.w3.org/2000/01/rdf-schema#domain> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#leads> <http://www.w3.org/2000/01/rdf-schema#range> <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> .
@@ -175,6 +236,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a campaign to an organization it is conducted by"@en .
@@ -192,18 +254,18 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn
 <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid9 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a country or a habitat or an organization to a location it is located in"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "Located in"@en .
@@ -263,18 +325,18 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType
 <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/2000/01/rdf-schema#range> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-_:genid13 <http://www.w3.org/2002/07/owl#oneOf> _:genid16 .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/2000/01/rdf-schema#range> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid15 <http://www.w3.org/2002/07/owl#oneOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "desert" .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "forest" .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "desert" .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "forest" .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "island" .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "island" .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the type of an habitat, can be either desert, forest or island. Can be used twice to define an intersection, like: forest + island = forested island"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/2000/01/rdf-schema#label> "Habitat type"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> <http://www.w3.org/2000/01/rdf-schema#label> "Tipo di habitat"@it .
@@ -304,42 +366,37 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# http://purl.org/dc/elements/1.1/Location
-<http://purl.org/dc/elements/1.1/Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/dc/elements/1.1/Location> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
-# 
-# http://schema.org/AdministrativeArea
-<http://schema.org/AdministrativeArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/AdministrativeArea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+# http://schema.org/Continent
+<http://schema.org/Continent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Continent> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<http://schema.org/Continent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/Continent> <http://www.w3.org/2000/01/rdf-schema#label> "Continent" .
 # 
 # http://schema.org/Country
 <http://schema.org/Country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/Country> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
-<http://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/AdministrativeArea> .
+<http://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country" .
 # 
 # http://schema.org/Organization
 <http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
 # 
 # http://schema.org/Place
 <http://schema.org/Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/Place> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
-# 
-# http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
-# 
-# http://xmlns.com/foaf/0.1/Organization
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<http://schema.org/Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<http://schema.org/Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place" .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization
 <https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf> .
-_:genid17 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid17 <http://www.w3.org/2002/07/owl#onClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf> .
+_:genid19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "A local office or branch of an organization. Can be an indipendent legal entity or not."@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Branch office"@en .
@@ -347,44 +404,47 @@ _:genid17 <http://www.w3.org/2002/07/owl#onClass> <https://acontenti.github.io/p
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#addresses> .
-_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#campaignPage> .
-_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/entity/Q18812548> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#addresses> .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#campaignPage> .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#anyURI> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#comment> "A generic project intended to mobilize public support and use democratic tools, such as lobbying, addressing some threats, in order to help endangered tribes"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#label> "Campagna"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> <http://www.w3.org/2000/01/rdf-schema#label> "Campaign"@en .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Continent
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid20 <http://www.w3.org/2002/07/owl#oneOf> _:genid27 .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/entity/Q5107> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid22 <http://www.w3.org/2002/07/owl#oneOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/2000/01/rdf-schema#comment> "One of the seven geographical regions that make up the global landmass"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> <http://www.w3.org/2000/01/rdf-schema#label> "Continent"@en .
@@ -392,21 +452,22 @@ _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Country
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/entity/Q6256> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
-_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
+_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2000/01/rdf-schema#comment> "A distinct territorial body or political entity"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> <http://www.w3.org/2000/01/rdf-schema#label> "Paese"@it .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Desert
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid29 .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> .
-_:genid29 <http://www.w3.org/2002/07/owl#hasValue> "desert" .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> .
+_:genid31 <http://www.w3.org/2002/07/owl#hasValue> "desert" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> <http://www.w3.org/2000/01/rdf-schema#comment> "A desert is a arid or semi-arid area of landscape"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> <http://www.w3.org/2000/01/rdf-schema#label> "Desert"@en .
@@ -414,25 +475,25 @@ _:genid29 <http://www.w3.org/2002/07/owl#hasValue> "desert" .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid30 .
-_:genid30 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid32 .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland> <http://www.w3.org/2000/01/rdf-schema#comment> "An island mostly covered by a desert area"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland> <http://www.w3.org/2000/01/rdf-schema#label> "Desert island"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland> <http://www.w3.org/2000/01/rdf-schema#label> "Isola desertica"@it .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid33 .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
-_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
+_:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Desert> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe> <http://www.w3.org/2000/01/rdf-schema#comment> "Tribe living in a desert"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe> <http://www.w3.org/2000/01/rdf-schema#label> "Desert tribe"@en .
@@ -440,10 +501,10 @@ _:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.gith
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Forest
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid34 .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> .
-_:genid34 <http://www.w3.org/2002/07/owl#hasValue> "forest" .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> .
+_:genid36 <http://www.w3.org/2002/07/owl#hasValue> "forest" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> <http://www.w3.org/2000/01/rdf-schema#comment> "A forest is an area of land dominated by trees"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> <http://www.w3.org/2000/01/rdf-schema#label> "Forest"@en .
@@ -451,10 +512,10 @@ _:genid34 <http://www.w3.org/2002/07/owl#hasValue> "forest" .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid35 .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
-_:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe> <http://www.w3.org/2000/01/rdf-schema#comment> "Tribe living in a forest"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe> <http://www.w3.org/2000/01/rdf-schema#label> "Forest tribe"@en .
@@ -462,15 +523,15 @@ _:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.gith
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid36 .
-_:genid36 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid38 .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Forest> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland> <http://www.w3.org/2000/01/rdf-schema#comment> "An island mostly covered by forests"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland> <http://www.w3.org/2000/01/rdf-schema#label> "Forested island"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland> <http://www.w3.org/2000/01/rdf-schema#label> "Isola boscosa"@it .
@@ -478,20 +539,20 @@ _:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
-_:genid39 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
+_:genid41 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/2000/01/rdf-schema#comment> "A geographical region which may span one or more countries, hosting one or more tribes"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/2000/01/rdf-schema#label> "Habitat"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> <http://www.w3.org/2000/01/rdf-schema#label> "Habitat"@it .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Island
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Island> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid40 .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> .
-_:genid40 <http://www.w3.org/2002/07/owl#hasValue> "island" .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Island> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> .
+_:genid42 <http://www.w3.org/2002/07/owl#hasValue> "island" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> <http://www.w3.org/2000/01/rdf-schema#comment> "An island is a portion of land entirely surrounded by water"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> <http://www.w3.org/2000/01/rdf-schema#label> "Island"@en .
@@ -499,10 +560,10 @@ _:genid40 <http://www.w3.org/2002/07/owl#hasValue> "island" .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe
 <https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid41 .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
-_:genid41 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
+_:genid43 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Island> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe> <http://www.w3.org/2000/01/rdf-schema#comment> "Tribe living on one or more islands"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe> <http://www.w3.org/2000/01/rdf-schema#label> "Islander tribe"@en .
@@ -510,10 +571,10 @@ _:genid41 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.gith
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign
 <https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid42 .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps> .
-_:genid42 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps> .
+_:genid44 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign> <http://www.w3.org/2000/01/rdf-schema#comment> "A campaign directly helping one or more specific tribes"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign> <http://www.w3.org/2000/01/rdf-schema#label> "Campagna locale"@it .
@@ -521,27 +582,31 @@ _:genid42 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.gith
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Location
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Location> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/entity/Q82794> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "A generic location"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Luogo"@it .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Organization
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
-_:genid43 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/entity/Q43229> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> .
+_:genid45 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization is an entity, such as a company, an institution, or an association, comprising one or more people and having a particular purpose"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organizzazione"@it .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid44 .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> .
-_:genid44 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid44 <http://www.w3.org/2002/07/owl#onClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy> .
+_:genid46 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid46 <http://www.w3.org/2002/07/owl#onClass> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign> <http://www.w3.org/2000/01/rdf-schema#comment> "A campaign led by more than one organization"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign> <http://www.w3.org/2000/01/rdf-schema#label> "Campagna condivisa"@it .
@@ -549,34 +614,73 @@ _:genid44 <http://www.w3.org/2002/07/owl#onClass> <https://acontenti.github.io/p
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Threat
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatens> .
-_:genid45 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatens> .
+_:genid47 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/2000/01/rdf-schema#comment> "A generic threat which may endanger one or more tribe or a tribe-specific threat"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/2000/01/rdf-schema#label> "Minaccia"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> <http://www.w3.org/2000/01/rdf-schema#label> "Threat"@en .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid46 .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
-_:genid46 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/entity/Q103817> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> .
+_:genid48 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2000/01/rdf-schema#comment> "Endangered tribes and indigenous peoples"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2000/01/rdf-schema#label> "Tribe"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> <http://www.w3.org/2000/01/rdf-schema#label> "Tribù"@it .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid47 .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#contacted> .
-_:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <https://acontenti.github.io/progetto-modsem/survival.ttl#contacted> .
+_:genid49 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/2000/01/rdf-schema#comment> "Tribe that has never, or nearly never, been contacted by the \"civilized\" world, if not for some forced contacts, which have almost always been rejected. Little or nothing is known about these tribes, sometimes just their name or not event that."@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/2000/01/rdf-schema#label> "Tribù incontattata"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe> <http://www.w3.org/2000/01/rdf-schema#label> "Uncontacted tribe"@en .
+# 
+# https://www.wikidata.org/entity/Q103817
+<https://www.wikidata.org/entity/Q103817> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/entity/Q103817> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<https://www.wikidata.org/entity/Q103817> <http://www.w3.org/2000/01/rdf-schema#label> "indigenous people"@en .
+<https://www.wikidata.org/entity/Q103817> <http://www.w3.org/2000/01/rdf-schema#label> "popolo indigeno"@it .
+# 
+# https://www.wikidata.org/entity/Q18812548
+<https://www.wikidata.org/entity/Q18812548> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/entity/Q18812548> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> .
+<https://www.wikidata.org/entity/Q18812548> <http://www.w3.org/2000/01/rdf-schema#label> "campagna"@it .
+<https://www.wikidata.org/entity/Q18812548> <http://www.w3.org/2000/01/rdf-schema#label> "campaign"@en .
+# 
+# https://www.wikidata.org/entity/Q43229
+<https://www.wikidata.org/entity/Q43229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/entity/Q43229> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<https://www.wikidata.org/entity/Q43229> <http://www.w3.org/2000/01/rdf-schema#label> "organization"@en .
+<https://www.wikidata.org/entity/Q43229> <http://www.w3.org/2000/01/rdf-schema#label> "organizzazione"@it .
+# 
+# https://www.wikidata.org/entity/Q5107
+<https://www.wikidata.org/entity/Q5107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/entity/Q5107> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.wikidata.org/entity/Q82794> .
+<https://www.wikidata.org/entity/Q5107> <http://www.w3.org/2000/01/rdf-schema#label> "continent"@en .
+<https://www.wikidata.org/entity/Q5107> <http://www.w3.org/2000/01/rdf-schema#label> "continente"@it .
+# 
+# https://www.wikidata.org/entity/Q6256
+<https://www.wikidata.org/entity/Q6256> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/entity/Q6256> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.wikidata.org/entity/Q82794> .
+<https://www.wikidata.org/entity/Q6256> <http://www.w3.org/2000/01/rdf-schema#label> "country"@en .
+<https://www.wikidata.org/entity/Q6256> <http://www.w3.org/2000/01/rdf-schema#label> "paese"@it .
+# 
+# https://www.wikidata.org/entity/Q82794
+<https://www.wikidata.org/entity/Q82794> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/entity/Q82794> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> .
+<https://www.wikidata.org/entity/Q82794> <http://www.w3.org/2000/01/rdf-schema#label> "geographic region"@en .
+<https://www.wikidata.org/entity/Q82794> <http://www.w3.org/2000/01/rdf-schema#label> "regione geografica"@it .
 # 
 # 
 # 
@@ -590,6 +694,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#APIB
 <https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q16494254> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> <https://acontenti.github.io/progetto-modsem/survival.ttl#email> "apib.se@apiboficial.org" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> <https://acontenti.github.io/progetto-modsem/survival.ttl#website> "https://apiboficial.org/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
@@ -600,6 +705,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Africa
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q15> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> <http://www.w3.org/2000/01/rdf-schema#comment> "The African continent"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> <http://www.w3.org/2000/01/rdf-schema#label> "Africa"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> <http://www.w3.org/2000/01/rdf-schema#label> "Africa"@it .
@@ -607,6 +713,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q51> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> <http://www.w3.org/2000/01/rdf-schema#comment> "The Antarctic continent"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctica"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica> <http://www.w3.org/2000/01/rdf-schema#label> "Antartide"@it .
@@ -614,6 +721,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Asia
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q48> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> <http://www.w3.org/2000/01/rdf-schema#comment> "The continent of Asia"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> <http://www.w3.org/2000/01/rdf-schema#label> "Asia"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> <http://www.w3.org/2000/01/rdf-schema#label> "Asia"@it .
@@ -621,6 +729,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q750> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia> <http://www.w3.org/2000/01/rdf-schema#comment> "The Plurinational State of Bolivia"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia> <http://www.w3.org/2000/01/rdf-schema#label> "Bolivia"@en .
@@ -629,6 +738,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q963> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Africa> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> <http://www.w3.org/2000/01/rdf-schema#comment> "The Republic of Botswana"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> <http://www.w3.org/2000/01/rdf-schema#label> "Botswana"@en .
@@ -637,6 +747,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q155> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> <http://www.w3.org/2000/01/rdf-schema#label> "Brasile"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> <http://www.w3.org/2000/01/rdf-schema#label> "Brazil"@en .
@@ -644,6 +755,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q172365> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#ColonialConservation> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen> <https://acontenti.github.io/progetto-modsem/survival.ttl#contacted> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -655,6 +767,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve
 <https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q194732> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> "desert" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve> <http://www.w3.org/2000/01/rdf-schema#comment> "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana"@en .
@@ -688,6 +801,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Europe
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q46> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> <http://www.w3.org/2000/01/rdf-schema#comment> "The European continent"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> <http://www.w3.org/2000/01/rdf-schema#label> "Europa"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> <http://www.w3.org/2000/01/rdf-schema#label> "Europe"@en .
@@ -716,6 +830,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#India
 <https://acontenti.github.io/progetto-modsem/survival.ttl#India> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#India> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#India> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q668> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#India> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Asia> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#India> <http://www.w3.org/2000/01/rdf-schema#comment> "The Republic of India"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#India> <http://www.w3.org/2000/01/rdf-schema#label> "India"@en .
@@ -724,6 +839,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Italy
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Italy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Italy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Italy> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q38> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Italy> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Italy> <http://www.w3.org/2000/01/rdf-schema#comment> "The Italian Republic"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Italy> <http://www.w3.org/2000/01/rdf-schema#label> "Italia"@it .
@@ -732,6 +848,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro
 <https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q3850712> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#Deforestation> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact> .
@@ -744,6 +861,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Matses
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Matses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Matses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Matses> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q2708837> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Matses> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Matses> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Matses> <https://acontenti.github.io/progetto-modsem/survival.ttl#contacted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -755,6 +873,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q49> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> <http://www.w3.org/2000/01/rdf-schema#comment> "The North American continent"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> <http://www.w3.org/2000/01/rdf-schema#label> "Nord America"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> <http://www.w3.org/2000/01/rdf-schema#label> "North America"@en .
@@ -762,6 +881,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q1260331> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#India> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> "forest" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> "island" .
@@ -772,6 +892,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q55643> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> <http://www.w3.org/2000/01/rdf-schema#comment> "The continent of Oceania"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> <http://www.w3.org/2000/01/rdf-schema#label> "Oceania"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania> <http://www.w3.org/2000/01/rdf-schema#label> "Oceania"@it .
@@ -779,6 +900,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Peru
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Peru> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Peru> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Peru> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q419> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Peru> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Peru> <http://www.w3.org/2000/01/rdf-schema#comment> "The Republic of Peru"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Peru> <http://www.w3.org/2000/01/rdf-schema#label> "Peru"@en .
@@ -787,6 +909,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q917695> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalFishing> .
@@ -799,6 +922,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q18> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> <http://www.w3.org/2000/01/rdf-schema#comment> "The South American continent"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> <http://www.w3.org/2000/01/rdf-schema#label> "South America"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica> <http://www.w3.org/2000/01/rdf-schema#label> "Sud America"@it .
@@ -828,6 +952,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q1887464> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> <https://acontenti.github.io/progetto-modsem/survival.ttl#email> "info@survivalinternational.org" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> <https://acontenti.github.io/progetto-modsem/survival.ttl#website> "https://www.survivalinternational.org"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
@@ -846,32 +971,14 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia> <http://www.w3.org/2000/01/rdf-schema#label> "Survival International Italia"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia> <http://www.w3.org/2000/01/rdf-schema#label> "Survival International Italy"@en .
 # 
-# https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf> <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#USA> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <https://acontenti.github.io/progetto-modsem/survival.ttl#email> "info.usa@survivalinternational.org" .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <https://acontenti.github.io/progetto-modsem/survival.ttl#website> "https://www.survivalinternational.org"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <http://www.w3.org/2000/01/rdf-schema#comment> "US office of Survival International"@en .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <http://www.w3.org/2000/01/rdf-schema#label> "Survival International USA"@en .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> <http://www.w3.org/2000/01/rdf-schema#label> "Survival International USA"@it .
-# 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#UK
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q145> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Europe> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <http://www.w3.org/2000/01/rdf-schema#comment> "The United Kingdom of Great Britain and Northern Ireland"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <http://www.w3.org/2000/01/rdf-schema#label> "Regno Unito"@it .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> <http://www.w3.org/2000/01/rdf-schema#label> "United Kingdom"@en .
-# 
-# https://acontenti.github.io/progetto-modsem/survival.ttl#USA
-<https://acontenti.github.io/progetto-modsem/survival.ttl#USA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#USA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#USA> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica> .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#USA> <http://www.w3.org/2000/01/rdf-schema#comment> "The United States of America"@en .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#USA> <http://www.w3.org/2000/01/rdf-schema#label> "Stati Uniti d'America"@it .
-<https://acontenti.github.io/progetto-modsem/survival.ttl#USA> <http://www.w3.org/2000/01/rdf-schema#label> "United States of America"@en .
 # 
 # https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier
 <https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -897,6 +1004,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q717> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> <http://www.w3.org/2000/01/rdf-schema#comment> "The Bolivarian Republic of Venezuela"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> <http://www.w3.org/2000/01/rdf-schema#label> "Venezuela"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> <http://www.w3.org/2000/01/rdf-schema#label> "Venezuela"@it .
@@ -904,6 +1012,7 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q34188> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami> <https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#Deforestation> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami> <https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy> <https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalMining> .
@@ -916,12 +1025,158 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+<https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <http://www.w3.org/2002/07/owl#sameAs> <https://www.wikidata.org/entity/Q10380751> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn> <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType> "forest" .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <http://www.w3.org/2000/01/rdf-schema#comment> "The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission."@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <http://www.w3.org/2000/01/rdf-schema#label> "Yanomami Park"@en .
 <https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark> <http://www.w3.org/2000/01/rdf-schema#label> "Yanomami Park"@it .
+# 
+# https://www.wikidata.org/entity/Q10380751
+<https://www.wikidata.org/entity/Q10380751> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q10380751> <http://www.w3.org/2000/01/rdf-schema#label> "Terra Indígena Yanomami"@en .
+# 
+# https://www.wikidata.org/entity/Q1260331
+<https://www.wikidata.org/entity/Q1260331> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q1260331> <http://www.w3.org/2000/01/rdf-schema#label> "North Sentinel Island"@en .
+<https://www.wikidata.org/entity/Q1260331> <http://www.w3.org/2000/01/rdf-schema#label> "isola di North Sentinel"@it .
+# 
+# https://www.wikidata.org/entity/Q145
+<https://www.wikidata.org/entity/Q145> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q145> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q145> <http://www.w3.org/2000/01/rdf-schema#label> "Regno Unito"@it .
+<https://www.wikidata.org/entity/Q145> <http://www.w3.org/2000/01/rdf-schema#label> "United Kingdom"@en .
+# 
+# https://www.wikidata.org/entity/Q15
+<https://www.wikidata.org/entity/Q15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q15> <http://www.w3.org/2000/01/rdf-schema#label> "Africa"@en .
+<https://www.wikidata.org/entity/Q15> <http://www.w3.org/2000/01/rdf-schema#label> "Africa"@it .
+# 
+# https://www.wikidata.org/entity/Q155
+<https://www.wikidata.org/entity/Q155> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q155> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q155> <http://www.w3.org/2000/01/rdf-schema#label> "Brasile"@it .
+<https://www.wikidata.org/entity/Q155> <http://www.w3.org/2000/01/rdf-schema#label> "Brazil"@en .
+# 
+# https://www.wikidata.org/entity/Q16494254
+<https://www.wikidata.org/entity/Q16494254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q16494254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q43229> .
+<https://www.wikidata.org/entity/Q16494254> <http://www.w3.org/2000/01/rdf-schema#label> "Brazil's Indigenous People Articulation"@en .
+# 
+# https://www.wikidata.org/entity/Q172365
+<https://www.wikidata.org/entity/Q172365> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q172365> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q103817> .
+<https://www.wikidata.org/entity/Q172365> <http://www.w3.org/2000/01/rdf-schema#label> "San"@it .
+<https://www.wikidata.org/entity/Q172365> <http://www.w3.org/2000/01/rdf-schema#label> "San people"@en .
+# 
+# https://www.wikidata.org/entity/Q18
+<https://www.wikidata.org/entity/Q18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q18> <http://www.w3.org/2000/01/rdf-schema#label> "America meridionale"@it .
+<https://www.wikidata.org/entity/Q18> <http://www.w3.org/2000/01/rdf-schema#label> "South America"@en .
+# 
+# https://www.wikidata.org/entity/Q1887464
+<https://www.wikidata.org/entity/Q1887464> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q1887464> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q43229> .
+<https://www.wikidata.org/entity/Q1887464> <http://www.w3.org/2000/01/rdf-schema#label> "Survival International"@en .
+<https://www.wikidata.org/entity/Q1887464> <http://www.w3.org/2000/01/rdf-schema#label> "Survival International"@it .
+# 
+# https://www.wikidata.org/entity/Q194732
+<https://www.wikidata.org/entity/Q194732> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q194732> <http://www.w3.org/2000/01/rdf-schema#label> "Central Kalahari Game Reserve"@en .
+<https://www.wikidata.org/entity/Q194732> <http://www.w3.org/2000/01/rdf-schema#label> "Central Kalahari Game Reserve"@it .
+# 
+# https://www.wikidata.org/entity/Q2708837
+<https://www.wikidata.org/entity/Q2708837> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q2708837> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q103817> .
+<https://www.wikidata.org/entity/Q2708837> <http://www.w3.org/2000/01/rdf-schema#label> "Matsés"@it .
+<https://www.wikidata.org/entity/Q2708837> <http://www.w3.org/2000/01/rdf-schema#label> "Matsés people"@en .
+# 
+# https://www.wikidata.org/entity/Q34188
+<https://www.wikidata.org/entity/Q34188> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q34188> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q103817> .
+<https://www.wikidata.org/entity/Q34188> <http://www.w3.org/2000/01/rdf-schema#label> "Yanomami"@en .
+<https://www.wikidata.org/entity/Q34188> <http://www.w3.org/2000/01/rdf-schema#label> "Yanomamö"@it .
+# 
+# https://www.wikidata.org/entity/Q38
+<https://www.wikidata.org/entity/Q38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q38> <http://www.w3.org/2000/01/rdf-schema#label> "Italia"@it .
+<https://www.wikidata.org/entity/Q38> <http://www.w3.org/2000/01/rdf-schema#label> "Italy"@en .
+# 
+# https://www.wikidata.org/entity/Q3850712
+<https://www.wikidata.org/entity/Q3850712> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q3850712> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q103817> .
+<https://www.wikidata.org/entity/Q3850712> <http://www.w3.org/2000/01/rdf-schema#label> "Mascho Piro"@it .
+<https://www.wikidata.org/entity/Q3850712> <http://www.w3.org/2000/01/rdf-schema#label> "Mashco-Piro people"@en .
+# 
+# https://www.wikidata.org/entity/Q419
+<https://www.wikidata.org/entity/Q419> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q419> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q419> <http://www.w3.org/2000/01/rdf-schema#label> "Peru"@en .
+<https://www.wikidata.org/entity/Q419> <http://www.w3.org/2000/01/rdf-schema#label> "Perù"@it .
+# 
+# https://www.wikidata.org/entity/Q46
+<https://www.wikidata.org/entity/Q46> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q46> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q46> <http://www.w3.org/2000/01/rdf-schema#label> "Europa"@it .
+<https://www.wikidata.org/entity/Q46> <http://www.w3.org/2000/01/rdf-schema#label> "Europe"@en .
+# 
+# https://www.wikidata.org/entity/Q48
+<https://www.wikidata.org/entity/Q48> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q48> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q48> <http://www.w3.org/2000/01/rdf-schema#label> "Asia"@en .
+<https://www.wikidata.org/entity/Q48> <http://www.w3.org/2000/01/rdf-schema#label> "Asia"@it .
+# 
+# https://www.wikidata.org/entity/Q49
+<https://www.wikidata.org/entity/Q49> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q49> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q49> <http://www.w3.org/2000/01/rdf-schema#label> "America del Nord"@it .
+<https://www.wikidata.org/entity/Q49> <http://www.w3.org/2000/01/rdf-schema#label> "North America"@en .
+# 
+# https://www.wikidata.org/entity/Q51
+<https://www.wikidata.org/entity/Q51> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q51> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q51> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctica"@en .
+<https://www.wikidata.org/entity/Q51> <http://www.w3.org/2000/01/rdf-schema#label> "Antartide"@it .
+# 
+# https://www.wikidata.org/entity/Q55643
+<https://www.wikidata.org/entity/Q55643> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q55643> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q5107> .
+<https://www.wikidata.org/entity/Q55643> <http://www.w3.org/2000/01/rdf-schema#label> "Oceania"@en .
+<https://www.wikidata.org/entity/Q55643> <http://www.w3.org/2000/01/rdf-schema#label> "Oceania"@it .
+# 
+# https://www.wikidata.org/entity/Q668
+<https://www.wikidata.org/entity/Q668> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q668> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q668> <http://www.w3.org/2000/01/rdf-schema#label> "India"@en .
+<https://www.wikidata.org/entity/Q668> <http://www.w3.org/2000/01/rdf-schema#label> "India"@it .
+# 
+# https://www.wikidata.org/entity/Q717
+<https://www.wikidata.org/entity/Q717> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q717> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q717> <http://www.w3.org/2000/01/rdf-schema#label> "Venezuela"@en .
+<https://www.wikidata.org/entity/Q717> <http://www.w3.org/2000/01/rdf-schema#label> "Venezuela"@it .
+# 
+# https://www.wikidata.org/entity/Q750
+<https://www.wikidata.org/entity/Q750> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q750> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q750> <http://www.w3.org/2000/01/rdf-schema#label> "Bolivia"@en .
+<https://www.wikidata.org/entity/Q750> <http://www.w3.org/2000/01/rdf-schema#label> "Bolivia"@it .
+# 
+# https://www.wikidata.org/entity/Q917695
+<https://www.wikidata.org/entity/Q917695> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q917695> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q103817> .
+<https://www.wikidata.org/entity/Q917695> <http://www.w3.org/2000/01/rdf-schema#label> "Sentinelese people"@en .
+<https://www.wikidata.org/entity/Q917695> <http://www.w3.org/2000/01/rdf-schema#label> "Sentinelesi"@it .
+# 
+# https://www.wikidata.org/entity/Q963
+<https://www.wikidata.org/entity/Q963> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://www.wikidata.org/entity/Q963> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.wikidata.org/entity/Q6256> .
+<https://www.wikidata.org/entity/Q963> <http://www.w3.org/2000/01/rdf-schema#label> "Botswana"@en .
+<https://www.wikidata.org/entity/Q963> <http://www.w3.org/2000/01/rdf-schema#label> "Botswana"@it .
 # 
 # 
 # 
@@ -932,38 +1187,35 @@ _:genid47 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2
 # #################################################################
 # 
 # 
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid48 <http://www.w3.org/2002/07/owl#members> _:genid53 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid50 <http://www.w3.org/2002/07/owl#members> _:genid53 .
 _:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
 _:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid52 .
 _:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
 _:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid51 .
 _:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 _:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid54 <http://www.w3.org/2002/07/owl#members> _:genid57 .
+_:genid54 <http://www.w3.org/2002/07/owl#members> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Location> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid57 .
 _:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Continent> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Organization> .
 _:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
 _:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Country> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Threat> .
 _:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
 _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe> .
 _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
-_:genid58 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid63 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid59 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid63 .
 _:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#APIB> .
 _:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid62 .
@@ -975,10 +1227,7 @@ _:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.
 _:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid60 .
 _:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid59 .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 _:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
 _:genid64 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid71 .
@@ -1028,7 +1277,7 @@ _:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 _:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#UK> .
 _:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid73 .
 _:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#USA> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela> .
 _:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 _:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .

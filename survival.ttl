@@ -17,9 +17,10 @@
 @base <https://acontenti.github.io/progetto-modsem/survival.ttl> .
 
 <https://acontenti.github.io/progetto-modsem/survival.ttl> rdf:type owl:Ontology ;
-                                                            owl:imports <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl> ;
+                                                            owl:imports <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl> ,
+                                                                        <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
                                                             dc:creator "Alessandro Contenti" ;
-                                                            dc:date "2022-02-04" ;
+                                                            dc:date "2022-02-05" ;
                                                             dc:description "An ontology to describe the operations of the Survival International NGO"@en ;
                                                             dc:title "Survival International Ontology"@en ;
                                                             vann:preferredNamespacePrefix "survival" ;
@@ -377,22 +378,30 @@ survival:website rdf:type owl:DatatypeProperty ;
 
 ###  http://schema.org/Continent
 schema:Continent rdf:type owl:Class ;
-                 owl:equivalentClass survival:Continent .
+                 owl:equivalentClass survival:Continent ;
+                 rdfs:subClassOf schema:Place ;
+                 rdfs:label "Continent" .
 
 
 ###  http://schema.org/Country
 schema:Country rdf:type owl:Class ;
-               owl:equivalentClass survival:Country .
+               owl:equivalentClass survival:Country ;
+               rdfs:subClassOf schema:Place ;
+               rdfs:label "Country" .
 
 
 ###  http://schema.org/Organization
 schema:Organization rdf:type owl:Class ;
-                    owl:equivalentClass survival:Organization .
+                    owl:equivalentClass survival:Organization ;
+                    rdfs:subClassOf participation:Object ;
+                    rdfs:label "Organization" .
 
 
 ###  http://schema.org/Place
 schema:Place rdf:type owl:Class ;
-             owl:equivalentClass survival:Location .
+             owl:equivalentClass survival:Location ;
+             rdfs:subClassOf participation:Object ;
+             rdfs:label "Place" .
 
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization
@@ -427,8 +436,7 @@ survival:Campaign rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Continent
 survival:Continent rdf:type owl:Class ;
-                   owl:equivalentClass wd:Q5107 ,
-                                       [ rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
                                          owl:oneOf ( survival:Africa
                                                      survival:Antarctica
                                                      survival:Asia
@@ -446,7 +454,6 @@ survival:Continent rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Country
 survival:Country rdf:type owl:Class ;
-                 owl:equivalentClass wd:Q6256 ;
                  rdfs:subClassOf survival:Location ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty survival:locatedIn ;
@@ -588,7 +595,6 @@ survival:Location rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Organization
 survival:Organization rdf:type owl:Class ;
-                      owl:equivalentClass wd:Q43229 ;
                       rdfs:subClassOf participation:Object ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty survival:locatedIn ;
@@ -626,7 +632,6 @@ survival:Threat rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe
 survival:Tribe rdf:type owl:Class ;
-               owl:equivalentClass wd:Q103817 ;
                rdfs:subClassOf participation:Object ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty survival:livesIn ;
@@ -651,36 +656,48 @@ survival:UncontactedTribe rdf:type owl:Class ;
 
 ###  https://www.wikidata.org/entity/Q103817
 wd:Q103817 rdf:type owl:Class ;
+           owl:equivalentClass :Tribe  ;
+           rdfs:subClassOf participation:Object ;
            rdfs:label "indigenous people"@en ,
                       "popolo indigeno"@it .
 
 
 ###  https://www.wikidata.org/entity/Q18812548
 wd:Q18812548 rdf:type owl:Class ;
+             owl:equivalentClass :Campaign  ;
+             rdfs:subClassOf participation:Event ;
              rdfs:label "campagna"@it ,
                         "campaign"@en .
 
 
 ###  https://www.wikidata.org/entity/Q43229
 wd:Q43229 rdf:type owl:Class ;
+          owl:equivalentClass :Organization  ;
+          rdfs:subClassOf participation:Object ;
           rdfs:label "organization"@en ,
                      "organizzazione"@it .
 
 
 ###  https://www.wikidata.org/entity/Q5107
 wd:Q5107 rdf:type owl:Class ;
+         owl:equivalentClass :Continent  ;
+         rdfs:subClassOf wd:Q82794 ;
          rdfs:label "continent"@en ,
                     "continente"@it .
 
 
 ###  https://www.wikidata.org/entity/Q6256
 wd:Q6256 rdf:type owl:Class ;
+         owl:equivalentClass :Country  ;
+         rdfs:subClassOf wd:Q82794 ;
          rdfs:label "country"@en ,
                     "paese"@it .
 
 
 ###  https://www.wikidata.org/entity/Q82794
 wd:Q82794 rdf:type owl:Class ;
+          owl:equivalentClass :Location  ;
+          rdfs:subClassOf participation:Object ;
           rdfs:label "geographic region"@en ,
                      "regione geografica"@it .
 

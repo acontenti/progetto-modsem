@@ -8,10 +8,13 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:survival="https://acontenti.github.io/progetto-modsem/survival.ttl#">
+     xmlns:survival="https://acontenti.github.io/progetto-modsem/survival.ttl#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
     <owl:Ontology rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl"/>
         <dc:creator>Alessandro Contenti</dc:creator>
-        <dc:date>2022-02-04</dc:date>
+        <dc:date>2022-02-05</dc:date>
         <dc:description xml:lang="en">An ontology to describe the operations of the Survival International NGO</dc:description>
         <dc:title xml:lang="en">Survival International Ontology</dc:title>
         <vann:preferredNamespacePrefix>survival</vann:preferredNamespacePrefix>
@@ -120,6 +123,81 @@
     
 
 
+    <!-- http://schema.org/location -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/location">
+        <owl:equivalentProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"/>
+        <rdfs:label>location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/parentOrganization -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/parentOrganization">
+        <owl:equivalentProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf"/>
+        <owl:inverseOf rdf:resource="http://schema.org/subOrganization"/>
+        <rdfs:label>parentOrganization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/subOrganization -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/subOrganization">
+        <owl:equivalentProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch"/>
+        <rdfs:label>subOrganization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P1706 -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P1706">
+        <rdfs:label xml:lang="it">insieme a</rdfs:label>
+        <rdfs:label xml:lang="en">together with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P355 -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P355">
+        <owl:equivalentProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch"/>
+        <owl:inverseOf rdf:resource="http://www.wikidata.org/prop/direct/P749"/>
+        <rdfs:label xml:lang="it">filiali</rdfs:label>
+        <rdfs:label xml:lang="en">subsidiary</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P706 -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P706">
+        <owl:equivalentProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"/>
+        <rdfs:label xml:lang="en">located in/on physical feature</rdfs:label>
+        <rdfs:label xml:lang="it">luogo geografico</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P749 -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P749">
+        <owl:equivalentProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf"/>
+        <rdfs:label xml:lang="it">ente controllante</rdfs:label>
+        <rdfs:label xml:lang="en">parent organization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy -->
 
 
@@ -168,6 +246,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.wikidata.org/prop/direct/P1706"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
         <rdfs:range rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
@@ -180,6 +259,25 @@
         <rdfs:comment xml:lang="en">Links a tribe to another tribe it shares a habitat with</rdfs:comment>
         <rdfs:label xml:lang="it">Coabita con</rdfs:label>
         <rdfs:label xml:lang="en">Cohabits with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+        <rdfs:range rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#leads"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Links an organization with another organization it collaborates with in one or more campaigns</rdfs:comment>
+        <rdfs:label xml:lang="it">Collabora con</rdfs:label>
+        <rdfs:label xml:lang="en">Collaborates with</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -263,6 +361,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#leads">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn"/>
         <owl:inverseOf rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy"/>
         <rdfs:domain rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
         <rdfs:range rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"/>
@@ -277,6 +376,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant"/>
         <rdfs:domain rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"/>
         <rdfs:range rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
         <rdfs:comment xml:lang="en">Links a campaign to an organization it is conducted by</rdfs:comment>
@@ -473,20 +573,13 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/Location -->
+    <!-- http://schema.org/Continent -->
 
 
-    <owl:Class rdf:about="http://purl.org/dc/elements/1.1/Location">
-        <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Location"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.org/AdministrativeArea -->
-
-
-    <owl:Class rdf:about="http://schema.org/AdministrativeArea">
+    <owl:Class rdf:about="http://schema.org/Continent">
+        <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
         <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label>Continent</rdfs:label>
     </owl:Class>
     
 
@@ -496,7 +589,8 @@
 
     <owl:Class rdf:about="http://schema.org/Country">
         <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
-        <rdfs:subClassOf rdf:resource="http://schema.org/AdministrativeArea"/>
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label>Country</rdfs:label>
     </owl:Class>
     
 
@@ -506,6 +600,8 @@
 
     <owl:Class rdf:about="http://schema.org/Organization">
         <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
+        <rdfs:label>Organization</rdfs:label>
     </owl:Class>
     
 
@@ -515,24 +611,8 @@
 
     <owl:Class rdf:about="http://schema.org/Place">
         <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Location"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization -->
-
-
-    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization">
-        <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
-    </owl:Class>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/Organization -->
-
-
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
-        <owl:equivalentClass rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
+        <rdfs:label>Place</rdfs:label>
     </owl:Class>
     
 
@@ -560,6 +640,8 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q18812548"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#addresses"/>
@@ -583,6 +665,7 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q5107"/>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
@@ -608,6 +691,7 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Country">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q6256"/>
         <rdfs:subClassOf rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Location"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -808,6 +892,8 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Location">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q82794"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
         <rdfs:comment xml:lang="en">A generic location</rdfs:comment>
         <rdfs:label xml:lang="en">Location</rdfs:label>
         <rdfs:label xml:lang="it">Luogo</rdfs:label>
@@ -819,6 +905,8 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q43229"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn"/>
@@ -855,6 +943,7 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Threat">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#threatens"/>
@@ -872,6 +961,8 @@
 
 
     <owl:Class rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q103817"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn"/>
@@ -903,6 +994,72 @@
     
 
 
+    <!-- https://www.wikidata.org/entity/Q103817 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/entity/Q103817">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
+        <rdfs:label xml:lang="en">indigenous people</rdfs:label>
+        <rdfs:label xml:lang="it">popolo indigeno</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q18812548 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/entity/Q18812548">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
+        <rdfs:label xml:lang="it">campagna</rdfs:label>
+        <rdfs:label xml:lang="en">campaign</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q43229 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/entity/Q43229">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
+        <rdfs:label xml:lang="en">organization</rdfs:label>
+        <rdfs:label xml:lang="it">organizzazione</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q5107 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/entity/Q5107">
+        <rdfs:subClassOf rdf:resource="https://www.wikidata.org/entity/Q82794"/>
+        <rdfs:label xml:lang="en">continent</rdfs:label>
+        <rdfs:label xml:lang="it">continente</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q6256 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/entity/Q6256">
+        <rdfs:subClassOf rdf:resource="https://www.wikidata.org/entity/Q82794"/>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+        <rdfs:label xml:lang="it">paese</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q82794 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/entity/Q82794">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object"/>
+        <rdfs:label xml:lang="en">geographic region</rdfs:label>
+        <rdfs:label xml:lang="it">regione geografica</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -920,6 +1077,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#APIB">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q16494254"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil"/>
         <email>apib.se@apiboficial.org</email>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://apiboficial.org/</website>
@@ -935,6 +1093,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Africa">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q15"/>
         <rdfs:comment xml:lang="en">The African continent</rdfs:comment>
         <rdfs:label xml:lang="en">Africa</rdfs:label>
         <rdfs:label xml:lang="it">Africa</rdfs:label>
@@ -947,6 +1106,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q51"/>
         <rdfs:comment xml:lang="en">The Antarctic continent</rdfs:comment>
         <rdfs:label xml:lang="en">Antarctica</rdfs:label>
         <rdfs:label xml:lang="it">Antartide</rdfs:label>
@@ -959,6 +1119,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Asia">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q48"/>
         <rdfs:comment xml:lang="en">The continent of Asia</rdfs:comment>
         <rdfs:label xml:lang="en">Asia</rdfs:label>
         <rdfs:label xml:lang="it">Asia</rdfs:label>
@@ -971,6 +1132,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q750"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica"/>
         <rdfs:comment xml:lang="en">The Plurinational State of Bolivia</rdfs:comment>
         <rdfs:label xml:lang="en">Bolivia</rdfs:label>
@@ -984,6 +1146,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q963"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Africa"/>
         <rdfs:comment xml:lang="en">The Republic of Botswana</rdfs:comment>
         <rdfs:label xml:lang="en">Botswana</rdfs:label>
@@ -997,6 +1160,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q155"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica"/>
         <rdfs:label xml:lang="it">Brasile</rdfs:label>
         <rdfs:label xml:lang="en">Brazil</rdfs:label>
@@ -1009,6 +1173,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q172365"/>
         <livesIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#ColonialConservation"/>
         <contacted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</contacted>
@@ -1025,6 +1190,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q194732"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana"/>
         <habitatType>desert</habitatType>
         <rdfs:comment xml:lang="en">Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana</rdfs:comment>
@@ -1078,6 +1244,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Europe">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q46"/>
         <rdfs:comment xml:lang="en">The European continent</rdfs:comment>
         <rdfs:label xml:lang="it">Europa</rdfs:label>
         <rdfs:label xml:lang="en">Europe</rdfs:label>
@@ -1126,6 +1293,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#India">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q668"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Asia"/>
         <rdfs:comment xml:lang="en">The Republic of India</rdfs:comment>
         <rdfs:label xml:lang="en">India</rdfs:label>
@@ -1139,6 +1307,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Italy">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q38"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Europe"/>
         <rdfs:comment xml:lang="en">The Italian Republic</rdfs:comment>
         <rdfs:label xml:lang="it">Italia</rdfs:label>
@@ -1152,6 +1321,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q3850712"/>
         <livesIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Deforestation"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact"/>
@@ -1169,6 +1339,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Matses">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q2708837"/>
         <livesIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact"/>
         <contacted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</contacted>
@@ -1185,6 +1356,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q49"/>
         <rdfs:comment xml:lang="en">The North American continent</rdfs:comment>
         <rdfs:label xml:lang="it">Nord America</rdfs:label>
         <rdfs:label xml:lang="en">North America</rdfs:label>
@@ -1197,6 +1369,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q1260331"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#India"/>
         <habitatType>forest</habitatType>
         <habitatType>island</habitatType>
@@ -1212,6 +1385,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q55643"/>
         <rdfs:comment xml:lang="en">The continent of Oceania</rdfs:comment>
         <rdfs:label xml:lang="en">Oceania</rdfs:label>
         <rdfs:label xml:lang="it">Oceania</rdfs:label>
@@ -1224,6 +1398,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Peru">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q419"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica"/>
         <rdfs:comment xml:lang="en">The Republic of Peru</rdfs:comment>
         <rdfs:label xml:lang="en">Peru</rdfs:label>
@@ -1237,6 +1412,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q917695"/>
         <livesIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalFishing"/>
@@ -1254,6 +1430,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q18"/>
         <rdfs:comment xml:lang="en">The South American continent</rdfs:comment>
         <rdfs:label xml:lang="en">South America</rdfs:label>
         <rdfs:label xml:lang="it">Sud America</rdfs:label>
@@ -1298,6 +1475,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q1887464"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#UK"/>
         <email>info@survivalinternational.org</email>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.survivalinternational.org</website>
@@ -1324,44 +1502,16 @@
     
 
 
-    <!-- https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA -->
-
-
-    <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA">
-        <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
-        <branchOf rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational"/>
-        <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#USA"/>
-        <email>info.usa@survivalinternational.org</email>
-        <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.survivalinternational.org</website>
-        <rdfs:comment xml:lang="en">US office of Survival International</rdfs:comment>
-        <rdfs:label xml:lang="en">Survival International USA</rdfs:label>
-        <rdfs:label xml:lang="it">Survival International USA</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://acontenti.github.io/progetto-modsem/survival.ttl#UK -->
 
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#UK">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q145"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Europe"/>
         <rdfs:comment xml:lang="en">The United Kingdom of Great Britain and Northern Ireland</rdfs:comment>
         <rdfs:label xml:lang="it">Regno Unito</rdfs:label>
         <rdfs:label xml:lang="en">United Kingdom</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://acontenti.github.io/progetto-modsem/survival.ttl#USA -->
-
-
-    <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#USA">
-        <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
-        <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica"/>
-        <rdfs:comment xml:lang="en">The United States of America</rdfs:comment>
-        <rdfs:label xml:lang="it">Stati Uniti d&apos;America</rdfs:label>
-        <rdfs:label xml:lang="en">United States of America</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1402,6 +1552,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q717"/>
         <rdfs:comment xml:lang="en">The Bolivarian Republic of Venezuela</rdfs:comment>
         <rdfs:label xml:lang="en">Venezuela</rdfs:label>
         <rdfs:label xml:lang="it">Venezuela</rdfs:label>
@@ -1414,6 +1565,7 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q34188"/>
         <livesIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Deforestation"/>
         <threatenedBy rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalMining"/>
@@ -1431,12 +1583,283 @@
 
     <owl:NamedIndividual rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark">
         <rdf:type rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"/>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/entity/Q10380751"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil"/>
         <locatedIn rdf:resource="https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela"/>
         <habitatType>forest</habitatType>
         <rdfs:comment xml:lang="en">The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission.</rdfs:comment>
         <rdfs:label xml:lang="en">Yanomami Park</rdfs:label>
         <rdfs:label xml:lang="it">Yanomami Park</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q10380751 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q10380751">
+        <rdfs:label xml:lang="en">Terra Indígena Yanomami</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q1260331 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q1260331">
+        <rdfs:label xml:lang="en">North Sentinel Island</rdfs:label>
+        <rdfs:label xml:lang="it">isola di North Sentinel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q145 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q145">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="it">Regno Unito</rdfs:label>
+        <rdfs:label xml:lang="en">United Kingdom</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q15 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q15">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="en">Africa</rdfs:label>
+        <rdfs:label xml:lang="it">Africa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q155 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q155">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="it">Brasile</rdfs:label>
+        <rdfs:label xml:lang="en">Brazil</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q16494254 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q16494254">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q43229"/>
+        <rdfs:label xml:lang="en">Brazil&apos;s Indigenous People Articulation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q172365 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q172365">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q103817"/>
+        <rdfs:label xml:lang="it">San</rdfs:label>
+        <rdfs:label xml:lang="en">San people</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q18 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q18">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="it">America meridionale</rdfs:label>
+        <rdfs:label xml:lang="en">South America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q1887464 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q1887464">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q43229"/>
+        <rdfs:label xml:lang="en">Survival International</rdfs:label>
+        <rdfs:label xml:lang="it">Survival International</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q194732 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q194732">
+        <rdfs:label xml:lang="en">Central Kalahari Game Reserve</rdfs:label>
+        <rdfs:label xml:lang="it">Central Kalahari Game Reserve</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q2708837 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q2708837">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q103817"/>
+        <rdfs:label xml:lang="it">Matsés</rdfs:label>
+        <rdfs:label xml:lang="en">Matsés people</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q34188 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q34188">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q103817"/>
+        <rdfs:label xml:lang="en">Yanomami</rdfs:label>
+        <rdfs:label xml:lang="it">Yanomamö</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q38 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q38">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="it">Italia</rdfs:label>
+        <rdfs:label xml:lang="en">Italy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q3850712 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q3850712">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q103817"/>
+        <rdfs:label xml:lang="it">Mascho Piro</rdfs:label>
+        <rdfs:label xml:lang="en">Mashco-Piro people</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q419 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q419">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="en">Peru</rdfs:label>
+        <rdfs:label xml:lang="it">Perù</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q46 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q46">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="it">Europa</rdfs:label>
+        <rdfs:label xml:lang="en">Europe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q48 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q48">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="en">Asia</rdfs:label>
+        <rdfs:label xml:lang="it">Asia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q49 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q49">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="it">America del Nord</rdfs:label>
+        <rdfs:label xml:lang="en">North America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q51 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q51">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="en">Antarctica</rdfs:label>
+        <rdfs:label xml:lang="it">Antartide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q55643 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q55643">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q5107"/>
+        <rdfs:label xml:lang="en">Oceania</rdfs:label>
+        <rdfs:label xml:lang="it">Oceania</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q668 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q668">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="en">India</rdfs:label>
+        <rdfs:label xml:lang="it">India</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q717 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q717">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="en">Venezuela</rdfs:label>
+        <rdfs:label xml:lang="it">Venezuela</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q750 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q750">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="en">Bolivia</rdfs:label>
+        <rdfs:label xml:lang="it">Bolivia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q917695 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q917695">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q103817"/>
+        <rdfs:label xml:lang="en">Sentinelese people</rdfs:label>
+        <rdfs:label xml:lang="it">Sentinelesi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/entity/Q963 -->
+
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/entity/Q963">
+        <rdf:type rdf:resource="https://www.wikidata.org/entity/Q6256"/>
+        <rdfs:label xml:lang="en">Botswana</rdfs:label>
+        <rdfs:label xml:lang="it">Botswana</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1453,19 +1876,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Location"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Threat"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Continent"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Country"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Location"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Organization"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Threat"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1475,7 +1897,6 @@
             <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalBrasil"/>
             <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational"/>
             <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
@@ -1500,7 +1921,7 @@
             <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Italy"/>
             <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Peru"/>
             <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#UK"/>
-            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#USA"/>
+            <rdf:Description rdf:about="https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>

@@ -1,0 +1,2081 @@
+@prefix : <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://acontenti.github.io/progetto-modsem/survival.ttl> .
+
+<https://acontenti.github.io/progetto-modsem/survival.ttl> rdf:type owl:Ontology ;
+                                                            <http://purl.org/dc/elements/1.1/creator> "Alessandro Contenti" ;
+                                                            <http://purl.org/dc/elements/1.1/date> "2022-02-05" ;
+                                                            <http://purl.org/dc/elements/1.1/description> "An ontology to describe the operations of the Survival International NGO"@en ;
+                                                            <http://purl.org/dc/elements/1.1/title> "Survival International Ontology"@en ;
+                                                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "survival" ;
+                                                            <http://purl.org/vocab/vann/preferredNamespaceUri> "https://acontenti.github.io/progetto-modsem/survival.ttl#" ;
+                                                            <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements> "Which objects do participate in this event? Which events do this object participate in?"^^xsd:string ;
+                                                            <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> "http://ontologydesignpatterns.org/ont/dul/DUL.owl" ;
+                                                            <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences> """It is possible to model whatever relation between objects and events. Using cardinality restrictions appropriately allows to limit the number of participants, e.g. 'life of' is a specialization of this pattern that requires a functional object property (cardinality 1. . .1).
+This is a non-temporal version of the particpation relation. If we need a time-indexed relation, use http://ontologydesignpatterns.owl/cp/owl/timeindexedparticipation.owl"""^^xsd:string ;
+                                                            <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent> "To represent participation of an object in an event."^^xsd:string ;
+                                                            <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs> """Co-participation allows to model the relation between two objects that 
+par ticipate in a same event (implicitly); n-ary participation allows to model par ticipation over different dimensions e.g., temporal, spatial, etc., as well as explicitly relate more than one object to the same event; object role, n-ary classiﬁcation are examples of CPs that can be composed with this CP."""^^xsd:string ,
+                                                                                                                                              "Time indexed participation" ;
+                                                            <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios> "Aldo Gangemi participated in the premiere of La Dolce Vita."^^xsd:string ;
+                                                            rdfs:comment """The basic participation pattern, without temporal indexing. 
+It clones equivalent elements from DOLCE-UltraLite.""" ,
+                                                                         """The co-participation pattern. 
+This pattern re-uses the participation pattern and is extracted from DOLCE-UltraLite by partial clone of elements.
+This minimal pattern is useful to abstract from specific or domain-oriented 'thematic role' relations, such as 'agent', 'patient', 'instrument', 'product', 'provides', 'activator', etc.
+A property chain allows to derive coparticipation from simple participation relations. For a more complete version of this pattern, see the functionalsituation.owl pattern.""" ;
+                                                            rdfs:label "Survival" ,
+                                                                       "participation" ;
+                                                            owl:versionInfo """1.1
+- Improved annotation
+1.0 
+- Created by Aldo Gangemi and Valentina Presutti"""^^xsd:string ,
+                                                                            "1.1 added rdfs:isDefinedBy for all named entities"^^xsd:string ,
+                                                                            """1.1 added rdfs:isDefinedBy for all named entities
+2.0 used OWL2 property chain, added defining axiom for Event having at least 2 participants"""^^xsd:string ,
+                                                                            "Created with TopBraid Composer"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements> rdf:type owl:AnnotationProperty ;
+                                                                                          rdfs:comment "This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> rdf:type owl:AnnotationProperty ;
+                                                                                     rdfs:comment "This annotation property should be assigned with a URI, which points to the possible reference ontology which the annotated pattern was extracted from (i.e. the reference ontology that the ontology elements have been deeply or partially cloned by). The range is not explicit in the definition of the annotation property because it would turn the ontology to OWL Full. E.g. The participation pattern is extracted from the Dolce Ultra Lite ontology, hence the value for this annotation property is http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences> rdf:type owl:AnnotationProperty ;
+                                                                                       rdfs:comment "This annotation property is used for briefly describing the benefits and/or possible trade-offs when using the CP." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent> rdf:type owl:AnnotationProperty ;
+                                                                                 rdfs:comment "This annotation property is used in order to describe the intent of the content pattern." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs> rdf:type owl:AnnotationProperty ;
+                                                                                  rdfs:comment "This annotation property can be used to indicate other CPs (if any) that specialize, generalize, inlcude, or are components of the CP. Furthermore, this field may indicate other CPs that are typically used in conjunction with the described one. Important similarities and differences with other patterns can be also described here." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios> rdf:type owl:AnnotationProperty ;
+                                                                                 rdfs:comment "This annotation property is used for describing examples of instantiation of the Content OP. For example, for the part-of Content OP (which represents part-whole relations) a possible scenario is the sentence: \"the brain is part of the human body\". Scenarios are expressed as natural language sentences." .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://schema.org/location
+<http://schema.org/location> rdf:type owl:ObjectProperty ;
+                             owl:equivalentProperty <http://www.wikidata.org/prop/direct/P706> ;
+                             rdf:type owl:TransitiveProperty ;
+                             rdfs:label "location" .
+
+
+###  http://schema.org/parentOrganization
+<http://schema.org/parentOrganization> rdf:type owl:ObjectProperty ;
+                                       owl:equivalentProperty <http://www.wikidata.org/prop/direct/P749> ;
+                                       owl:inverseOf <http://schema.org/subOrganization> ,
+                                                     <http://www.wikidata.org/prop/direct/P355> ,
+                                                     :hasBranch ;
+                                       rdfs:label "parentOrganization" .
+
+
+###  http://schema.org/subOrganization
+<http://schema.org/subOrganization> rdf:type owl:ObjectProperty ;
+                                    owl:equivalentProperty <http://www.wikidata.org/prop/direct/P355> ;
+                                    owl:inverseOf <http://www.wikidata.org/prop/direct/P749> ,
+                                                  :branchOf ;
+                                    rdfs:label "subOrganization" .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith
+<http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> rdf:type owl:ObjectProperty ;
+                                                                                      owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> ;
+                                                                                      rdf:type owl:SymmetricProperty ;
+                                                                                      rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl> ;
+                                                                                      rdfs:label "coparticipates with"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant
+<http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> rdf:type owl:ObjectProperty ;
+                                                                                owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> ;
+                                                                                rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+                                                                                rdfs:label "has participant"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn
+<http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+                                                                                 rdfs:label "is participant in"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P1706
+<http://www.wikidata.org/prop/direct/P1706> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "insieme a"@it ,
+                                                       "together with"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P355
+<http://www.wikidata.org/prop/direct/P355> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty :hasBranch ;
+                                           owl:inverseOf <http://www.wikidata.org/prop/direct/P749> ,
+                                                         :branchOf ;
+                                           rdfs:label "filiali"@it ,
+                                                      "subsidiary"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P706
+<http://www.wikidata.org/prop/direct/P706> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty :locatedIn ;
+                                           rdf:type owl:TransitiveProperty ;
+                                           rdfs:label "located in/on physical feature"@en ,
+                                                      "luogo geografico"@it .
+
+
+###  http://www.wikidata.org/prop/direct/P749
+<http://www.wikidata.org/prop/direct/P749> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty :branchOf ;
+                                           owl:inverseOf :hasBranch ;
+                                           rdfs:label "ente controllante"@it ,
+                                                      "parent organization"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy
+:addressedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :addresses ;
+             rdfs:comment "Links a threat to a campaign addressing it"@en ;
+             rdfs:label "Addressed by"@en ,
+                        "Affrontata da"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#addresses
+:addresses rdf:type owl:ObjectProperty ;
+           rdfs:comment "Links a campaign to a threat that it addresses"@en ;
+           rdfs:label "Addresses"@en ,
+                      "Affronta"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#branchOf
+:branchOf rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf <http://schema.org/subOrganization> ;
+                                   owl:equivalentProperty [ owl:inverseOf <http://www.wikidata.org/prop/direct/P355> ;
+                                                            owl:equivalentProperty [ owl:inverseOf :hasBranch
+                                                                                   ]
+                                                          ]
+                                 ] ;
+          owl:inverseOf :hasBranch ;
+          rdfs:comment "Links a branch organization to its head organization"@en ;
+          rdfs:label "Branch of"@en ,
+                     "Ufficio di"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith
+:cohabitsWith rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P1706> ,
+                                 [ owl:inverseOf <http://www.wikidata.org/prop/direct/P1706>
+                                 ] ;
+              owl:inverseOf :cohabitsWith ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:comment "Links a tribe to another tribe it shares a habitat with"@en ;
+              rdfs:label "Coabita con"@it ,
+                         "Cohabits with"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#collaboratesWith
+:collaboratesWith rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> ,
+                                     [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith>
+                                     ] ;
+                  owl:inverseOf :collaboratesWith ;
+                  rdf:type owl:SymmetricProperty ;
+                  rdfs:comment "Links an organization with another organization it collaborates with in one or more campaigns"@en ;
+                  rdfs:label "Collabora con"@it ,
+                             "Collaborates with"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#explicitlyHelps
+:explicitlyHelps rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :helps ,
+                                    [ owl:inverseOf :helpedBy
+                                    ] ;
+                 rdfs:comment "Links a campaign to a tribe it explicitly helps"@en ;
+                 rdfs:label "Aiuta esplicitamente"@it ,
+                            "Explicitly helps"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#hasBranch
+:hasBranch rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf <http://schema.org/parentOrganization> ;
+                                    owl:equivalentProperty [ owl:inverseOf <http://www.wikidata.org/prop/direct/P749> ;
+                                                             owl:equivalentProperty [ owl:inverseOf :branchOf
+                                                                                    ]
+                                                           ]
+                                  ] ;
+           rdfs:comment "Links an organization to one of its branches"@en ;
+           rdfs:label "Ha ufficio"@it ,
+                      "Has branch"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#helpedBy
+:helpedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :helps ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:comment "Links a tribe to a campaign it is helped by"@en ;
+          rdfs:label "Aiutata da"@it ,
+                     "Helped by"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#helps
+:helps rdf:type owl:ObjectProperty ,
+                owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:comment "Links a campaign to a tribe it implicitly helps"@en ;
+       rdfs:label "Aiuta"@it ,
+                  "Helps"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       owl:inverseOf :livesIn ;
+       rdfs:comment "Links a habitat to a tribe it hosts"@en ;
+       rdfs:label "Hosts"@en ,
+                  "Ospita"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#leads
+:leads rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> ,
+                          [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant>
+                          ] ;
+       owl:inverseOf :ledBy ;
+       rdfs:comment "Links an organization to a campaign it conducts"@en ;
+       rdfs:label "Conduce"@it ,
+                  "Leads"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ledBy
+:ledBy rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> ,
+                          [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn>
+                          ] ;
+       rdfs:comment "Links a campaign to an organization it is conducted by"@en ;
+       rdfs:label "Condotta da"@it ,
+                  "Led by"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#livesIn
+:livesIn rdf:type owl:ObjectProperty ;
+         rdfs:comment "Links a tribe to a habitat it lives in"@en ;
+         rdfs:label "Abita in"@it ,
+                    "Lives in"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ,
+                    owl:TransitiveProperty ;
+           rdfs:comment "Links a country or a habitat or an organization to a location it is located in"@en ;
+           rdfs:label "Located in"@en ,
+                      "Situato in"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#threatenedBy
+:threatenedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :threatens ;
+              rdfs:comment "Links a tribe to a threat it is endangered by"@en ;
+              rdfs:label "Minacciata da"@it ,
+                         "Threatened by"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#threatens
+:threatens rdf:type owl:ObjectProperty ;
+           rdfs:comment "Links a threat to a tribe it endangers"@en ;
+           rdfs:label "Minaccia"@it ,
+                      "Threatens"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#campaignPage
+:campaignPage rdf:type owl:DatatypeProperty ;
+              rdfs:comment "URL of the web page of the campaign"@en ;
+              rdfs:label "Campaign web page"@en ,
+                         "Pagina web della campagna"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#contacted
+:contacted rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:comment "Whether a tribe has been contacted or not: defines its uncontacted status"@en ;
+           rdfs:label "Contacted tribe"@en ,
+                      "Tribù contattata"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:comment "An organization e-mail address"@en ;
+       rdfs:label "Indirizzo e-mail dell'organizzazione"@it ,
+                  "Organization e-mail address"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#habitatType
+:habitatType rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Defines the type of an habitat, can be either desert, forest or island. Can be used twice to define an intersection, like: forest + island = forested island"@en ;
+             rdfs:label "Habitat type"@en ,
+                        "Tipo di habitat"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The official name of a tribe or indigenous people"@en ;
+      rdfs:label "Nome della tribù"@it ,
+                 "Tribe name"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#website
+:website rdf:type owl:DatatypeProperty ;
+         rdfs:comment "URL of the website of an organization"@en ;
+         rdfs:label "Organization website"@en ,
+                    "Sito web dell'organizzazione"@it .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/Continent
+<http://schema.org/Continent> rdf:type owl:Class ;
+                              owl:equivalentClass :Continent ;
+                              rdfs:subClassOf <http://schema.org/Place> ,
+                                              :Location ,
+                                              <https://www.wikidata.org/entity/Q82794> ;
+                              rdfs:label "Continent" .
+
+
+###  http://schema.org/Country
+<http://schema.org/Country> rdf:type owl:Class ;
+                            owl:equivalentClass :Country ;
+                            rdfs:subClassOf <http://schema.org/Place> ,
+                                            :Location ,
+                                            <https://www.wikidata.org/entity/Q82794> ;
+                            rdfs:label "Country" .
+
+
+###  http://schema.org/Organization
+<http://schema.org/Organization> rdf:type owl:Class ;
+                                 owl:equivalentClass :Organization ;
+                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+                                 rdfs:label "Organization" .
+
+
+###  http://schema.org/Place
+<http://schema.org/Place> rdf:type owl:Class ;
+                          owl:equivalentClass :Location ;
+                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+                          rdfs:label "Place" .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event
+<http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> rdf:type owl:Class ;
+                                                                       rdfs:comment "Any physical, social, or mental process, event, or state." ;
+                                                                       rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+                                                                       rdfs:label "Event"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object
+<http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> rdf:type owl:Class ;
+                                                                        rdfs:comment "Any physical, social, or mental object, or substance" ;
+                                                                        rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+                                                                        rdfs:label "Object"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#BranchOrganization
+:BranchOrganization rdf:type owl:Class ;
+                    rdfs:subClassOf <http://schema.org/Organization> ,
+                                    :Organization ,
+                                    <https://www.wikidata.org/entity/Q43229> ;
+                    rdfs:comment "A local office or branch of an organization. Can be an indipendent legal entity or not."@en ;
+                    rdfs:label "Branch office"@en ,
+                               "Ufficio distaccato"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign
+:Campaign rdf:type owl:Class ;
+          owl:equivalentClass <https://www.wikidata.org/entity/Q18812548> ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> ;
+          rdfs:comment "A generic project intended to mobilize public support and use democratic tools, such as lobbying, addressing some threats, in order to help endangered tribes"@en ;
+          rdfs:label "Campagna"@it ,
+                     "Campaign"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Continent
+:Continent rdf:type owl:Class ;
+           owl:equivalentClass <https://www.wikidata.org/entity/Q5107> ;
+           rdfs:subClassOf <http://schema.org/Place> ,
+                           :Location ,
+                           <https://www.wikidata.org/entity/Q82794> ;
+           rdfs:comment "One of the seven geographical regions that make up the global landmass"@en ;
+           rdfs:label "Continent"@en ,
+                      "Continente"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Country
+:Country rdf:type owl:Class ;
+         owl:equivalentClass <https://www.wikidata.org/entity/Q6256> ;
+         rdfs:subClassOf <http://schema.org/Place> ,
+                         :Location ,
+                         <https://www.wikidata.org/entity/Q82794> ;
+         rdfs:comment "A distinct territorial body or political entity"@en ;
+         rdfs:label "Country"@en ,
+                    "Paese"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Desert
+:Desert rdf:type owl:Class ;
+        rdfs:subClassOf :Habitat ;
+        rdfs:comment "A desert is a arid or semi-arid area of landscape"@en ;
+        rdfs:label "Desert"@en ,
+                   "Deserto"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#DesertIsland
+:DesertIsland rdf:type owl:Class ;
+              rdfs:subClassOf :Desert ,
+                              :Island ;
+              rdfs:comment "An island mostly covered by a desert area"@en ;
+              rdfs:label "Desert island"@en ,
+                         "Isola desertica"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#DesertTribe
+:DesertTribe rdf:type owl:Class ;
+             rdfs:subClassOf :Tribe ,
+                             <https://www.wikidata.org/entity/Q103817> ;
+             rdfs:comment "Tribe living in a desert"@en ;
+             rdfs:label "Desert tribe"@en ,
+                        "Tribù del deserto"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Forest
+:Forest rdf:type owl:Class ;
+        rdfs:subClassOf :Habitat ;
+        rdfs:comment "A forest is an area of land dominated by trees"@en ;
+        rdfs:label "Forest"@en ,
+                   "Foresta"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ForestTribe
+:ForestTribe rdf:type owl:Class ;
+             rdfs:subClassOf :Tribe ,
+                             <https://www.wikidata.org/entity/Q103817> ;
+             rdfs:comment "Tribe living in a forest"@en ;
+             rdfs:label "Forest tribe"@en ,
+                        "Tribù della foresta"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ForestedIsland
+:ForestedIsland rdf:type owl:Class ;
+                rdfs:subClassOf :Forest ,
+                                :Island ;
+                rdfs:comment "An island mostly covered by forests"@en ;
+                rdfs:label "Forested island"@en ,
+                           "Isola boscosa"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Habitat
+:Habitat rdf:type owl:Class ;
+         rdfs:subClassOf <http://schema.org/Place> ,
+                         :Location ,
+                         <https://www.wikidata.org/entity/Q82794> ;
+         rdfs:comment "A geographical region which may span one or more countries, hosting one or more tribes"@en ;
+         rdfs:label "Habitat"@en ,
+                    "Habitat"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Island
+:Island rdf:type owl:Class ;
+        rdfs:subClassOf :Habitat ;
+        rdfs:comment "An island is a portion of land entirely surrounded by water"@en ;
+        rdfs:label "Island"@en ,
+                   "Isola"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#IslanderTribe
+:IslanderTribe rdf:type owl:Class ;
+               rdfs:subClassOf :Tribe ,
+                               <https://www.wikidata.org/entity/Q103817> ;
+               rdfs:comment "Tribe living on one or more islands"@en ;
+               rdfs:label "Islander tribe"@en ,
+                          "Tribù isolana"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#LocalCampaign
+:LocalCampaign rdf:type owl:Class ;
+               rdfs:subClassOf :Campaign ,
+                               <https://www.wikidata.org/entity/Q18812548> ;
+               rdfs:comment "A campaign directly helping one or more specific tribes"@en ;
+               rdfs:label "Campagna locale"@it ,
+                          "Local campaign"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Location
+:Location rdf:type owl:Class ;
+          owl:equivalentClass <https://www.wikidata.org/entity/Q82794> ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+          rdfs:comment "A generic location"@en ;
+          rdfs:label "Location"@en ,
+                     "Luogo"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Organization
+:Organization rdf:type owl:Class ;
+              owl:equivalentClass <https://www.wikidata.org/entity/Q43229> ;
+              rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+              rdfs:comment "An organization is an entity, such as a company, an institution, or an association, comprising one or more people and having a particular purpose"@en ;
+              rdfs:label "Organization"@en ,
+                         "Organizzazione"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SharedCampaign
+:SharedCampaign rdf:type owl:Class ;
+                rdfs:subClassOf :Campaign ,
+                                <https://www.wikidata.org/entity/Q18812548> ;
+                rdfs:comment "A campaign led by more than one organization"@en ;
+                rdfs:label "Campagna condivisa"@it ,
+                           "Shared campaign"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Threat
+:Threat rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+        rdfs:comment "A generic threat which may endanger one or more tribe or a tribe-specific threat"@en ;
+        rdfs:label "Minaccia"@it ,
+                   "Threat"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe
+:Tribe rdf:type owl:Class ;
+       owl:equivalentClass <https://www.wikidata.org/entity/Q103817> ;
+       rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+       rdfs:comment "Endangered tribes and indigenous peoples"@en ;
+       rdfs:label "Tribe"@en ,
+                  "Tribù"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribe
+:UncontactedTribe rdf:type owl:Class ;
+                  rdfs:subClassOf :Tribe ,
+                                  <https://www.wikidata.org/entity/Q103817> ;
+                  rdfs:comment "Tribe that has never, or nearly never, been contacted by the \"civilized\" world, if not for some forced contacts, which have almost always been rejected. Little or nothing is known about these tribes, sometimes just their name or not event that."@en ;
+                  rdfs:label "Tribù incontattata"@it ,
+                             "Uncontacted tribe"@en .
+
+
+###  https://www.wikidata.org/entity/Q103817
+<https://www.wikidata.org/entity/Q103817> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+                                          rdfs:label "indigenous people"@en ,
+                                                     "popolo indigeno"@it .
+
+
+###  https://www.wikidata.org/entity/Q18812548
+<https://www.wikidata.org/entity/Q18812548> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> ;
+                                            rdfs:label "campagna"@it ,
+                                                       "campaign"@en .
+
+
+###  https://www.wikidata.org/entity/Q43229
+<https://www.wikidata.org/entity/Q43229> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+                                         rdfs:label "organization"@en ,
+                                                    "organizzazione"@it .
+
+
+###  https://www.wikidata.org/entity/Q5107
+<https://www.wikidata.org/entity/Q5107> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://schema.org/Place> ,
+                                                        :Location ,
+                                                        <https://www.wikidata.org/entity/Q82794> ;
+                                        rdfs:label "continent"@en ,
+                                                   "continente"@it .
+
+
+###  https://www.wikidata.org/entity/Q6256
+<https://www.wikidata.org/entity/Q6256> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://schema.org/Place> ,
+                                                        :Location ,
+                                                        <https://www.wikidata.org/entity/Q82794> ;
+                                        rdfs:label "country"@en ,
+                                                   "paese"@it .
+
+
+###  https://www.wikidata.org/entity/Q82794
+<https://www.wikidata.org/entity/Q82794> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ;
+                                         rdfs:label "geographic region"@en ,
+                                                    "regione geografica"@it .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#APIB
+:APIB rdf:type owl:NamedIndividual ,
+               <http://schema.org/Organization> ,
+               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+               :Organization ,
+               <https://www.wikidata.org/entity/Q43229> ;
+      <http://schema.org/location> :Brazil ,
+                                   :SouthAmerica ,
+                                   <https://www.wikidata.org/entity/Q155> ,
+                                   <https://www.wikidata.org/entity/Q18> ;
+      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :APIB ,
+                                                                                            :SurvivalInternational ,
+                                                                                            <https://www.wikidata.org/entity/Q16494254> ,
+                                                                                            <https://www.wikidata.org/entity/Q1887464> ;
+      <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> :StopBrazilGenocide ;
+      <http://www.wikidata.org/prop/direct/P706> :Brazil ,
+                                                 :SouthAmerica ,
+                                                 <https://www.wikidata.org/entity/Q155> ,
+                                                 <https://www.wikidata.org/entity/Q18> ;
+      :collaboratesWith :APIB ,
+                        :SurvivalInternational ,
+                        <https://www.wikidata.org/entity/Q16494254> ,
+                        <https://www.wikidata.org/entity/Q1887464> ;
+      :leads :StopBrazilGenocide ;
+      :locatedIn :Brazil ,
+                 :SouthAmerica ,
+                 <https://www.wikidata.org/entity/Q155> ,
+                 <https://www.wikidata.org/entity/Q18> ;
+      :email "apib.se@apiboficial.org" ;
+      :website "https://apiboficial.org/"^^xsd:anyURI ;
+      rdfs:comment "The Articulation of Indigenous Peoples of Brazil was created by the indigenous movement at Camp Terra Livre (ATL) 2005. APIB is an instance of national reference of the indigenous movement in Brazil, created from the bottom up."@en ;
+      rdfs:label "Articolazione dei Popoli Indigeni del Brasile"@it ,
+                 "Articulation of Indigenous Peoples of Brazil"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Africa
+:Africa rdf:type owl:NamedIndividual ,
+                 <http://schema.org/Continent> ,
+                 <http://schema.org/Place> ,
+                 <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                 :Continent ,
+                 :Location ,
+                 <https://www.wikidata.org/entity/Q5107> ,
+                 <https://www.wikidata.org/entity/Q82794> ;
+        <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Africa ,
+                                                                                              <https://www.wikidata.org/entity/Q15> ;
+        rdfs:comment "The African continent"@en ;
+        rdfs:label "Africa"@en ,
+                   "Africa"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica
+:Antarctica rdf:type owl:NamedIndividual ,
+                     <http://schema.org/Continent> ,
+                     <http://schema.org/Place> ,
+                     <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                     :Continent ,
+                     :Location ,
+                     <https://www.wikidata.org/entity/Q5107> ,
+                     <https://www.wikidata.org/entity/Q82794> ;
+            <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Antarctica ,
+                                                                                                  <https://www.wikidata.org/entity/Q51> ;
+            rdfs:comment "The Antarctic continent"@en ;
+            rdfs:label "Antarctica"@en ,
+                       "Antartide"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Asia
+:Asia rdf:type owl:NamedIndividual ,
+               <http://schema.org/Continent> ,
+               <http://schema.org/Place> ,
+               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+               :Continent ,
+               :Location ,
+               <https://www.wikidata.org/entity/Q5107> ,
+               <https://www.wikidata.org/entity/Q82794> ;
+      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Asia ,
+                                                                                            <https://www.wikidata.org/entity/Q48> ;
+      rdfs:comment "The continent of Asia"@en ;
+      rdfs:label "Asia"@en ,
+                 "Asia"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia
+:Bolivia rdf:type owl:NamedIndividual ,
+                  <http://schema.org/Country> ,
+                  <http://schema.org/Place> ,
+                  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                  :Country ,
+                  :Location ,
+                  <https://www.wikidata.org/entity/Q6256> ,
+                  <https://www.wikidata.org/entity/Q82794> ;
+         <http://schema.org/location> :SouthAmerica ,
+                                      <https://www.wikidata.org/entity/Q18> ;
+         <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Bolivia ,
+                                                                                               <https://www.wikidata.org/entity/Q750> ;
+         <http://www.wikidata.org/prop/direct/P706> :SouthAmerica ,
+                                                    <https://www.wikidata.org/entity/Q18> ;
+         :locatedIn :SouthAmerica ,
+                    <https://www.wikidata.org/entity/Q18> ;
+         rdfs:comment "The Plurinational State of Bolivia"@en ;
+         rdfs:label "Bolivia"@en ,
+                    "Bolivia"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana
+:Botswana rdf:type owl:NamedIndividual ,
+                   <http://schema.org/Country> ,
+                   <http://schema.org/Place> ,
+                   <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                   :Country ,
+                   :Location ,
+                   <https://www.wikidata.org/entity/Q6256> ,
+                   <https://www.wikidata.org/entity/Q82794> ;
+          <http://schema.org/location> :Africa ,
+                                       <https://www.wikidata.org/entity/Q15> ;
+          <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Botswana ,
+                                                                                                <https://www.wikidata.org/entity/Q963> ;
+          <http://www.wikidata.org/prop/direct/P706> :Africa ,
+                                                     <https://www.wikidata.org/entity/Q15> ;
+          :locatedIn :Africa ,
+                     <https://www.wikidata.org/entity/Q15> ;
+          rdfs:comment "The Republic of Botswana"@en ;
+          rdfs:label "Botswana"@en ,
+                     "Botswana"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil
+:Brazil rdf:type owl:NamedIndividual ,
+                 <http://schema.org/Country> ,
+                 <http://schema.org/Place> ,
+                 <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                 :Country ,
+                 :Location ,
+                 <https://www.wikidata.org/entity/Q6256> ,
+                 <https://www.wikidata.org/entity/Q82794> ;
+        <http://schema.org/location> :SouthAmerica ,
+                                     <https://www.wikidata.org/entity/Q18> ;
+        <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Brazil ,
+                                                                                              <https://www.wikidata.org/entity/Q155> ;
+        <http://www.wikidata.org/prop/direct/P706> :SouthAmerica ,
+                                                   <https://www.wikidata.org/entity/Q18> ;
+        :locatedIn :SouthAmerica ,
+                   <https://www.wikidata.org/entity/Q18> ;
+        rdfs:label "Brasile"@it ,
+                   "Brazil"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen
+:Bushmen rdf:type owl:NamedIndividual ,
+                  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                  :DesertTribe ,
+                  :Tribe ,
+                  <https://www.wikidata.org/entity/Q103817> ;
+         <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Bushmen ,
+                                                                                               <https://www.wikidata.org/entity/Q172365> ;
+         <http://www.wikidata.org/prop/direct/P1706> :Bushmen ,
+                                                     <https://www.wikidata.org/entity/Q172365> ;
+         :cohabitsWith :Bushmen ,
+                       <https://www.wikidata.org/entity/Q172365> ;
+         :helpedBy :DecolonizeConservation ;
+         :livesIn :CentralKalahariGameReserve ,
+                  <https://www.wikidata.org/entity/Q194732> ;
+         :threatenedBy :ColonialConservation ;
+         :contacted "true"^^xsd:boolean ;
+         :name "San"^^xsd:string ;
+         rdfs:comment "The Bushmen are the indigenous peoples of southern Africa. Largely hunter-gatherers, their territory spans several nations and they have called the region home for tens of thousands of years."@en ;
+         rdfs:label "Boscimani"@it ,
+                    "Bushmen"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve
+:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
+                                     <http://schema.org/Place> ,
+                                     <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                     :Desert ,
+                                     :Habitat ,
+                                     :Location ,
+                                     <https://www.wikidata.org/entity/Q82794> ;
+                            <http://schema.org/location> :Africa ,
+                                                         :Botswana ,
+                                                         <https://www.wikidata.org/entity/Q15> ,
+                                                         <https://www.wikidata.org/entity/Q963> ;
+                            <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :CentralKalahariGameReserve ,
+                                                                                                                  <https://www.wikidata.org/entity/Q194732> ;
+                            <http://www.wikidata.org/prop/direct/P706> :Africa ,
+                                                                       :Botswana ,
+                                                                       <https://www.wikidata.org/entity/Q15> ,
+                                                                       <https://www.wikidata.org/entity/Q963> ;
+                            :hosts :Bushmen ,
+                                   <https://www.wikidata.org/entity/Q172365> ;
+                            :locatedIn :Africa ,
+                                       :Botswana ,
+                                       <https://www.wikidata.org/entity/Q15> ,
+                                       <https://www.wikidata.org/entity/Q963> ;
+                            :habitatType "desert" ;
+                            rdfs:comment "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana"@en ;
+                            rdfs:label "Central Kalahari Game Reserve"@en ,
+                                       "Riserva faunistica del Kalahari centrale"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ColonialConservation
+:ColonialConservation rdf:type owl:NamedIndividual ,
+                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                               :Threat ;
+                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :ColonialConservation ;
+                      :addressedBy :DecolonizeConservation ;
+                      :threatens :Bushmen ,
+                                 <https://www.wikidata.org/entity/Q172365> ;
+                      rdfs:comment "Colonial conservation, also known as Fortress Conservation, rests on the racist misconception that indigenous people cannot be trusted to look after their own land and the animals that live there. Its proponents view the original custodians of the land as a “nuisance” to be “dealt with\", instead of as experts in local biodiversity and key partners in conservation."@en ;
+                      rdfs:label "Colonial conservation"@en ,
+                                 "Conservazione di stampo colonialista"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#DecolonizeConservation
+:DecolonizeConservation rdf:type owl:NamedIndividual ,
+                                 <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> ,
+                                 :Campaign ,
+                                 <https://www.wikidata.org/entity/Q18812548> ;
+                        <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> :SurvivalInternational ,
+                                                                                                        <https://www.wikidata.org/entity/Q1887464> ;
+                        :addresses :ColonialConservation ;
+                        :helps :Bushmen ,
+                               <https://www.wikidata.org/entity/Q172365> ;
+                        :ledBy :SurvivalInternational ,
+                               <https://www.wikidata.org/entity/Q1887464> ;
+                        :campaignPage "https://www.survivalinternational.org/conservation"^^xsd:anyURI ;
+                        rdfs:comment "Well known conservation groups like WWF, WCS, and African Parks have been aware of these atrocities for many years but they continue to fund and support colonial conservation. For over 30 years, Survival has been campaigning against the atrocities committed in the name of “conservation”."@en ;
+                        rdfs:label "Decolonize Conservation"@en ,
+                                   "Decolonizziamo la conservazione"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Deforestation
+:Deforestation rdf:type owl:NamedIndividual ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                        :Threat ;
+               <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Deforestation ;
+               :threatens :MashcoPiro ,
+                          :Yanomami ,
+                          <https://www.wikidata.org/entity/Q34188> ,
+                          <https://www.wikidata.org/entity/Q3850712> ;
+               rdfs:comment "Deforestation or forest clearance is the removal of a forest or stand of trees from land that is then converted to non-forest use. Deforestation can involve conversion of forest land to farms, ranches, or urban use. The most concentrated deforestation occurs in tropical rainforests."@en ;
+               rdfs:label "Deforestation"@en ,
+                          "Deforestazione"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Europe
+:Europe rdf:type owl:NamedIndividual ,
+                 <http://schema.org/Continent> ,
+                 <http://schema.org/Place> ,
+                 <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                 :Continent ,
+                 :Location ,
+                 <https://www.wikidata.org/entity/Q5107> ,
+                 <https://www.wikidata.org/entity/Q82794> ;
+        <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Europe ,
+                                                                                              <https://www.wikidata.org/entity/Q46> ;
+        rdfs:comment "The European continent"@en ;
+        rdfs:label "Europa"@it ,
+                   "Europe"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#ForcedContact
+:ForcedContact rdf:type owl:NamedIndividual ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                        :Threat ;
+               <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :ForcedContact ;
+               :addressedBy :UncontactedTribes ;
+               :threatens :MashcoPiro ,
+                          :Matses ,
+                          :Sentinelese ,
+                          <https://www.wikidata.org/entity/Q2708837> ,
+                          <https://www.wikidata.org/entity/Q3850712> ,
+                          <https://www.wikidata.org/entity/Q917695> ;
+               rdfs:comment "Forced contact is the practice of contacting forcibly indigenous tribes for many reasons such as to either exploit their land, convert them to Christianity or simply study their habits. Whole populations are being wiped out by genocidal violence, and by diseases like flu and measles to which they have no resistance."@en ;
+               rdfs:label "Contatto forzato"@it ,
+                          "Forced contact"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalFishing
+:IllegalFishing rdf:type owl:NamedIndividual ,
+                         <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                         :Threat ;
+                <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :IllegalFishing ;
+                :threatens :Sentinelese ,
+                           <https://www.wikidata.org/entity/Q917695> ;
+                rdfs:comment "Illegal fishing takes place when vessels or poachers operate in violation of the laws and especially in protected natural reserves. It endangers some tribes by reducing their sources of livelihood and exposing them to deadly deseases."@en ;
+                rdfs:label "Illegal fishing"@en ,
+                           "Pesca illegale"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#IllegalMining
+:IllegalMining rdf:type owl:NamedIndividual ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                        :Threat ;
+               <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :IllegalMining ;
+               :threatens :Yanomami ,
+                          <https://www.wikidata.org/entity/Q34188> ;
+               rdfs:comment "Illegal mining is mining activity that is undertaken without state permission, in particular in absence of land rights, mining licenses, and exploration or mineral transportation permits."@en ;
+               rdfs:label "Estrazione mineraria illegale"@it ,
+                          "Illegal mining"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#India
+:India rdf:type owl:NamedIndividual ,
+                <http://schema.org/Country> ,
+                <http://schema.org/Place> ,
+                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                :Country ,
+                :Location ,
+                <https://www.wikidata.org/entity/Q6256> ,
+                <https://www.wikidata.org/entity/Q82794> ;
+       <http://schema.org/location> :Asia ,
+                                    <https://www.wikidata.org/entity/Q48> ;
+       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :India ,
+                                                                                             <https://www.wikidata.org/entity/Q668> ;
+       <http://www.wikidata.org/prop/direct/P706> :Asia ,
+                                                  <https://www.wikidata.org/entity/Q48> ;
+       :locatedIn :Asia ,
+                  <https://www.wikidata.org/entity/Q48> ;
+       rdfs:comment "The Republic of India"@en ;
+       rdfs:label "India"@en ,
+                  "India"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Italy
+:Italy rdf:type owl:NamedIndividual ,
+                <http://schema.org/Country> ,
+                <http://schema.org/Place> ,
+                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                :Country ,
+                :Location ,
+                <https://www.wikidata.org/entity/Q6256> ,
+                <https://www.wikidata.org/entity/Q82794> ;
+       <http://schema.org/location> :Europe ,
+                                    <https://www.wikidata.org/entity/Q46> ;
+       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Italy ,
+                                                                                             <https://www.wikidata.org/entity/Q38> ;
+       <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                                  <https://www.wikidata.org/entity/Q46> ;
+       :locatedIn :Europe ,
+                  <https://www.wikidata.org/entity/Q46> ;
+       rdfs:comment "The Italian Republic"@en ;
+       rdfs:label "Italia"@it ,
+                  "Italy"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro
+:MashcoPiro rdf:type owl:NamedIndividual ,
+                     <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                     :ForestTribe ,
+                     :Tribe ,
+                     :UncontactedTribe ,
+                     <https://www.wikidata.org/entity/Q103817> ;
+            <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :MashcoPiro ,
+                                                                                                  <https://www.wikidata.org/entity/Q3850712> ;
+            <http://www.wikidata.org/prop/direct/P1706> :MashcoPiro ,
+                                                        :Matses ,
+                                                        <https://www.wikidata.org/entity/Q2708837> ,
+                                                        <https://www.wikidata.org/entity/Q3850712> ;
+            :cohabitsWith :MashcoPiro ,
+                          :Matses ,
+                          <https://www.wikidata.org/entity/Q2708837> ,
+                          <https://www.wikidata.org/entity/Q3850712> ;
+            :helpedBy :UncontactedTribes ;
+            :livesIn :UncontactedFrontier ;
+            :threatenedBy :Deforestation ,
+                          :ForcedContact ;
+            :contacted "false"^^xsd:boolean ;
+            :name "Mashco-Piro"^^xsd:string ;
+            rdfs:comment "Mashco-Piro are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."@en ;
+            rdfs:label "Mascho-Piro"@it ,
+                       "Mashco-Piro"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Matses
+:Matses rdf:type owl:NamedIndividual ,
+                 <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                 :ForestTribe ,
+                 :Tribe ,
+                 :UncontactedTribe ,
+                 <https://www.wikidata.org/entity/Q103817> ;
+        <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Matses ,
+                                                                                              <https://www.wikidata.org/entity/Q2708837> ;
+        <http://www.wikidata.org/prop/direct/P1706> :MashcoPiro ,
+                                                    :Matses ,
+                                                    <https://www.wikidata.org/entity/Q2708837> ,
+                                                    <https://www.wikidata.org/entity/Q3850712> ;
+        :cohabitsWith :MashcoPiro ,
+                      :Matses ,
+                      <https://www.wikidata.org/entity/Q2708837> ,
+                      <https://www.wikidata.org/entity/Q3850712> ;
+        :helpedBy :UncontactedTribes ;
+        :livesIn :UncontactedFrontier ;
+        :threatenedBy :ForcedContact ;
+        :contacted "false"^^xsd:boolean ;
+        :name "Matsés"^^xsd:string ;
+        rdfs:comment "Matsés are one of the uncontacted tribes living in the Amazon Uncontacted Frontier. Not much is known about them. But we do know that they have rejected contact, often as a result of horrific violence and diseases brought in by outsiders."@en ;
+        rdfs:label "Matsés"@en ,
+                   "Matsés"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica
+:NorthAmerica rdf:type owl:NamedIndividual ,
+                       <http://schema.org/Continent> ,
+                       <http://schema.org/Place> ,
+                       <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                       :Continent ,
+                       :Location ,
+                       <https://www.wikidata.org/entity/Q5107> ,
+                       <https://www.wikidata.org/entity/Q82794> ;
+              <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :NorthAmerica ,
+                                                                                                    <https://www.wikidata.org/entity/Q49> ;
+              rdfs:comment "The North American continent"@en ;
+              rdfs:label "Nord America"@it ,
+                         "North America"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel
+:NorthSentinel rdf:type owl:NamedIndividual ,
+                        <http://schema.org/Place> ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                        :Forest ,
+                        :ForestedIsland ,
+                        :Habitat ,
+                        :Island ,
+                        :Location ,
+                        <https://www.wikidata.org/entity/Q82794> ;
+               <http://schema.org/location> :Asia ,
+                                            :India ,
+                                            <https://www.wikidata.org/entity/Q48> ,
+                                            <https://www.wikidata.org/entity/Q668> ;
+               <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :NorthSentinel ,
+                                                                                                     <https://www.wikidata.org/entity/Q1260331> ;
+               <http://www.wikidata.org/prop/direct/P706> :Asia ,
+                                                          :India ,
+                                                          <https://www.wikidata.org/entity/Q48> ,
+                                                          <https://www.wikidata.org/entity/Q668> ;
+               :hosts :Sentinelese ,
+                      <https://www.wikidata.org/entity/Q917695> ;
+               :locatedIn :Asia ,
+                          :India ,
+                          <https://www.wikidata.org/entity/Q48> ,
+                          <https://www.wikidata.org/entity/Q668> ;
+               :habitatType "forest" ,
+                            "island" ;
+               rdfs:comment "North Sentinel Island is one of the Andaman Islands, an Indian archipelago in the Bay of Bengal"@en ;
+               rdfs:label "Isola di North Sentinel"@it ,
+                          "North Sentinel Island"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania
+:Oceania rdf:type owl:NamedIndividual ,
+                  <http://schema.org/Continent> ,
+                  <http://schema.org/Place> ,
+                  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                  :Continent ,
+                  :Location ,
+                  <https://www.wikidata.org/entity/Q5107> ,
+                  <https://www.wikidata.org/entity/Q82794> ;
+         <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Oceania ,
+                                                                                               <https://www.wikidata.org/entity/Q55643> ;
+         rdfs:comment "The continent of Oceania"@en ;
+         rdfs:label "Oceania"@en ,
+                    "Oceania"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Peru
+:Peru rdf:type owl:NamedIndividual ,
+               <http://schema.org/Country> ,
+               <http://schema.org/Place> ,
+               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+               :Country ,
+               :Location ,
+               <https://www.wikidata.org/entity/Q6256> ,
+               <https://www.wikidata.org/entity/Q82794> ;
+      <http://schema.org/location> :SouthAmerica ,
+                                   <https://www.wikidata.org/entity/Q18> ;
+      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Peru ,
+                                                                                            <https://www.wikidata.org/entity/Q419> ;
+      <http://www.wikidata.org/prop/direct/P706> :SouthAmerica ,
+                                                 <https://www.wikidata.org/entity/Q18> ;
+      :locatedIn :SouthAmerica ,
+                 <https://www.wikidata.org/entity/Q18> ;
+      rdfs:comment "The Republic of Peru"@en ;
+      rdfs:label "Peru"@en ,
+                 "Perù"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese
+:Sentinelese rdf:type owl:NamedIndividual ,
+                      <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                      :ForestTribe ,
+                      :IslanderTribe ,
+                      :Tribe ,
+                      :UncontactedTribe ,
+                      <https://www.wikidata.org/entity/Q103817> ;
+             <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Sentinelese ,
+                                                                                                   <https://www.wikidata.org/entity/Q917695> ;
+             <http://www.wikidata.org/prop/direct/P1706> :Sentinelese ,
+                                                         <https://www.wikidata.org/entity/Q917695> ;
+             :cohabitsWith :Sentinelese ,
+                           <https://www.wikidata.org/entity/Q917695> ;
+             :helpedBy :UncontactedTribes ;
+             :livesIn :NorthSentinel ,
+                      <https://www.wikidata.org/entity/Q1260331> ;
+             :threatenedBy :ForcedContact ,
+                           :IllegalFishing ;
+             :contacted "false"^^xsd:boolean ;
+             :name "Sentinelese"^^xsd:string ;
+             rdfs:comment "The Sentinelese are an uncontacted tribe living on North Sentinal Island, one of the Andaman Islands in the Indian Ocean. They vigorously reject all contact with outsiders."@en ;
+             rdfs:label "Sentinelese"@en ,
+                        "Sentinellesi"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica
+:SouthAmerica rdf:type owl:NamedIndividual ,
+                       <http://schema.org/Continent> ,
+                       <http://schema.org/Place> ,
+                       <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                       :Continent ,
+                       :Location ,
+                       <https://www.wikidata.org/entity/Q5107> ,
+                       <https://www.wikidata.org/entity/Q82794> ;
+              <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :SouthAmerica ,
+                                                                                                    <https://www.wikidata.org/entity/Q18> ;
+              rdfs:comment "The South American continent"@en ;
+              rdfs:label "South America"@en ,
+                         "Sud America"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#StopBrazilGenocide
+:StopBrazilGenocide rdf:type owl:NamedIndividual ,
+                             <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> ,
+                             :Campaign ,
+                             :LocalCampaign ,
+                             :SharedCampaign ,
+                             <https://www.wikidata.org/entity/Q18812548> ;
+                    <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> :APIB ,
+                                                                                                    :SurvivalInternational ,
+                                                                                                    <https://www.wikidata.org/entity/Q16494254> ,
+                                                                                                    <https://www.wikidata.org/entity/Q1887464> ;
+                    :explicitlyHelps :Yanomami ,
+                                     <https://www.wikidata.org/entity/Q34188> ;
+                    :helps :Yanomami ,
+                           <https://www.wikidata.org/entity/Q34188> ;
+                    :ledBy :APIB ,
+                           :SurvivalInternational ,
+                           <https://www.wikidata.org/entity/Q16494254> ,
+                           <https://www.wikidata.org/entity/Q1887464> ;
+                    :campaignPage "https://www.survivalinternational.org/brazilgenocide"^^xsd:anyURI ;
+                    rdfs:comment "President Jair Bolsonaro is trying to turn back the clock on indigenous rights. He wants to strip their autonomy, sell off their territories for logging and mining and “assimilate” them against their wishes. Brazil’s indigenous peoples, their supporters and allies, and Survival International are fighting back as the President plots to steal their land, destroy their lives and annihilate them as peoples."@en ;
+                    rdfs:label "Fermiamo il genocidio in Brasile"@it ,
+                               "Stop Brazil's genocide"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalBrasil
+:SurvivalBrasil rdf:type owl:NamedIndividual ,
+                         <http://schema.org/Organization> ,
+                         <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                         :BranchOrganization ,
+                         :Organization ,
+                         <https://www.wikidata.org/entity/Q43229> ;
+                <http://schema.org/location> :Brazil ,
+                                             :SouthAmerica ,
+                                             <https://www.wikidata.org/entity/Q155> ,
+                                             <https://www.wikidata.org/entity/Q18> ;
+                <http://schema.org/parentOrganization> :SurvivalInternational ,
+                                                       <https://www.wikidata.org/entity/Q1887464> ;
+                <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :SurvivalBrasil ;
+                <http://www.wikidata.org/prop/direct/P706> :Brazil ,
+                                                           :SouthAmerica ,
+                                                           <https://www.wikidata.org/entity/Q155> ,
+                                                           <https://www.wikidata.org/entity/Q18> ;
+                <http://www.wikidata.org/prop/direct/P749> :SurvivalInternational ,
+                                                           <https://www.wikidata.org/entity/Q1887464> ;
+                :branchOf :SurvivalInternational ,
+                          <https://www.wikidata.org/entity/Q1887464> ;
+                :locatedIn :Brazil ,
+                           :SouthAmerica ,
+                           <https://www.wikidata.org/entity/Q155> ,
+                           <https://www.wikidata.org/entity/Q18> ;
+                :email "info@survivalbrasil.org"^^xsd:string ;
+                :website "https://www.survivalbrasil.org"^^xsd:anyURI ;
+                rdfs:comment "Brazilian office of Survival International"@en ;
+                rdfs:label "Survival International Brasile"@it ,
+                           "Survival International Brazil"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational
+:SurvivalInternational rdf:type owl:NamedIndividual ,
+                                <http://schema.org/Organization> ,
+                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                :Organization ,
+                                <https://www.wikidata.org/entity/Q43229> ;
+                       <http://schema.org/location> :Europe ,
+                                                    :UK ,
+                                                    <https://www.wikidata.org/entity/Q145> ,
+                                                    <https://www.wikidata.org/entity/Q46> ;
+                       <http://schema.org/subOrganization> :SurvivalBrasil ,
+                                                           :SurvivalItalia ;
+                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :APIB ,
+                                                                                                             :SurvivalInternational ,
+                                                                                                             <https://www.wikidata.org/entity/Q16494254> ,
+                                                                                                             <https://www.wikidata.org/entity/Q1887464> ;
+                       <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> :DecolonizeConservation ,
+                                                                                                        :StopBrazilGenocide ,
+                                                                                                        :UncontactedTribes ;
+                       <http://www.wikidata.org/prop/direct/P355> :SurvivalBrasil ,
+                                                                  :SurvivalItalia ;
+                       <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                                                  :UK ,
+                                                                  <https://www.wikidata.org/entity/Q145> ,
+                                                                  <https://www.wikidata.org/entity/Q46> ;
+                       :collaboratesWith :APIB ,
+                                         :SurvivalInternational ,
+                                         <https://www.wikidata.org/entity/Q16494254> ,
+                                         <https://www.wikidata.org/entity/Q1887464> ;
+                       :hasBranch :SurvivalBrasil ,
+                                  :SurvivalItalia ;
+                       :leads :DecolonizeConservation ,
+                              :StopBrazilGenocide ,
+                              :UncontactedTribes ;
+                       :locatedIn :Europe ,
+                                  :UK ,
+                                  <https://www.wikidata.org/entity/Q145> ,
+                                  <https://www.wikidata.org/entity/Q46> ;
+                       :email "info@survivalinternational.org" ;
+                       :website "https://www.survivalinternational.org"^^xsd:anyURI ;
+                       rdfs:comment "Survival International is a human rights organisation formed in 1969 that campaigns for the rights of indigenous and/or tribal peoples and uncontacted peoples"@en ;
+                       rdfs:label "Survival International"@en ,
+                                  "Survival International"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalItalia
+:SurvivalItalia rdf:type owl:NamedIndividual ,
+                         <http://schema.org/Organization> ,
+                         <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                         :BranchOrganization ,
+                         :Organization ,
+                         <https://www.wikidata.org/entity/Q43229> ;
+                <http://schema.org/location> :Europe ,
+                                             :Italy ,
+                                             <https://www.wikidata.org/entity/Q38> ,
+                                             <https://www.wikidata.org/entity/Q46> ;
+                <http://schema.org/parentOrganization> :SurvivalInternational ,
+                                                       <https://www.wikidata.org/entity/Q1887464> ;
+                <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :SurvivalItalia ;
+                <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                                           :Italy ,
+                                                           <https://www.wikidata.org/entity/Q38> ,
+                                                           <https://www.wikidata.org/entity/Q46> ;
+                <http://www.wikidata.org/prop/direct/P749> :SurvivalInternational ,
+                                                           <https://www.wikidata.org/entity/Q1887464> ;
+                :branchOf :SurvivalInternational ,
+                          <https://www.wikidata.org/entity/Q1887464> ;
+                :locatedIn :Europe ,
+                           :Italy ,
+                           <https://www.wikidata.org/entity/Q38> ,
+                           <https://www.wikidata.org/entity/Q46> ;
+                :email "info@survival.it"^^xsd:string ;
+                :website "https://www.survival.it"^^xsd:anyURI ;
+                rdfs:comment "Italian office of Survival International"@en ;
+                rdfs:label "Survival International Italia"@it ,
+                           "Survival International Italy"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UK
+:UK rdf:type owl:NamedIndividual ,
+             <http://schema.org/Country> ,
+             <http://schema.org/Place> ,
+             <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+             :Country ,
+             :Location ,
+             <https://www.wikidata.org/entity/Q6256> ,
+             <https://www.wikidata.org/entity/Q82794> ;
+    <http://schema.org/location> :Europe ,
+                                 <https://www.wikidata.org/entity/Q46> ;
+    <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :UK ,
+                                                                                          <https://www.wikidata.org/entity/Q145> ;
+    <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                               <https://www.wikidata.org/entity/Q46> ;
+    :locatedIn :Europe ,
+               <https://www.wikidata.org/entity/Q46> ;
+    rdfs:comment "The United Kingdom of Great Britain and Northern Ireland"@en ;
+    rdfs:label "Regno Unito"@it ,
+               "United Kingdom"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier
+:UncontactedFrontier rdf:type owl:NamedIndividual ,
+                              <http://schema.org/Place> ,
+                              <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                              :Forest ,
+                              :Habitat ,
+                              :Location ,
+                              <https://www.wikidata.org/entity/Q82794> ;
+                     <http://schema.org/location> :Bolivia ,
+                                                  :Brazil ,
+                                                  :Peru ,
+                                                  :SouthAmerica ,
+                                                  <https://www.wikidata.org/entity/Q155> ,
+                                                  <https://www.wikidata.org/entity/Q18> ,
+                                                  <https://www.wikidata.org/entity/Q419> ,
+                                                  <https://www.wikidata.org/entity/Q750> ;
+                     <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :UncontactedFrontier ;
+                     <http://www.wikidata.org/prop/direct/P706> :Bolivia ,
+                                                                :Brazil ,
+                                                                :Peru ,
+                                                                :SouthAmerica ,
+                                                                <https://www.wikidata.org/entity/Q155> ,
+                                                                <https://www.wikidata.org/entity/Q18> ,
+                                                                <https://www.wikidata.org/entity/Q419> ,
+                                                                <https://www.wikidata.org/entity/Q750> ;
+                     :hosts :MashcoPiro ,
+                            :Matses ,
+                            <https://www.wikidata.org/entity/Q2708837> ,
+                            <https://www.wikidata.org/entity/Q3850712> ;
+                     :locatedIn :Bolivia ,
+                                :Brazil ,
+                                :Peru ,
+                                :SouthAmerica ,
+                                <https://www.wikidata.org/entity/Q155> ,
+                                <https://www.wikidata.org/entity/Q18> ,
+                                <https://www.wikidata.org/entity/Q419> ,
+                                <https://www.wikidata.org/entity/Q750> ;
+                     :habitatType "forest" ;
+                     rdfs:comment "Straddling the borders of Peru, Brazil and Bolivia is the Uncontacted Frontier, home to more uncontacted tribes than anywhere else on the planet"@en ;
+                     rdfs:label "La frontiera dell'Amazzonia incontattata"@it ,
+                                "The Amazon Uncontacted Frontier"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedTribes
+:UncontactedTribes rdf:type owl:NamedIndividual ,
+                            <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event> ,
+                            :Campaign ,
+                            <https://www.wikidata.org/entity/Q18812548> ;
+                   <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> :SurvivalInternational ,
+                                                                                                   <https://www.wikidata.org/entity/Q1887464> ;
+                   :addresses :ForcedContact ;
+                   :helps :MashcoPiro ,
+                          :Matses ,
+                          :Sentinelese ,
+                          <https://www.wikidata.org/entity/Q2708837> ,
+                          <https://www.wikidata.org/entity/Q3850712> ,
+                          <https://www.wikidata.org/entity/Q917695> ;
+                   :ledBy :SurvivalInternational ,
+                          <https://www.wikidata.org/entity/Q1887464> ;
+                   :campaignPage "https://www.survivalinternational.org/uncontactedtribes"^^xsd:anyURI ;
+                   rdfs:comment "There are more than a hundred uncontacted tribes around the world. They are a vitally important part of humankind’s diversity, but they face catastrophe unless their land is protected. Survival is doing everything possible to secure their land for them, and to let them live."@en ;
+                   rdfs:label "Incontattati"@it ,
+                              "Uncontacted Tribes"@en .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela
+:Venezuela rdf:type owl:NamedIndividual ,
+                    <http://schema.org/Country> ,
+                    <http://schema.org/Place> ,
+                    <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                    :Country ,
+                    :Location ,
+                    <https://www.wikidata.org/entity/Q6256> ,
+                    <https://www.wikidata.org/entity/Q82794> ;
+           <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Venezuela ,
+                                                                                                 <https://www.wikidata.org/entity/Q717> ;
+           rdfs:comment "The Bolivarian Republic of Venezuela"@en ;
+           rdfs:label "Venezuela"@en ,
+                      "Venezuela"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami
+:Yanomami rdf:type owl:NamedIndividual ,
+                   <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                   :ForestTribe ,
+                   :Tribe ,
+                   :UncontactedTribe ,
+                   <https://www.wikidata.org/entity/Q103817> ;
+          <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Yanomami ,
+                                                                                                <https://www.wikidata.org/entity/Q34188> ;
+          <http://www.wikidata.org/prop/direct/P1706> :Yanomami ,
+                                                      <https://www.wikidata.org/entity/Q34188> ;
+          :cohabitsWith :Yanomami ,
+                        <https://www.wikidata.org/entity/Q34188> ;
+          :helpedBy :StopBrazilGenocide ;
+          :livesIn :YanomamiPark ,
+                   <https://www.wikidata.org/entity/Q10380751> ;
+          :threatenedBy :Deforestation ,
+                        :IllegalMining ;
+          :contacted "false"^^xsd:boolean ;
+          :name "Yanomamö"^^xsd:string ;
+          rdfs:comment "The Yanomami are the largest relatively isolated tribe in South America. They live in the rainforests and mountains of northern Brazil and southern Venezuela."@en ;
+          rdfs:label "Yanomami"@en ,
+                     "Yanomami"@it .
+
+
+###  https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark
+:YanomamiPark rdf:type owl:NamedIndividual ,
+                       <http://schema.org/Place> ,
+                       <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                       :Forest ,
+                       :Habitat ,
+                       :Location ,
+                       <https://www.wikidata.org/entity/Q82794> ;
+              <http://schema.org/location> :Brazil ,
+                                           :SouthAmerica ,
+                                           :Venezuela ,
+                                           <https://www.wikidata.org/entity/Q155> ,
+                                           <https://www.wikidata.org/entity/Q18> ,
+                                           <https://www.wikidata.org/entity/Q717> ;
+              <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :YanomamiPark ,
+                                                                                                    <https://www.wikidata.org/entity/Q10380751> ;
+              <http://www.wikidata.org/prop/direct/P706> :Brazil ,
+                                                         :SouthAmerica ,
+                                                         :Venezuela ,
+                                                         <https://www.wikidata.org/entity/Q155> ,
+                                                         <https://www.wikidata.org/entity/Q18> ,
+                                                         <https://www.wikidata.org/entity/Q717> ;
+              :hosts :Yanomami ,
+                     <https://www.wikidata.org/entity/Q34188> ;
+              :locatedIn :Brazil ,
+                         :SouthAmerica ,
+                         :Venezuela ,
+                         <https://www.wikidata.org/entity/Q155> ,
+                         <https://www.wikidata.org/entity/Q18> ,
+                         <https://www.wikidata.org/entity/Q717> ;
+              :habitatType "forest" ;
+              rdfs:comment "The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission."@en ;
+              rdfs:label "Yanomami Park"@en ,
+                         "Yanomami Park"@it .
+
+
+###  https://www.wikidata.org/entity/Q10380751
+<https://www.wikidata.org/entity/Q10380751> rdf:type owl:NamedIndividual ,
+                                                     <http://schema.org/Place> ,
+                                                     <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                     :Forest ,
+                                                     :Habitat ,
+                                                     :Location ,
+                                                     <https://www.wikidata.org/entity/Q82794> ;
+                                            <http://schema.org/location> :Brazil ,
+                                                                         :SouthAmerica ,
+                                                                         :Venezuela ,
+                                                                         <https://www.wikidata.org/entity/Q155> ,
+                                                                         <https://www.wikidata.org/entity/Q18> ,
+                                                                         <https://www.wikidata.org/entity/Q717> ;
+                                            <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :YanomamiPark ,
+                                                                                                                                  <https://www.wikidata.org/entity/Q10380751> ;
+                                            <http://www.wikidata.org/prop/direct/P706> :Brazil ,
+                                                                                       :SouthAmerica ,
+                                                                                       :Venezuela ,
+                                                                                       <https://www.wikidata.org/entity/Q155> ,
+                                                                                       <https://www.wikidata.org/entity/Q18> ,
+                                                                                       <https://www.wikidata.org/entity/Q717> ;
+                                            :hosts :Yanomami ,
+                                                   <https://www.wikidata.org/entity/Q34188> ;
+                                            :locatedIn :Brazil ,
+                                                       :SouthAmerica ,
+                                                       :Venezuela ,
+                                                       <https://www.wikidata.org/entity/Q155> ,
+                                                       <https://www.wikidata.org/entity/Q18> ,
+                                                       <https://www.wikidata.org/entity/Q717> ;
+                                            :habitatType "forest" ;
+                                            rdfs:label "Terra Indígena Yanomami"@en .
+
+
+###  https://www.wikidata.org/entity/Q1260331
+<https://www.wikidata.org/entity/Q1260331> rdf:type owl:NamedIndividual ,
+                                                    <http://schema.org/Place> ,
+                                                    <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                    :Forest ,
+                                                    :ForestedIsland ,
+                                                    :Habitat ,
+                                                    :Island ,
+                                                    :Location ,
+                                                    <https://www.wikidata.org/entity/Q82794> ;
+                                           <http://schema.org/location> :Asia ,
+                                                                        :India ,
+                                                                        <https://www.wikidata.org/entity/Q48> ,
+                                                                        <https://www.wikidata.org/entity/Q668> ;
+                                           <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :NorthSentinel ,
+                                                                                                                                 <https://www.wikidata.org/entity/Q1260331> ;
+                                           <http://www.wikidata.org/prop/direct/P706> :Asia ,
+                                                                                      :India ,
+                                                                                      <https://www.wikidata.org/entity/Q48> ,
+                                                                                      <https://www.wikidata.org/entity/Q668> ;
+                                           :hosts :Sentinelese ,
+                                                  <https://www.wikidata.org/entity/Q917695> ;
+                                           :locatedIn :Asia ,
+                                                      :India ,
+                                                      <https://www.wikidata.org/entity/Q48> ,
+                                                      <https://www.wikidata.org/entity/Q668> ;
+                                           :habitatType "forest" ,
+                                                        "island" ;
+                                           rdfs:label "North Sentinel Island"@en ,
+                                                      "isola di North Sentinel"@it .
+
+
+###  https://www.wikidata.org/entity/Q145
+<https://www.wikidata.org/entity/Q145> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://schema.org/location> :Europe ,
+                                                                    <https://www.wikidata.org/entity/Q46> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :UK ,
+                                                                                                                             <https://www.wikidata.org/entity/Q145> ;
+                                       <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                                                                  <https://www.wikidata.org/entity/Q46> ;
+                                       :locatedIn :Europe ,
+                                                  <https://www.wikidata.org/entity/Q46> ;
+                                       rdfs:label "Regno Unito"@it ,
+                                                  "United Kingdom"@en .
+
+
+###  https://www.wikidata.org/entity/Q15
+<https://www.wikidata.org/entity/Q15> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Continent> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Continent ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q5107> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Africa ,
+                                                                                                                            <https://www.wikidata.org/entity/Q15> ;
+                                      rdfs:label "Africa"@en ,
+                                                 "Africa"@it .
+
+
+###  https://www.wikidata.org/entity/Q155
+<https://www.wikidata.org/entity/Q155> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://schema.org/location> :SouthAmerica ,
+                                                                    <https://www.wikidata.org/entity/Q18> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Brazil ,
+                                                                                                                             <https://www.wikidata.org/entity/Q155> ;
+                                       <http://www.wikidata.org/prop/direct/P706> :SouthAmerica ,
+                                                                                  <https://www.wikidata.org/entity/Q18> ;
+                                       :locatedIn :SouthAmerica ,
+                                                  <https://www.wikidata.org/entity/Q18> ;
+                                       rdfs:label "Brasile"@it ,
+                                                  "Brazil"@en .
+
+
+###  https://www.wikidata.org/entity/Q16494254
+<https://www.wikidata.org/entity/Q16494254> rdf:type owl:NamedIndividual ,
+                                                     <http://schema.org/Organization> ,
+                                                     <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                     :Organization ,
+                                                     <https://www.wikidata.org/entity/Q43229> ;
+                                            <http://schema.org/location> :Brazil ,
+                                                                         :SouthAmerica ,
+                                                                         <https://www.wikidata.org/entity/Q155> ,
+                                                                         <https://www.wikidata.org/entity/Q18> ;
+                                            <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :APIB ,
+                                                                                                                                  :SurvivalInternational ,
+                                                                                                                                  <https://www.wikidata.org/entity/Q16494254> ,
+                                                                                                                                  <https://www.wikidata.org/entity/Q1887464> ;
+                                            <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> :StopBrazilGenocide ;
+                                            <http://www.wikidata.org/prop/direct/P706> :Brazil ,
+                                                                                       :SouthAmerica ,
+                                                                                       <https://www.wikidata.org/entity/Q155> ,
+                                                                                       <https://www.wikidata.org/entity/Q18> ;
+                                            :collaboratesWith :APIB ,
+                                                              :SurvivalInternational ,
+                                                              <https://www.wikidata.org/entity/Q16494254> ,
+                                                              <https://www.wikidata.org/entity/Q1887464> ;
+                                            :leads :StopBrazilGenocide ;
+                                            :locatedIn :Brazil ,
+                                                       :SouthAmerica ,
+                                                       <https://www.wikidata.org/entity/Q155> ,
+                                                       <https://www.wikidata.org/entity/Q18> ;
+                                            :email "apib.se@apiboficial.org" ;
+                                            :website "https://apiboficial.org/"^^xsd:anyURI ;
+                                            rdfs:label "Brazil's Indigenous People Articulation"@en .
+
+
+###  https://www.wikidata.org/entity/Q172365
+<https://www.wikidata.org/entity/Q172365> rdf:type owl:NamedIndividual ,
+                                                   <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                   :DesertTribe ,
+                                                   :Tribe ,
+                                                   <https://www.wikidata.org/entity/Q103817> ;
+                                          <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Bushmen ,
+                                                                                                                                <https://www.wikidata.org/entity/Q172365> ;
+                                          <http://www.wikidata.org/prop/direct/P1706> :Bushmen ,
+                                                                                      <https://www.wikidata.org/entity/Q172365> ;
+                                          :cohabitsWith :Bushmen ,
+                                                        <https://www.wikidata.org/entity/Q172365> ;
+                                          :helpedBy :DecolonizeConservation ;
+                                          :livesIn :CentralKalahariGameReserve ,
+                                                   <https://www.wikidata.org/entity/Q194732> ;
+                                          :threatenedBy :ColonialConservation ;
+                                          :contacted "true"^^xsd:boolean ;
+                                          :name "San"^^xsd:string ;
+                                          rdfs:label "San"@it ,
+                                                     "San people"@en .
+
+
+###  https://www.wikidata.org/entity/Q18
+<https://www.wikidata.org/entity/Q18> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Continent> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Continent ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q5107> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :SouthAmerica ,
+                                                                                                                            <https://www.wikidata.org/entity/Q18> ;
+                                      rdfs:label "America meridionale"@it ,
+                                                 "South America"@en .
+
+
+###  https://www.wikidata.org/entity/Q1887464
+<https://www.wikidata.org/entity/Q1887464> rdf:type owl:NamedIndividual ,
+                                                    <http://schema.org/Organization> ,
+                                                    <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                    :Organization ,
+                                                    <https://www.wikidata.org/entity/Q43229> ;
+                                           <http://schema.org/location> :Europe ,
+                                                                        :UK ,
+                                                                        <https://www.wikidata.org/entity/Q145> ,
+                                                                        <https://www.wikidata.org/entity/Q46> ;
+                                           <http://schema.org/subOrganization> :SurvivalBrasil ,
+                                                                               :SurvivalItalia ;
+                                           <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :APIB ,
+                                                                                                                                 :SurvivalInternational ,
+                                                                                                                                 <https://www.wikidata.org/entity/Q16494254> ,
+                                                                                                                                 <https://www.wikidata.org/entity/Q1887464> ;
+                                           <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#isParticipantIn> :DecolonizeConservation ,
+                                                                                                                            :StopBrazilGenocide ,
+                                                                                                                            :UncontactedTribes ;
+                                           <http://www.wikidata.org/prop/direct/P355> :SurvivalBrasil ,
+                                                                                      :SurvivalItalia ;
+                                           <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                                                                      :UK ,
+                                                                                      <https://www.wikidata.org/entity/Q145> ,
+                                                                                      <https://www.wikidata.org/entity/Q46> ;
+                                           :collaboratesWith :APIB ,
+                                                             :SurvivalInternational ,
+                                                             <https://www.wikidata.org/entity/Q16494254> ,
+                                                             <https://www.wikidata.org/entity/Q1887464> ;
+                                           :hasBranch :SurvivalBrasil ,
+                                                      :SurvivalItalia ;
+                                           :leads :DecolonizeConservation ,
+                                                  :StopBrazilGenocide ,
+                                                  :UncontactedTribes ;
+                                           :locatedIn :Europe ,
+                                                      :UK ,
+                                                      <https://www.wikidata.org/entity/Q145> ,
+                                                      <https://www.wikidata.org/entity/Q46> ;
+                                           :email "info@survivalinternational.org" ;
+                                           :website "https://www.survivalinternational.org"^^xsd:anyURI ;
+                                           rdfs:label "Survival International"@en ,
+                                                      "Survival International"@it .
+
+
+###  https://www.wikidata.org/entity/Q194732
+<https://www.wikidata.org/entity/Q194732> rdf:type owl:NamedIndividual ,
+                                                   <http://schema.org/Place> ,
+                                                   <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                   :Desert ,
+                                                   :Habitat ,
+                                                   :Location ,
+                                                   <https://www.wikidata.org/entity/Q82794> ;
+                                          <http://schema.org/location> :Africa ,
+                                                                       :Botswana ,
+                                                                       <https://www.wikidata.org/entity/Q15> ,
+                                                                       <https://www.wikidata.org/entity/Q963> ;
+                                          <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :CentralKalahariGameReserve ,
+                                                                                                                                <https://www.wikidata.org/entity/Q194732> ;
+                                          <http://www.wikidata.org/prop/direct/P706> :Africa ,
+                                                                                     :Botswana ,
+                                                                                     <https://www.wikidata.org/entity/Q15> ,
+                                                                                     <https://www.wikidata.org/entity/Q963> ;
+                                          :hosts :Bushmen ,
+                                                 <https://www.wikidata.org/entity/Q172365> ;
+                                          :locatedIn :Africa ,
+                                                     :Botswana ,
+                                                     <https://www.wikidata.org/entity/Q15> ,
+                                                     <https://www.wikidata.org/entity/Q963> ;
+                                          :habitatType "desert" ;
+                                          rdfs:label "Central Kalahari Game Reserve"@en ,
+                                                     "Central Kalahari Game Reserve"@it .
+
+
+###  https://www.wikidata.org/entity/Q2708837
+<https://www.wikidata.org/entity/Q2708837> rdf:type owl:NamedIndividual ,
+                                                    <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                    :ForestTribe ,
+                                                    :Tribe ,
+                                                    :UncontactedTribe ,
+                                                    <https://www.wikidata.org/entity/Q103817> ;
+                                           <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Matses ,
+                                                                                                                                 <https://www.wikidata.org/entity/Q2708837> ;
+                                           <http://www.wikidata.org/prop/direct/P1706> :MashcoPiro ,
+                                                                                       :Matses ,
+                                                                                       <https://www.wikidata.org/entity/Q2708837> ,
+                                                                                       <https://www.wikidata.org/entity/Q3850712> ;
+                                           :cohabitsWith :MashcoPiro ,
+                                                         :Matses ,
+                                                         <https://www.wikidata.org/entity/Q2708837> ,
+                                                         <https://www.wikidata.org/entity/Q3850712> ;
+                                           :helpedBy :UncontactedTribes ;
+                                           :livesIn :UncontactedFrontier ;
+                                           :threatenedBy :ForcedContact ;
+                                           :contacted "false"^^xsd:boolean ;
+                                           :name "Matsés"^^xsd:string ;
+                                           rdfs:label "Matsés"@it ,
+                                                      "Matsés people"@en .
+
+
+###  https://www.wikidata.org/entity/Q34188
+<https://www.wikidata.org/entity/Q34188> rdf:type owl:NamedIndividual ,
+                                                  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                  :ForestTribe ,
+                                                  :Tribe ,
+                                                  :UncontactedTribe ,
+                                                  <https://www.wikidata.org/entity/Q103817> ;
+                                         <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Yanomami ,
+                                                                                                                               <https://www.wikidata.org/entity/Q34188> ;
+                                         <http://www.wikidata.org/prop/direct/P1706> :Yanomami ,
+                                                                                     <https://www.wikidata.org/entity/Q34188> ;
+                                         :cohabitsWith :Yanomami ,
+                                                       <https://www.wikidata.org/entity/Q34188> ;
+                                         :helpedBy :StopBrazilGenocide ;
+                                         :livesIn :YanomamiPark ,
+                                                  <https://www.wikidata.org/entity/Q10380751> ;
+                                         :threatenedBy :Deforestation ,
+                                                       :IllegalMining ;
+                                         :contacted "false"^^xsd:boolean ;
+                                         :name "Yanomamö"^^xsd:string ;
+                                         rdfs:label "Yanomami"@en ,
+                                                    "Yanomamö"@it .
+
+
+###  https://www.wikidata.org/entity/Q38
+<https://www.wikidata.org/entity/Q38> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Country> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Country ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q6256> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://schema.org/location> :Europe ,
+                                                                   <https://www.wikidata.org/entity/Q46> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Italy ,
+                                                                                                                            <https://www.wikidata.org/entity/Q38> ;
+                                      <http://www.wikidata.org/prop/direct/P706> :Europe ,
+                                                                                 <https://www.wikidata.org/entity/Q46> ;
+                                      :locatedIn :Europe ,
+                                                 <https://www.wikidata.org/entity/Q46> ;
+                                      rdfs:label "Italia"@it ,
+                                                 "Italy"@en .
+
+
+###  https://www.wikidata.org/entity/Q3850712
+<https://www.wikidata.org/entity/Q3850712> rdf:type owl:NamedIndividual ,
+                                                    <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                    :ForestTribe ,
+                                                    :Tribe ,
+                                                    :UncontactedTribe ,
+                                                    <https://www.wikidata.org/entity/Q103817> ;
+                                           <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :MashcoPiro ,
+                                                                                                                                 <https://www.wikidata.org/entity/Q3850712> ;
+                                           <http://www.wikidata.org/prop/direct/P1706> :MashcoPiro ,
+                                                                                       :Matses ,
+                                                                                       <https://www.wikidata.org/entity/Q2708837> ,
+                                                                                       <https://www.wikidata.org/entity/Q3850712> ;
+                                           :cohabitsWith :MashcoPiro ,
+                                                         :Matses ,
+                                                         <https://www.wikidata.org/entity/Q2708837> ,
+                                                         <https://www.wikidata.org/entity/Q3850712> ;
+                                           :helpedBy :UncontactedTribes ;
+                                           :livesIn :UncontactedFrontier ;
+                                           :threatenedBy :Deforestation ,
+                                                         :ForcedContact ;
+                                           :contacted "false"^^xsd:boolean ;
+                                           :name "Mashco-Piro"^^xsd:string ;
+                                           rdfs:label "Mascho Piro"@it ,
+                                                      "Mashco-Piro people"@en .
+
+
+###  https://www.wikidata.org/entity/Q419
+<https://www.wikidata.org/entity/Q419> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://schema.org/location> :SouthAmerica ,
+                                                                    <https://www.wikidata.org/entity/Q18> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Peru ,
+                                                                                                                             <https://www.wikidata.org/entity/Q419> ;
+                                       <http://www.wikidata.org/prop/direct/P706> :SouthAmerica ,
+                                                                                  <https://www.wikidata.org/entity/Q18> ;
+                                       :locatedIn :SouthAmerica ,
+                                                  <https://www.wikidata.org/entity/Q18> ;
+                                       rdfs:label "Peru"@en ,
+                                                  "Perù"@it .
+
+
+###  https://www.wikidata.org/entity/Q46
+<https://www.wikidata.org/entity/Q46> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Continent> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Continent ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q5107> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Europe ,
+                                                                                                                            <https://www.wikidata.org/entity/Q46> ;
+                                      rdfs:label "Europa"@it ,
+                                                 "Europe"@en .
+
+
+###  https://www.wikidata.org/entity/Q48
+<https://www.wikidata.org/entity/Q48> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Continent> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Continent ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q5107> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Asia ,
+                                                                                                                            <https://www.wikidata.org/entity/Q48> ;
+                                      rdfs:label "Asia"@en ,
+                                                 "Asia"@it .
+
+
+###  https://www.wikidata.org/entity/Q49
+<https://www.wikidata.org/entity/Q49> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Continent> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Continent ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q5107> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :NorthAmerica ,
+                                                                                                                            <https://www.wikidata.org/entity/Q49> ;
+                                      rdfs:label "America del Nord"@it ,
+                                                 "North America"@en .
+
+
+###  https://www.wikidata.org/entity/Q51
+<https://www.wikidata.org/entity/Q51> rdf:type owl:NamedIndividual ,
+                                               <http://schema.org/Continent> ,
+                                               <http://schema.org/Place> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                               :Continent ,
+                                               :Location ,
+                                               <https://www.wikidata.org/entity/Q5107> ,
+                                               <https://www.wikidata.org/entity/Q82794> ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Antarctica ,
+                                                                                                                            <https://www.wikidata.org/entity/Q51> ;
+                                      rdfs:label "Antarctica"@en ,
+                                                 "Antartide"@it .
+
+
+###  https://www.wikidata.org/entity/Q55643
+<https://www.wikidata.org/entity/Q55643> rdf:type owl:NamedIndividual ,
+                                                  <http://schema.org/Continent> ,
+                                                  <http://schema.org/Place> ,
+                                                  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                  :Continent ,
+                                                  :Location ,
+                                                  <https://www.wikidata.org/entity/Q5107> ,
+                                                  <https://www.wikidata.org/entity/Q82794> ;
+                                         <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Oceania ,
+                                                                                                                               <https://www.wikidata.org/entity/Q55643> ;
+                                         rdfs:label "Oceania"@en ,
+                                                    "Oceania"@it .
+
+
+###  https://www.wikidata.org/entity/Q668
+<https://www.wikidata.org/entity/Q668> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://schema.org/location> :Asia ,
+                                                                    <https://www.wikidata.org/entity/Q48> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :India ,
+                                                                                                                             <https://www.wikidata.org/entity/Q668> ;
+                                       <http://www.wikidata.org/prop/direct/P706> :Asia ,
+                                                                                  <https://www.wikidata.org/entity/Q48> ;
+                                       :locatedIn :Asia ,
+                                                  <https://www.wikidata.org/entity/Q48> ;
+                                       rdfs:label "India"@en ,
+                                                  "India"@it .
+
+
+###  https://www.wikidata.org/entity/Q717
+<https://www.wikidata.org/entity/Q717> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Venezuela ,
+                                                                                                                             <https://www.wikidata.org/entity/Q717> ;
+                                       rdfs:label "Venezuela"@en ,
+                                                  "Venezuela"@it .
+
+
+###  https://www.wikidata.org/entity/Q750
+<https://www.wikidata.org/entity/Q750> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://schema.org/location> :SouthAmerica ,
+                                                                    <https://www.wikidata.org/entity/Q18> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Bolivia ,
+                                                                                                                             <https://www.wikidata.org/entity/Q750> ;
+                                       <http://www.wikidata.org/prop/direct/P706> :SouthAmerica ,
+                                                                                  <https://www.wikidata.org/entity/Q18> ;
+                                       :locatedIn :SouthAmerica ,
+                                                  <https://www.wikidata.org/entity/Q18> ;
+                                       rdfs:label "Bolivia"@en ,
+                                                  "Bolivia"@it .
+
+
+###  https://www.wikidata.org/entity/Q917695
+<https://www.wikidata.org/entity/Q917695> rdf:type owl:NamedIndividual ,
+                                                   <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                   :ForestTribe ,
+                                                   :IslanderTribe ,
+                                                   :Tribe ,
+                                                   :UncontactedTribe ,
+                                                   <https://www.wikidata.org/entity/Q103817> ;
+                                          <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Sentinelese ,
+                                                                                                                                <https://www.wikidata.org/entity/Q917695> ;
+                                          <http://www.wikidata.org/prop/direct/P1706> :Sentinelese ,
+                                                                                      <https://www.wikidata.org/entity/Q917695> ;
+                                          :cohabitsWith :Sentinelese ,
+                                                        <https://www.wikidata.org/entity/Q917695> ;
+                                          :helpedBy :UncontactedTribes ;
+                                          :livesIn :NorthSentinel ,
+                                                   <https://www.wikidata.org/entity/Q1260331> ;
+                                          :threatenedBy :ForcedContact ,
+                                                        :IllegalFishing ;
+                                          :contacted "false"^^xsd:boolean ;
+                                          :name "Sentinelese"^^xsd:string ;
+                                          rdfs:label "Sentinelese people"@en ,
+                                                     "Sentinelesi"@it .
+
+
+###  https://www.wikidata.org/entity/Q963
+<https://www.wikidata.org/entity/Q963> rdf:type owl:NamedIndividual ,
+                                                <http://schema.org/Country> ,
+                                                <http://schema.org/Place> ,
+                                                <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Object> ,
+                                                :Country ,
+                                                :Location ,
+                                                <https://www.wikidata.org/entity/Q6256> ,
+                                                <https://www.wikidata.org/entity/Q82794> ;
+                                       <http://schema.org/location> :Africa ,
+                                                                    <https://www.wikidata.org/entity/Q15> ;
+                                       <http://www.ontologydesignpatterns.org/cp/owl/coparticipation.owl#coparticipatesWith> :Botswana ,
+                                                                                                                             <https://www.wikidata.org/entity/Q963> ;
+                                       <http://www.wikidata.org/prop/direct/P706> :Africa ,
+                                                                                  <https://www.wikidata.org/entity/Q15> ;
+                                       :locatedIn :Africa ,
+                                                  <https://www.wikidata.org/entity/Q15> ;
+                                       rdfs:label "Botswana"@en ,
+                                                  "Botswana"@it .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent> rdfs:comment "This annotation property is useful for content ontology design patterns. Its value is a URI, which refers to another content ontology design pattern which is a component of the annotated one." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest> rdfs:comment "This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf> rdfs:comment "This annotation property is used for referring a cloned ontology entity to its cloning source." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf> rdfs:comment "This annotation property is useful for content ontology design patterns and its elements. Its value is a URI, which refers either to a content ontology design pattern that is specialized by the annotated one, or to an ontology element that is specialized by the annotated one." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom> rdfs:comment "This annotation property should be assigned with a URI, which points to the concept schema, page, or anything else from which the annotated pattern was reengineered.  If the source does not have any URI e.g., a printed book, this property value should provide information as precise as possible in order to identify the source. This property is alternative to the extractedFrom property because it is used when the pattern come from a concept schema which is not an owl ontology. For example content ontology design patterns, which are reengineered from data model patterns, rdf schemas, etc. should be annotatd with this property. E.g. The basicpersonalfoaf pattern is extracted from the rdf FOAF specification, hence the value for this annotation property is http://xmlns.com/foaf/spec/20071002.rdf" .
+
+
+:emailAddress rdfs:label "E-mail"@it ;
+              rdfs:comment "A datatype for an e-mail address"@en ;
+              rdfs:label "E-mail"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
