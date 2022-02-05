@@ -1,8 +1,10 @@
 @prefix : <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <https://www.wikidata.org/entity/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -10,7 +12,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/> .
 @prefix survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
-@base <https://acontenti.github.io/progetto-modsem/survival.ttl#> .
+@base <https://acontenti.github.io/progetto-modsem/survival.ttl> .
 
 <https://acontenti.github.io/progetto-modsem/survival.ttl> rdf:type owl:Ontology ;
                                                             dc:creator "Alessandro Contenti" ;
@@ -70,6 +72,53 @@ survival:emailAddress rdf:type rdfs:Datatype ;
 #    Object Properties
 #################################################################
 
+###  http://schema.org/location
+schema:location rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty survival:locatedIn ;
+                rdfs:label "location" .
+
+
+###  http://schema.org/parentOrganization
+schema:parentOrganization rdf:type owl:ObjectProperty ;
+                          owl:equivalentProperty survival:branchOf ;
+                          owl:inverseOf schema:subOrganization ;
+                          rdfs:label "parentOrganization" .
+
+
+###  http://schema.org/subOrganization
+schema:subOrganization rdf:type owl:ObjectProperty ;
+                       owl:equivalentProperty survival:hasBranch ;
+                       rdfs:label "subOrganization" .
+
+
+###  http://www.wikidata.org/prop/direct/P1706
+wdt:P1706 rdf:type owl:ObjectProperty ;
+          rdfs:label "insieme a"@it ,
+                     "together with"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P355
+wdt:P355 rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty survival:hasBranch ;
+         owl:inverseOf wdt:P749 ;
+         rdfs:label "filiali"@it ,
+                    "subsidiary"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P706
+wdt:P706 rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty survival:locatedIn ;
+         rdfs:label "located in/on physical feature"@en ,
+                    "luogo geografico"@it .
+
+
+###  http://www.wikidata.org/prop/direct/P749
+wdt:P749 rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty survival:branchOf ;
+         rdfs:label "ente controllante"@it ,
+                    "parent organization"@en .
+
+
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#addressedBy
 survival:addressedBy rdf:type owl:ObjectProperty ;
                      owl:inverseOf survival:addresses ;
@@ -103,8 +152,9 @@ survival:branchOf rdf:type owl:ObjectProperty ;
 
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#cohabitsWith
-survival:cohabitsWith rdf:type owl:ObjectProperty ,
-                               owl:SymmetricProperty ;
+survival:cohabitsWith rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf wdt:P1706 ;
+                      rdf:type owl:SymmetricProperty ;
                       rdfs:domain survival:Tribe ;
                       rdfs:range survival:Tribe ;
                       owl:propertyChainAxiom ( survival:livesIn
@@ -306,20 +356,14 @@ survival:website rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://purl.org/dc/elements/1.1/Location
-dc:Location rdf:type owl:Class ;
-            owl:equivalentClass survival:Location .
-
-
-###  http://schema.org/AdministrativeArea
-schema:AdministrativeArea rdf:type owl:Class ;
-                          rdfs:subClassOf schema:Place .
+###  http://schema.org/Continent
+schema:Continent rdf:type owl:Class ;
+                 owl:equivalentClass survival:Continent .
 
 
 ###  http://schema.org/Country
 schema:Country rdf:type owl:Class ;
-               owl:equivalentClass survival:Country ;
-               rdfs:subClassOf schema:AdministrativeArea .
+               owl:equivalentClass survival:Country .
 
 
 ###  http://schema.org/Organization
@@ -352,6 +396,7 @@ survival:BranchOrganization rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Campaign
 survival:Campaign rdf:type owl:Class ;
+                  owl:equivalentClass wd:Q18812548 ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty survival:addresses ;
                                     owl:someValuesFrom survival:Threat
@@ -367,7 +412,8 @@ survival:Campaign rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Continent
 survival:Continent rdf:type owl:Class ;
-                   owl:equivalentClass [ rdf:type owl:Class ;
+                   owl:equivalentClass wd:Q5107 ,
+                                       [ rdf:type owl:Class ;
                                          owl:oneOf ( survival:Africa
                                                      survival:Antarctica
                                                      survival:Asia
@@ -385,6 +431,7 @@ survival:Continent rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Country
 survival:Country rdf:type owl:Class ;
+                 owl:equivalentClass wd:Q6256 ;
                  rdfs:subClassOf survival:Location ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty survival:locatedIn ;
@@ -517,6 +564,7 @@ survival:LocalCampaign rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Location
 survival:Location rdf:type owl:Class ;
+                  owl:equivalentClass wd:Q82794 ;
                   rdfs:comment "A generic location"@en ;
                   rdfs:label "Location"@en ,
                              "Luogo"@it .
@@ -524,7 +572,7 @@ survival:Location rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Organization
 survival:Organization rdf:type owl:Class ;
-                      owl:equivalentClass foaf:Organization ;
+                      owl:equivalentClass wd:Q43229 ;
                       rdfs:subClassOf [ rdf:type owl:Restriction ;
                                         owl:onProperty survival:locatedIn ;
                                         owl:someValuesFrom survival:Country
@@ -560,6 +608,7 @@ survival:Threat rdf:type owl:Class ;
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Tribe
 survival:Tribe rdf:type owl:Class ;
+               owl:equivalentClass wd:Q103817 ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
                                  owl:onProperty survival:livesIn ;
                                  owl:someValuesFrom survival:Habitat
@@ -581,8 +630,40 @@ survival:UncontactedTribe rdf:type owl:Class ;
                                      "Uncontacted tribe"@en .
 
 
-###  http://xmlns.com/foaf/0.1/Organization
-foaf:Organization rdf:type owl:Class .
+###  https://www.wikidata.org/entity/Q103817
+wd:Q103817 rdf:type owl:Class ;
+           rdfs:label "indigenous people"@en ,
+                      "popolo indigeno"@it .
+
+
+###  https://www.wikidata.org/entity/Q18812548
+wd:Q18812548 rdf:type owl:Class ;
+             rdfs:label "campagna"@it ,
+                        "campaign"@en .
+
+
+###  https://www.wikidata.org/entity/Q43229
+wd:Q43229 rdf:type owl:Class ;
+          rdfs:label "organization"@en ,
+                     "organizzazione"@it .
+
+
+###  https://www.wikidata.org/entity/Q5107
+wd:Q5107 rdf:type owl:Class ;
+         rdfs:label "continent"@en ,
+                    "continente"@it .
+
+
+###  https://www.wikidata.org/entity/Q6256
+wd:Q6256 rdf:type owl:Class ;
+         rdfs:label "country"@en ,
+                    "paese"@it .
+
+
+###  https://www.wikidata.org/entity/Q82794
+wd:Q82794 rdf:type owl:Class ;
+          rdfs:label "geographic region"@en ,
+                     "regione geografica"@it .
 
 
 #################################################################
@@ -592,6 +673,7 @@ foaf:Organization rdf:type owl:Class .
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#APIB
 survival:APIB rdf:type owl:NamedIndividual ,
                        survival:Organization ;
+              owl:sameAs wd:Q16494254 ;
               survival:locatedIn survival:Brazil ;
               survival:email "apib.se@apiboficial.org" ;
               survival:website "https://apiboficial.org/"^^xsd:anyURI ;
@@ -603,6 +685,7 @@ survival:APIB rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Africa
 survival:Africa rdf:type owl:NamedIndividual ,
                          survival:Continent ;
+                owl:sameAs wd:Q15 ;
                 rdfs:comment "The African continent"@en ;
                 rdfs:label "Africa"@en ,
                            "Africa"@it .
@@ -611,6 +694,7 @@ survival:Africa rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Antarctica
 survival:Antarctica rdf:type owl:NamedIndividual ,
                              survival:Continent ;
+                    owl:sameAs wd:Q51 ;
                     rdfs:comment "The Antarctic continent"@en ;
                     rdfs:label "Antarctica"@en ,
                                "Antartide"@it .
@@ -619,6 +703,7 @@ survival:Antarctica rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Asia
 survival:Asia rdf:type owl:NamedIndividual ,
                        survival:Continent ;
+              owl:sameAs wd:Q48 ;
               rdfs:comment "The continent of Asia"@en ;
               rdfs:label "Asia"@en ,
                          "Asia"@it .
@@ -627,6 +712,7 @@ survival:Asia rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Bolivia
 survival:Bolivia rdf:type owl:NamedIndividual ,
                           survival:Country ;
+                 owl:sameAs wd:Q750 ;
                  survival:locatedIn survival:SouthAmerica ;
                  rdfs:comment "The Plurinational State of Bolivia"@en ;
                  rdfs:label "Bolivia"@en ,
@@ -636,6 +722,7 @@ survival:Bolivia rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Botswana
 survival:Botswana rdf:type owl:NamedIndividual ,
                            survival:Country ;
+                  owl:sameAs wd:Q963 ;
                   survival:locatedIn survival:Africa ;
                   rdfs:comment "The Republic of Botswana"@en ;
                   rdfs:label "Botswana"@en ,
@@ -645,6 +732,7 @@ survival:Botswana rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Brazil
 survival:Brazil rdf:type owl:NamedIndividual ,
                          survival:Country ;
+                owl:sameAs wd:Q155 ;
                 survival:locatedIn survival:SouthAmerica ;
                 rdfs:label "Brasile"@it ,
                            "Brazil"@en .
@@ -653,6 +741,7 @@ survival:Brazil rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Bushmen
 survival:Bushmen rdf:type owl:NamedIndividual ,
                           survival:Tribe ;
+                 owl:sameAs wd:Q172365 ;
                  survival:livesIn survival:CentralKalahariGameReserve ;
                  survival:threatenedBy survival:ColonialConservation ;
                  survival:contacted "true"^^xsd:boolean ;
@@ -665,6 +754,7 @@ survival:Bushmen rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#CentralKalahariGameReserve
 survival:CentralKalahariGameReserve rdf:type owl:NamedIndividual ,
                                              survival:Habitat ;
+                                    owl:sameAs wd:Q194732 ;
                                     survival:locatedIn survival:Botswana ;
                                     survival:habitatType "desert" ;
                                     rdfs:comment "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana"@en ;
@@ -702,6 +792,7 @@ survival:Deforestation rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Europe
 survival:Europe rdf:type owl:NamedIndividual ,
                          survival:Continent ;
+                owl:sameAs wd:Q46 ;
                 rdfs:comment "The European continent"@en ;
                 rdfs:label "Europa"@it ,
                            "Europe"@en .
@@ -734,6 +825,7 @@ survival:IllegalMining rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#India
 survival:India rdf:type owl:NamedIndividual ,
                         survival:Country ;
+               owl:sameAs wd:Q668 ;
                survival:locatedIn survival:Asia ;
                rdfs:comment "The Republic of India"@en ;
                rdfs:label "India"@en ,
@@ -743,6 +835,7 @@ survival:India rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Italy
 survival:Italy rdf:type owl:NamedIndividual ,
                         survival:Country ;
+               owl:sameAs wd:Q38 ;
                survival:locatedIn survival:Europe ;
                rdfs:comment "The Italian Republic"@en ;
                rdfs:label "Italia"@it ,
@@ -752,6 +845,7 @@ survival:Italy rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#MashcoPiro
 survival:MashcoPiro rdf:type owl:NamedIndividual ,
                              survival:Tribe ;
+                    owl:sameAs wd:Q3850712 ;
                     survival:livesIn survival:UncontactedFrontier ;
                     survival:threatenedBy survival:Deforestation ,
                                           survival:ForcedContact ;
@@ -765,6 +859,7 @@ survival:MashcoPiro rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Matses
 survival:Matses rdf:type owl:NamedIndividual ,
                          survival:Tribe ;
+                owl:sameAs wd:Q2708837 ;
                 survival:livesIn survival:UncontactedFrontier ;
                 survival:threatenedBy survival:ForcedContact ;
                 survival:contacted "false"^^xsd:boolean ;
@@ -777,6 +872,7 @@ survival:Matses rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#NorthAmerica
 survival:NorthAmerica rdf:type owl:NamedIndividual ,
                                survival:Continent ;
+                      owl:sameAs wd:Q49 ;
                       rdfs:comment "The North American continent"@en ;
                       rdfs:label "Nord America"@it ,
                                  "North America"@en .
@@ -785,6 +881,7 @@ survival:NorthAmerica rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#NorthSentinel
 survival:NorthSentinel rdf:type owl:NamedIndividual ,
                                 survival:Habitat ;
+                       owl:sameAs wd:Q1260331 ;
                        survival:locatedIn survival:India ;
                        survival:habitatType "forest" ,
                                             "island" ;
@@ -796,6 +893,7 @@ survival:NorthSentinel rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Oceania
 survival:Oceania rdf:type owl:NamedIndividual ,
                           survival:Continent ;
+                 owl:sameAs wd:Q55643 ;
                  rdfs:comment "The continent of Oceania"@en ;
                  rdfs:label "Oceania"@en ,
                             "Oceania"@it .
@@ -804,6 +902,7 @@ survival:Oceania rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Peru
 survival:Peru rdf:type owl:NamedIndividual ,
                        survival:Country ;
+              owl:sameAs wd:Q419 ;
               survival:locatedIn survival:SouthAmerica ;
               rdfs:comment "The Republic of Peru"@en ;
               rdfs:label "Peru"@en ,
@@ -813,6 +912,7 @@ survival:Peru rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Sentinelese
 survival:Sentinelese rdf:type owl:NamedIndividual ,
                               survival:Tribe ;
+                     owl:sameAs wd:Q917695 ;
                      survival:livesIn survival:NorthSentinel ;
                      survival:threatenedBy survival:ForcedContact ,
                                            survival:IllegalFishing ;
@@ -826,6 +926,7 @@ survival:Sentinelese rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#SouthAmerica
 survival:SouthAmerica rdf:type owl:NamedIndividual ,
                                survival:Continent ;
+                      owl:sameAs wd:Q18 ;
                       rdfs:comment "The South American continent"@en ;
                       rdfs:label "South America"@en ,
                                  "Sud America"@it .
@@ -858,6 +959,7 @@ survival:SurvivalBrasil rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalInternational
 survival:SurvivalInternational rdf:type owl:NamedIndividual ,
                                         survival:Organization ;
+                               owl:sameAs wd:Q1887464 ;
                                survival:locatedIn survival:UK ;
                                survival:email "info@survivalinternational.org" ;
                                survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
@@ -878,34 +980,14 @@ survival:SurvivalItalia rdf:type owl:NamedIndividual ,
                                    "Survival International Italy"@en .
 
 
-###  https://acontenti.github.io/progetto-modsem/survival.ttl#SurvivalUSA
-survival:SurvivalUSA rdf:type owl:NamedIndividual ,
-                              survival:Organization ;
-                     survival:branchOf survival:SurvivalInternational ;
-                     survival:locatedIn survival:USA ;
-                     survival:email "info.usa@survivalinternational.org"^^xsd:string ;
-                     survival:website "https://www.survivalinternational.org"^^xsd:anyURI ;
-                     rdfs:comment "US office of Survival International"@en ;
-                     rdfs:label "Survival International USA"@en ,
-                                "Survival International USA"@it .
-
-
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#UK
 survival:UK rdf:type owl:NamedIndividual ,
                      survival:Country ;
+            owl:sameAs wd:Q145 ;
             survival:locatedIn survival:Europe ;
             rdfs:comment "The United Kingdom of Great Britain and Northern Ireland"@en ;
             rdfs:label "Regno Unito"@it ,
                        "United Kingdom"@en .
-
-
-###  https://acontenti.github.io/progetto-modsem/survival.ttl#USA
-survival:USA rdf:type owl:NamedIndividual ,
-                      survival:Country ;
-             survival:locatedIn survival:NorthAmerica ;
-             rdfs:comment "The United States of America"@en ;
-             rdfs:label "Stati Uniti d'America"@it ,
-                        "United States of America"@en .
 
 
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#UncontactedFrontier
@@ -934,6 +1016,7 @@ survival:UncontactedTribes rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Venezuela
 survival:Venezuela rdf:type owl:NamedIndividual ,
                             survival:Country ;
+                   owl:sameAs wd:Q717 ;
                    rdfs:comment "The Bolivarian Republic of Venezuela"@en ;
                    rdfs:label "Venezuela"@en ,
                               "Venezuela"@it .
@@ -942,6 +1025,7 @@ survival:Venezuela rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#Yanomami
 survival:Yanomami rdf:type owl:NamedIndividual ,
                            survival:Tribe ;
+                  owl:sameAs wd:Q34188 ;
                   survival:livesIn survival:YanomamiPark ;
                   survival:threatenedBy survival:Deforestation ,
                                         survival:IllegalMining ;
@@ -955,12 +1039,183 @@ survival:Yanomami rdf:type owl:NamedIndividual ,
 ###  https://acontenti.github.io/progetto-modsem/survival.ttl#YanomamiPark
 survival:YanomamiPark rdf:type owl:NamedIndividual ,
                                survival:Habitat ;
+                      owl:sameAs wd:Q10380751 ;
                       survival:locatedIn survival:Brazil ,
                                          survival:Venezuela ;
                       survival:habitatType "forest" ;
                       rdfs:comment "The Yanomami Park covers 37,000 square miles in the Brazilian Amazon on the Venezuelan border; it is inhabited by 27,000 Yanomami. The Yanomami Park in Brazil was created on 25 May 1992, following years of campaigning by Davi Kopenawa Yanomami, Survival International, and the Pro Yanomami Commission."@en ;
                       rdfs:label "Yanomami Park"@en ,
                                  "Yanomami Park"@it .
+
+
+###  https://www.wikidata.org/entity/Q10380751
+wd:Q10380751 rdf:type owl:NamedIndividual ;
+             rdfs:label "Terra Indígena Yanomami"@en .
+
+
+###  https://www.wikidata.org/entity/Q1260331
+wd:Q1260331 rdf:type owl:NamedIndividual ;
+            rdfs:label "North Sentinel Island"@en ,
+                       "isola di North Sentinel"@it .
+
+
+###  https://www.wikidata.org/entity/Q145
+wd:Q145 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "Regno Unito"@it ,
+                   "United Kingdom"@en .
+
+
+###  https://www.wikidata.org/entity/Q15
+wd:Q15 rdf:type owl:NamedIndividual ,
+                wd:Q5107 ;
+       rdfs:label "Africa"@en ,
+                  "Africa"@it .
+
+
+###  https://www.wikidata.org/entity/Q155
+wd:Q155 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "Brasile"@it ,
+                   "Brazil"@en .
+
+
+###  https://www.wikidata.org/entity/Q16494254
+wd:Q16494254 rdf:type owl:NamedIndividual ,
+                      wd:Q43229 ;
+             rdfs:label "Brazil's Indigenous People Articulation"@en .
+
+
+###  https://www.wikidata.org/entity/Q172365
+wd:Q172365 rdf:type owl:NamedIndividual ,
+                    wd:Q103817 ;
+           rdfs:label "San"@it ,
+                      "San people"@en .
+
+
+###  https://www.wikidata.org/entity/Q18
+wd:Q18 rdf:type owl:NamedIndividual ,
+                wd:Q5107 ;
+       rdfs:label "America meridionale"@it ,
+                  "South America"@en .
+
+
+###  https://www.wikidata.org/entity/Q1887464
+wd:Q1887464 rdf:type owl:NamedIndividual ,
+                     wd:Q43229 ;
+            rdfs:label "Survival International"@en ,
+                       "Survival International"@it .
+
+
+###  https://www.wikidata.org/entity/Q194732
+wd:Q194732 rdf:type owl:NamedIndividual ;
+           rdfs:label "Central Kalahari Game Reserve"@en ,
+                      "Central Kalahari Game Reserve"@it .
+
+
+###  https://www.wikidata.org/entity/Q2708837
+wd:Q2708837 rdf:type owl:NamedIndividual ,
+                     wd:Q103817 ;
+            rdfs:label "Matsés"@it ,
+                       "Matsés people"@en .
+
+
+###  https://www.wikidata.org/entity/Q34188
+wd:Q34188 rdf:type owl:NamedIndividual ,
+                   wd:Q103817 ;
+          rdfs:label "Yanomami"@en ,
+                     "Yanomamö"@it .
+
+
+###  https://www.wikidata.org/entity/Q38
+wd:Q38 rdf:type owl:NamedIndividual ,
+                wd:Q6256 ;
+       rdfs:label "Italia"@it ,
+                  "Italy"@en .
+
+
+###  https://www.wikidata.org/entity/Q3850712
+wd:Q3850712 rdf:type owl:NamedIndividual ,
+                     wd:Q103817 ;
+            rdfs:label "Mascho Piro"@it ,
+                       "Mashco-Piro people"@en .
+
+
+###  https://www.wikidata.org/entity/Q419
+wd:Q419 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "Peru"@en ,
+                   "Perù"@it .
+
+
+###  https://www.wikidata.org/entity/Q46
+wd:Q46 rdf:type owl:NamedIndividual ,
+                wd:Q5107 ;
+       rdfs:label "Europa"@it ,
+                  "Europe"@en .
+
+
+###  https://www.wikidata.org/entity/Q48
+wd:Q48 rdf:type owl:NamedIndividual ,
+                wd:Q5107 ;
+       rdfs:label "Asia"@en ,
+                  "Asia"@it .
+
+
+###  https://www.wikidata.org/entity/Q49
+wd:Q49 rdf:type owl:NamedIndividual ,
+                wd:Q5107 ;
+       rdfs:label "America del Nord"@it ,
+                  "North America"@en .
+
+
+###  https://www.wikidata.org/entity/Q51
+wd:Q51 rdf:type owl:NamedIndividual ,
+                wd:Q5107 ;
+       rdfs:label "Antarctica"@en ,
+                  "Antartide"@it .
+
+
+###  https://www.wikidata.org/entity/Q55643
+wd:Q55643 rdf:type owl:NamedIndividual ,
+                   wd:Q5107 ;
+          rdfs:label "Oceania"@en ,
+                     "Oceania"@it .
+
+
+###  https://www.wikidata.org/entity/Q668
+wd:Q668 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "India"@en ,
+                   "India"@it .
+
+
+###  https://www.wikidata.org/entity/Q717
+wd:Q717 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "Venezuela"@en ,
+                   "Venezuela"@it .
+
+
+###  https://www.wikidata.org/entity/Q750
+wd:Q750 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "Bolivia"@en ,
+                   "Bolivia"@it .
+
+
+###  https://www.wikidata.org/entity/Q917695
+wd:Q917695 rdf:type owl:NamedIndividual ,
+                    wd:Q103817 ;
+           rdfs:label "Sentinelese people"@en ,
+                      "Sentinelesi"@it .
+
+
+###  https://www.wikidata.org/entity/Q963
+wd:Q963 rdf:type owl:NamedIndividual ,
+                 wd:Q6256 ;
+        rdfs:label "Botswana"@en ,
+                   "Botswana"@it .
 
 
 #################################################################
@@ -990,7 +1245,6 @@ survival:YanomamiPark rdf:type owl:NamedIndividual ,
                         survival:SurvivalBrasil
                         survival:SurvivalInternational
                         survival:SurvivalItalia
-                        survival:SurvivalUSA
                       )
 ] .
 
@@ -1015,7 +1269,7 @@ survival:YanomamiPark rdf:type owl:NamedIndividual ,
                         survival:Italy
                         survival:Peru
                         survival:UK
-                        survival:USA
+                        survival:Venezuela
                       )
 ] .
 
