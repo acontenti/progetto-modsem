@@ -93,6 +93,8 @@ Queste sono state utilizzate anche per trarre informazioni su concetti non speci
 
 == LODE
 
+La documentazione generata con LODE (per la precisione con il tool https://github.com/dgarijo/Widoco[WIDOCO] che utilizza LODE) è disponibile al seguente indirizzo web: https://acontenti.github.io/progetto-modsem/index-en.html
+
 == Visualizzazione
 
 === Tassonomia delle classi
@@ -101,4 +103,25 @@ Queste sono state utilizzate anche per trarre informazioni su concetti non speci
 
 == Queries SPARQL
 
+=== Interazione
+
+=== Queries
+
 == Applicazione client
+
+L'applicazione client è stata realizzata con il framework JavaScript _Quasar_, costruito a sua volta sul framework _Vue.js_. +
+Ho scelto questo framework perché permette di costruire velocemente una single page application (SPA) ben strutturata, senza dover creare tutta l'architettura e la UI da zero, dando quindi allo sviluppatore la possibilità di concentrarsi sul contenuto invece che sulla forma.
+
+L'applicazione rispecchia a grandi linee quanto illustrato nei mockup presenti nella sezione precedente e permette di visualizzare i dati delle queries viste, in maniera totalmente trasparente per l'utente. +
+Le sezioni dell'applicazione, che rappresentano le varie queries, sono accessibili dalla pagina iniziale e dal menù di navigazione (a sinistra).
+
+Inoltre sono state aggiunte delle pagine che permettono di visualizzare i dettagli degli individui appartenenti alle seguenti classi:
+
+* `survival:Campaign` -> Campagna
+* `survival:Country` -> Paese
+* `survival:Habitat` -> Habitat
+* `survival:Organization` -> Organizzazione
+* `survival:Tribe` -> Popolo indigeno
+
+Queste ultime non sono accessibili direttamente tramite la barra di navigazione, bensì dalle varie sezioni dell'applicazione. +
+Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica sezione, sono dotati di link che indirizzano alla pagina di dettaglio dello specifico individuo.
