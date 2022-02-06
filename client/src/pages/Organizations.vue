@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import Queries from "src/components/Queries";
+import {Queries} from "src/components/Queries";
 import {defineComponent} from "vue";
 
 export default defineComponent({

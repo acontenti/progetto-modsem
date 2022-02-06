@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-const infer = <V>() => <T>(et: { [K in keyof T]: V }) => et;
-
-const queries = infer<{ page?: string, title: string, query: string }>()({
+const Queries = {
   tribes: {
     page: "tribes",
     title: "Tribes",
@@ -77,6 +74,32 @@ GROUP BY ?campaign ?campaignName ?url
 ORDER BY ?campaignName
 `
   },
+  organizations: {
+    page: "organizations",
+    title: "Organizations",
+    query: `
+PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX onto: <http://www.ontotext.com/>
+
+SELECT ?org (MAX(?label) as ?orgLabel) ?head (MAX(?hLabel) as ?headLabel)
+FROM onto:disable-sameAs
+WHERE {
+    ?org rdf:type survival:Organization;
+         rdfs:label ?label.
+    OPTIONAL {
+        ?org survival:branchOf ?head.
+        ?head rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = "" || LANGMATCHES(LANG(?hLabel), "en"))
+    }
+    FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+}
+GROUP BY ?org ?head
+ORDER BY ?orgLabel
+`
+  },
   threats: {
     page: "threats",
     title: "Tribes threats",
@@ -112,37 +135,50 @@ WHERE {
     }
 }
 `
-  },
-  organizations: {
-    page: "organizations",
-    title: "Organizations",
-    query: `
+  }
+};
+
+const DynQueries = {
+  tribe: (id: string) => `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX onto: <http://www.ontotext.com/>
 
-SELECT ?org (MAX(?label) as ?orgLabel) ?head (MAX(?hLabel) as ?headLabel)
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?name ?contacted ?threats ?habitat ?habitatLabel ?country ?countryLabel ?campaign ?campaignLabel
 FROM onto:disable-sameAs
 WHERE {
-    ?org rdf:type survival:Organization;
-         rdfs:label ?label.
-    OPTIONAL {
-        ?org survival:branchOf ?head.
-        ?head rdfs:label ?hLabel.
-        FILTER(LANG(?hLabel) = "" || LANGMATCHES(LANG(?hLabel), "en"))
+    {
+        SELECT ?tribe ?name ?contacted (GROUP_CONCAT(DISTINCT ?threatLabel;separator=', ') AS ?threats) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?country (MAX(?cLabel) AS ?countryLabel) WHERE {
+            BIND(<${id}> AS ?tribe)
+            ?tribe survival:name ?name;
+                   survival:contacted ?contacted;
+                   survival:livesIn ?habitat.
+            OPTIONAL {
+                ?tribe survival:threatenedBy ?threat.
+                ?threat rdfs:label ?threatLabel.
+                FILTER(LANG(?threatLabel) = "" || LANGMATCHES(LANG(?threatLabel), "en"))
+            }
+            OPTIONAL {
+                ?tribe survival:livesIn ?habitat.
+                ?habitat rdfs:label ?hLabel.
+                FILTER(LANG(?hLabel) = "" || LANGMATCHES(LANG(?hLabel), "en"))
+            }
+            OPTIONAL {
+                ?habitat survival:locatedIn ?country.
+                ?country rdf:type survival:Country;
+                         rdfs:label ?cLabel.
+                FILTER(LANG(?cLabel) = "" || LANGMATCHES(LANG(?cLabel), "en"))
+            }
+        } GROUP BY ?tribe ?name ?contacted ?habitat ?country
     }
-    FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    OPTIONAL {
+        ?tribe survival:helpedBy ?campaign.
+        ?campaign rdfs:label ?campaignLabel.
+        FILTER(LANG(?campaignLabel) = "" || LANGMATCHES(LANG(?campaignLabel), "en"))
+    }
 }
-GROUP BY ?org ?head
-ORDER BY ?orgLabel
 `
-  },
-  Q6: {
-    title: "Q6",
-    query: ""
-  }
-});
+};
 
-export default queries;
+export {Queries, DynQueries};

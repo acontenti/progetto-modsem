@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
-import Queries from "components/Queries";
+import {Queries} from "components/Queries";
 
 export default defineComponent({
   name: "MainLayout",
@@ -40,7 +40,7 @@ export default defineComponent({
           page: "home",
           title: "Home"
         },
-        ...Object.values(Queries).filter(it => !!it.page)
+        ...Object.values(Queries)
       ]
     }
   },
