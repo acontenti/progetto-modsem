@@ -1,0 +1,2142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with WebVOWL (version 1.1.7), http://vowl.visualdataweb.org -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   class="vowlGraph"
+   width="552.75519"
+   height="622.84674"
+   version="1.1"
+   id="svg685"
+   sodipodi:docname="ontology.svg"
+   inkscape:export-filename="D:\DATA\università\unito\magistrale\ModSem\progetto\report\diagrams\ontology.png"
+   inkscape:export-xdpi="355.73438"
+   inkscape:export-ydpi="355.73438"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata691">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs689" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="837"
+     id="namedview687"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.0113961"
+     inkscape:cx="230.64571"
+     inkscape:cy="327.42576"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg685" />
+  <g
+     style="opacity:1"
+     transform="matrix(0.50490108,0,0,0.50490108,19.526311,134.41517)"
+     id="g683">
+    <g
+       class="linkContainer"
+       id="g174">
+      <defs
+         id="defs2" />
+      <defs
+         id="defs76">
+        <marker
+           id="marker60"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path4"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker62"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path7"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker81"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path10"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker82"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path13"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker84"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path16"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker86"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path19"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker89"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path22"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker90"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path25"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker91"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path28"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker92"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path31"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker94"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path34"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker97"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path37"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker99"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path40"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker100"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path43"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker101"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path46"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker104"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path49"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="marker105"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path52"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerGENERATED-INTERSECTION-26-27-0"
+           viewBox="-10 -10 20 20"
+           markerWidth="20"
+           markerHeight="20"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           refX="-8">
+          <path
+             d="M 0,-8 8,0 0,8 -8,0 0,-8 8,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path55"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerGENERATED-INTERSECTION-26-28-1"
+           viewBox="-10 -10 20 20"
+           markerWidth="20"
+           markerHeight="20"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           refX="-8">
+          <path
+             d="M 0,-8 8,0 0,8 -8,0 0,-8 8,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path58"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerGENERATED-INTERSECTION-118-1-0"
+           viewBox="-10 -10 20 20"
+           markerWidth="20"
+           markerHeight="20"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           refX="-8">
+          <path
+             d="M 0,-8 8,0 0,8 -8,0 0,-8 8,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path61"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerGENERATED-INTERSECTION-118-27-1"
+           viewBox="-10 -10 20 20"
+           markerWidth="20"
+           markerHeight="20"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           refX="-8">
+          <path
+             d="M 0,-8 8,0 0,8 -8,0 0,-8 8,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path64"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerobjectProperty76"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path67"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerobjectProperty77"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path70"
+             inkscape:connector-curvature="0" />
+        </marker>
+        <marker
+           id="markerobjectProperty78"
+           viewBox="-14 -10 28 20"
+           markerWidth="10"
+           markerHeight="10"
+           orient="auto">
+          <path
+             d="M 0,0 -12,8 V -8 L 0,0"
+             class="white"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:100"
+             id="path73"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <g
+         class="link"
+         id="g80"
+         style="marker-end:url(#marker60)">
+        <path
+           class="link-path node12 node45 dotted"
+           d="m 239.57646,319.23858 q 57.12488,-24.15945 71.40609,-30.19931 14.28122,-6.03986 71.4061,-30.19931"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path78"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g84"
+         style="marker-end:url(#marker82)">
+        <path
+           class="link-path node8 node45 dotted"
+           d="M 491.23506,427.6055 Q 472.84352,371.5369 468.24563,357.51975 463.64775,343.5026 445.2562,287.434"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path82"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g88"
+         style="marker-end:url(#marker84)">
+        <path
+           class="link-path node25 node8 dotted"
+           d="m 709.05111,491.71948 q -58.30776,-3.4442 -72.8847,-4.30525 -14.57694,-0.86105 -72.88469,-4.30526"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path86"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g92"
+         style="marker-end:url(#marker86)">
+        <path
+           class="link-path node55 node8 dotted"
+           d="m 318.80887,547.48837 q 55.10631,-19.65743 68.88289,-24.57178 13.77658,-4.91436 68.88289,-24.57179"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path90"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g96"
+         style="marker-end:url(#marker89)">
+        <path
+           class="link-path node2 node8 dotted"
+           d="m 641.31507,632.58737 q -38.7307,-44.49464 -48.41337,-55.6183 -9.68268,-11.12366 -48.41338,-55.61829"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path94"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g100"
+         style="marker-end:url(#marker92)">
+        <path
+           class="link-path node46 node12 dotted"
+           d="m 43.327117,516.30825 q 33.932755,-44.32664 42.415943,-55.4083 8.483189,-11.08166 42.41594,-55.4083"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path98"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g104"
+         style="marker-end:url(#marker97)">
+        <path
+           class="link-path node64 node13 dotted"
+           d="m 777.45381,-66.394136 q -55.68592,-18.416876 -69.6074,-23.021096 -13.92148,-4.604219 -69.6074,-23.021098"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path102"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g108"
+         style="marker-end:url(#marker99)">
+        <path
+           class="link-path node44 node17 dotted"
+           d="m 916.21492,369.08184 q -50.18798,-33.136 -62.73498,-41.42 -12.54699,-8.284 -62.73497,-41.42"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path106"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g112"
+         style="marker-end:url(#marker100)">
+        <path
+           class="link-path node57 node17 dotted"
+           d="m 954.27806,263.88493 q -60.59343,-4.99641 -75.74179,-6.24551 -15.14836,-1.2491 -75.74179,-6.24551"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path110"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g116"
+         style="marker-end:url(#marker104)">
+        <path
+           class="link-path node59 node17 dotted"
+           d="m 925.05228,140.4784 q -52.30572,27.92087 -65.38216,34.90109 -13.07643,6.98022 -65.38215,34.90109"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path114"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g120"
+         style="marker-start:url(#markerGENERATED-INTERSECTION-26-27-0)">
+        <path
+           class="link-path node26 node27 dashed"
+           d="m 755.70935,891.39145 q -59.55763,7.4602 -74.44704,9.32525 -14.88941,1.86505 -74.44704,9.32524"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:8"
+           id="path118"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g124"
+         style="marker-start:url(#markerGENERATED-INTERSECTION-26-28-1)">
+        <path
+           class="link-path node26 node28 dashed"
+           d="m 837.01693,844.33019 q 34.91994,-46.31558 43.64993,-57.89447 8.72998,-11.57889 43.64992,-57.89447"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:8"
+           id="path122"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g128"
+         style="marker-start:url(#markerGENERATED-INTERSECTION-118-1-0)">
+        <path
+           class="link-path node118 node1 dashed"
+           d="m 329.13424,856.03613 q 25.93797,-48.01375 32.42247,-60.01719 6.48449,-12.00344 32.42246,-60.01719"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:8"
+           id="path126"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g132"
+         style="marker-start:url(#markerGENERATED-INTERSECTION-118-27-1)">
+        <path
+           class="link-path node118 node27 dashed"
+           d="m 355.79762,904.0413 q 59.8038,3.68211 74.75475,4.60263 14.95095,0.92053 74.75474,4.60263"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:8"
+           id="path130"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g136"
+         style="marker-end:url(#markerobjectProperty78)">
+        <path
+           class="link-path node28 node2 dotted"
+           d="m 904.02361,687.19563 q -59.44686,-0.72636 -74.30857,-0.90795 -14.86172,-0.18159 -74.30857,-0.90794"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path134"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g140"
+         style="marker-end:url(#marker62)">
+        <path
+           class="link-path node24 node45 dotted"
+           d="m 227.40025,211.92227 q 60.56471,8.11252 75.70589,10.14065 15.14117,2.02813 75.70588,10.14065"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path138"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g144"
+         style="marker-end:url(#marker90)">
+        <path
+           class="link-path node27 node2 dotted"
+           d="m 581.20152,871.92328 q 28.6338,-50.93813 35.79225,-63.67266 7.15845,-12.73453 35.79226,-63.67266"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path142"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g148"
+         style="marker-end:url(#marker91)">
+        <path
+           class="link-path node1 node2 dotted"
+           d="m 469.20401,689.87802 q 59.39095,-1.45921 74.23869,-1.82402 14.84773,-0.3648 74.23868,-1.82402"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path146"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g152"
+         style="marker-end:url(#markerobjectProperty76)">
+        <path
+           class="link-path node45 node4 dotted"
+           d="M 391.42496,204.88793 Q 345.07235,163.23845 333.4842,152.82607 321.89604,142.4137 275.54343,100.76421"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path150"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g156"
+         style="marker-end:url(#marker81)">
+        <path
+           class="link-path node17 node45 dotted"
+           d="m 654.39427,243.71849 q -69.61801,-1.46765 -87.02252,-1.83457 -17.4045,-0.36691 -87.02251,-1.83456"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path154"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g160"
+         style="marker-end:url(#markerobjectProperty77)">
+        <path
+           class="link-path node19 node4 dotted"
+           d="m 292.98172,-87.039301 q -13.27798,54.782632 -16.59748,68.47829 -3.31949,13.6956576 -16.59748,68.478289"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path158"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g164"
+         style="marker-end:url(#marker105)">
+        <path
+           class="link-path node106 node17 dotted"
+           d="m 594.45266,78.65738 q 35.04825,43.49807 43.81032,54.37259 8.76206,10.87452 43.81032,54.37259"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path162"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g168"
+         style="marker-end:url(#marker101)">
+        <path
+           class="link-path node53 node13 dotted"
+           d="m 771.9984,-199.58443 q -53.43503,17.21188 -66.79378,21.51485 -13.35876,4.30297 -66.79378,21.51485"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path166"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         class="link"
+         id="g172"
+         style="marker-end:url(#marker94)">
+        <path
+           class="link-path node13 node19 dotted"
+           d="m 499.65557,-135.2524 q -57.4647,-0.39906 -71.83087,-0.49882 -14.36617,-0.0998 -71.83087,-0.49883"
+           style="fill:none;stroke:#000000;stroke-width:2px;stroke-dasharray:3"
+           id="path170"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       class="cardinalityContainer"
+       id="g176" />
+    <g
+       class="labelContainer"
+       id="g398">
+      <g
+         class="labelGroup"
+         transform="translate(829.71504,686.28768)"
+         id="g187">
+        <g
+           class="label"
+           id="objectProperty78">
+          <rect
+             class="subclass property"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect180">
+            <title
+               id="title178">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text184">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan182">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(859.67012,175.37949)"
+         id="g198">
+        <g
+           class="label"
+           id="104">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect191">
+            <title
+               id="title189">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text195">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan193">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(878.53627,257.63942)"
+         id="g209">
+        <g
+           class="label"
+           id="100">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect202">
+            <title
+               id="title200">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text206">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan204">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(853.47994,327.66184)"
+         id="g220">
+        <g
+           class="label"
+           id="99">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect213">
+            <title
+               id="title211">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text217">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan215">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(707.84641,-89.415232)"
+         id="g231">
+        <g
+           class="label"
+           id="97">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect224">
+            <title
+               id="title222">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text228">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan226">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(85.74306,460.89995)"
+         id="g242">
+        <g
+           class="label"
+           id="92">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect235">
+            <title
+               id="title233">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text239">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan237">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(592.9017,576.96907)"
+         id="g253">
+        <g
+           class="label"
+           id="89">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect246">
+            <title
+               id="title244">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text250">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan248">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(387.69176,522.91659)"
+         id="g264">
+        <g
+           class="label"
+           id="86">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect257">
+            <title
+               id="title255">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text261">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan259">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(636.16641,487.41423)"
+         id="g275">
+        <g
+           class="label"
+           id="84">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect268">
+            <title
+               id="title266">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text272">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan270">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(468.24563,357.51975)"
+         id="g286">
+        <g
+           class="label"
+           id="82">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect279">
+            <title
+               id="title277">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text283">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan281">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(310.98255,289.03927)"
+         id="g297">
+        <g
+           class="label"
+           id="60">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect290">
+            <title
+               id="title288">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text294">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan292">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(303.10614,222.06292)"
+         id="g308">
+        <g
+           class="label"
+           id="62">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect301">
+            <title
+               id="title299">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text305">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan303">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(616.99377,808.25062)"
+         id="g319">
+        <g
+           class="label"
+           id="90">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect312">
+            <title
+               id="title310">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text316">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan314">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(543.4427,688.054)"
+         id="g330">
+        <g
+           class="label"
+           id="91">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect323">
+            <title
+               id="title321">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text327">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan325">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(333.4842,152.82607)"
+         id="g341">
+        <g
+           class="label"
+           id="objectProperty76">
+          <rect
+             class="subclass property"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect334">
+            <title
+               id="title332">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text338">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan336">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(567.37175,241.88392)"
+         id="g352">
+        <g
+           class="label"
+           id="81">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect345">
+            <title
+               id="title343">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text349">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan347">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(276.38424,-18.561011)"
+         id="g363">
+        <g
+           class="label"
+           id="objectProperty77">
+          <rect
+             class="subclass property"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect356">
+            <title
+               id="title354">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text360">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan358">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(638.26298,133.02997)"
+         id="g374">
+        <g
+           class="label"
+           id="105">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect367">
+            <title
+               id="title365">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text371">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan369">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(705.20462,-178.06958)"
+         id="g385">
+        <g
+           class="label"
+           id="101">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect378">
+            <title
+               id="title376">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text382">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan380">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+      <g
+         class="labelGroup"
+         transform="translate(427.8247,-135.75122)"
+         id="g396">
+        <g
+           class="label"
+           id="94">
+          <rect
+             class="subclass property object,anonymous"
+             x="-42.5"
+             y="-14"
+             width="85"
+             height="28"
+             style="fill:#ffffff"
+             id="rect389">
+            <title
+               id="title387">Subclass of</title>
+          </rect>
+          <text
+             class="text"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+             y="-6.75"
+             id="text393">
+            <tspan
+               class="text"
+               x="0"
+               dy="12"
+               style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+               id="tspan391">Subclass of</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+    <g
+       class="nodeContainer"
+       id="g681">
+      <g
+         class="node"
+         id="1"
+         transform="translate(418.2194,691.1307)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle402"
+           cx="0"
+           cy="0">
+          <title
+             id="title400">Forest</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text406">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan404">Forest</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="26"
+         transform="translate(806.3139,885.05272)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle411"
+           cx="0"
+           cy="0">
+          <title
+             id="title409">Desert island</title>
+        </circle>
+        <g
+           class="embedded"
+           transform="translate(-5,-0.35)"
+           id="g421">
+          <path
+             class="nostroke symbol"
+             d="M 5,-9 C 12,-4 12,4 5,9 -2,4 -2,-4 5,-9"
+             style="fill:#6699cc;stroke:none;stroke-width:2px"
+             id="path413"
+             inkscape:connector-curvature="0" />
+          <circle
+             class="nofill fineline"
+             r="10"
+             style="fill:none;stroke:#000000;stroke-width:1px"
+             id="circle415"
+             cx="0"
+             cy="0" />
+          <circle
+             cx="10"
+             class="nofill fineline"
+             r="10"
+             style="fill:none;stroke:#000000;stroke-width:1px"
+             id="circle417"
+             cy="0" />
+          <path
+             class="nofill"
+             d="m 9,5 c 0,-2 0,-4 0,-6 0,0 0,0 0,0 0,0 0,-1.8 -1,-2.3 -0.7,-0.6 -1.7,-0.8 -2.9,-0.8 -1.2,0 -2,0 -3,0.8 -0.7,0.5 -1,1.4 -1,2.3 0,2 0,4 0,6"
+             transform="matrix(0.5,0,0,0.5,2.5,0)"
+             style="fill:none;stroke:#000000;stroke-width:2px"
+             id="path419"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           id="text425">
+          <tspan
+             class="text"
+             x="0"
+             y="-13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan423">Desert island</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="28"
+         transform="translate(955.01981,687.81873)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle430"
+           cx="0"
+           cy="0">
+          <title
+             id="title428">Desert</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text434">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan432">Desert</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="2"
+         transform="translate(686.5361,684.53824)">
+        <circle
+           class="class"
+           r="67.875504"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle439"
+           cx="0"
+           cy="0">
+          <title
+             id="title437">Habitat</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-13.25"
+           id="text445">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan441">Habitat</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan443">4</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="46"
+         transform="translate(12.326463,556.80467)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle450"
+           cx="0"
+           cy="0">
+          <title
+             id="title448">Branch office</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text454">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan452">Branch office</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="8"
+         transform="translate(508.37742,479.86581)">
+        <g
+           id="g463">
+          <circle
+             class="class white embedded"
+             r="54"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px"
+             id="circle457"
+             cx="0"
+             cy="0" />
+          <circle
+             class="class equivalentclass"
+             r="50"
+             style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+             id="circle461"
+             cx="0"
+             cy="0">
+            <title
+               id="title459">Location</title>
+          </circle>
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-13.25"
+           id="text469">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan465">Location,</tspan>
+          <tspan
+             class="text"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan467">geographic regi...</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="4"
+         transform="translate(252.48454,80.044965)">
+        <circle
+           class="class white dashed"
+           r="30"
+           style="fill:#ffffff;stroke:#000000;stroke-width:2px;stroke-dasharray:8"
+           id="circle474"
+           cx="0"
+           cy="0">
+          <title
+             id="title472">Thing</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text478">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan476">Thing</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="45"
+         transform="translate(429.36056,238.97444)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#3366cc;stroke:#000000;stroke-width:2px"
+           id="circle483"
+           cx="0"
+           cy="0">
+          <title
+             id="title481">Object</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#ffffff"
+           y="-11.75"
+           id="text489">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan485">Object</tspan>
+          <tspan
+             class="text subtext"
+             x="0"
+             dy="10"
+             style="font-size:9px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan487">(external)</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="27"
+         transform="translate(556.21072,916.38068)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle494"
+           cx="0"
+           cy="0">
+          <title
+             id="title492">Island</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text498">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan496">Island</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="57"
+         transform="translate(1005.1056,268.07605)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle503"
+           cx="0"
+           cy="0">
+          <title
+             id="title501">Forest tribe</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text507">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan505">Forest tribe</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="106"
+         transform="translate(562.45434,38.944563)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle512"
+           cx="0"
+           cy="0">
+          <title
+             id="title510">Uncontacted tribe</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text516">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan514">Uncontacted tribe</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="118"
+         transform="translate(304.89402,900.90718)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle521"
+           cx="0"
+           cy="0">
+          <title
+             id="title519">Forested island</title>
+        </circle>
+        <g
+           class="embedded"
+           transform="translate(-5,-0.35)"
+           id="g531">
+          <path
+             class="nostroke symbol"
+             d="M 5,-9 C 12,-4 12,4 5,9 -2,4 -2,-4 5,-9"
+             style="fill:#6699cc;stroke:none;stroke-width:2px"
+             id="path523"
+             inkscape:connector-curvature="0" />
+          <circle
+             class="nofill fineline"
+             r="10"
+             style="fill:none;stroke:#000000;stroke-width:1px"
+             id="circle525"
+             cx="0"
+             cy="0" />
+          <circle
+             cx="10"
+             class="nofill fineline"
+             r="10"
+             style="fill:none;stroke:#000000;stroke-width:1px"
+             id="circle527"
+             cy="0" />
+          <path
+             class="nofill"
+             d="m 9,5 c 0,-2 0,-4 0,-6 0,0 0,0 0,0 0,0 0,-1.8 -1,-2.3 -0.7,-0.6 -1.7,-0.8 -2.9,-0.8 -1.2,0 -2,0 -3,0.8 -0.7,0.5 -1,1.4 -1,2.3 0,2 0,4 0,6"
+             transform="matrix(0.5,0,0,0.5,2.5,0)"
+             style="fill:none;stroke:#000000;stroke-width:2px"
+             id="path529"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           id="text535">
+          <tspan
+             class="text"
+             x="0"
+             y="-13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan533">Forested island</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="44"
+         transform="translate(958.77535,397.18184)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle540"
+           cx="0"
+           cy="0">
+          <title
+             id="title538">Islander tribe</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text544">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan542">Islander tribe</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="55"
+         transform="translate(246.62828,573.2365)">
+        <g
+           id="g553">
+          <circle
+             class="class white embedded"
+             r="75.635529"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px"
+             id="circle547"
+             cx="0"
+             cy="0" />
+          <circle
+             class="class equivalentclass"
+             r="71.635529"
+             style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+             id="circle551"
+             cx="0"
+             cy="0">
+            <title
+               id="title549">Continent</title>
+          </circle>
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-19.75"
+           id="text561">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan555">Continent,</tspan>
+          <tspan
+             class="text"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan557">continent, Continent</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan559">7</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="12"
+         transform="translate(172.45681,347.62505)">
+        <g
+           id="g570">
+          <circle
+             class="class white embedded"
+             r="71.875504"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px"
+             id="circle564"
+             cx="0"
+             cy="0" />
+          <circle
+             class="class equivalentclass"
+             r="67.875504"
+             style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+             id="circle568"
+             cx="0"
+             cy="0">
+            <title
+               id="title566">Organization</title>
+          </circle>
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-19.75"
+           id="text578">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan572">Organization,</tspan>
+          <tspan
+             class="text"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan574">Organization, organiza...</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan576">4</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="24"
+         transform="translate(157.68878,202.58457)">
+        <circle
+           class="class"
+           r="69.334076"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle583"
+           cx="0"
+           cy="0">
+          <title
+             id="title581">Threat</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-13.25"
+           id="text589">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan585">Threat</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan587">5</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="19"
+         transform="translate(304.99506,-136.60421)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#3366cc;stroke:#000000;stroke-width:2px"
+           id="circle594"
+           cx="0"
+           cy="0">
+          <title
+             id="title592">Event</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#ffffff"
+           y="-11.75"
+           id="text600">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan596">Event</tspan>
+          <tspan
+             class="text subtext"
+             x="0"
+             dy="10"
+             style="font-size:9px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan598">(external)</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="53"
+         transform="translate(820.54223,-215.22081)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle605"
+           cx="0"
+           cy="0">
+          <title
+             id="title603">Local campaign</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text609">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan607">Local campaign</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="25"
+         transform="translate(786.49392,496.29398)">
+        <g
+           id="g618">
+          <circle
+             class="class white embedded"
+             r="76.577797"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px"
+             id="circle612"
+             cx="0"
+             cy="0" />
+          <circle
+             class="class equivalentclass"
+             r="72.577797"
+             style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+             id="circle616"
+             cx="0"
+             cy="0">
+            <title
+               id="title614">Country</title>
+          </circle>
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-19.75"
+           id="text626">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan620">Country,</tspan>
+          <tspan
+             class="text"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan622">Country, country</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan624">8</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="59"
+         transform="translate(970.04353,116.462)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle631"
+           cx="0"
+           cy="0">
+          <title
+             id="title629">Desert tribe</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text635">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan633">Desert tribe</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="17"
+         transform="translate(728.71183,245.28522)">
+        <g
+           id="g644">
+          <circle
+             class="class white embedded"
+             r="73.334076"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px"
+             id="circle638"
+             cx="0"
+             cy="0" />
+          <circle
+             class="class equivalentclass"
+             r="69.334076"
+             style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+             id="circle642"
+             cx="0"
+             cy="0">
+            <title
+               id="title640">Tribe</title>
+          </circle>
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-19.75"
+           id="text652">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan646">Tribe,</tspan>
+          <tspan
+             class="text"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan648">indigenous people</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan650">5</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="64"
+         transform="translate(825.87437,-50.380113)">
+        <circle
+           class="class"
+           r="50"
+           style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+           id="circle657"
+           cx="0"
+           cy="0">
+          <title
+             id="title655">Shared campaign</title>
+        </circle>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-6.75"
+           id="text661">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan659">Shared camp...</tspan>
+        </text>
+      </g>
+      <g
+         class="node"
+         id="13"
+         transform="translate(570.74421,-134.75873)">
+        <g
+           id="g670">
+          <circle
+             class="class white embedded"
+             r="70.090355"
+             style="fill:#ffffff;stroke:#000000;stroke-width:2px"
+             id="circle664"
+             cx="0"
+             cy="0" />
+          <circle
+             class="class equivalentclass"
+             r="66.090355"
+             style="fill:#aaccff;stroke:#000000;stroke-width:2px"
+             id="circle668"
+             cx="0"
+             cy="0">
+            <title
+               id="title666">Campaign</title>
+          </circle>
+        </g>
+        <text
+           class="text"
+           style="font-size:12px;font-family:Helvetica, Arial, sans-serif;text-anchor:middle;fill:#000000"
+           y="-19.75"
+           id="text678">
+          <tspan
+             class="text"
+             x="0"
+             dy="12"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan672">Campaign,</tspan>
+          <tspan
+             class="text"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif"
+             id="tspan674">campaign</tspan>
+          <tspan
+             class="text instance-count"
+             x="0"
+             dy="13"
+             style="font-size:12px;font-family:Helvetica, Arial, sans-serif;fill:#666666"
+             id="tspan676">3</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

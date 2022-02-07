@@ -3,6 +3,7 @@
 :revnumber: 2021/2022
 :version-label: A.A.
 :toc: left
+:toclevels: 4
 :sectnums: true
 :pagenums: true
 :title-page:
@@ -99,18 +100,46 @@ La documentazione generata con LODE (per la precisione con il tool https://githu
 
 === Tassonomia delle classi
 
+image::images/ontology.png[align=center]
+
+=== Template
+
+Durante lo sviluppo dell'ontologia si è deciso di utilizzare gli Ontology Design Patterns http://ontologydesignpatterns.org/wiki/Submissions:Participation["Participation"] e http://ontologydesignpatterns.org/wiki/Submissions:Co-participation["Co-participation"].
+
+.Diagramma dell'ODP "Participation"
+image::images/participation.jpg[align=center]
+
+.Diagramma dell'ODP "Co-participation"
+image::images/coparticipation.jpg[align=center]
+
+L'ODP Participation è stato utilizzato per differenziare gli oggetti dagli eventi e stabilire la partecipazione degli oggetti agli eventi. +
+Nello specifico la classe `survival:Campaign` è stata resa sottoclasse di `Event` mentre tutte le altre classi sono state rese sottoclassi di `Object`. +
+Inoltre, la proprietà `survival:leads`, che mette in relazione `survival:Organization` con `survival:Campaign`, è stata resa sottoproprietà di `isParticipantIn`; lo stesso per la proprietà inversa `survival:ledBy` con `hasParticipant`.
+
+Quindi, grazie all'ODP Co-participation (che estende l'ODP Participation), si è modellata la proprietà simmetrica `survival:collaboratesWith` tra due `survival:Organization`, come sottoproprietà di `coparticipatesWith`.
+
 === Triple dell'esempio
 
 == Queries SPARQL
+
+Qui di seguito è presente il materiale riguardante la sezione delle queries SPARQL. +
+Sono state create 5 query principali e 5 query accessorie.
 
 === Interazione
 
 ==== Flow-chart
 
+Il flow-chart seguente descrive lo schema di interazione dell'applicazione nel complesso. +
+Sono rappresentate tutte le pagine e come nodi del grafo, mentre le frecce indicano la possibilità di navigare da una pagina all'altra. +
+Per evitare di appesantire eccessivamente il grafico, si sono evitate le frecce che collegano tra loro le pagine "top-level", cioè quelle accessibili dalla barra di navigazione, proprio perché sono sempre accessibili da qualsiasi pagina.
+
 .Flow-chart dell'interazione
 image::images/flow-chart.png[align=center]
 
 ==== Mockups
+
+I seguenti mockup illustrano alcuni esempi di pagine del progetto dell'applicazione client. +
+Oltre alla pagina iniziale, vi sono fondamentalmente due tipologie di pagine: quelle che presentano una lista di elementi, come la seconda e la terza, e quelle che rappresentano il dettaglio di un singolo elemento, come le ultime due.
 
 .Pagina iniziale
 image::images/mockup-home-Home.png[align=center]
@@ -121,6 +150,11 @@ image::images/mockup-home-Tribes.png[align=center]
 .Pagina "Countries"
 image::images/mockup-home-Countries.png[align=center]
 
+.Pagina "Tribe" per l'individuo "survival:Sentinelese"
+image::images/mockup-home-Tribe.png[align=center]
+
+.Pagina "Organization" per l'individuo "survival:SurvivalInternational"
+image::images/mockup-home-Organization.png[align=center]
 
 === Queries principali
 

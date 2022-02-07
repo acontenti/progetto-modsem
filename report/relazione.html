@@ -473,14 +473,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_visualizzazione">7. Visualizzazione</a>
 <ul class="sectlevel2">
 <li><a href="#_tassonomia_delle_classi">7.1. Tassonomia delle classi</a></li>
-<li><a href="#_triple_dellesempio">7.2. Triple dell&#8217;esempio</a></li>
+<li><a href="#_template">7.2. Template</a></li>
+<li><a href="#_triple_dellesempio">7.3. Triple dell&#8217;esempio</a></li>
 </ul>
 </li>
 <li><a href="#_queries_sparql">8. Queries SPARQL</a>
 <ul class="sectlevel2">
-<li><a href="#_interazione">8.1. Interazione</a></li>
-<li><a href="#_queries_principali">8.2. Queries principali</a></li>
-<li><a href="#_queries_aggiuntive_dellapplicazione_client">8.3. Queries aggiuntive dell&#8217;applicazione client</a></li>
+<li><a href="#_interazione">8.1. Interazione</a>
+<ul class="sectlevel3">
+<li><a href="#_flow_chart">8.1.1. Flow-chart</a></li>
+<li><a href="#_mockups">8.1.2. Mockups</a></li>
+</ul>
+</li>
+<li><a href="#_queries_principali">8.2. Queries principali</a>
+<ul class="sectlevel3">
+<li><a href="#_tribes">8.2.1. Tribes</a></li>
+<li><a href="#_countries">8.2.2. Countries</a></li>
+<li><a href="#_campaigns">8.2.3. Campaigns</a></li>
+<li><a href="#_organizations">8.2.4. Organizations</a></li>
+<li><a href="#_tribes_threats">8.2.5. Tribes threats</a></li>
+</ul>
+</li>
+<li><a href="#_queries_aggiuntive_dellapplicazione_client">8.3. Queries aggiuntive dell&#8217;applicazione client</a>
+<ul class="sectlevel3">
+<li><a href="#_tribe">8.3.1. Tribe</a></li>
+<li><a href="#_country">8.3.2. Country</a></li>
+<li><a href="#_habitat">8.3.3. Habitat</a></li>
+<li><a href="#_organization">8.3.4. Organization</a></li>
+<li><a href="#_campaign">8.3.5. Campaign</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_applicazione_client">9. Applicazione client</a></li>
@@ -670,10 +692,40 @@ Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integra
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_tassonomia_delle_classi">7.1. Tassonomia delle classi</h3>
-
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/ontology.png" alt="ontology">
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_triple_dellesempio">7.2. Triple dell&#8217;esempio</h3>
+<h3 id="_template">7.2. Template</h3>
+<div class="paragraph">
+<p>Durante lo sviluppo dell&#8217;ontologia si è deciso di utilizzare gli Ontology Design Patterns <a href="http://ontologydesignpatterns.org/wiki/Submissions:Participation">"Participation"</a> e <a href="http://ontologydesignpatterns.org/wiki/Submissions:Co-participation">"Co-participation"</a>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/participation.jpg" alt="participation">
+</div>
+<div class="title">Figure 1. Diagramma dell&#8217;ODP "Participation"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation.jpg" alt="coparticipation">
+</div>
+<div class="title">Figure 2. Diagramma dell&#8217;ODP "Co-participation"</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;ODP Participation è stato utilizzato per differenziare gli oggetti dagli eventi e stabilire la partecipazione degli oggetti agli eventi.<br>
+Nello specifico la classe <code>survival:Campaign</code> è stata resa sottoclasse di <code>Event</code> mentre tutte le altre classi sono state rese sottoclassi di <code>Object</code>.<br>
+Inoltre, la proprietà <code>survival:leads</code>, che mette in relazione <code>survival:Organization</code> con <code>survival:Campaign</code>, è stata resa sottoproprietà di <code>isParticipantIn</code>; lo stesso per la proprietà inversa <code>survival:ledBy</code> con <code>hasParticipant</code>.</p>
+</div>
+<div class="paragraph">
+<p>Quindi, grazie all&#8217;ODP Co-participation (che estende l&#8217;ODP Participation), si è modellata la proprietà simmetrica <code>survival:collaboratesWith</code> tra due <code>survival:Organization</code>, come sottoproprietà di <code>coparticipatesWith</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_triple_dellesempio">7.3. Triple dell&#8217;esempio</h3>
 
 </div>
 </div>
@@ -681,36 +733,61 @@ Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integra
 <div class="sect1">
 <h2 id="_queries_sparql">8. Queries SPARQL</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Qui di seguito è presente il materiale riguardante la sezione delle queries SPARQL.<br>
+Sono state create 5 query principali e 5 query accessorie.</p>
+</div>
 <div class="sect2">
 <h3 id="_interazione">8.1. Interazione</h3>
 <div class="sect3">
 <h4 id="_flow_chart">8.1.1. Flow-chart</h4>
+<div class="paragraph">
+<p>Il flow-chart seguente descrive lo schema di interazione dell&#8217;applicazione nel complesso.<br>
+Sono rappresentate tutte le pagine e come nodi del grafo, mentre le frecce indicano la possibilità di navigare da una pagina all&#8217;altra.<br>
+Per evitare di appesantire eccessivamente il grafico, si sono evitate le frecce che collegano tra loro le pagine "top-level", cioè quelle accessibili dalla barra di navigazione, proprio perché sono sempre accessibili da qualsiasi pagina.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/flow-chart.png" alt="flow chart">
 </div>
-<div class="title">Figure 1. Flow-chart dell&#8217;interazione</div>
+<div class="title">Figure 3. Flow-chart dell&#8217;interazione</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_mockups">8.1.2. Mockups</h4>
+<div class="paragraph">
+<p>I seguenti mockup illustrano alcuni esempi di pagine del progetto dell&#8217;applicazione client.<br>
+Oltre alla pagina iniziale, vi sono fondamentalmente due tipologie di pagine: quelle che presentano una lista di elementi, come la seconda e la terza, e quelle che rappresentano il dettaglio di un singolo elemento, come le ultime due.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Home.png" alt="mockup home Home">
 </div>
-<div class="title">Figure 2. Pagina iniziale</div>
+<div class="title">Figure 4. Pagina iniziale</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Tribes.png" alt="mockup home Tribes">
 </div>
-<div class="title">Figure 3. Pagina "Tribes"</div>
+<div class="title">Figure 5. Pagina "Tribes"</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Countries.png" alt="mockup home Countries">
 </div>
-<div class="title">Figure 4. Pagina "Countries"</div>
+<div class="title">Figure 6. Pagina "Countries"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Tribe.png" alt="mockup home Tribe">
+</div>
+<div class="title">Figure 7. Pagina "Tribe" per l&#8217;individuo "survival:Sentinelese"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Organization.png" alt="mockup home Organization">
+</div>
+<div class="title">Figure 8. Pagina "Organization" per l&#8217;individuo "survival:SurvivalInternational"</div>
 </div>
 </div>
 </div>
@@ -749,7 +826,7 @@ ORDER BY ?name</code></pre>
 <div class="content">
 <img src="images/query-tribes.png" alt="query tribes">
 </div>
-<div class="title">Figure 5. Esempio di risultato della query</div>
+<div class="title">Figure 9. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
@@ -790,7 +867,7 @@ WHERE {
 <div class="content">
 <img src="images/query-countries.png" alt="query countries">
 </div>
-<div class="title">Figure 6. Esempio di risultato della query</div>
+<div class="title">Figure 10. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
@@ -822,7 +899,7 @@ ORDER BY ?campaignName</code></pre>
 <div class="content">
 <img src="images/query-campaigns.png" alt="query campaigns">
 </div>
-<div class="title">Figure 7. Esempio di risultato della query</div>
+<div class="title">Figure 11. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
@@ -858,7 +935,7 @@ ORDER BY ?orgLabel</code></pre>
 <div class="content">
 <img src="images/query-organizations.png" alt="query organizations">
 </div>
-<div class="title">Figure 8. Esempio di risultato della query</div>
+<div class="title">Figure 12. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
@@ -905,7 +982,7 @@ WHERE {
 <div class="content">
 <img src="images/query-threats.png" alt="query threats">
 </div>
-<div class="title">Figure 9. Esempio di risultato della query</div>
+<div class="title">Figure 13. Esempio di risultato della query</div>
 </div>
 </div>
 </div>
@@ -1171,7 +1248,7 @@ Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica
 <div class="content">
 <img src="images/client-home.png" alt="client home">
 </div>
-<div class="title">Figure 10. Schermata iniziale dell&#8217;applicazione client</div>
+<div class="title">Figure 14. Schermata iniziale dell&#8217;applicazione client</div>
 </div>
 </div>
 </div>
@@ -1179,7 +1256,7 @@ Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica
 <div id="footer">
 <div id="footer-text">
 A.A. 2021/2022<br>
-Last updated 2022-02-07 13:53:48 +0100
+Last updated 2022-02-07 16:11:32 +0100
 </div>
 </div>
 </body>
