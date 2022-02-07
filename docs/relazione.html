@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="author" content="Alessandro Contenti">
+<title>Progetto di Modellazione Concettuale per il Web Semantico: Survival International Ontology</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Progetto di Modellazione Concettuale per il Web Semantico: Survival International Ontology</h1>
+<div class="details">
+<span id="author" class="author">Alessandro Contenti</span><br>
+<span id="revnumber">a.a. 2021/2022</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduzione">1. Introduzione</a></li>
+<li><a href="#_motivazioni">2. Motivazioni</a></li>
+<li><a href="#_requisiti">3. Requisiti</a>
+<ul class="sectlevel2">
+<li><a href="#_finalità">3.1. Finalità</a></li>
+<li><a href="#_task">3.2. Task</a></li>
+<li><a href="#_utenti">3.3. Utenti</a></li>
+</ul>
+</li>
+<li><a href="#_descrizione_del_dominio">4. Descrizione del dominio</a>
+<ul class="sectlevel2">
+<li><a href="#_dominio">4.1. Dominio</a></li>
+<li><a href="#_riferimenti">4.2. Riferimenti</a></li>
+</ul>
+</li>
+<li><a href="#_documentazione_sul_dominio">5. Documentazione sul dominio</a>
+<ul class="sectlevel2">
+<li><a href="#_allineamenti">5.1. Allineamenti</a></li>
+</ul>
+</li>
+<li><a href="#_lode">6. LODE</a></li>
+<li><a href="#_visualizzazione">7. Visualizzazione</a>
+<ul class="sectlevel2">
+<li><a href="#_tassonomia_delle_classi">7.1. Tassonomia delle classi</a></li>
+<li><a href="#_template">7.2. Template</a></li>
+<li><a href="#_esempio">7.3. Esempio</a></li>
+</ul>
+</li>
+<li><a href="#_queries_sparql">8. Queries SPARQL</a>
+<ul class="sectlevel2">
+<li><a href="#_flow_chart">8.1. Flow-chart</a></li>
+<li><a href="#_mockups">8.2. Mockups</a></li>
+<li><a href="#_queries_principali">8.3. Queries principali</a></li>
+<li><a href="#_queries_aggiuntive_dellapplicazione_client">8.4. Queries aggiuntive dell&#8217;applicazione client</a></li>
+</ul>
+</li>
+<li><a href="#_applicazione_client">9. Applicazione client</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduzione">1. Introduzione</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il progetto svolto riguarda l&#8217;ambito della ONG "Survival International" e tutto il materiale prodotto è disponibile presso la <a href="https://github.com/acontenti/progetto-modsem">repository GitHub</a> del progetto stesso.<br>
+L&#8217;ontologia in formato Turtle è accesibile al seguente link <a href="https://acontenti.github.io/progetto-modsem/survival.ttl" class="bare">https://acontenti.github.io/progetto-modsem/survival.ttl</a> (che è anche il suo IRI).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_motivazioni">2. Motivazioni</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il dominio che ho deciso di modellare riguarda il contesto e le operazioni dell&#8217;associazione senza scopo di lucro "Survival International".</p>
+</div>
+<div class="paragraph">
+<p>Survival International è un movimento internazionale per la salvaguardia deii diritti dei popoli indigeni.
+È stata fondata nel 1969 a Londra, a seguito della pubblicazione di un articolo del Sunday Times, che narrava il genocidio dei popoli amazzonici.
+La sua missione è aiutare i popoli indigeni e tribali a difendere le loro vite, le loro terre e i loro fondamentali diritti umani contro ogni forma di persecuzione, razzismo e genocidio.</p>
+</div>
+<div class="paragraph">
+<p>A partire dalla sua fondazione, Survival ha portato avanti decine di campagne a favore dei popoli indigeni, ricevendo il sostegno di centinaia di migliaia di persone.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;idea di modellare il dominio di Survival International mi è venuta leggendo casualmente un articolo riguardo questa associazione, in relazione alle loro campagne a supporto dei popoli incontattati, tema che mi incuriosisce molto.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requisiti">3. Requisiti</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_finalità">3.1. Finalità</h3>
+<div class="paragraph">
+<p>La finalità dello sviluppo di un&#8217;ontologia che descriva il contesto sia culturale che geografico in cui opera Survival, le operazioni che svolge e le criticità che deve affrontare è quello di creare una solida base di conoscenza che contenga tutte le informazioni utili per facilitare le operazioni interne dell&#8217;associazione e la comunicazione con il pubblico.</p>
+</div>
+<div class="paragraph">
+<p>Nell&#8217;ontologia da me creata vi è solamente un sottoinsieme di tutte le informazioni che potrebbero essere incluse in una base di conoscenza del genere.<br>
+Sia perché alcuni concetti potrebbero essere dettagliati con una granularità più fine.<br>
+Sia perché manca la modellazione di alcuni ambiti, come ad esempio la gestione dei contatti locali con i popoli indigeni e dei contatti governativi, la gestione dei fondi e molti altri aspetti su cui, da esterni, è impossibile ottenere informazioni.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_task">3.2. Task</h3>
+<div class="paragraph">
+<p>Alcuni task specifici dell&#8217;ontologia modellata sono:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gestire una lista aggiornata dei popoli indigeni che necessitano di aiuto da parte di Survival o che comunque sono oggetto d&#8217;interesse</p>
+</li>
+<li>
+<p>Gestire una lista aggiornata delle campagne in corso o passate e da chi sono gestite (per esempio se sono condivise con altre associazioni)</p>
+</li>
+<li>
+<p>Gestire una lista delle sedi locali di Survival e delle associazioni con cui collabora</p>
+</li>
+<li>
+<p>Cercare velocemente quali sono le minacce che mettono in pericolo uno specifico popolo indigeno e quali campagne sono in atto a loro supporto</p>
+</li>
+<li>
+<p>Localizzare facilmente i vari popoli per area geografica, visualizzando anche quali popoli condividono la stessa</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_utenti">3.3. Utenti</h3>
+<div class="paragraph">
+<p>Gli utenti che potrebbero trarre giovamento dall&#8217;utilizzo di questa ontologia sono:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Personale di Survival</strong>: per gestire e aggiornare la base di conoscenza e usarla per programmare e tenere sotto controllo le campagne e le operazioni da svolgere</p>
+</li>
+<li>
+<p><strong>Sostenitori di Survival</strong>: per seguire le varie campagne in atto e la situazione dei vari popoli indigeni</p>
+</li>
+<li>
+<p><strong>Pubblico</strong>: per scoprire le iniziative di Survival o informarsi riguardo i vari popoli indigeni</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_descrizione_del_dominio">4. Descrizione del dominio</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_dominio">4.1. Dominio</h3>
+<div class="paragraph">
+<p>Il dominio è composto da un insieme di concetti top-level, cui corrisponde una specifica classe nell&#8217;ontologia:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tribù</dt>
+<dd>
+<p>Una tribù o un popolo indigeno oggetto dell&#8217;attenzione e delle campagne di Survival e/o di altre organizzazioni</p>
+</dd>
+<dt class="hdlist1">Minaccia</dt>
+<dd>
+<p>Con minaccia si intende o un generico problema che affligge più popoli indigeni, accomunandoli come protagonisti di una campagna, oppure un problema che affligge una specifica tribù.</p>
+</dd>
+<dt class="hdlist1">Campagna</dt>
+<dd>
+<p>Una campagna può essere diretta ad affrontare in generale una minaccia che riguarda molte comunità indigene, oppure si rivolge direttamente ad una specifica tribù, affrontandone le varie problematiche</p>
+</dd>
+<dt class="hdlist1">Organizzazione</dt>
+<dd>
+<p>Un&#8217;organizzazione è un generico ente che collabora con Survival (come anche Survival stessa e le sue sedi locali).
+Un&#8217;organizzazione può essere legata a una campagna che conduce (o co-conduce).</p>
+</dd>
+<dt class="hdlist1">Luogo</dt>
+<dd>
+<p>Un luogo indica in generale un&#8217;area geografica, più specificamente un continente, un paese o un habitat.
+Quest&#8217;ultimo rappresenta un&#8217;area in cui vivono una (o più) tribù e popoli indigeni, atta a circoscrivere più precisamente i territori in cui vivono queste popolazioni, che spesso si estendono oltre i confini di un singolo paese.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_riferimenti">4.2. Riferimenti</h3>
+<div class="paragraph">
+<p>La stragrande maggioranza delle informazioni riguardanti i temi chiave di questa ontologia, ovvero popoli indigeni, minacce, campagne di Survival, organizzazioni sono tratte dai siti web di Survival in inglese e italiano:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Survival International: <a href="https://www.survivalinternational.org" class="bare">https://www.survivalinternational.org</a></p>
+</li>
+<li>
+<p>Survival International Italia: <a href="https://www.survival.it" class="bare">https://www.survival.it</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Purtroppo le informazioni sono un po' frammentate e organizzate in modo poco sistematico.
+Probabilmente per fare più colpo sui lettori, piuttosto che per dare una documentazione precisa.<br>
+Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integrare qualche volta con enciclopedie online come:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wikipedia: <a href="https://en.wikipedia.org/" class="bare">https://en.wikipedia.org/</a> e <a href="https://it.wikipedia.org/" class="bare">https://it.wikipedia.org/</a></p>
+</li>
+<li>
+<p>Enciclopedia Treccani: <a href="https://www.treccani.it/enciclopedia/" class="bare">https://www.treccani.it/enciclopedia/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Queste sono state utilizzate anche per trarre informazioni su concetti non specifici dell&#8217;ambito di Survival, come ad esempio continenti e paesi.</p>
+</div>
+<div class="paragraph">
+<p>È stato inoltre consultato il sito dell&#8217;Articulation of Indigenous Peoples of Brazil (APIB): <a href="https://apiboficial.org/" class="bare">https://apiboficial.org/</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentazione_sul_dominio">5. Documentazione sul dominio</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Come già riportato alla sezione precedente la maggioranza delle informazioni utilizzate per documentarsi sul dominio modellato deriva dai siti istituzionali di Survival International in italiano e inglese, che riportano circa le stesse informazioni nelle due lingue (il sito italiano non è sempre aggiornato come quello inglese).
+Quindi per semplicità mi riferiro ad entrambi indifferentemente come "il sito di Survival".</p>
+</div>
+<div class="paragraph">
+<p>Il sito di Survival, appare poco strutturato e coerente: spesso alcune pagine evidentemente più vecchie hanno un&#8217;interfaccia diversa dalle altre.<br>
+Tuttavia presenta un minimo di suddivisione delle informazioni: è possibile infatti vedere una lista dei popoli indigeni seguiti da Survival, suddivisi per tree macroaeree: le Americhe, Africa e Asia ed Australasia.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/survival-website-tribes.png" alt="survival website tribes">
+</div>
+<div class="title">Figure 1. Elenco di popoli indigeni</div>
+</div>
+<div class="paragraph">
+<p>Inoltre è possibile vedere una lista (poco esaustiva) delle campagne in corso.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/survival-website-campaigns.png" alt="survival website campaigns">
+</div>
+<div class="title">Figure 2. Piccola lista di alcune campagne di Survival</div>
+</div>
+<div class="paragraph">
+<p>Aprendo ad esempio la pagina della campagna "Stop Brazil&#8217;s Genocide" (inclusa nell&#8217;ontologia) ci si trova di fronte ad un lungo articolo, molto interessante, ma totalmente privo di informazioni strutturate: senza leggerlo per intero è impossibile campire al volo quali popoli siano interessati da questa campagna, chi vi collabori, se sia ancora in corso o terminata.<br>
+Leggendo bene fino a circa metà pagina, si nota che è una campagna in cui Survival collabora con l&#8217;APIB, l’<em>Associazione dei Popoli Indigeni del Brasile</em> (anch&#8217;essa inclusa nell&#8217;ontologia).</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/survival-website-campaign-ex.png" alt="survival website campaign ex">
+</div>
+<div class="title">Figure 3. Pagina della campagna "Stop Brazil&#8217;s Genocide"</div>
+</div>
+<div class="paragraph">
+<p>Anche il sito web dell&#8217;assoziazione APIB sopracitata è stato utilizzato per documentarsi, ma è ancora meno strutturato e caotico (e presenta anche qualche bug).<br>
+Le informazioni sono sparse su varie pagine poco chiaramente accessibili e talvolta disponibili solo in portoghese.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/apib-website.png" alt="apib website">
+</div>
+<div class="title">Figure 4. Sito web dell&#8217;APIB</div>
+</div>
+<div class="paragraph">
+<p>Data la scarsità di informazioni pratiche, in favore di "propaganda" e richieste di donazioni o firme per la causa (fatto comprensibilissimo, ma in questo caso spiacevole), è stato talvolta necessario documentarsi su Wikipedia.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/wikipedia-yanomami.png" alt="wikipedia yanomami">
+</div>
+<div class="title">Figure 5. Pagina Wikipedia del popolo Yanomamö, interessato dalla camapagna precedente</div>
+</div>
+<div class="paragraph">
+<p>In conclusione, date le note negative espresse sul sito di Survival e altre associazioni analoghe, l&#8217;idea di fondo di questa ontologia e dell&#8217;applicazione client derivante è quella di permettere agli utenti di avere informazioni chiare e facilmente accessibili, il più possibili ricche di dettagli, piuttosto che di appelli.</p>
+</div>
+<div class="paragraph">
+<p>Sarebbe molto interessante poter unire i due aspetti in un possibile "nuovo" sito web di Survival che presenti tutti i contenuti già visibili, ma ben collegati semanticamente e con allegate schede che illustrino in breve le informazioni chiave.<br>
+Così da non trascurare l&#8217;informatività del sito, pur mantenendo la sua funzione giustamente "propagandistica".</p>
+</div>
+<div class="sect2">
+<h3 id="_allineamenti">5.1. Allineamenti</h3>
+<div class="paragraph">
+<p>L&#8217;ontologia sviluppata è stata allineata sia con <a href="https://schema.org/">Schema.org</a> che con <a href="https://www.wikidata.org/">Wikidata</a>.</p>
+</div>
+<div class="paragraph">
+<p>Con <em>Schema.org</em> sono state allineate solo alcune classi e proprietà che rappresentano concetti o relazioni di alto livello, poiché non vi è molta sovrapposizione tra le due ontologie.</p>
+</div>
+<div class="ulist">
+<div class="title">Classi:</div>
+<ul>
+<li>
+<p><code>survival:Location</code> &#8594; <code>schema:Place</code></p>
+</li>
+<li>
+<p><code>survival:Continent</code> &#8594; <code>schema:Continent</code></p>
+</li>
+<li>
+<p><code>survival:Country</code> &#8594; <code>schema:Country</code></p>
+</li>
+<li>
+<p><code>survival:Organization</code> &#8594; <code>schema:Organization</code></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Proprietà:</div>
+<ul>
+<li>
+<p><code>survival:locatedIn</code> &#8594; <code>schema:location</code></p>
+</li>
+<li>
+<p><code>survival:branchOf</code> &#8594; <code>schema:parentOrganization</code></p>
+</li>
+<li>
+<p><code>survival:hasBranch</code> &#8594; <code>schema:subOrganization</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Con <em>Wikidata</em>, grazie alla sua grande varietà, invece sono state allineate non solo molte classi e proprietà, ma anche moltissimi individui.<br>
+Dato il grande numero non è possibile riportare tutti gli allineamenti, per cui saranno riportati solo alcuni esempi significativi.</p>
+</div>
+<div class="ulist">
+<div class="title">Classi:</div>
+<ul>
+<li>
+<p><code>survival:Tribe</code> &#8594; <code>wd:Q103817</code> (<em>indigenous people</em>)</p>
+</li>
+<li>
+<p><code>survival:Campaign</code> &#8594; <code>wd:Q18812548</code> (<em>campaign</em>)</p>
+</li>
+<li>
+<p><code>survival:Organization</code> &#8594; <code>wd:Q43229</code> (<em>organization</em>)</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Proprietà:</div>
+<ul>
+<li>
+<p><code>survival:locatedIn</code> &#8594; <code>wdt:P706</code> (<em>located in/on physical feature</em>)</p>
+</li>
+<li>
+<p><code>survival:branchOf</code> &#8594; <code>wdt:P749</code> (<em>parent organization</em>)</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Individui:</div>
+<ul>
+<li>
+<p><code>survival:SurvivalInternational</code> &#8594; <code>wd:Q1887464</code> (<em>Survival International</em>)</p>
+</li>
+<li>
+<p><code>survival:APIB</code> &#8594; <code>wd:Q16494254</code> (<em>Brazil&#8217;s Indigenous People Articulation</em>)</p>
+</li>
+<li>
+<p><code>survival:NorthSentinel</code> &#8594; <code>wd:Q1260331</code> (<em>North Sentinel Island</em>)</p>
+</li>
+<li>
+<p><code>survival:Sentinelese</code> &#8594; <code>wd:Q917695</code> (<em>Sentinelese people</em>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tutti gli allineamenti delle classi sono stati effettuati con la proprietà <code>owl:equivalentClass</code> perché sono state scelte classi che rappresentassero esattamente lo stesso concetto nelle varie ontologie.<br>
+Per quanto riguarda le proprietà si è utlizzato <code>owl:equivalentProperty</code> per tutte le proprietà strettamente equivalenti, tranne in qualche caso in cui si è utilizzato <code>rdfs:subPropertyOf</code> per proprietà che sussumessero la proprietà importata.<br>
+Per gli tutti individui si è naturalmente utilizzato <code>owl:sameAs</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lode">6. LODE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La documentazione generata con LODE (per la precisione con il tool <a href="https://github.com/dgarijo/Widoco">WIDOCO</a> che utilizza LODE) è disponibile al seguente indirizzo web: <a href="https://acontenti.github.io/progetto-modsem/index-en.html" class="bare">https://acontenti.github.io/progetto-modsem/index-en.html</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_visualizzazione">7. Visualizzazione</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tassonomia_delle_classi">7.1. Tassonomia delle classi</h3>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/ontology.png" alt="ontology">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template">7.2. Template</h3>
+<div class="paragraph">
+<p>Durante lo sviluppo dell&#8217;ontologia si è deciso di utilizzare gli Ontology Design Patterns <a href="http://ontologydesignpatterns.org/wiki/Submissions:Participation">"Participation"</a> e <a href="http://ontologydesignpatterns.org/wiki/Submissions:Co-participation">"Co-participation"</a>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/participation.jpg" alt="participation">
+</div>
+<div class="title">Figure 6. Diagramma dell&#8217;ODP "Participation"</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;ODP Participation è stato utilizzato per differenziare gli oggetti dagli eventi e stabilire la partecipazione degli oggetti agli eventi.<br>
+Nello specifico la classe <code>survival:Campaign</code> è stata resa sottoclasse di <code>Event</code> mentre tutte le altre classi sono state rese sottoclassi di <code>Object</code>.<br>
+Inoltre, la proprietà <code>survival:leads</code>, che mette in relazione <code>survival:Organization</code> con <code>survival:Campaign</code>, è stata resa sottoproprietà di <code>isParticipantIn</code>; lo stesso per la proprietà inversa <code>survival:ledBy</code> con <code>hasParticipant</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation.jpg" alt="coparticipation">
+</div>
+<div class="title">Figure 7. Diagramma dell&#8217;ODP "Co-participation"</div>
+</div>
+<div class="paragraph">
+<p>Quindi, grazie all&#8217;ODP Co-participation (che estende l&#8217;ODP Participation), si è modellata la proprietà simmetrica <code>survival:collaboratesWith</code> tra due <code>survival:Organization</code>, come sottoproprietà di <code>coparticipatesWith</code>.
+Ciò indica che due oggetti, in questo caso due organizzazioni, collaborano in un evento, in questo caso una campagna, se entrambe partecipano ad uno stesso evento.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_esempio">7.3. Esempio</h3>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation-example.png" alt="coparticipation example">
+</div>
+<div class="title">Figure 8. Grafico di esempio di utilizzo della proprietà <code>survival:collaboratesWith</code></div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation-triples.png" alt="coparticipation triples">
+</div>
+<div class="title">Figure 9. Triple che descrivono la proprietà <code>survival:collaboratesWith</code></div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation-ex-triples.png" alt="coparticipation ex triples">
+</div>
+<div class="title">Figure 10. Triple che descrivono un esempio di utilizzo della proprietà <code>survival:collaboratesWith</code></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_queries_sparql">8. Queries SPARQL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Qui di seguito è presente il materiale riguardante la sezione delle queries SPARQL.<br>
+Sono state create 5 query principali e 5 query accessorie.</p>
+</div>
+<div class="sect2">
+<h3 id="_flow_chart">8.1. Flow-chart</h3>
+<div class="paragraph">
+<p>Il flow-chart seguente descrive lo schema di interazione dell&#8217;applicazione nel complesso.<br>
+Sono rappresentate tutte le pagine e come nodi del grafo, mentre le frecce indicano la possibilità di navigare da una pagina all&#8217;altra.<br>
+Per evitare di appesantire eccessivamente il grafico, si sono evitate le frecce che collegano tra loro le pagine "top-level", cioè quelle accessibili dalla barra di navigazione, proprio perché sono sempre accessibili da qualsiasi pagina.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/flow-chart.png" alt="flow chart">
+</div>
+<div class="title">Figure 11. Flow-chart dell&#8217;interazione</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mockups">8.2. Mockups</h3>
+<div class="paragraph">
+<p>I seguenti mockup illustrano alcuni esempi di pagine del progetto dell&#8217;applicazione client.<br>
+Oltre alla pagina iniziale, vi sono fondamentalmente due tipologie di pagine: quelle che presentano una lista di elementi, come la seconda e la terza, e quelle che rappresentano il dettaglio di un singolo elemento, come le ultime due.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Home.png" alt="mockup home Home">
+</div>
+<div class="title">Figure 12. Pagina iniziale</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Tribes.png" alt="mockup home Tribes">
+</div>
+<div class="title">Figure 13. Pagina "Tribes"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Countries.png" alt="mockup home Countries">
+</div>
+<div class="title">Figure 14. Pagina "Countries"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Tribe.png" alt="mockup home Tribe">
+</div>
+<div class="title">Figure 15. Pagina "Tribe" per l&#8217;individuo "survival:Sentinelese"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Organization.png" alt="mockup home Organization">
+</div>
+<div class="title">Figure 16. Pagina "Organization" per l&#8217;individuo "survival:SurvivalInternational"</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_queries_principali">8.3. Queries principali</h3>
+<div class="paragraph">
+<p>Queste sono le query principali dell&#8217;applicazione client e sono accessibili tramite il menù di navigazione</p>
+</div>
+<div class="sect3">
+<h4 id="_tribes">8.3.1. Tribes</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista dei popoli indigeni presenti nell&#8217;ontologia e, per ogni popolo, restituisce anche il nome, se è contattato o meno e l&#8217;habitat in cui vive con il relativo nome.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?tribe ?name ?contacted ?habitat (MAX(?hLabel) as ?habitatLabel)
+FROM onto:disable-sameAs
+WHERE {
+    ?tribe rdf:type survival:Tribe;
+           survival:name ?name;
+           survival:contacted ?contacted;
+           survival:livesIn ?habitat.
+    ?habitat rdfs:label ?hLabel.
+    FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+}
+GROUP BY ?tribe ?name ?contacted ?habitat
+ORDER BY ?name</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-tribes.png" alt="query tribes">
+</div>
+<div class="title">Figure 17. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_countries">8.3.2. Countries</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista dei paesi presenti nell&#8217;ontologia e per ciascuno restituisce anche il relativo nome, il nome del continente in cui sitrova e il numero di popoli indigeni che vi risiedono.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?country ?countryLabel ?continentLabel ?tribesCount
+FROM onto:disable-sameAs
+WHERE {
+    ?country rdf:type survival:Country;
+             rdfs:label ?countryLabel;
+             survival:locatedIn ?continent.
+    ?continent rdfs:label ?continentLabel.
+    OPTIONAL {
+        SELECT ?country (COUNT(?tribe) as ?count)
+        WHERE {
+            ?tribe rdf:type survival:Tribe;
+                   survival:livesIn ?habitat.
+            ?habitat rdf:type survival:Habitat;
+                     survival:locatedIn ?country.
+        } GROUP BY ?country
+    }
+    FILTER(LANG(?countryLabel) = &quot;&quot; || LANGMATCHES(LANG(?countryLabel), &quot;en&quot;))
+    FILTER(LANG(?continentLabel) = &quot;&quot; || LANGMATCHES(LANG(?continentLabel), &quot;en&quot;))
+    BIND(COALESCE(?count, 0) AS ?tribesCount)
+}</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-countries.png" alt="query countries">
+</div>
+<div class="title">Figure 18. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_campaigns">8.3.3. Campaigns</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista delle campagne presenti nell&#8217;ontologia e, per ogni campagna, restituisce anche il relativo nome, l&#8217;URL della pagina web della campagna e il numero di popoli indigeni aiutati da essa.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?campaign ?campaignName ?url (COUNT(?tribe) AS ?tribesCount)
+FROM onto:disable-sameAs
+WHERE {
+    ?campaign rdf:type survival:Campaign;
+              rdfs:label ?campaignName;
+              survival:campaignPage ?url;
+              survival:helps ?tribe.
+    FILTER(LANG(?campaignName) = &quot;&quot; || LANGMATCHES(LANG(?campaignName), &quot;en&quot;))
+}
+GROUP BY ?campaign ?campaignName ?url
+ORDER BY ?campaignName</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-campaigns.png" alt="query campaigns">
+</div>
+<div class="title">Figure 19. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organizations">8.3.4. Organizations</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista delle organizzazioni presenti nell&#8217;ontologia e per ciascuna restituisce anche il nome e l&#8217;organizzazione cui fa capo (se ne ha una) con il relativo nome.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?org (MAX(?label) as ?orgLabel) ?head (MAX(?hLabel) as ?headLabel)
+FROM onto:disable-sameAs
+WHERE {
+    ?org rdf:type survival:Organization;
+         rdfs:label ?label.
+    OPTIONAL {
+        ?org survival:branchOf ?head.
+        ?head rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+    }
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+}
+GROUP BY ?org ?head
+ORDER BY ?orgLabel</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-organizations.png" alt="query organizations">
+</div>
+<div class="title">Figure 20. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tribes_threats">8.3.5. Tribes threats</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista dei popoli indigeni presenti nell&#8217;ontologia e, per ogni popolo, restituisce anche il relativo nome, le minacce cui è sottoposto (sotto forma di concatenazione di stringhe).<br>
+Inoltre per ogni popolo restituisce un "threat score", ovvero un punteggio da 0 a 1 che esprime quanto il popolo in questione sia in pericolo, calcolato sul numero di minacce subite.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?tribe ?name ?threats (?count/?max AS ?threatScore)
+FROM onto:disable-sameAs
+WHERE {
+    {
+        SELECT (MAX(?count) AS ?max)
+        WHERE {
+            SELECT ?tribe (COUNT(?threat) as ?count)
+            WHERE {
+                ?tribe survival:threatenedBy ?threat.
+            }
+            GROUP BY ?tribe
+        }
+    }
+    {
+        SELECT ?tribe ?name (COUNT(?threat) as ?count) (GROUP_CONCAT(?threatLabel;separator=', ') AS ?threats)
+        WHERE {
+            ?tribe rdf:type survival:Tribe;
+                   survival:name ?name;
+                   survival:threatenedBy ?threat.
+            ?threat rdfs:label ?threatLabel.
+            FILTER(LANG(?threatLabel) = &quot;&quot; || LANGMATCHES(LANG(?threatLabel), &quot;en&quot;))
+        }
+        GROUP BY ?tribe ?name
+    }
+}</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-threats.png" alt="query threats">
+</div>
+<div class="title">Figure 21. Esempio di risultato della query</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_queries_aggiuntive_dellapplicazione_client">8.4. Queries aggiuntive dell&#8217;applicazione client</h3>
+<div class="paragraph">
+<p>Le seguenti query sono utilizzate dall&#8217;applicazione client per estrarre dettagli e informazioni utili per un singolo individuo dell&#8217;ontologia.</p>
+</div>
+<div class="sect3">
+<h4 id="_tribe">8.4.1. Tribe</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un popolo indigeno (<code>survival:Tribe</code>), ne restituisce il nome, la descrizione, se è contattato, le minacce cui è sottoposto, gli habitat in cui vive e i paesi in cui vive (inferito dagli habitat)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+SELECT ?name ?comment ?contacted ?threats ?habitat ?habitatLabel ?country ?countryLabel ?campaign ?campaignLabel
+FROM onto:disable-sameAs
+WHERE {
+    {
+        SELECT ?tribe ?name ?comment ?contacted (GROUP_CONCAT(DISTINCT ?threatLabel;separator=', ') AS ?threats) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?country (MAX(?cLabel) AS ?countryLabel) WHERE {
+            BIND(&lt;${id}&gt; AS ?tribe)
+            ?tribe survival:name ?name;
+                   rdfs:comment ?comment;
+                   survival:contacted ?contacted;
+                   survival:livesIn ?habitat.
+            FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+            OPTIONAL {
+                ?tribe survival:threatenedBy ?threat.
+                ?threat rdfs:label ?threatLabel.
+                FILTER(LANG(?threatLabel) = &quot;&quot; || LANGMATCHES(LANG(?threatLabel), &quot;en&quot;))
+            }
+            OPTIONAL {
+                ?tribe survival:livesIn ?habitat.
+                ?habitat rdfs:label ?hLabel.
+                FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+            }
+            OPTIONAL {
+                ?habitat survival:locatedIn ?country.
+                ?country rdf:type survival:Country;
+                         rdfs:label ?cLabel.
+                FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+            }
+        } GROUP BY ?tribe ?name ?comment ?contacted ?habitat ?country
+    }
+    OPTIONAL {
+        ?tribe survival:helpedBy ?campaign.
+        ?campaign rdfs:label ?campaignLabel.
+        FILTER(LANG(?campaignLabel) = &quot;&quot; || LANGMATCHES(LANG(?campaignLabel), &quot;en&quot;))
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_country">8.4.2. Country</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un paese (<code>survival:Country</code>), ne restituisce il nome, il continente in cui è situato, gli habitat che contiene e le organizzazioni che vi hanno sede</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) (MAX(?cLabel) AS ?continentLabel) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?tribe ?tribeLabel ?org (MAX(?oLabel) AS ?orgLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?country)
+    ?country rdfs:label ?label.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    ?country survival:locatedIn ?continent.
+    ?continent rdfs:label ?cLabel.
+    FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+    OPTIONAL {
+        ?habitat rdf:type survival:Habitat;
+                 survival:locatedIn ?country;
+                 rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+        OPTIONAL {
+            ?tribe rdf:type survival:Tribe;
+                   survival:livesIn ?habitat;
+                   survival:name ?tribeLabel.
+        }
+    }
+    OPTIONAL {
+        ?org rdf:type survival:Organization;
+                 survival:locatedIn ?country;
+                 rdfs:label ?oLabel.
+        FILTER(LANG(?oLabel) = &quot;&quot; || LANGMATCHES(LANG(?oLabel), &quot;en&quot;))
+    }
+} GROUP BY ?habitat ?tribe ?tribeLabel ?org</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_habitat">8.4.3. Habitat</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un habitat (<code>survival:Habitat</code>), ne restituisce il nome, la descrizione, la tipologia, i paesi in cui si trova e i popoli indigeni che vi risiedono</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) ?comment ?type ?country (MAX(?cLabel) AS ?countryLabel) ?tribe ?tribeLabel
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?habitat)
+    ?habitat rdfs:label ?label;
+             rdfs:comment ?comment;
+             survival:habitatType ?type.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+    OPTIONAL {
+        ?habitat survival:locatedIn ?country.
+        ?country rdf:type survival:Country;
+                 rdfs:label ?cLabel.
+        FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?tribe rdf:type survival:Tribe;
+               survival:livesIn ?habitat;
+               survival:name ?tribeLabel.
+    }
+} GROUP BY ?comment ?type ?country ?tribe ?tribeLabel</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organization">8.4.4. Organization</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un&#8217;organizzazione (<code>survival:Organization</code>), ne restituisce il nome, la descrizione, il sito web, l&#8217;e-mail, il paese in cui ha sede, le campagne che conduce, le sue eventuali sedi ed eventualmente l&#8217;organizzazione a cui fa capo</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) ?comment ?website ?email ?country (MAX(?cLabel) AS ?countryLabel) ?campaign ?campaignLabel ?branch (MAX(?bLabel) AS ?branchLabel) ?head (MAX(?hLabel) AS ?headLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?org)
+    ?org rdfs:label ?label;
+         rdfs:comment ?comment;
+         survival:website ?website;
+         survival:email ?email.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+    OPTIONAL {
+        ?org survival:locatedIn ?country.
+        ?country rdf:type survival:Country;
+                 rdfs:label ?cLabel.
+        FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?campaign rdf:type survival:Campaign;
+                  survival:ledBy ?org;
+                  rdfs:label ?campaignLabel.
+        FILTER(LANG(?campaignLabel) = &quot;&quot; || LANGMATCHES(LANG(?campaignLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?branch survival:branchOf ?org;
+                rdfs:label ?bLabel.
+        FILTER(LANG(?bLabel) = &quot;&quot; || LANGMATCHES(LANG(?bLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?head survival:hasBranch ?org;
+              rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+    }
+} GROUP BY ?comment ?website ?email ?country ?campaign ?campaignLabel ?branch ?head</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_campaign">8.4.5. Campaign</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di una campagna (<code>survival:Campaign</code>), ne restituisce il nome, la descrizione, il sito web, i popoli che aiuta e le organizzazioni che la conducono</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) ?comment ?website ?tribe (MAX(?tLabel) AS ?tribeLabel) ?org (MAX(?oLabel) AS ?orgLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?campaign)
+    ?campaign rdfs:label ?label;
+              rdfs:comment ?comment;
+              survival:campaignPage ?website.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+    OPTIONAL {
+        ?tribe rdf:type survival:Tribe;
+               survival:helpedBy ?campaign;
+               rdfs:label ?tLabel.
+        FILTER(LANG(?tLabel) = &quot;&quot; || LANGMATCHES(LANG(?tLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?org rdf:type survival:Organization;
+             survival:leads ?campaign;
+             rdfs:label ?oLabel.
+        FILTER(LANG(?oLabel) = &quot;&quot; || LANGMATCHES(LANG(?oLabel), &quot;en&quot;))
+    }
+} GROUP BY ?website ?comment ?tribe ?org</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_applicazione_client">9. Applicazione client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>L&#8217;applicazione client, intitolata <em>Survival International Ontology Explorer</em>, è stata realizzata con il framework JavaScript <em>Quasar</em>, costruito a sua volta sul framework <em>Vue.js</em>.<br>
+Ho scelto questo framework perché permette di costruire velocemente una single page application (SPA) ben strutturata, senza dover creare tutta l&#8217;architettura e la UI da zero, dando quindi allo sviluppatore la possibilità di concentrarsi sul contenuto invece che sulla forma.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;applicazione rispecchia a grandi linee quanto illustrato nei mockup presenti nella sezione precedente e permette di visualizzare i dati delle queries viste, in maniera totalmente trasparente per l&#8217;utente.</p>
+</div>
+<div class="paragraph">
+<p>Le sezioni dell&#8217;applicazione, che rappresentano le varie queries, sono accessibili dalla pagina iniziale e dal menù di navigazione (a sinistra).</p>
+</div>
+<div class="paragraph">
+<p>Inoltre sono presenti le pagine che permettono di visualizzare (grazie alle query accessorie alla sezione precedente) i dettagli dei singoli individui appartenenti alle seguenti classi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>survival:Campaign</code> &#8594; Campagna</p>
+</li>
+<li>
+<p><code>survival:Country</code> &#8594; Paese</p>
+</li>
+<li>
+<p><code>survival:Habitat</code> &#8594; Habitat</p>
+</li>
+<li>
+<p><code>survival:Organization</code> &#8594; Organizzazione</p>
+</li>
+<li>
+<p><code>survival:Tribe</code> &#8594; Popolo indigeno</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Queste ultime non sono accessibili direttamente tramite la barra di navigazione, bensì dalle varie sezioni dell&#8217;applicazione.<br>
+Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica sezione, sono dotati di link che indirizzano alla pagina di dettaglio dello specifico individuo.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/client-home.png" alt="client home">
+</div>
+<div class="title">Figure 22. Schermata iniziale dell&#8217;applicazione client</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/client-tribes.png" alt="client tribes">
+</div>
+<div class="title">Figure 23. Schermata della pagina "Tribes"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/client-yanomami.png" alt="client yanomami">
+</div>
+<div class="title">Figure 24. Schermata della pagina del popolo Yanomami</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/client-survival.png" alt="client survival">
+</div>
+<div class="title">Figure 25. Schermata della pagina dell&#8217;organizzazione Survival International</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+A.A. 2021/2022<br>
+Last updated 2022-02-07 18:43:52 +0100
+</div>
+</div>
+</body>
+</html>

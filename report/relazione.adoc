@@ -638,3 +638,12 @@ Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica
 
 .Schermata iniziale dell'applicazione client
 image::images/client-home.png[align=center]
+
+.Schermata della pagina "Tribes"
+image::images/client-tribes.png[align=center]
+
+.Schermata della pagina del popolo Yanomami
+image::images/client-yanomami.png[align=center]
+
+.Schermata della pagina dell'organizzazione Survival International
+image::images/client-survival.png[align=center]
