@@ -178,6 +178,60 @@ WHERE {
         FILTER(LANG(?campaignLabel) = "" || LANGMATCHES(LANG(?campaignLabel), "en"))
     }
 }
+`,
+  country: (id: string) => `
+PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (MAX(?label) AS ?name) (MAX(?cLabel) AS ?continentLabel) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?tribe ?tribeLabel
+FROM onto:disable-sameAs
+WHERE {
+    BIND(<${id}> AS ?country)
+    ?country rdfs:label ?label.
+    FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    ?country survival:locatedIn ?continent.
+    ?continent rdfs:label ?cLabel.
+    FILTER(LANG(?cLabel) = "" || LANGMATCHES(LANG(?cLabel), "en"))
+    OPTIONAL {
+        ?habitat rdf:type survival:Habitat;
+                 survival:locatedIn ?country;
+                 rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = "" || LANGMATCHES(LANG(?hLabel), "en"))
+        OPTIONAL {
+            ?tribe rdf:type survival:Tribe;
+                   survival:livesIn ?habitat;
+                   survival:name ?tribeLabel.
+        }
+    }
+} GROUP BY ?habitat ?tribe ?tribeLabel
+`,
+  habitat: (id: string) => `
+PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (MAX(?label) AS ?name) ?type ?country (MAX(?cLabel) AS ?countryLabel) ?tribe ?tribeLabel
+FROM onto:disable-sameAs
+WHERE {
+    BIND(<${id}> AS ?habitat)
+    ?habitat rdfs:label ?label;
+             survival:habitatType ?type.
+    FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    OPTIONAL {
+        ?habitat survival:locatedIn ?country.
+        ?country rdf:type survival:Country;
+                 rdfs:label ?cLabel.
+        FILTER(LANG(?cLabel) = "" || LANGMATCHES(LANG(?cLabel), "en"))
+    }
+    OPTIONAL {
+        ?tribe rdf:type survival:Tribe;
+               survival:livesIn ?habitat;
+               survival:name ?tribeLabel.
+    }
+} GROUP BY ?type ?country ?tribe ?tribeLabel
 `
 };
 

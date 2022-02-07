@@ -19,7 +19,7 @@
         <q-item>
           <q-item-section side>Habitats:</q-item-section>
           <q-item-section>
-            <q-item-label v-for="{iri, label} in result.habitat" :key="iri">
+            <q-item-label v-for="{iri, label} in result.habitats" :key="iri">
               <router-link :to="{name: 'habitat', params: {id: iri}}">
                 {{ label }}
               </router-link>
@@ -29,7 +29,7 @@
         <q-item>
           <q-item-section side>Countries:</q-item-section>
           <q-item-section>
-            <q-item-label v-for="{iri, label} in result.country" :key="iri">
+            <q-item-label v-for="{iri, label} in result.countries" :key="iri">
               <router-link :to="{name: 'country', params: {id: iri}}">
                 {{ label }}
               </router-link>
@@ -45,7 +45,7 @@
         <q-item>
           <q-item-section side>Campaigns:</q-item-section>
           <q-item-section>
-            <q-item-label v-for="{iri, label} in result.campaign" :key="iri">
+            <q-item-label v-for="{iri, label} in result.campaigns" :key="iri">
               <router-link :to="{name: 'campaign', params: {id: iri}}">
                 {{ label }}
               </router-link>
@@ -60,19 +60,19 @@
 <script lang="ts">
 import {DynQueries} from "src/components/Queries";
 import {defineComponent} from "vue";
-import {deduplicate, IRIandLabel} from "components/Utils";
+import {deduplicateBy, IRIandLabel} from "components/Utils";
 
 type TribeDesc = {
   name: string
   contacted: boolean,
   threats: string,
-  habitat: IRIandLabel[],
-  country: IRIandLabel[],
-  campaign: IRIandLabel[]
+  habitats: IRIandLabel[],
+  countries: IRIandLabel[],
+  campaigns: IRIandLabel[]
 }
 
 export default defineComponent({
-  name: "Tribes",
+  name: "Tribe",
   data() {
     return {
       query: DynQueries.tribe(this.$route.params.id as string),
@@ -87,9 +87,9 @@ export default defineComponent({
         name: result[0].name.value,
         contacted: result[0].contacted.value === "true",
         threats: result[0].threats.value,
-        habitat: deduplicate(result.map((it) => ({iri: it.habitat.value, label: it.habitatLabel.value})), "iri"),
-        country: deduplicate(result.map((it) => ({iri: it.country.value, label: it.countryLabel.value})), "iri"),
-        campaign: deduplicate(result.map((it) => ({iri: it.campaign.value, label: it.campaignLabel.value})), "iri")
+        habitats: deduplicateBy(result.map((it) => ({iri: it.habitat.value, label: it.habitatLabel.value})), "iri"),
+        countries: deduplicateBy(result.map((it) => ({iri: it.country.value, label: it.countryLabel.value})), "iri"),
+        campaigns: deduplicateBy(result.map((it) => ({iri: it.campaign.value, label: it.campaignLabel.value})), "iri")
       }
       console.log(this.result)
     }
