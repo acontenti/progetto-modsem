@@ -139,14 +139,14 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX onto: <http://www.ontotext.com/>
 
-SELECT ?country ?countryLabel ?continent ?continentLabel ?count
+SELECT ?country ?countryLabel ?continent ?continentLabel ?tribesCount
 FROM onto:disable-sameAs
 WHERE {
     ?country rdf:type survival:Country;
              rdfs:label ?countryLabel;
              survival:locatedIn ?continent.
     ?continent rdfs:label ?continentLabel.
-    {
+    OPTIONAL {
         SELECT ?country (COUNT(?tribe) as ?count)
         WHERE {
             ?tribe rdf:type survival:Tribe;
@@ -157,6 +157,7 @@ WHERE {
     }
     FILTER(LANG(?countryLabel) = "" || LANGMATCHES(LANG(?countryLabel), "en"))
     FILTER(LANG(?continentLabel) = "" || LANGMATCHES(LANG(?continentLabel), "en"))
+    BIND(COALESCE(?count, 0) AS ?tribesCount)
 }
 ----
 

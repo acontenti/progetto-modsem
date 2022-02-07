@@ -13,27 +13,33 @@
         <q-item>
           <q-item-section side>Contacted:</q-item-section>
           <q-item-section>
-            <q-item-label>{{ result.contacted }}</q-item-label>
+            <q-item-label>{{ result.contacted ? "yes" : "no" }}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item>
           <q-item-section side>Habitats:</q-item-section>
           <q-item-section>
-            <q-item-label v-for="{iri, label} in result.habitats" :key="iri">
-              <router-link :to="{name: 'habitat', params: {id: iri}}">
-                {{ label }}
-              </router-link>
-            </q-item-label>
+            <template v-if="result.habitats.length">
+              <q-item-label v-for="{iri, label} in result.habitats" :key="iri">
+                <router-link :to="{name: 'habitat', params: {id: iri}}">
+                  {{ label }}
+                </router-link>
+              </q-item-label>
+            </template>
+            <q-item-label v-else>-</q-item-label>
           </q-item-section>
         </q-item>
         <q-item>
           <q-item-section side>Countries:</q-item-section>
           <q-item-section>
-            <q-item-label v-for="{iri, label} in result.countries" :key="iri">
-              <router-link :to="{name: 'country', params: {id: iri}}">
-                {{ label }}
-              </router-link>
-            </q-item-label>
+            <template v-if="result.countries.length">
+              <q-item-label v-for="{iri, label} in result.countries" :key="iri">
+                <router-link :to="{name: 'country', params: {id: iri}}">
+                  {{ label }}
+                </router-link>
+              </q-item-label>
+            </template>
+            <q-item-label v-else>-</q-item-label>
           </q-item-section>
         </q-item>
         <q-item>
@@ -45,11 +51,14 @@
         <q-item>
           <q-item-section side>Campaigns:</q-item-section>
           <q-item-section>
-            <q-item-label v-for="{iri, label} in result.campaigns" :key="iri">
-              <router-link :to="{name: 'campaign', params: {id: iri}}">
-                {{ label }}
-              </router-link>
-            </q-item-label>
+            <template v-if="result.campaigns.length">
+              <q-item-label v-for="{iri, label} in result.campaigns" :key="iri">
+                <router-link :to="{name: 'campaign', params: {id: iri}}">
+                  {{ label }}
+                </router-link>
+              </q-item-label>
+            </template>
+            <q-item-label v-else>-</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
@@ -87,11 +96,19 @@ export default defineComponent({
         name: result[0].name.value,
         contacted: result[0].contacted.value === "true",
         threats: result[0].threats.value,
-        habitats: deduplicateBy(result.map((it) => ({iri: it.habitat.value, label: it.habitatLabel.value})), "iri"),
-        countries: deduplicateBy(result.map((it) => ({iri: it.country.value, label: it.countryLabel.value})), "iri"),
-        campaigns: deduplicateBy(result.map((it) => ({iri: it.campaign.value, label: it.campaignLabel.value})), "iri")
+        habitats: deduplicateBy(result.filter(it => !!it.habitat).map((it) => ({
+          iri: it.habitat.value,
+          label: it.habitatLabel.value
+        })), "iri"),
+        countries: deduplicateBy(result.filter(it => !!it.country).map((it) => ({
+          iri: it.country.value,
+          label: it.countryLabel.value
+        })), "iri"),
+        campaigns: deduplicateBy(result.filter(it => !!it.campaign).map((it) => ({
+          iri: it.campaign.value,
+          label: it.campaignLabel.value
+        })), "iri")
       }
-      console.log(this.result)
     }
   },
   mounted() {

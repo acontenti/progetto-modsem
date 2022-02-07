@@ -31,14 +31,14 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX onto: <http://www.ontotext.com/>
 
-SELECT ?country ?countryLabel ?continent ?continentLabel ?count
+SELECT ?country ?countryLabel ?continent ?continentLabel ?tribesCount
 FROM onto:disable-sameAs
 WHERE {
     ?country rdf:type survival:Country;
              rdfs:label ?countryLabel;
              survival:locatedIn ?continent.
     ?continent rdfs:label ?continentLabel.
-    {
+    OPTIONAL {
         SELECT ?country (COUNT(?tribe) as ?count)
         WHERE {
             ?tribe rdf:type survival:Tribe;
@@ -49,6 +49,7 @@ WHERE {
     }
     FILTER(LANG(?countryLabel) = "" || LANGMATCHES(LANG(?countryLabel), "en"))
     FILTER(LANG(?continentLabel) = "" || LANGMATCHES(LANG(?continentLabel), "en"))
+    BIND(COALESCE(?count, 0) AS ?tribesCount)
 }
 `
   },
@@ -185,7 +186,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX onto: <http://www.ontotext.com/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT (MAX(?label) AS ?name) (MAX(?cLabel) AS ?continentLabel) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?tribe ?tribeLabel
+SELECT (MAX(?label) AS ?name) (MAX(?cLabel) AS ?continentLabel) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?tribe ?tribeLabel ?org (MAX(?oLabel) AS ?orgLabel)
 FROM onto:disable-sameAs
 WHERE {
     BIND(<${id}> AS ?country)
@@ -205,7 +206,13 @@ WHERE {
                    survival:name ?tribeLabel.
         }
     }
-} GROUP BY ?habitat ?tribe ?tribeLabel
+    OPTIONAL {
+        ?org rdf:type survival:Organization;
+                 survival:locatedIn ?country;
+                 rdfs:label ?oLabel.
+        FILTER(LANG(?oLabel) = "" || LANGMATCHES(LANG(?oLabel), "en"))
+    }
+} GROUP BY ?habitat ?tribe ?tribeLabel ?org
 `,
   habitat: (id: string) => `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
@@ -232,6 +239,71 @@ WHERE {
                survival:name ?tribeLabel.
     }
 } GROUP BY ?type ?country ?tribe ?tribeLabel
+`,
+  organization: (id: string) => `
+PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (MAX(?label) AS ?name) ?website ?email ?country (MAX(?cLabel) AS ?countryLabel) ?campaign ?campaignLabel ?branch (MAX(?bLabel) AS ?branchLabel) ?head (MAX(?hLabel) AS ?headLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(<${id}> AS ?org)
+    ?org rdfs:label ?label;
+         survival:website ?website;
+         survival:email ?email.
+    FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    OPTIONAL {
+        ?org survival:locatedIn ?country.
+        ?country rdf:type survival:Country;
+                 rdfs:label ?cLabel.
+        FILTER(LANG(?cLabel) = "" || LANGMATCHES(LANG(?cLabel), "en"))
+    }
+    OPTIONAL {
+        ?campaign rdf:type survival:Campaign;
+                  survival:ledBy ?org;
+                  rdfs:label ?campaignLabel.
+        FILTER(LANG(?campaignLabel) = "" || LANGMATCHES(LANG(?campaignLabel), "en"))
+    }
+    OPTIONAL {
+        ?branch survival:branchOf ?org;
+                rdfs:label ?bLabel.
+        FILTER(LANG(?bLabel) = "" || LANGMATCHES(LANG(?bLabel), "en"))
+    }
+    OPTIONAL {
+        ?head survival:hasBranch ?org;
+              rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = "" || LANGMATCHES(LANG(?hLabel), "en"))
+    }
+} GROUP BY ?website ?email ?country ?campaign ?campaignLabel ?branch ?head
+`,
+  campaign: (id: string) => `
+PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (MAX(?label) AS ?name) ?website ?tribe (MAX(?tLabel) AS ?tribeLabel) ?org (MAX(?oLabel) AS ?orgLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(<${id}> AS ?campaign)
+    ?campaign rdfs:label ?label;
+         survival:campaignPage ?website.
+    FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    OPTIONAL {
+        ?tribe rdf:type survival:Tribe;
+                  survival:helpedBy ?campaign;
+                  rdfs:label ?tLabel.
+        FILTER(LANG(?tLabel) = "" || LANGMATCHES(LANG(?tLabel), "en"))
+    }
+    OPTIONAL {
+        ?org rdf:type survival:Organization;
+                  survival:leads ?campaign;
+                  rdfs:label ?oLabel.
+        FILTER(LANG(?oLabel) = "" || LANGMATCHES(LANG(?oLabel), "en"))
+    }
+} GROUP BY ?website ?tribe ?org
 `
 };
 

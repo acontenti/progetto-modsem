@@ -10,7 +10,7 @@
       <tr>
         <th>Country</th>
         <th>Continent</th>
-        <th>Tribes living</th>
+        <th>Tribes</th>
       </tr>
       </thead>
       <tbody>
@@ -21,7 +21,7 @@
           </router-link>
         </td>
         <td>{{ item["continentLabel"].value }}</td>
-        <td>{{ item["count"].value }}</td>
+        <td>{{ item["tribesCount"].value }}</td>
       </tr>
       </tbody>
     </q-markup-table>
