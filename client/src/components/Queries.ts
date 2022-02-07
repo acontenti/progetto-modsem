@@ -2,6 +2,7 @@ const Queries = {
   tribes: {
     page: "tribes",
     title: "Tribes",
+    desc: "View tribes and their habitat",
     query: `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -25,6 +26,7 @@ ORDER BY ?name
   countries: {
     page: "countries",
     title: "Countries",
+    desc: "View countries and their tribes",
     query: `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -56,6 +58,7 @@ WHERE {
   campaigns: {
     page: "campaigns",
     title: "Campaigns",
+    desc: "View campaigns and their tribes",
     query: `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -78,6 +81,7 @@ ORDER BY ?campaignName
   organizations: {
     page: "organizations",
     title: "Organizations",
+    desc: "View organizations",
     query: `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -104,6 +108,7 @@ ORDER BY ?orgLabel
   threats: {
     page: "threats",
     title: "Tribes threats",
+    desc: "View tribes and their threats",
     query: `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
