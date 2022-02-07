@@ -465,8 +465,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_documentazione_sul_dominio">5. Documentazione sul dominio</a>
 <ul class="sectlevel2">
-<li><a href="#_esempio">5.1. Esempio</a></li>
-<li><a href="#_allineamenti">5.2. Allineamenti</a></li>
+<li><a href="#_allineamenti">5.1. Allineamenti</a></li>
 </ul>
 </li>
 <li><a href="#_lode">6. LODE</a></li>
@@ -474,35 +473,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_tassonomia_delle_classi">7.1. Tassonomia delle classi</a></li>
 <li><a href="#_template">7.2. Template</a></li>
-<li><a href="#_triple_dellesempio">7.3. Triple dell&#8217;esempio</a></li>
+<li><a href="#_esempio">7.3. Esempio</a></li>
 </ul>
 </li>
 <li><a href="#_queries_sparql">8. Queries SPARQL</a>
 <ul class="sectlevel2">
-<li><a href="#_interazione">8.1. Interazione</a>
-<ul class="sectlevel3">
-<li><a href="#_flow_chart">8.1.1. Flow-chart</a></li>
-<li><a href="#_mockups">8.1.2. Mockups</a></li>
-</ul>
-</li>
-<li><a href="#_queries_principali">8.2. Queries principali</a>
-<ul class="sectlevel3">
-<li><a href="#_tribes">8.2.1. Tribes</a></li>
-<li><a href="#_countries">8.2.2. Countries</a></li>
-<li><a href="#_campaigns">8.2.3. Campaigns</a></li>
-<li><a href="#_organizations">8.2.4. Organizations</a></li>
-<li><a href="#_tribes_threats">8.2.5. Tribes threats</a></li>
-</ul>
-</li>
-<li><a href="#_queries_aggiuntive_dellapplicazione_client">8.3. Queries aggiuntive dell&#8217;applicazione client</a>
-<ul class="sectlevel3">
-<li><a href="#_tribe">8.3.1. Tribe</a></li>
-<li><a href="#_country">8.3.2. Country</a></li>
-<li><a href="#_habitat">8.3.3. Habitat</a></li>
-<li><a href="#_organization">8.3.4. Organization</a></li>
-<li><a href="#_campaign">8.3.5. Campaign</a></li>
-</ul>
-</li>
+<li><a href="#_flow_chart">8.1. Flow-chart</a></li>
+<li><a href="#_mockups">8.2. Mockups</a></li>
+<li><a href="#_queries_principali">8.3. Queries principali</a></li>
+<li><a href="#_queries_aggiuntive_dellapplicazione_client">8.4. Queries aggiuntive dell&#8217;applicazione client</a></li>
 </ul>
 </li>
 <li><a href="#_applicazione_client">9. Applicazione client</a></li>
@@ -514,7 +493,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_introduzione">1. Introduzione</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Il progetto svolto riguarda l&#8217;ambito della ONG "Survival International" e tutto il materiale prodotto è disponibile presso la <a href="https://github.com/acontenti/progetto-modsem">repository GitHub</a> del progetto stesso.</p>
+<p>Il progetto svolto riguarda l&#8217;ambito della ONG "Survival International" e tutto il materiale prodotto è disponibile presso la <a href="https://github.com/acontenti/progetto-modsem">repository GitHub</a> del progetto stesso.<br>
+L&#8217;ontologia in formato Turtle è accesibile al seguente link <a href="https://acontenti.github.io/progetto-modsem/survival.ttl" class="bare">https://acontenti.github.io/progetto-modsem/survival.ttl</a> (che è anche il suo IRI).</p>
 </div>
 </div>
 </div>
@@ -525,7 +505,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Il dominio che ho deciso di modellare riguarda il contesto e le operazioni dell&#8217;associazione senza scopo di lucro "Survival International".</p>
 </div>
 <div class="paragraph">
-<p>Survival International è un movimento internazionale per la salvaguardia deii diritti dei popoli indigeni. È stata fondata nel 1969 a Londra, a seguito della pubblicazione di un articolo del Sunday Times, che narrava il genocidio dei popoli amazzonici. La sua missione è aiutare i popoli indigeni e tribali a difendere le loro vite, le loro terre e i loro fondamentali diritti umani contro ogni forma di persecuzione, razzismo e genocidio.</p>
+<p>Survival International è un movimento internazionale per la salvaguardia deii diritti dei popoli indigeni.
+È stata fondata nel 1969 a Londra, a seguito della pubblicazione di un articolo del Sunday Times, che narrava il genocidio dei popoli amazzonici.
+La sua missione è aiutare i popoli indigeni e tribali a difendere le loro vite, le loro terre e i loro fondamentali diritti umani contro ogni forma di persecuzione, razzismo e genocidio.</p>
 </div>
 <div class="paragraph">
 <p>A partire dalla sua fondazione, Survival ha portato avanti decine di campagne a favore dei popoli indigeni, ricevendo il sostegno di centinaia di migliaia di persone.</p>
@@ -619,11 +601,13 @@ Sia perché manca la modellazione di alcuni ambiti, come ad esempio la gestione 
 </dd>
 <dt class="hdlist1">Organizzazione</dt>
 <dd>
-<p>Un&#8217;organizzazione è un generico ente che collabora con Survival (come anche Survival stessa e le sue sedi locali). Un&#8217;organizzazione può essere legata a una campagna che conduce (o co-conduce).</p>
+<p>Un&#8217;organizzazione è un generico ente che collabora con Survival (come anche Survival stessa e le sue sedi locali).
+Un&#8217;organizzazione può essere legata a una campagna che conduce (o co-conduce).</p>
 </dd>
 <dt class="hdlist1">Luogo</dt>
 <dd>
-<p>Un luogo indica in generale un&#8217;area geografica, più specificamente un continente, un paese o un habitat. Quest&#8217;ultimo rappresenta un&#8217;area in cui vivono una (o più) tribù e popoli indigeni, atta a circoscrivere più precisamente i territori in cui vivono queste popolazioni, che spesso si estendono oltre i confini di un singolo paese.</p>
+<p>Un luogo indica in generale un&#8217;area geografica, più specificamente un continente, un paese o un habitat.
+Quest&#8217;ultimo rappresenta un&#8217;area in cui vivono una (o più) tribù e popoli indigeni, atta a circoscrivere più precisamente i territori in cui vivono queste popolazioni, che spesso si estendono oltre i confini di un singolo paese.</p>
 </dd>
 </dl>
 </div>
@@ -644,7 +628,8 @@ Sia perché manca la modellazione di alcuni ambiti, come ad esempio la gestione 
 </ul>
 </div>
 <div class="paragraph">
-<p>Purtroppo le informazioni sono un po' frammentate e organizzate in modo poco sistematico. Probabilmente per fare più colpo sui lettori, piuttosto che per dare una documentazione precisa.<br>
+<p>Purtroppo le informazioni sono un po' frammentate e organizzate in modo poco sistematico.
+Probabilmente per fare più colpo sui lettori, piuttosto che per dare una documentazione precisa.<br>
 Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integrare qualche volta con enciclopedie online come:</p>
 </div>
 <div class="ulist">
@@ -669,13 +654,155 @@ Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integra
 <div class="sect1">
 <h2 id="_documentazione_sul_dominio">5. Documentazione sul dominio</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_esempio">5.1. Esempio</h3>
-
+<div class="paragraph">
+<p>Come già riportato alla sezione precedente la maggioranza delle informazioni utilizzate per documentarsi sul dominio modellato deriva dai siti istituzionali di Survival International in italiano e inglese, che riportano circa le stesse informazioni nelle due lingue (il sito italiano non è sempre aggiornato come quello inglese).
+Quindi per semplicità mi riferiro ad entrambi indifferentemente come "il sito di Survival".</p>
+</div>
+<div class="paragraph">
+<p>Il sito di Survival, appare poco strutturato e coerente: spesso alcune pagine evidentemente più vecchie hanno un&#8217;interfaccia diversa dalle altre.<br>
+Tuttavia presenta un minimo di suddivisione delle informazioni: è possibile infatti vedere una lista dei popoli indigeni seguiti da Survival, suddivisi per tree macroaeree: le Americhe, Africa e Asia ed Australasia.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/survival-website-tribes.png" alt="survival website tribes">
+</div>
+<div class="title">Figure 1. Elenco di popoli indigeni</div>
+</div>
+<div class="paragraph">
+<p>Inoltre è possibile vedere una lista (poco esaustiva) delle campagne in corso.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/survival-website-campaigns.png" alt="survival website campaigns">
+</div>
+<div class="title">Figure 2. Piccola lista di alcune campagne di Survival</div>
+</div>
+<div class="paragraph">
+<p>Aprendo ad esempio la pagina della campagna "Stop Brazil&#8217;s Genocide" (inclusa nell&#8217;ontologia) ci si trova di fronte ad un lungo articolo, molto interessante, ma totalmente privo di informazioni strutturate: senza leggerlo per intero è impossibile campire al volo quali popoli siano interessati da questa campagna, chi vi collabori, se sia ancora in corso o terminata.<br>
+Leggendo bene fino a circa metà pagina, si nota che è una campagna in cui Survival collabora con l&#8217;APIB, l’<em>Associazione dei Popoli Indigeni del Brasile</em> (anch&#8217;essa inclusa nell&#8217;ontologia).</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/survival-website-campaign-ex.png" alt="survival website campaign ex">
+</div>
+<div class="title">Figure 3. Pagina della campagna "Stop Brazil&#8217;s Genocide"</div>
+</div>
+<div class="paragraph">
+<p>Anche il sito web dell&#8217;assoziazione APIB sopracitata è stato utilizzato per documentarsi, ma è ancora meno strutturato e caotico (e presenta anche qualche bug).<br>
+Le informazioni sono sparse su varie pagine poco chiaramente accessibili e talvolta disponibili solo in portoghese.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/apib-website.png" alt="apib website">
+</div>
+<div class="title">Figure 4. Sito web dell&#8217;APIB</div>
+</div>
+<div class="paragraph">
+<p>Data la scarsità di informazioni pratiche, in favore di "propaganda" e richieste di donazioni o firme per la causa (fatto comprensibilissimo, ma in questo caso spiacevole), è stato talvolta necessario documentarsi su Wikipedia.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/wikipedia-yanomami.png" alt="wikipedia yanomami">
+</div>
+<div class="title">Figure 5. Pagina Wikipedia del popolo Yanomamö, interessato dalla camapagna precedente</div>
+</div>
+<div class="paragraph">
+<p>In conclusione, date le note negative espresse sul sito di Survival e altre associazioni analoghe, l&#8217;idea di fondo di questa ontologia e dell&#8217;applicazione client derivante è quella di permettere agli utenti di avere informazioni chiare e facilmente accessibili, il più possibili ricche di dettagli, piuttosto che di appelli.</p>
+</div>
+<div class="paragraph">
+<p>Sarebbe molto interessante poter unire i due aspetti in un possibile "nuovo" sito web di Survival che presenti tutti i contenuti già visibili, ma ben collegati semanticamente e con allegate schede che illustrino in breve le informazioni chiave.<br>
+Così da non trascurare l&#8217;informatività del sito, pur mantenendo la sua funzione giustamente "propagandistica".</p>
 </div>
 <div class="sect2">
-<h3 id="_allineamenti">5.2. Allineamenti</h3>
-
+<h3 id="_allineamenti">5.1. Allineamenti</h3>
+<div class="paragraph">
+<p>L&#8217;ontologia sviluppata è stata allineata sia con <a href="https://schema.org/">Schema.org</a> che con <a href="https://www.wikidata.org/">Wikidata</a>.</p>
+</div>
+<div class="paragraph">
+<p>Con <em>Schema.org</em> sono state allineate solo alcune classi e proprietà che rappresentano concetti o relazioni di alto livello, poiché non vi è molta sovrapposizione tra le due ontologie.</p>
+</div>
+<div class="ulist">
+<div class="title">Classi:</div>
+<ul>
+<li>
+<p><code>survival:Location</code> &#8594; <code>schema:Place</code></p>
+</li>
+<li>
+<p><code>survival:Continent</code> &#8594; <code>schema:Continent</code></p>
+</li>
+<li>
+<p><code>survival:Country</code> &#8594; <code>schema:Country</code></p>
+</li>
+<li>
+<p><code>survival:Organization</code> &#8594; <code>schema:Organization</code></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Proprietà:</div>
+<ul>
+<li>
+<p><code>survival:locatedIn</code> &#8594; <code>schema:location</code></p>
+</li>
+<li>
+<p><code>survival:branchOf</code> &#8594; <code>schema:parentOrganization</code></p>
+</li>
+<li>
+<p><code>survival:hasBranch</code> &#8594; <code>schema:subOrganization</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Con <em>Wikidata</em>, grazie alla sua grande varietà, invece sono state allineate non solo molte classi e proprietà, ma anche moltissimi individui.<br>
+Dato il grande numero non è possibile riportare tutti gli allineamenti, per cui saranno riportati solo alcuni esempi significativi.</p>
+</div>
+<div class="ulist">
+<div class="title">Classi:</div>
+<ul>
+<li>
+<p><code>survival:Tribe</code> &#8594; <code>wd:Q103817</code> (<em>indigenous people</em>)</p>
+</li>
+<li>
+<p><code>survival:Campaign</code> &#8594; <code>wd:Q18812548</code> (<em>campaign</em>)</p>
+</li>
+<li>
+<p><code>survival:Organization</code> &#8594; <code>wd:Q43229</code> (<em>organization</em>)</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Proprietà:</div>
+<ul>
+<li>
+<p><code>survival:locatedIn</code> &#8594; <code>wdt:P706</code> (<em>located in/on physical feature</em>)</p>
+</li>
+<li>
+<p><code>survival:branchOf</code> &#8594; <code>wdt:P749</code> (<em>parent organization</em>)</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Individui:</div>
+<ul>
+<li>
+<p><code>survival:SurvivalInternational</code> &#8594; <code>wd:Q1887464</code> (<em>Survival International</em>)</p>
+</li>
+<li>
+<p><code>survival:APIB</code> &#8594; <code>wd:Q16494254</code> (<em>Brazil&#8217;s Indigenous People Articulation</em>)</p>
+</li>
+<li>
+<p><code>survival:NorthSentinel</code> &#8594; <code>wd:Q1260331</code> (<em>North Sentinel Island</em>)</p>
+</li>
+<li>
+<p><code>survival:Sentinelese</code> &#8594; <code>wd:Q917695</code> (<em>Sentinelese people</em>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tutti gli allineamenti delle classi sono stati effettuati con la proprietà <code>owl:equivalentClass</code> perché sono state scelte classi che rappresentassero esattamente lo stesso concetto nelle varie ontologie.<br>
+Per quanto riguarda le proprietà si è utlizzato <code>owl:equivalentProperty</code> per tutte le proprietà strettamente equivalenti, tranne in qualche caso in cui si è utilizzato <code>rdfs:subPropertyOf</code> per proprietà che sussumessero la proprietà importata.<br>
+Per gli tutti individui si è naturalmente utilizzato <code>owl:sameAs</code>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -707,26 +834,44 @@ Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integra
 <div class="content">
 <img src="images/participation.jpg" alt="participation">
 </div>
-<div class="title">Figure 1. Diagramma dell&#8217;ODP "Participation"</div>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="images/coparticipation.jpg" alt="coparticipation">
-</div>
-<div class="title">Figure 2. Diagramma dell&#8217;ODP "Co-participation"</div>
+<div class="title">Figure 6. Diagramma dell&#8217;ODP "Participation"</div>
 </div>
 <div class="paragraph">
 <p>L&#8217;ODP Participation è stato utilizzato per differenziare gli oggetti dagli eventi e stabilire la partecipazione degli oggetti agli eventi.<br>
 Nello specifico la classe <code>survival:Campaign</code> è stata resa sottoclasse di <code>Event</code> mentre tutte le altre classi sono state rese sottoclassi di <code>Object</code>.<br>
 Inoltre, la proprietà <code>survival:leads</code>, che mette in relazione <code>survival:Organization</code> con <code>survival:Campaign</code>, è stata resa sottoproprietà di <code>isParticipantIn</code>; lo stesso per la proprietà inversa <code>survival:ledBy</code> con <code>hasParticipant</code>.</p>
 </div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation.jpg" alt="coparticipation">
+</div>
+<div class="title">Figure 7. Diagramma dell&#8217;ODP "Co-participation"</div>
+</div>
 <div class="paragraph">
-<p>Quindi, grazie all&#8217;ODP Co-participation (che estende l&#8217;ODP Participation), si è modellata la proprietà simmetrica <code>survival:collaboratesWith</code> tra due <code>survival:Organization</code>, come sottoproprietà di <code>coparticipatesWith</code>.</p>
+<p>Quindi, grazie all&#8217;ODP Co-participation (che estende l&#8217;ODP Participation), si è modellata la proprietà simmetrica <code>survival:collaboratesWith</code> tra due <code>survival:Organization</code>, come sottoproprietà di <code>coparticipatesWith</code>.
+Ciò indica che due oggetti, in questo caso due organizzazioni, collaborano in un evento, in questo caso una campagna, se entrambe partecipano ad uno stesso evento.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_triple_dellesempio">7.3. Triple dell&#8217;esempio</h3>
-
+<h3 id="_esempio">7.3. Esempio</h3>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation-example.png" alt="coparticipation example">
+</div>
+<div class="title">Figure 8. Grafico di esempio di utilizzo della proprietà <code>survival:collaboratesWith</code></div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation-triples.png" alt="coparticipation triples">
+</div>
+<div class="title">Figure 9. Triple che descrivono la proprietà <code>survival:collaboratesWith</code></div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/coparticipation-ex-triples.png" alt="coparticipation ex triples">
+</div>
+<div class="title">Figure 10. Triple che descrivono un esempio di utilizzo della proprietà <code>survival:collaboratesWith</code></div>
+</div>
 </div>
 </div>
 </div>
@@ -738,9 +883,7 @@ Inoltre, la proprietà <code>survival:leads</code>, che mette in relazione <code
 Sono state create 5 query principali e 5 query accessorie.</p>
 </div>
 <div class="sect2">
-<h3 id="_interazione">8.1. Interazione</h3>
-<div class="sect3">
-<h4 id="_flow_chart">8.1.1. Flow-chart</h4>
+<h3 id="_flow_chart">8.1. Flow-chart</h3>
 <div class="paragraph">
 <p>Il flow-chart seguente descrive lo schema di interazione dell&#8217;applicazione nel complesso.<br>
 Sono rappresentate tutte le pagine e come nodi del grafo, mentre le frecce indicano la possibilità di navigare da una pagina all&#8217;altra.<br>
@@ -750,11 +893,11 @@ Per evitare di appesantire eccessivamente il grafico, si sono evitate le frecce 
 <div class="content">
 <img src="images/flow-chart.png" alt="flow chart">
 </div>
-<div class="title">Figure 3. Flow-chart dell&#8217;interazione</div>
+<div class="title">Figure 11. Flow-chart dell&#8217;interazione</div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_mockups">8.1.2. Mockups</h4>
+<div class="sect2">
+<h3 id="_mockups">8.2. Mockups</h3>
 <div class="paragraph">
 <p>I seguenti mockup illustrano alcuni esempi di pagine del progetto dell&#8217;applicazione client.<br>
 Oltre alla pagina iniziale, vi sono fondamentalmente due tipologie di pagine: quelle che presentano una lista di elementi, come la seconda e la terza, e quelle che rappresentano il dettaglio di un singolo elemento, come le ultime due.</p>
@@ -763,41 +906,40 @@ Oltre alla pagina iniziale, vi sono fondamentalmente due tipologie di pagine: qu
 <div class="content">
 <img src="images/mockup-home-Home.png" alt="mockup home Home">
 </div>
-<div class="title">Figure 4. Pagina iniziale</div>
+<div class="title">Figure 12. Pagina iniziale</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Tribes.png" alt="mockup home Tribes">
 </div>
-<div class="title">Figure 5. Pagina "Tribes"</div>
+<div class="title">Figure 13. Pagina "Tribes"</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Countries.png" alt="mockup home Countries">
 </div>
-<div class="title">Figure 6. Pagina "Countries"</div>
+<div class="title">Figure 14. Pagina "Countries"</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Tribe.png" alt="mockup home Tribe">
 </div>
-<div class="title">Figure 7. Pagina "Tribe" per l&#8217;individuo "survival:Sentinelese"</div>
+<div class="title">Figure 15. Pagina "Tribe" per l&#8217;individuo "survival:Sentinelese"</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/mockup-home-Organization.png" alt="mockup home Organization">
 </div>
-<div class="title">Figure 8. Pagina "Organization" per l&#8217;individuo "survival:SurvivalInternational"</div>
-</div>
+<div class="title">Figure 16. Pagina "Organization" per l&#8217;individuo "survival:SurvivalInternational"</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_queries_principali">8.2. Queries principali</h3>
+<h3 id="_queries_principali">8.3. Queries principali</h3>
 <div class="paragraph">
 <p>Queste sono le query principali dell&#8217;applicazione client e sono accessibili tramite il menù di navigazione</p>
 </div>
 <div class="sect3">
-<h4 id="_tribes">8.2.1. Tribes</h4>
+<h4 id="_tribes">8.3.1. Tribes</h4>
 <div class="paragraph">
 <p>Questa query restituisce la lista dei popoli indigeni presenti nell&#8217;ontologia e, per ogni popolo, restituisce anche il nome, se è contattato o meno e l&#8217;habitat in cui vive con il relativo nome.</p>
 </div>
@@ -826,11 +968,11 @@ ORDER BY ?name</code></pre>
 <div class="content">
 <img src="images/query-tribes.png" alt="query tribes">
 </div>
-<div class="title">Figure 9. Esempio di risultato della query</div>
+<div class="title">Figure 17. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_countries">8.2.2. Countries</h4>
+<h4 id="_countries">8.3.2. Countries</h4>
 <div class="paragraph">
 <p>Questa query restituisce la lista dei paesi presenti nell&#8217;ontologia e per ciascuno restituisce anche il relativo nome, il nome del continente in cui sitrova e il numero di popoli indigeni che vi risiedono.</p>
 </div>
@@ -867,11 +1009,11 @@ WHERE {
 <div class="content">
 <img src="images/query-countries.png" alt="query countries">
 </div>
-<div class="title">Figure 10. Esempio di risultato della query</div>
+<div class="title">Figure 18. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_campaigns">8.2.3. Campaigns</h4>
+<h4 id="_campaigns">8.3.3. Campaigns</h4>
 <div class="paragraph">
 <p>Questa query restituisce la lista delle campagne presenti nell&#8217;ontologia e, per ogni campagna, restituisce anche il relativo nome, l&#8217;URL della pagina web della campagna e il numero di popoli indigeni aiutati da essa.</p>
 </div>
@@ -899,11 +1041,11 @@ ORDER BY ?campaignName</code></pre>
 <div class="content">
 <img src="images/query-campaigns.png" alt="query campaigns">
 </div>
-<div class="title">Figure 11. Esempio di risultato della query</div>
+<div class="title">Figure 19. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_organizations">8.2.4. Organizations</h4>
+<h4 id="_organizations">8.3.4. Organizations</h4>
 <div class="paragraph">
 <p>Questa query restituisce la lista delle organizzazioni presenti nell&#8217;ontologia e per ciascuna restituisce anche il nome e l&#8217;organizzazione cui fa capo (se ne ha una) con il relativo nome.</p>
 </div>
@@ -935,11 +1077,11 @@ ORDER BY ?orgLabel</code></pre>
 <div class="content">
 <img src="images/query-organizations.png" alt="query organizations">
 </div>
-<div class="title">Figure 12. Esempio di risultato della query</div>
+<div class="title">Figure 20. Esempio di risultato della query</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tribes_threats">8.2.5. Tribes threats</h4>
+<h4 id="_tribes_threats">8.3.5. Tribes threats</h4>
 <div class="paragraph">
 <p>Questa query restituisce la lista dei popoli indigeni presenti nell&#8217;ontologia e, per ogni popolo, restituisce anche il relativo nome, le minacce cui è sottoposto (sotto forma di concatenazione di stringhe).<br>
 Inoltre per ogni popolo restituisce un "threat score", ovvero un punteggio da 0 a 1 che esprime quanto il popolo in questione sia in pericolo, calcolato sul numero di minacce subite.</p>
@@ -982,17 +1124,17 @@ WHERE {
 <div class="content">
 <img src="images/query-threats.png" alt="query threats">
 </div>
-<div class="title">Figure 13. Esempio di risultato della query</div>
+<div class="title">Figure 21. Esempio di risultato della query</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_queries_aggiuntive_dellapplicazione_client">8.3. Queries aggiuntive dell&#8217;applicazione client</h3>
+<h3 id="_queries_aggiuntive_dellapplicazione_client">8.4. Queries aggiuntive dell&#8217;applicazione client</h3>
 <div class="paragraph">
 <p>Le seguenti query sono utilizzate dall&#8217;applicazione client per estrarre dettagli e informazioni utili per un singolo individuo dell&#8217;ontologia.</p>
 </div>
 <div class="sect3">
-<h4 id="_tribe">8.3.1. Tribe</h4>
+<h4 id="_tribe">8.4.1. Tribe</h4>
 <div class="paragraph">
 <p>Questa query, dato l&#8217;IRI di un popolo indigeno (<code>survival:Tribe</code>), ne restituisce il nome, la descrizione, se è contattato, le minacce cui è sottoposto, gli habitat in cui vive e i paesi in cui vive (inferito dagli habitat)</p>
 </div>
@@ -1042,7 +1184,7 @@ WHERE {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_country">8.3.2. Country</h4>
+<h4 id="_country">8.4.2. Country</h4>
 <div class="paragraph">
 <p>Questa query, dato l&#8217;IRI di un paese (<code>survival:Country</code>), ne restituisce il nome, il continente in cui è situato, gli habitat che contiene e le organizzazioni che vi hanno sede</p>
 </div>
@@ -1084,7 +1226,7 @@ WHERE {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_habitat">8.3.3. Habitat</h4>
+<h4 id="_habitat">8.4.3. Habitat</h4>
 <div class="paragraph">
 <p>Questa query, dato l&#8217;IRI di un habitat (<code>survival:Habitat</code>), ne restituisce il nome, la descrizione, la tipologia, i paesi in cui si trova e i popoli indigeni che vi risiedono</p>
 </div>
@@ -1120,7 +1262,7 @@ WHERE {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_organization">8.3.4. Organization</h4>
+<h4 id="_organization">8.4.4. Organization</h4>
 <div class="paragraph">
 <p>Questa query, dato l&#8217;IRI di un&#8217;organizzazione (<code>survival:Organization</code>), ne restituisce il nome, la descrizione, il sito web, l&#8217;e-mail, il paese in cui ha sede, le campagne che conduce, le sue eventuali sedi ed eventualmente l&#8217;organizzazione a cui fa capo</p>
 </div>
@@ -1168,7 +1310,7 @@ WHERE {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_campaign">8.3.5. Campaign</h4>
+<h4 id="_campaign">8.4.5. Campaign</h4>
 <div class="paragraph">
 <p>Questa query, dato l&#8217;IRI di una campagna (<code>survival:Campaign</code>), ne restituisce il nome, la descrizione, il sito web, i popoli che aiuta e le organizzazioni che la conducono</p>
 </div>
@@ -1211,15 +1353,17 @@ WHERE {
 <h2 id="_applicazione_client">9. Applicazione client</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>L&#8217;applicazione client è stata realizzata con il framework JavaScript <em>Quasar</em>, costruito a sua volta sul framework <em>Vue.js</em>.<br>
+<p>L&#8217;applicazione client, intitolata <em>Survival International Ontology Explorer</em>, è stata realizzata con il framework JavaScript <em>Quasar</em>, costruito a sua volta sul framework <em>Vue.js</em>.<br>
 Ho scelto questo framework perché permette di costruire velocemente una single page application (SPA) ben strutturata, senza dover creare tutta l&#8217;architettura e la UI da zero, dando quindi allo sviluppatore la possibilità di concentrarsi sul contenuto invece che sulla forma.</p>
 </div>
 <div class="paragraph">
-<p>L&#8217;applicazione rispecchia a grandi linee quanto illustrato nei mockup presenti nella sezione precedente e permette di visualizzare i dati delle queries viste, in maniera totalmente trasparente per l&#8217;utente.<br>
-Le sezioni dell&#8217;applicazione, che rappresentano le varie queries, sono accessibili dalla pagina iniziale e dal menù di navigazione (a sinistra).</p>
+<p>L&#8217;applicazione rispecchia a grandi linee quanto illustrato nei mockup presenti nella sezione precedente e permette di visualizzare i dati delle queries viste, in maniera totalmente trasparente per l&#8217;utente.</p>
 </div>
 <div class="paragraph">
-<p>Inoltre sono state aggiunte delle pagine che permettono di visualizzare i dettagli degli individui appartenenti alle seguenti classi:</p>
+<p>Le sezioni dell&#8217;applicazione, che rappresentano le varie queries, sono accessibili dalla pagina iniziale e dal menù di navigazione (a sinistra).</p>
+</div>
+<div class="paragraph">
+<p>Inoltre sono presenti le pagine che permettono di visualizzare (grazie alle query accessorie alla sezione precedente) i dettagli dei singoli individui appartenenti alle seguenti classi:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1248,7 +1392,7 @@ Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica
 <div class="content">
 <img src="images/client-home.png" alt="client home">
 </div>
-<div class="title">Figure 14. Schermata iniziale dell&#8217;applicazione client</div>
+<div class="title">Figure 22. Schermata iniziale dell&#8217;applicazione client</div>
 </div>
 </div>
 </div>
@@ -1256,7 +1400,7 @@ Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica
 <div id="footer">
 <div id="footer-text">
 A.A. 2021/2022<br>
-Last updated 2022-02-07 16:11:32 +0100
+Last updated 2022-02-07 18:25:52 +0100
 </div>
 </div>
 </body>

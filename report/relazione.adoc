@@ -3,7 +3,7 @@
 :revnumber: 2021/2022
 :version-label: A.A.
 :toc: left
-:toclevels: 4
+:toclevels: 2
 :sectnums: true
 :pagenums: true
 :title-page:
@@ -12,7 +12,8 @@
 
 == Introduzione
 
-Il progetto svolto riguarda l'ambito della ONG "Survival International" e tutto il materiale prodotto è disponibile presso la https://github.com/acontenti/progetto-modsem[repository GitHub] del progetto stesso.
+Il progetto svolto riguarda l'ambito della ONG "Survival International" e tutto il materiale prodotto è disponibile presso la https://github.com/acontenti/progetto-modsem[repository GitHub] del progetto stesso. +
+L'ontologia in formato Turtle è accesibile al seguente link https://acontenti.github.io/progetto-modsem/survival.ttl (che è anche il suo IRI).
 
 == Motivazioni
 
@@ -93,9 +94,80 @@ Queste sono state utilizzate anche per trarre informazioni su concetti non speci
 
 == Documentazione sul dominio
 
-=== Esempio
+Come già riportato alla sezione precedente la maggioranza delle informazioni utilizzate per documentarsi sul dominio modellato deriva dai siti istituzionali di Survival International in italiano e inglese, che riportano circa le stesse informazioni nelle due lingue (il sito italiano non è sempre aggiornato come quello inglese).
+Quindi per semplicità mi riferiro ad entrambi indifferentemente come "il sito di Survival".
+
+Il sito di Survival, appare poco strutturato e coerente: spesso alcune pagine evidentemente più vecchie hanno un'interfaccia diversa dalle altre. +
+Tuttavia presenta un minimo di suddivisione delle informazioni: è possibile infatti vedere una lista dei popoli indigeni seguiti da Survival, suddivisi per tree macroaeree: le Americhe, Africa e Asia ed Australasia.
+
+.Elenco di popoli indigeni
+image::images/survival-website-tribes.png[align=center]
+
+Inoltre è possibile vedere una lista (poco esaustiva) delle campagne in corso.
+
+.Piccola lista di alcune campagne di Survival
+image::images/survival-website-campaigns.png[align=center]
+
+Aprendo ad esempio la pagina della campagna "Stop Brazil's Genocide" (inclusa nell'ontologia) ci si trova di fronte ad un lungo articolo, molto interessante, ma totalmente privo di informazioni strutturate: senza leggerlo per intero è impossibile campire al volo quali popoli siano interessati da questa campagna, chi vi collabori, se sia ancora in corso o terminata. +
+Leggendo bene fino a circa metà pagina, si nota che è una campagna in cui Survival collabora con l'APIB, l’_Associazione dei Popoli Indigeni del Brasile_ (anch'essa inclusa nell'ontologia).
+
+.Pagina della campagna "Stop Brazil's Genocide"
+image::images/survival-website-campaign-ex.png[align=center]
+
+Anche il sito web dell'assoziazione APIB sopracitata è stato utilizzato per documentarsi, ma è ancora meno strutturato e caotico (e presenta anche qualche bug). +
+Le informazioni sono sparse su varie pagine poco chiaramente accessibili e talvolta disponibili solo in portoghese.
+
+.Sito web dell'APIB
+image::images/apib-website.png[align=center]
+
+Data la scarsità di informazioni pratiche, in favore di "propaganda" e richieste di donazioni o firme per la causa (fatto comprensibilissimo, ma in questo caso spiacevole), è stato talvolta necessario documentarsi su Wikipedia.
+
+.Pagina Wikipedia del popolo Yanomamö, interessato dalla camapagna precedente
+image::images/wikipedia-yanomami.png[align=center]
+
+In conclusione, date le note negative espresse sul sito di Survival e altre associazioni analoghe, l'idea di fondo di questa ontologia e dell'applicazione client derivante è quella di permettere agli utenti di avere informazioni chiare e facilmente accessibili, il più possibili ricche di dettagli, piuttosto che di appelli.
+
+Sarebbe molto interessante poter unire i due aspetti in un possibile "nuovo" sito web di Survival che presenti tutti i contenuti già visibili, ma ben collegati semanticamente e con allegate schede che illustrino in breve le informazioni chiave. +
+Così da non trascurare l'informatività del sito, pur mantenendo la sua funzione giustamente "propagandistica".
 
 === Allineamenti
+
+L'ontologia sviluppata è stata allineata sia con https://schema.org/[Schema.org] che con https://www.wikidata.org/[Wikidata].
+
+Con _Schema.org_ sono state allineate solo alcune classi e proprietà che rappresentano concetti o relazioni di alto livello, poiché non vi è molta sovrapposizione tra le due ontologie.
+
+.Classi:
+* `survival:Location` -> `schema:Place`
+* `survival:Continent` -> `schema:Continent`
+* `survival:Country` -> `schema:Country`
+* `survival:Organization` -> `schema:Organization`
+
+.Proprietà:
+* `survival:locatedIn` -> `schema:location`
+* `survival:branchOf` -> `schema:parentOrganization`
+* `survival:hasBranch` -> `schema:subOrganization`
+
+Con _Wikidata_, grazie alla sua grande varietà, invece sono state allineate non solo molte classi e proprietà, ma anche moltissimi individui. +
+Dato il grande numero non è possibile riportare tutti gli allineamenti, per cui saranno riportati solo alcuni esempi significativi.
+
+.Classi:
+* `survival:Tribe` -> `wd:Q103817` (_indigenous people_)
+* `survival:Campaign` -> `wd:Q18812548` (_campaign_)
+* `survival:Organization` -> `wd:Q43229` (_organization_)
+
+.Proprietà:
+* `survival:locatedIn` -> `wdt:P706` (_located in/on physical feature_)
+* `survival:branchOf` -> `wdt:P749` (_parent organization_)
+
+.Individui:
+* `survival:SurvivalInternational` -> `wd:Q1887464` (_Survival International_)
+* `survival:APIB` -> `wd:Q16494254` (_Brazil's Indigenous People Articulation_)
+* `survival:NorthSentinel` -> `wd:Q1260331` (_North Sentinel Island_)
+* `survival:Sentinelese` -> `wd:Q917695` (_Sentinelese people_)
+
+Tutti gli allineamenti delle classi sono stati effettuati con la proprietà `owl:equivalentClass` perché sono state scelte classi che rappresentassero esattamente lo stesso concetto nelle varie ontologie. +
+Per quanto riguarda le proprietà si è utlizzato `owl:equivalentProperty` per tutte le proprietà strettamente equivalenti, tranne in qualche caso in cui si è utilizzato `rdfs:subPropertyOf` per proprietà che sussumessero la proprietà importata. +
+Per gli tutti individui si è naturalmente utilizzato `owl:sameAs`.
 
 == LODE
 
@@ -140,9 +212,7 @@ image::images/coparticipation-ex-triples.png[align=center]
 Qui di seguito è presente il materiale riguardante la sezione delle queries SPARQL. +
 Sono state create 5 query principali e 5 query accessorie.
 
-=== Interazione
-
-==== Flow-chart
+=== Flow-chart
 
 Il flow-chart seguente descrive lo schema di interazione dell'applicazione nel complesso. +
 Sono rappresentate tutte le pagine e come nodi del grafo, mentre le frecce indicano la possibilità di navigare da una pagina all'altra. +
@@ -151,7 +221,7 @@ Per evitare di appesantire eccessivamente il grafico, si sono evitate le frecce 
 .Flow-chart dell'interazione
 image::images/flow-chart.png[align=center]
 
-==== Mockups
+=== Mockups
 
 I seguenti mockup illustrano alcuni esempi di pagine del progetto dell'applicazione client. +
 Oltre alla pagina iniziale, vi sono fondamentalmente due tipologie di pagine: quelle che presentano una lista di elementi, come la seconda e la terza, e quelle che rappresentano il dettaglio di un singolo elemento, come le ultime due.
@@ -548,13 +618,14 @@ WHERE {
 
 == Applicazione client
 
-L'applicazione client è stata realizzata con il framework JavaScript _Quasar_, costruito a sua volta sul framework _Vue.js_. +
+L'applicazione client, intitolata _Survival International Ontology Explorer_, è stata realizzata con il framework JavaScript _Quasar_, costruito a sua volta sul framework _Vue.js_. +
 Ho scelto questo framework perché permette di costruire velocemente una single page application (SPA) ben strutturata, senza dover creare tutta l'architettura e la UI da zero, dando quindi allo sviluppatore la possibilità di concentrarsi sul contenuto invece che sulla forma.
 
-L'applicazione rispecchia a grandi linee quanto illustrato nei mockup presenti nella sezione precedente e permette di visualizzare i dati delle queries viste, in maniera totalmente trasparente per l'utente. +
+L'applicazione rispecchia a grandi linee quanto illustrato nei mockup presenti nella sezione precedente e permette di visualizzare i dati delle queries viste, in maniera totalmente trasparente per l'utente.
+
 Le sezioni dell'applicazione, che rappresentano le varie queries, sono accessibili dalla pagina iniziale e dal menù di navigazione (a sinistra).
 
-Inoltre sono state aggiunte delle pagine che permettono di visualizzare i dettagli degli individui appartenenti alle seguenti classi:
+Inoltre sono presenti le pagine che permettono di visualizzare (grazie alle query accessorie alla sezione precedente) i dettagli dei singoli individui appartenenti alle seguenti classi:
 
 * `survival:Campaign` -> Campagna
 * `survival:Country` -> Paese
