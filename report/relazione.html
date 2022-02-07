@@ -479,7 +479,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_queries_sparql">8. Queries SPARQL</a>
 <ul class="sectlevel2">
 <li><a href="#_interazione">8.1. Interazione</a></li>
-<li><a href="#_queries">8.2. Queries</a></li>
+<li><a href="#_queries_principali">8.2. Queries principali</a></li>
+<li><a href="#_queries_aggiuntive_dellapplicazione_client">8.3. Queries aggiuntive dell&#8217;applicazione client</a></li>
 </ul>
 </li>
 <li><a href="#_applicazione_client">9. Applicazione client</a></li>
@@ -584,7 +585,7 @@ Sia perché manca la modellazione di alcuni ambiti, come ad esempio la gestione 
 <dl>
 <dt class="hdlist1">Tribù</dt>
 <dd>
-<p>Una tribù o un popolo indigeno oggetto dell&#8217;attenzione e delle campagne di Survival</p>
+<p>Una tribù o un popolo indigeno oggetto dell&#8217;attenzione e delle campagne di Survival e/o di altre organizzazioni</p>
 </dd>
 <dt class="hdlist1">Minaccia</dt>
 <dd>
@@ -682,11 +683,450 @@ Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integra
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_interazione">8.1. Interazione</h3>
-
+<div class="sect3">
+<h4 id="_flow_chart">8.1.1. Flow-chart</h4>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/flow-chart.png" alt="flow chart">
+</div>
+<div class="title">Figure 1. Flow-chart dell&#8217;interazione</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mockups">8.1.2. Mockups</h4>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Home.png" alt="mockup home Home">
+</div>
+<div class="title">Figure 2. Pagina iniziale</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Tribes.png" alt="mockup home Tribes">
+</div>
+<div class="title">Figure 3. Pagina "Tribes"</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/mockup-home-Countries.png" alt="mockup home Countries">
+</div>
+<div class="title">Figure 4. Pagina "Countries"</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_queries">8.2. Queries</h3>
+<h3 id="_queries_principali">8.2. Queries principali</h3>
+<div class="paragraph">
+<p>Queste sono le query principali dell&#8217;applicazione client e sono accessibili tramite il menù di navigazione</p>
+</div>
+<div class="sect3">
+<h4 id="_tribes">8.2.1. Tribes</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista dei popoli indigeni presenti nell&#8217;ontologia e, per ogni popolo, restituisce anche il nome, se è contattato o meno e l&#8217;habitat in cui vive con il relativo nome.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
 
+SELECT ?tribe ?name ?contacted ?habitat (MAX(?hLabel) as ?habitatLabel)
+FROM onto:disable-sameAs
+WHERE {
+    ?tribe rdf:type survival:Tribe;
+           survival:name ?name;
+           survival:contacted ?contacted;
+           survival:livesIn ?habitat.
+    ?habitat rdfs:label ?hLabel.
+    FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+}
+GROUP BY ?tribe ?name ?contacted ?habitat
+ORDER BY ?name</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-tribes.png" alt="query tribes">
+</div>
+<div class="title">Figure 5. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_countries">8.2.2. Countries</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista dei paesi presenti nell&#8217;ontologia e per ciascuno restituisce anche il relativo nome, il nome del continente in cui sitrova e il numero di popoli indigeni che vi risiedono.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?country ?countryLabel ?continentLabel ?tribesCount
+FROM onto:disable-sameAs
+WHERE {
+    ?country rdf:type survival:Country;
+             rdfs:label ?countryLabel;
+             survival:locatedIn ?continent.
+    ?continent rdfs:label ?continentLabel.
+    OPTIONAL {
+        SELECT ?country (COUNT(?tribe) as ?count)
+        WHERE {
+            ?tribe rdf:type survival:Tribe;
+                   survival:livesIn ?habitat.
+            ?habitat rdf:type survival:Habitat;
+                     survival:locatedIn ?country.
+        } GROUP BY ?country
+    }
+    FILTER(LANG(?countryLabel) = &quot;&quot; || LANGMATCHES(LANG(?countryLabel), &quot;en&quot;))
+    FILTER(LANG(?continentLabel) = &quot;&quot; || LANGMATCHES(LANG(?continentLabel), &quot;en&quot;))
+    BIND(COALESCE(?count, 0) AS ?tribesCount)
+}</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-countries.png" alt="query countries">
+</div>
+<div class="title">Figure 6. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_campaigns">8.2.3. Campaigns</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista delle campagne presenti nell&#8217;ontologia e, per ogni campagna, restituisce anche il relativo nome, l&#8217;URL della pagina web della campagna e il numero di popoli indigeni aiutati da essa.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?campaign ?campaignName ?url (COUNT(?tribe) AS ?tribesCount)
+FROM onto:disable-sameAs
+WHERE {
+    ?campaign rdf:type survival:Campaign;
+              rdfs:label ?campaignName;
+              survival:campaignPage ?url;
+              survival:helps ?tribe.
+    FILTER(LANG(?campaignName) = &quot;&quot; || LANGMATCHES(LANG(?campaignName), &quot;en&quot;))
+}
+GROUP BY ?campaign ?campaignName ?url
+ORDER BY ?campaignName</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-campaigns.png" alt="query campaigns">
+</div>
+<div class="title">Figure 7. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organizations">8.2.4. Organizations</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista delle organizzazioni presenti nell&#8217;ontologia e per ciascuna restituisce anche il nome e l&#8217;organizzazione cui fa capo (se ne ha una) con il relativo nome.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+SELECT ?org (MAX(?label) as ?orgLabel) ?head (MAX(?hLabel) as ?headLabel)
+FROM onto:disable-sameAs
+WHERE {
+    ?org rdf:type survival:Organization;
+         rdfs:label ?label.
+    OPTIONAL {
+        ?org survival:branchOf ?head.
+        ?head rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+    }
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+}
+GROUP BY ?org ?head
+ORDER BY ?orgLabel</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-organizations.png" alt="query organizations">
+</div>
+<div class="title">Figure 8. Esempio di risultato della query</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tribes_threats">8.2.5. Tribes threats</h4>
+<div class="paragraph">
+<p>Questa query restituisce la lista dei popoli indigeni presenti nell&#8217;ontologia e, per ogni popolo, restituisce anche il relativo nome, le minacce cui è sottoposto (sotto forma di concatenazione di stringhe).<br>
+Inoltre per ogni popolo restituisce un "threat score", ovvero un punteggio da 0 a 1 che esprime quanto il popolo in questione sia in pericolo, calcolato sul numero di minacce subite.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?tribe ?name ?threats (?count/?max AS ?threatScore)
+FROM onto:disable-sameAs
+WHERE {
+    {
+        SELECT (MAX(?count) AS ?max)
+        WHERE {
+            SELECT ?tribe (COUNT(?threat) as ?count)
+            WHERE {
+                ?tribe survival:threatenedBy ?threat.
+            }
+            GROUP BY ?tribe
+        }
+    }
+    {
+        SELECT ?tribe ?name (COUNT(?threat) as ?count) (GROUP_CONCAT(?threatLabel;separator=', ') AS ?threats)
+        WHERE {
+            ?tribe rdf:type survival:Tribe;
+                   survival:name ?name;
+                   survival:threatenedBy ?threat.
+            ?threat rdfs:label ?threatLabel.
+            FILTER(LANG(?threatLabel) = &quot;&quot; || LANGMATCHES(LANG(?threatLabel), &quot;en&quot;))
+        }
+        GROUP BY ?tribe ?name
+    }
+}</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/query-threats.png" alt="query threats">
+</div>
+<div class="title">Figure 9. Esempio di risultato della query</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_queries_aggiuntive_dellapplicazione_client">8.3. Queries aggiuntive dell&#8217;applicazione client</h3>
+<div class="paragraph">
+<p>Le seguenti query sono utilizzate dall&#8217;applicazione client per estrarre dettagli e informazioni utili per un singolo individuo dell&#8217;ontologia.</p>
+</div>
+<div class="sect3">
+<h4 id="_tribe">8.3.1. Tribe</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un popolo indigeno (<code>survival:Tribe</code>), ne restituisce il nome, la descrizione, se è contattato, le minacce cui è sottoposto, gli habitat in cui vive e i paesi in cui vive (inferito dagli habitat)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+SELECT ?name ?comment ?contacted ?threats ?habitat ?habitatLabel ?country ?countryLabel ?campaign ?campaignLabel
+FROM onto:disable-sameAs
+WHERE {
+    {
+        SELECT ?tribe ?name ?comment ?contacted (GROUP_CONCAT(DISTINCT ?threatLabel;separator=', ') AS ?threats) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?country (MAX(?cLabel) AS ?countryLabel) WHERE {
+            BIND(&lt;${id}&gt; AS ?tribe)
+            ?tribe survival:name ?name;
+                   rdfs:comment ?comment;
+                   survival:contacted ?contacted;
+                   survival:livesIn ?habitat.
+            FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+            OPTIONAL {
+                ?tribe survival:threatenedBy ?threat.
+                ?threat rdfs:label ?threatLabel.
+                FILTER(LANG(?threatLabel) = &quot;&quot; || LANGMATCHES(LANG(?threatLabel), &quot;en&quot;))
+            }
+            OPTIONAL {
+                ?tribe survival:livesIn ?habitat.
+                ?habitat rdfs:label ?hLabel.
+                FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+            }
+            OPTIONAL {
+                ?habitat survival:locatedIn ?country.
+                ?country rdf:type survival:Country;
+                         rdfs:label ?cLabel.
+                FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+            }
+        } GROUP BY ?tribe ?name ?comment ?contacted ?habitat ?country
+    }
+    OPTIONAL {
+        ?tribe survival:helpedBy ?campaign.
+        ?campaign rdfs:label ?campaignLabel.
+        FILTER(LANG(?campaignLabel) = &quot;&quot; || LANGMATCHES(LANG(?campaignLabel), &quot;en&quot;))
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_country">8.3.2. Country</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un paese (<code>survival:Country</code>), ne restituisce il nome, il continente in cui è situato, gli habitat che contiene e le organizzazioni che vi hanno sede</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) (MAX(?cLabel) AS ?continentLabel) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?tribe ?tribeLabel ?org (MAX(?oLabel) AS ?orgLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?country)
+    ?country rdfs:label ?label.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    ?country survival:locatedIn ?continent.
+    ?continent rdfs:label ?cLabel.
+    FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+    OPTIONAL {
+        ?habitat rdf:type survival:Habitat;
+                 survival:locatedIn ?country;
+                 rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+        OPTIONAL {
+            ?tribe rdf:type survival:Tribe;
+                   survival:livesIn ?habitat;
+                   survival:name ?tribeLabel.
+        }
+    }
+    OPTIONAL {
+        ?org rdf:type survival:Organization;
+                 survival:locatedIn ?country;
+                 rdfs:label ?oLabel.
+        FILTER(LANG(?oLabel) = &quot;&quot; || LANGMATCHES(LANG(?oLabel), &quot;en&quot;))
+    }
+} GROUP BY ?habitat ?tribe ?tribeLabel ?org</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_habitat">8.3.3. Habitat</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un habitat (<code>survival:Habitat</code>), ne restituisce il nome, la descrizione, la tipologia, i paesi in cui si trova e i popoli indigeni che vi risiedono</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) ?comment ?type ?country (MAX(?cLabel) AS ?countryLabel) ?tribe ?tribeLabel
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?habitat)
+    ?habitat rdfs:label ?label;
+             rdfs:comment ?comment;
+             survival:habitatType ?type.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+    OPTIONAL {
+        ?habitat survival:locatedIn ?country.
+        ?country rdf:type survival:Country;
+                 rdfs:label ?cLabel.
+        FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?tribe rdf:type survival:Tribe;
+               survival:livesIn ?habitat;
+               survival:name ?tribeLabel.
+    }
+} GROUP BY ?comment ?type ?country ?tribe ?tribeLabel</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organization">8.3.4. Organization</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di un&#8217;organizzazione (<code>survival:Organization</code>), ne restituisce il nome, la descrizione, il sito web, l&#8217;e-mail, il paese in cui ha sede, le campagne che conduce, le sue eventuali sedi ed eventualmente l&#8217;organizzazione a cui fa capo</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) ?comment ?website ?email ?country (MAX(?cLabel) AS ?countryLabel) ?campaign ?campaignLabel ?branch (MAX(?bLabel) AS ?branchLabel) ?head (MAX(?hLabel) AS ?headLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?org)
+    ?org rdfs:label ?label;
+         rdfs:comment ?comment;
+         survival:website ?website;
+         survival:email ?email.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+    OPTIONAL {
+        ?org survival:locatedIn ?country.
+        ?country rdf:type survival:Country;
+                 rdfs:label ?cLabel.
+        FILTER(LANG(?cLabel) = &quot;&quot; || LANGMATCHES(LANG(?cLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?campaign rdf:type survival:Campaign;
+                  survival:ledBy ?org;
+                  rdfs:label ?campaignLabel.
+        FILTER(LANG(?campaignLabel) = &quot;&quot; || LANGMATCHES(LANG(?campaignLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?branch survival:branchOf ?org;
+                rdfs:label ?bLabel.
+        FILTER(LANG(?bLabel) = &quot;&quot; || LANGMATCHES(LANG(?bLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?head survival:hasBranch ?org;
+              rdfs:label ?hLabel.
+        FILTER(LANG(?hLabel) = &quot;&quot; || LANGMATCHES(LANG(?hLabel), &quot;en&quot;))
+    }
+} GROUP BY ?comment ?website ?email ?country ?campaign ?campaignLabel ?branch ?head</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_campaign">8.3.5. Campaign</h4>
+<div class="paragraph">
+<p>Questa query, dato l&#8217;IRI di una campagna (<code>survival:Campaign</code>), ne restituisce il nome, la descrizione, il sito web, i popoli che aiuta e le organizzazioni che la conducono</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sparql">PREFIX survival: &lt;https://acontenti.github.io/progetto-modsem/survival.ttl#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX onto: &lt;http://www.ontotext.com/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT (MAX(?label) AS ?name) ?comment ?website ?tribe (MAX(?tLabel) AS ?tribeLabel) ?org (MAX(?oLabel) AS ?orgLabel)
+FROM onto:disable-sameAs
+WHERE {
+    BIND(&lt;${id}&gt; AS ?campaign)
+    ?campaign rdfs:label ?label;
+              rdfs:comment ?comment;
+              survival:campaignPage ?website.
+    FILTER(LANG(?label) = &quot;&quot; || LANGMATCHES(LANG(?label), &quot;en&quot;))
+    FILTER(LANG(?comment) = &quot;&quot; || LANGMATCHES(LANG(?comment), &quot;en&quot;))
+    OPTIONAL {
+        ?tribe rdf:type survival:Tribe;
+               survival:helpedBy ?campaign;
+               rdfs:label ?tLabel.
+        FILTER(LANG(?tLabel) = &quot;&quot; || LANGMATCHES(LANG(?tLabel), &quot;en&quot;))
+    }
+    OPTIONAL {
+        ?org rdf:type survival:Organization;
+             survival:leads ?campaign;
+             rdfs:label ?oLabel.
+        FILTER(LANG(?oLabel) = &quot;&quot; || LANGMATCHES(LANG(?oLabel), &quot;en&quot;))
+    }
+} GROUP BY ?website ?comment ?tribe ?org</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -727,13 +1167,19 @@ Le sezioni dell&#8217;applicazione, che rappresentano le varie queries, sono acc
 <p>Queste ultime non sono accessibili direttamente tramite la barra di navigazione, bensì dalle varie sezioni dell&#8217;applicazione.<br>
 Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica sezione, sono dotati di link che indirizzano alla pagina di dettaglio dello specifico individuo.</p>
 </div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/client-home.png" alt="client home">
+</div>
+<div class="title">Figure 10. Schermata iniziale dell&#8217;applicazione client</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 A.A. 2021/2022<br>
-Last updated 2022-02-06 20:29:54 +0100
+Last updated 2022-02-07 13:53:48 +0100
 </div>
 </div>
 </body>
