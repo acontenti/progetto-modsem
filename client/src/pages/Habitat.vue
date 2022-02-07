@@ -2,10 +2,11 @@
   <q-page padding>
     <q-card v-if="result">
       <q-card-section horizontal>
-        <q-card-section class="text-h6 text-right text-grey-6 q-my-auto q-pr-none">Habitat:</q-card-section>
+        <q-card-section class="text-h6 text-right text-grey-6 q-pr-none">Habitat:</q-card-section>
         <q-card-section>
           <q-card-section horizontal class="text-h6">{{ result.name }}</q-card-section>
           <q-card-section horizontal>{{ $route.params.id }}</q-card-section>
+          <q-card-section horizontal class="q-pt-md">{{ result.desc }}</q-card-section>
         </q-card-section>
       </q-card-section>
       <q-separator/>
@@ -56,8 +57,9 @@ import capitalize = format.capitalize;
 
 type HabitatDesc = {
   name: string
-  types: string[],
-  countries: IRIandLabel[],
+  desc: string
+  types: string[]
+  countries: IRIandLabel[]
   tribes: IRIandLabel[]
 }
 
@@ -77,6 +79,7 @@ export default defineComponent({
       const result = axiosResponse.data.results.bindings as Record<string, any>[];
       this.result = {
         name: result[0].name.value,
+        desc: result[0].comment.value,
         types: deduplicate(result.filter(it => !!it.type).map((it) => capitalize(it.type.value as string))),
         countries: deduplicateBy(result.filter(it => !!it.country).map((it) => ({
           iri: it.country.value,

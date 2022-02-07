@@ -2,10 +2,11 @@
   <q-page padding>
     <q-card v-if="result">
       <q-card-section horizontal>
-        <q-card-section class="text-h6 text-right text-grey-6 q-my-auto q-pr-none">Organization:</q-card-section>
+        <q-card-section class="text-h6 text-right text-grey-6 q-pr-none">Organization:</q-card-section>
         <q-card-section>
           <q-card-section horizontal class="text-h6">{{ result.name }}</q-card-section>
           <q-card-section horizontal>{{ $route.params.id }}</q-card-section>
+          <q-card-section horizontal class="q-pt-md">{{ result.desc }}</q-card-section>
         </q-card-section>
       </q-card-section>
       <q-separator/>
@@ -88,6 +89,7 @@ import {deduplicateBy, IRIandLabel} from "components/Utils";
 
 type OrganizationDesc = {
   name: string
+  desc: string
   website: string
   email: string
   head: IRIandLabel | null
@@ -112,6 +114,7 @@ export default defineComponent({
       const result = axiosResponse.data.results.bindings as Record<string, any>[];
       this.result = {
         name: result[0].name.value,
+        desc: result[0].comment.value,
         website: result[0].website.value,
         email: result[0].email.value,
         head: result[0].head ? {iri: result[0].head.value, label: result[0].headLabel.value} : null,

@@ -146,15 +146,17 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX onto: <http://www.ontotext.com/>
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?name ?contacted ?threats ?habitat ?habitatLabel ?country ?countryLabel ?campaign ?campaignLabel
+SELECT ?name ?comment ?contacted ?threats ?habitat ?habitatLabel ?country ?countryLabel ?campaign ?campaignLabel
 FROM onto:disable-sameAs
 WHERE {
     {
-        SELECT ?tribe ?name ?contacted (GROUP_CONCAT(DISTINCT ?threatLabel;separator=', ') AS ?threats) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?country (MAX(?cLabel) AS ?countryLabel) WHERE {
+        SELECT ?tribe ?name ?comment ?contacted (GROUP_CONCAT(DISTINCT ?threatLabel;separator=', ') AS ?threats) ?habitat (MAX(?hLabel) AS ?habitatLabel) ?country (MAX(?cLabel) AS ?countryLabel) WHERE {
             BIND(<${id}> AS ?tribe)
             ?tribe survival:name ?name;
+                   rdfs:comment ?comment;
                    survival:contacted ?contacted;
                    survival:livesIn ?habitat.
+            FILTER(LANG(?comment) = "" || LANGMATCHES(LANG(?comment), "en"))
             OPTIONAL {
                 ?tribe survival:threatenedBy ?threat.
                 ?threat rdfs:label ?threatLabel.
@@ -171,7 +173,7 @@ WHERE {
                          rdfs:label ?cLabel.
                 FILTER(LANG(?cLabel) = "" || LANGMATCHES(LANG(?cLabel), "en"))
             }
-        } GROUP BY ?tribe ?name ?contacted ?habitat ?country
+        } GROUP BY ?tribe ?name ?comment ?contacted ?habitat ?country
     }
     OPTIONAL {
         ?tribe survival:helpedBy ?campaign.
@@ -220,13 +222,15 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX onto: <http://www.ontotext.com/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT (MAX(?label) AS ?name) ?type ?country (MAX(?cLabel) AS ?countryLabel) ?tribe ?tribeLabel
+SELECT (MAX(?label) AS ?name) ?comment ?type ?country (MAX(?cLabel) AS ?countryLabel) ?tribe ?tribeLabel
 FROM onto:disable-sameAs
 WHERE {
     BIND(<${id}> AS ?habitat)
     ?habitat rdfs:label ?label;
+             rdfs:comment ?comment;
              survival:habitatType ?type.
     FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    FILTER(LANG(?comment) = "" || LANGMATCHES(LANG(?comment), "en"))
     OPTIONAL {
         ?habitat survival:locatedIn ?country.
         ?country rdf:type survival:Country;
@@ -238,7 +242,7 @@ WHERE {
                survival:livesIn ?habitat;
                survival:name ?tribeLabel.
     }
-} GROUP BY ?type ?country ?tribe ?tribeLabel
+} GROUP BY ?comment ?type ?country ?tribe ?tribeLabel
 `,
   organization: (id: string) => `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
@@ -246,14 +250,16 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX onto: <http://www.ontotext.com/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT (MAX(?label) AS ?name) ?website ?email ?country (MAX(?cLabel) AS ?countryLabel) ?campaign ?campaignLabel ?branch (MAX(?bLabel) AS ?branchLabel) ?head (MAX(?hLabel) AS ?headLabel)
+SELECT (MAX(?label) AS ?name) ?comment ?website ?email ?country (MAX(?cLabel) AS ?countryLabel) ?campaign ?campaignLabel ?branch (MAX(?bLabel) AS ?branchLabel) ?head (MAX(?hLabel) AS ?headLabel)
 FROM onto:disable-sameAs
 WHERE {
     BIND(<${id}> AS ?org)
     ?org rdfs:label ?label;
+         rdfs:comment ?comment;
          survival:website ?website;
          survival:email ?email.
     FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    FILTER(LANG(?comment) = "" || LANGMATCHES(LANG(?comment), "en"))
     OPTIONAL {
         ?org survival:locatedIn ?country.
         ?country rdf:type survival:Country;
@@ -276,7 +282,7 @@ WHERE {
               rdfs:label ?hLabel.
         FILTER(LANG(?hLabel) = "" || LANGMATCHES(LANG(?hLabel), "en"))
     }
-} GROUP BY ?website ?email ?country ?campaign ?campaignLabel ?branch ?head
+} GROUP BY ?comment ?website ?email ?country ?campaign ?campaignLabel ?branch ?head
 `,
   campaign: (id: string) => `
 PREFIX survival: <https://acontenti.github.io/progetto-modsem/survival.ttl#>
@@ -284,26 +290,28 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX onto: <http://www.ontotext.com/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT (MAX(?label) AS ?name) ?website ?tribe (MAX(?tLabel) AS ?tribeLabel) ?org (MAX(?oLabel) AS ?orgLabel)
+SELECT (MAX(?label) AS ?name) ?comment ?website ?tribe (MAX(?tLabel) AS ?tribeLabel) ?org (MAX(?oLabel) AS ?orgLabel)
 FROM onto:disable-sameAs
 WHERE {
     BIND(<${id}> AS ?campaign)
     ?campaign rdfs:label ?label;
-         survival:campaignPage ?website.
+              rdfs:comment ?comment;
+              survival:campaignPage ?website.
     FILTER(LANG(?label) = "" || LANGMATCHES(LANG(?label), "en"))
+    FILTER(LANG(?comment) = "" || LANGMATCHES(LANG(?comment), "en"))
     OPTIONAL {
         ?tribe rdf:type survival:Tribe;
-                  survival:helpedBy ?campaign;
-                  rdfs:label ?tLabel.
+               survival:helpedBy ?campaign;
+               rdfs:label ?tLabel.
         FILTER(LANG(?tLabel) = "" || LANGMATCHES(LANG(?tLabel), "en"))
     }
     OPTIONAL {
         ?org rdf:type survival:Organization;
-                  survival:leads ?campaign;
-                  rdfs:label ?oLabel.
+             survival:leads ?campaign;
+             rdfs:label ?oLabel.
         FILTER(LANG(?oLabel) = "" || LANGMATCHES(LANG(?oLabel), "en"))
     }
-} GROUP BY ?website ?tribe ?org
+} GROUP BY ?website ?comment ?tribe ?org
 `
 };
 
