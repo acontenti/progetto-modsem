@@ -18,7 +18,9 @@ Il progetto svolto riguarda l'ambito della ONG "Survival International" e tutto 
 
 Il dominio che ho deciso di modellare riguarda il contesto e le operazioni dell'associazione senza scopo di lucro "Survival International".
 
-Survival International è un movimento internazionale per la salvaguardia deii diritti dei popoli indigeni. È stata fondata nel 1969 a Londra, a seguito della pubblicazione di un articolo del Sunday Times, che narrava il genocidio dei popoli amazzonici. La sua missione è aiutare i popoli indigeni e tribali a difendere le loro vite, le loro terre e i loro fondamentali diritti umani contro ogni forma di persecuzione, razzismo e genocidio.
+Survival International è un movimento internazionale per la salvaguardia deii diritti dei popoli indigeni.
+È stata fondata nel 1969 a Londra, a seguito della pubblicazione di un articolo del Sunday Times, che narrava il genocidio dei popoli amazzonici.
+La sua missione è aiutare i popoli indigeni e tribali a difendere le loro vite, le loro terre e i loro fondamentali diritti umani contro ogni forma di persecuzione, razzismo e genocidio.
 
 A partire dalla sua fondazione, Survival ha portato avanti decine di campagne a favore dei popoli indigeni, ricevendo il sostegno di centinaia di migliaia di persone.
 
@@ -65,9 +67,11 @@ Con minaccia si intende o un generico problema che affligge più popoli indigeni
 Campagna::
 Una campagna può essere diretta ad affrontare in generale una minaccia che riguarda molte comunità indigene, oppure si rivolge direttamente ad una specifica tribù, affrontandone le varie problematiche
 Organizzazione::
-Un'organizzazione è un generico ente che collabora con Survival (come anche Survival stessa e le sue sedi locali). Un'organizzazione può essere legata a una campagna che conduce (o co-conduce).
+Un'organizzazione è un generico ente che collabora con Survival (come anche Survival stessa e le sue sedi locali).
+Un'organizzazione può essere legata a una campagna che conduce (o co-conduce).
 Luogo::
-Un luogo indica in generale un'area geografica, più specificamente un continente, un paese o un habitat. Quest'ultimo rappresenta un'area in cui vivono una (o più) tribù e popoli indigeni, atta a circoscrivere più precisamente i territori in cui vivono queste popolazioni, che spesso si estendono oltre i confini di un singolo paese.
+Un luogo indica in generale un'area geografica, più specificamente un continente, un paese o un habitat.
+Quest'ultimo rappresenta un'area in cui vivono una (o più) tribù e popoli indigeni, atta a circoscrivere più precisamente i territori in cui vivono queste popolazioni, che spesso si estendono oltre i confini di un singolo paese.
 
 === Riferimenti
 
@@ -76,7 +80,8 @@ La stragrande maggioranza delle informazioni riguardanti i temi chiave di questa
 * Survival International: https://www.survivalinternational.org
 * Survival International Italia: https://www.survival.it
 
-Purtroppo le informazioni sono un po' frammentate e organizzate in modo poco sistematico. Probabilmente per fare più colpo sui lettori, piuttosto che per dare una documentazione precisa. +
+Purtroppo le informazioni sono un po' frammentate e organizzate in modo poco sistematico.
+Probabilmente per fare più colpo sui lettori, piuttosto che per dare una documentazione precisa. +
 Alcune pagine non sembrano molto aggiornate, per cui è stato necessario integrare qualche volta con enciclopedie online come:
 
 * Wikipedia: https://en.wikipedia.org/ e https://it.wikipedia.org/
@@ -109,16 +114,26 @@ Durante lo sviluppo dell'ontologia si è deciso di utilizzare gli Ontology Desig
 .Diagramma dell'ODP "Participation"
 image::images/participation.jpg[align=center]
 
-.Diagramma dell'ODP "Co-participation"
-image::images/coparticipation.jpg[align=center]
-
 L'ODP Participation è stato utilizzato per differenziare gli oggetti dagli eventi e stabilire la partecipazione degli oggetti agli eventi. +
 Nello specifico la classe `survival:Campaign` è stata resa sottoclasse di `Event` mentre tutte le altre classi sono state rese sottoclassi di `Object`. +
 Inoltre, la proprietà `survival:leads`, che mette in relazione `survival:Organization` con `survival:Campaign`, è stata resa sottoproprietà di `isParticipantIn`; lo stesso per la proprietà inversa `survival:ledBy` con `hasParticipant`.
 
-Quindi, grazie all'ODP Co-participation (che estende l'ODP Participation), si è modellata la proprietà simmetrica `survival:collaboratesWith` tra due `survival:Organization`, come sottoproprietà di `coparticipatesWith`.
+.Diagramma dell'ODP "Co-participation"
+image::images/coparticipation.jpg[align=center]
 
-=== Triple dell'esempio
+Quindi, grazie all'ODP Co-participation (che estende l'ODP Participation), si è modellata la proprietà simmetrica `survival:collaboratesWith` tra due `survival:Organization`, come sottoproprietà di `coparticipatesWith`.
+Ciò indica che due oggetti, in questo caso due organizzazioni, collaborano in un evento, in questo caso una campagna, se entrambe partecipano ad uno stesso evento.
+
+=== Esempio
+
+.Grafico di esempio di utilizzo della proprietà `survival:collaboratesWith`
+image::images/coparticipation-example.png[align=center]
+
+.Triple che descrivono la proprietà `survival:collaboratesWith`
+image::images/coparticipation-triples.png[align=center]
+
+.Triple che descrivono un esempio di utilizzo della proprietà `survival:collaboratesWith`
+image::images/coparticipation-ex-triples.png[align=center]
 
 == Queries SPARQL
 
