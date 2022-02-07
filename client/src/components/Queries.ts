@@ -31,7 +31,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX onto: <http://www.ontotext.com/>
 
-SELECT ?country ?countryLabel ?continent ?continentLabel ?tribesCount
+SELECT ?country ?countryLabel ?continentLabel ?tribesCount
 FROM onto:disable-sameAs
 WHERE {
     ?country rdf:type survival:Country;
