@@ -58,7 +58,7 @@ Gli utenti che potrebbero trarre giovamento dall'utilizzo di questa ontologia so
 Il dominio è composto da un insieme di concetti top-level, cui corrisponde una specifica classe nell'ontologia:
 
 Tribù::
-Una tribù o un popolo indigeno oggetto dell'attenzione e delle campagne di Survival
+Una tribù o un popolo indigeno oggetto dell'attenzione e delle campagne di Survival e/o di altre organizzazioni
 Minaccia::
 Con minaccia si intende o un generico problema che affligge più popoli indigeni, accomunandoli come protagonisti di una campagna, oppure un problema che affligge una specifica tribù.
 Campagna::
@@ -104,6 +104,23 @@ La documentazione generata con LODE (per la precisione con il tool https://githu
 == Queries SPARQL
 
 === Interazione
+
+==== Flow-chart
+
+.Flow-chart dell'interazione
+image::images/flow-chart.png[align=center]
+
+==== Mockups
+
+.Pagina iniziale
+image::images/mockup-home-Home.png[align=center]
+
+.Pagina "Tribes"
+image::images/mockup-home-Tribes.png[align=center]
+
+.Pagina "Countries"
+image::images/mockup-home-Countries.png[align=center]
+
 
 === Queries principali
 
@@ -498,3 +515,6 @@ Inoltre sono state aggiunte delle pagine che permettono di visualizzare i dettag
 
 Queste ultime non sono accessibili direttamente tramite la barra di navigazione, bensì dalle varie sezioni dell'applicazione. +
 Infatti in ogni sezione alcuni elementi dei risultati, a seconda della specifica sezione, sono dotati di link che indirizzano alla pagina di dettaglio dello specifico individuo.
+
+.Schermata iniziale dell'applicazione client
+image::images/client-home.png[align=center]

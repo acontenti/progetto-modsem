@@ -1,0 +1,36 @@
+@startuml
+Home -down-> Tribes
+Home -down-> Countries
+Home -down-> Campaigns
+Home -down-> Organizations
+Home -down-> "Tribes threats" as Threats
+
+Tribes --> Tribe
+Tribes --> Habitat
+
+Countries --> Country
+
+Campaigns --> Campaign
+
+Organizations --> Organization
+
+Threats --> Tribe
+
+Tribe --> Habitat
+Tribe --> Country
+Tribe --> Campaign
+
+Campaign --> Tribe
+Campaign --> Organization
+
+Country --> Habitat
+Country --> Tribe
+Country --> Organization
+
+Organization --> Country
+Organization --> Campaign
+Organization --> Organization
+
+Habitat --> Country
+Habitat --> Tribe
+@enduml
